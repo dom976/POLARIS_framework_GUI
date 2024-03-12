@@ -1,11 +1,17 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import emailjs from 'emailjs-com';
 import myImage from './assets/img/Screenshot_2.png';
 import './assets/css/buttonhover.css';
 import Hover from './Hover';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Contact = () => {
   const form = useRef();
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -40,7 +46,7 @@ const Contact = () => {
         background: "linear-gradient(#eaccf5 35%, #aca7eb 77%)",
         position: "relative"
       }}>
-        <div className="container" style={{
+        <div className="container" data-aos="fade-up" style={{
           background: '#fff',
           width: '800px',
           height: '450px',
@@ -63,6 +69,8 @@ const Contact = () => {
               width={280}
               height={280}
               style={{ marginLeft: "-58px" }}
+              data-aos="zoom-in"
+              data-aos-duration="1000"
             />
             <div className="picture" />
           </div>

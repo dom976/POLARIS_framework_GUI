@@ -5,39 +5,21 @@ import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import Contact from "./Contact";
 import Catalogue from "./Catalogue";
 
+function App() {
+  return (
+    <>
+      <BrowserRouter>
+        <Navbar />
 
-/*    <Route index element = {<Homepage/>} />
-    <Route path="/Homepage" element = {<Homepage/>} /> */
-function App (){
-
-return(
-
-
-<>
-<BrowserRouter>
-<Navbar/>
-
-
-       <Routes>
-          <Route index element={<Homepage/>} />
+        <Routes>
+          <Route index element={<Homepage />} />
           <Route path="/Homepage" element={<Homepage />} />
           <Route path="/Contact" element={<Contact />} />
           <Route path="/Catalogue" element={<Catalogue />} />
-
-       </Routes>
-
-
-
-
-</BrowserRouter>
-        
-    
-</>
-   
-
-)
-
-
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
 }
 
-export default App
+export default App;
