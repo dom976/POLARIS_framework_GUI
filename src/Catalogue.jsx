@@ -1,21 +1,25 @@
-import React, { useState, useEffect } from "react";
-import FadeIn from "react-fade-in";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import React, { useState, useEffect } from 'react';
+import FadeIn from 'react-fade-in';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import './catalogue.css'; // Importa i tuoi stili CSS
 
 const Catalogue = () => {
   const [flashcards, setFlashcards] = useState([]);
-  const [filter, setFilter] = useState("All");
+  const [filterCategory, setFilterCategory] = useState('All');
+  const [filterPhase, setFilterPhase] = useState('All');
   const [selectedPhase, setSelectedPhase] = useState({});
   const [expandedFlashcard, setExpandedFlashcard] = useState(null);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState('');
+  const [activeCategoryButton, setActiveCategoryButton] = useState('All'); // Aggiunto stato per il bottone attivo della categoria
+  const [activePhaseButton, setActivePhaseButton] = useState('All'); // Aggiunto stato per il bottone attivo della fase
 
   useEffect(() => {
-    fetch("/csvjson.json")
-      .then((response) => response.json())
-      .then((data) => {
+    fetch('/csvjson.json')
+      .then(response => response.json())
+      .then(data => {
         // Sostituisci il carattere speciale '�' con l'apostrofo "'" in tutti i campi del JSON
-        const sanitizedData = data.map((item) => {
+        const sanitizedData = data.map(item => {
           const sanitizedItem = {};
           for (let key in item) {
             sanitizedItem[key] = item[key].replace(/�/g, "'"); // Sostituisci tutti i caratteri '�' con l'apostrofo "'"
@@ -24,40 +28,28 @@ const Catalogue = () => {
         });
 
         const groupedByCategory = sanitizedData.reduce((acc, item) => {
-          const id =
-            item.Category === "Explainability"
-              ? item["Explanation Goal"].substring(0, 100)
-              : item.Description.substring(0, 100);
+          const id = item.Category === 'Explainability' ? item['Explanation Goal'].substring(0, 100) : item.Description.substring(0, 100);
           acc[id] = acc[id] || {
             ...item,
             id,
             fullDescription: item.Description,
-            previewDescription:
-              item.Category !== "Explainability"
-                ? truncateDescription(item.Description)
-                : "",
-            previewExplanationGoal:
-              item.Category === "Explainability"
-                ? truncateExplanationGoal(item["Explanation Goal"])
-                : "",
-            phases: {},
+            previewDescription: item.Category !== 'Explainability' ? truncateDescription(item.Description) : '',
+            previewExplanationGoal: item.Category === 'Explainability' ? truncateExplanationGoal(item['Explanation Goal']) : '',
+            phases: {}
           };
-          acc[id].phases[item["SDLC Phase"]] = item.Action;
+          acc[id].phases[item['SDLC Phase']] = item.Action;
           return acc;
         }, {});
 
-        const initialPhases = Object.values(groupedByCategory).reduce(
-          (acc, item) => {
-            acc[item.id] = Object.keys(item.phases)[0];
-            return acc;
-          },
-          {}
-        );
+        const initialPhases = Object.values(groupedByCategory).reduce((acc, item) => {
+          acc[item.id] = Object.keys(item.phases)[0];
+          return acc;
+        }, {});
 
         setFlashcards(Object.values(groupedByCategory));
         setSelectedPhase(initialPhases);
       })
-      .catch((error) => console.error("Error loading JSON file:", error));
+      .catch(error => console.error('Error loading JSON file:', error));
 
     AOS.init({
       once: true,
@@ -69,256 +61,178 @@ const Catalogue = () => {
   };
 
   const handlePhaseSelection = (phase, id) => {
-    setSelectedPhase((prev) => ({
+    setSelectedPhase(prev => ({
       ...prev,
       [id]: phase,
     }));
   };
 
-  const handleFilterChange = (category) => {
-    setFilter(category);
-    // Dopo aver cambiato il filtro, chiamiamo AOS.refresh() per rilevare nuovamente gli elementi e riapplicare l'effetto
+  const handleCategoryFilter = (category) => {
+    setFilterCategory(category);
+    setActiveCategoryButton(category); // Imposta il bottone attivo per la categoria
+    AOS.refresh();
+  };
+
+  const handlePhaseFilter = (phase) => {
+    setFilterPhase(phase);
+    setActivePhaseButton(phase); // Imposta il bottone attivo per la fase
     AOS.refresh();
   };
 
   const handlePhaseName = (name) => {
-    if (name === "RE") {
-      return "Requirements Elicitation";
+    if (name === 'RE') {
+      return 'Requirements Elicitation';
     }
     return name;
   };
 
   const formatText = (text) => {
     // Dividi il testo in paragrafi quando incontra un salto di riga (\n)
-    const paragraphs = text.split("\n");
+    const paragraphs = text.split('\n');
     return paragraphs.map((paragraph, index) => (
-      <p
-        key={index}
-        style={{
-          marginBottom: "5px",
-          fontSize: "14px",
-          whiteSpace: "pre-wrap",
-          fontFamily: "Lucida Fax",
-        }}
-      >
+      <p key={index} className="flashcard-content">
         {paragraph}
       </p>
     ));
   };
 
   const truncateDescription = (description) => {
-    const words = description.split(" ");
+    const words = description.split(' ');
     if (words.length > 7) {
-      return words.slice(0, 7).join(" ") + "...";
+      return words.slice(0, 7).join(' ') + '...';
     }
     return description;
   };
 
   const truncateExplanationGoal = (explanationGoal) => {
-    const words = explanationGoal.split(" ");
+    const words = explanationGoal.split(' ');
     if (words.length > 7) {
-      return words.slice(0, 7).join(" ") + "...";
+      return words.slice(0, 7).join(' ') + '...';
     }
     return explanationGoal;
   };
 
   const categoryColors = {
-    All: "#ffffff",
-    Security: "#cce5ff",
-    Privacy: "#ccffcc",
-    Fairness: "#ecd6f4",
-    Explainability: "#ffebd9",
+    'All': '#ffffff',
+    'Security': '#cce5ff',
+    'Privacy': '#ccffcc',
+    'Fairness': '#ecd6f4',
+    'Explainability': '#ffebd9'
   };
 
-  const filteredFlashcards = flashcards.filter((flashcard) => {
-    const values = Object.values(flashcard).join("").toLowerCase();
-    return values.includes(searchTerm.toLowerCase());
+  const categoryDarkColors = {
+    'All': '#cccccc',
+    'Security': '#6699cc',
+    'Privacy': '#66cc66',
+    'Fairness': '#cc99cc',
+    'Explainability': '#ffcc99'
+  };
+
+  const filteredFlashcards = flashcards.filter(flashcard => {
+    const categoryMatch = filterCategory === 'All' || flashcard.Category === filterCategory;
+    const phaseMatch = filterPhase === 'All' || Object.keys(flashcard.phases).some(phase => phase === filterPhase);
+    const searchTermMatch = searchTerm === '' || Object.values(flashcard).join('').toLowerCase().includes(searchTerm.toLowerCase());
+    return categoryMatch && phaseMatch && searchTermMatch;
   });
 
   return (
     <body>
-      <div style={{ padding: "20px", width: "100%" }}>
-        <div
-          style={{
-            marginBottom: "20px",
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
-          <button
-            onClick={() => handleFilterChange("All")}
-            style={{
-              backgroundColor: categoryColors["All"],
-              borderRadius: "20px",
-              padding: "10px 20px",
-              marginRight: "10px",
-              fontSize: "16px",
-              fontWeight: "bold",
-              fontFamily: "Lucida Fax",
-            }}
+      <div className="container">
+        <div className="buttons-container">
+          {Object.keys(categoryColors).map(category => (
+            <button 
+              key={category} 
+              onClick={() => handleCategoryFilter(category)} 
+              className={activeCategoryButton === category ? 'button-active' : ''}
+              style={{ 
+                backgroundColor: categoryColors[category],
+                boxShadow: `inset 0 0 5px ${activeCategoryButton === category ? categoryDarkColors[category] : 'transparent'}`
+              }}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+        <div className="buttons-container">
+          <button 
+            onClick={() => handlePhaseFilter('All')} 
+            className={activePhaseButton === 'All' ? 'button-active' : ''}
           >
-            All
+            All Phases
           </button>
-          <button
-            onClick={() => handleFilterChange("Security")}
-            style={{
-              backgroundColor: categoryColors["Security"],
-              borderRadius: "20px",
-              padding: "10px 20px",
-              marginRight: "10px",
-              fontSize: "16px",
-              fontWeight: "bold",
-              fontFamily: "Lucida Fax",
-            }}
+          <button 
+            onClick={() => handlePhaseFilter('Deployment')} 
+            className={activePhaseButton === 'Deployment' ? 'button-active' : ''}
           >
-            Security
+            Deployment
           </button>
-          <button
-            onClick={() => handleFilterChange("Privacy")}
-            style={{
-              backgroundColor: categoryColors["Privacy"],
-              borderRadius: "20px",
-              padding: "10px 20px",
-              marginRight: "10px",
-              fontSize: "16px",
-              fontWeight: "bold",
-              fontFamily: "Lucida Fax",
-            }}
+          <button 
+            onClick={() => handlePhaseFilter('Design')} 
+            className={activePhaseButton === 'Design' ? 'button-active' : ''}
           >
-            Privacy
+            Design
           </button>
-          <button
-            onClick={() => handleFilterChange("Fairness")}
-            style={{
-              backgroundColor: categoryColors["Fairness"],
-              borderRadius: "20px",
-              padding: "10px 20px",
-              marginRight: "10px",
-              fontSize: "16px",
-              fontWeight: "bold",
-              fontFamily: "Lucida Fax",
-            }}
+          <button 
+            onClick={() => handlePhaseFilter('Testing')} 
+            className={activePhaseButton === 'Testing' ? 'button-active' : ''}
           >
-            Fairness
+            Testing
           </button>
-          <button
-            onClick={() => handleFilterChange("Explainability")}
-            style={{
-              backgroundColor: categoryColors["Explainability"],
-              borderRadius: "20px",
-              padding: "10px 20px",
-              marginRight: "10px",
-              fontSize: "16px",
-              fontWeight: "bold",
-              fontFamily: "Lucida Fax",
-            }}
+          <button 
+            onClick={() => handlePhaseFilter('RE')} 
+            className={activePhaseButton === 'RE' ? 'button-active' : ''}
           >
-            Explainability
+            Requirements Elicitation
+          </button>
+          <button 
+            onClick={() => handlePhaseFilter('Monitoring')} 
+            className={activePhaseButton === 'Monitoring' ? 'button-active' : ''}
+          >
+            Monitoring
+          </button>
+          <button 
+            onClick={() => handlePhaseFilter('Development')} 
+            className={activePhaseButton === 'Development' ? 'button-active' : ''}
+          >
+            Development
           </button>
         </div>
-        <div
-          style={{ position: "relative", width: "100%", marginBottom: "20px" }}
-        >
+        <div className="input-container">
           <input
             type="text"
             placeholder="Search"
-            style={{
-              padding: "8px",
-              fontSize: "14px",
-              width: "calc(50% - 32px)",
-              borderRadius: "10px",
-              border: "1px solid #ccc",
-              margin: "0 auto",
-              display: "block",
-            }}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
-        <div
-          data-aos="fade-up"
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "20px",
-            margin: "0 20px",
-            width: "100%",
-          }}
-        >
-          {(searchTerm === "" ? flashcards : filteredFlashcards)
-            .filter(
-              (flashcard) => filter === "All" || flashcard.Category === filter
-            )
-            .map((flashcard, index) => (
-              <div
-                key={index}
-                style={{
-                  border: "1px solid #ccc",
-                  padding: "5px",
-                  borderRadius: "5px",
-                  position: "relative",
-                  width:
-                    expandedFlashcard === flashcard.id
-                      ? "100%"
-                      : "calc(33% - 20px)",
-                  transition: "width 0.3s ease-in-out",
-                  backgroundColor: categoryColors[flashcard.Category],
-                }}
-                onClick={() => toggleExpansion(flashcard.id)}
-              >
-                <h4>{flashcard.Category}</h4>
-                <div
-                  style={{
-                    fontSize: "14px",
-                    margin: "5px 0",
-                    fontFamily: "Lucida Fax",
-                  }}
-                >
-                  {expandedFlashcard === flashcard.id
-                    ? flashcard.Category === "Explainability"
-                      ? formatText(flashcard["Explanation Goal"])
-                      : formatText(flashcard.fullDescription)
-                    : flashcard.Category === "Explainability"
-                      ? formatText(
-                        truncateExplanationGoal(
-                          flashcard.previewExplanationGoal
-                        )
-                      )
-                      : formatText(
-                        truncateDescription(flashcard.previewDescription)
-                      )}
-                </div>
-                {expandedFlashcard === flashcard.id && (
-                  <div onClick={(e) => e.stopPropagation()}>
-                    <div style={{ marginBottom: "5px", fontSize: "14px" }}>
-                      SDLC Phase:
-                    </div>
-                    {Object.entries(flashcard.phases).map(
-                      ([phase, action], idx) => (
-                        <button
-                          key={idx}
-                          style={{
-                            marginRight: "5px",
-                            marginBottom: "5px",
-                            fontSize: "14px",
-                          }}
-                          onClick={() =>
-                            handlePhaseSelection(phase, flashcard.id)
-                          }
-                        >
-                          {handlePhaseName(phase)}
-                        </button>
-                      )
-                    )}
-                    <p style={{ fontSize: "14px", margin: "5px 0" }}>
-                      Action:{" "}
-                      {formatText(
-                        flashcard.phases[selectedPhase[flashcard.id]]
-                      )}
-                    </p>
-                  </div>
-                )}
+        <div className="flashcards-container">
+          {filteredFlashcards.map((flashcard, index) => (
+            <div
+              key={index}
+              className="flashcard"
+              style={{ backgroundColor: categoryColors[flashcard.Category], width: expandedFlashcard === flashcard.id ? '100%' : 'calc(33% - 20px)' }}
+              onClick={() => toggleExpansion(flashcard.id)}
+            >
+              <h4>{flashcard.Category}</h4>
+              <div className="flashcard-content">
+                {expandedFlashcard === flashcard.id ? (flashcard.Category === 'Explainability' ? formatText(flashcard['Explanation Goal']) : formatText(flashcard.fullDescription)) : (flashcard.Category === 'Explainability' ? formatText(truncateExplanationGoal(flashcard.previewExplanationGoal)) : formatText(truncateDescription(flashcard.previewDescription)))}
               </div>
-            ))}
+              {expandedFlashcard === flashcard.id && (
+                <div onClick={(e) => e.stopPropagation()}>
+                  <div className="phases-container">SDLC Phase:</div>
+                  {Object.entries(flashcard.phases).map(([phase, action], idx) => (
+                    <button
+                      key={idx}
+                      className="phase-button"
+                      onClick={() => handlePhaseSelection(phase, flashcard.id)}
+                    >
+                      {handlePhaseName(phase)}
+                    </button>
+                  ))}
+                  <p className="action-text">Action: {formatText(flashcard.phases[selectedPhase[flashcard.id]])}</p>
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </body>
