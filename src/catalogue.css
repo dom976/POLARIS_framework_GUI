@@ -81,20 +81,6 @@
 }
 
 
-.category-button.Fairness:hover {
-  background-color: #7b04f2;
-}
 
-.category-button.Explainability:hover {
-  background-color: #ef6509;
-}
-
-.category-button.Security:hover {
-  background-color: #99b3cc;
-}
-
-.category-button.Privacy:hover {
-  background-color: #b3d9b3;
-}
 
 

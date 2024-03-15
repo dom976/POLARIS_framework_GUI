@@ -109,32 +109,52 @@ const Catalogue = () => {
 
   const categoryColors = {
     'All': '#ffffff',
-    'Security': '#cce5ff',
-    'Privacy': '#ccffcc',
-    'Fairness': '#ecd6f4',
-    'Explainability': '#ffebd9'
+    'Security': '#86e2ff',
+    'Privacy': '#9aff9a',
+    'Fairness': '#e290fd',
+    'Explainability': '#ffd771'
   };
+
+  const phaseColors = {
+    'All' : '#ffffff',
+    'Design' : '#ffd1d7',
+    'Development' : '#ffd1d7',
+    'Deployment' : '#ffd1d7',
+    'Testing' : '#ffd1d7',
+    'Monitoring': '#ffd1d7',
+    'RE': '#ffd1d7'
+  };
+
+  const hoverColorsPhase = {
+    'Design' : '#fc5c5c',
+    'Development' : '#fc5c5c',
+    'Deployment' : '#fc5c5c',
+    'Testing' : '#fc5c5c',
+    'Monitoring': '#fc5c5c',
+    'RE': '#fc5c5c'
+  }
 
   const categoryDarkColors = {
     'All': '#cccccc',
-    'Security': '#6699cc',
+    'Security': '#95a3f1',
     'Privacy': '#66cc66',
     'Fairness': '#cc99cc',
     'Explainability': '#ffcc99'
   };
 
   const hoverColors = {
-    'All': '#d4d2d2',
-    'Security': '#5eabfb', // Colore di hover per 'Security'
-    'Privacy': '#7af47a',   // Colore di hover per 'Privacy'
-    'Fairness': '#fb95fb',  // Colore di hover per 'Fairness'
-    'Explainability': '#ffc299' // Colore di hover per 'Explainability'
+    'Security': '#86a4ff', // Colore di hover per 'Security'
+    'Privacy': '#00f496',   // Colore di hover per 'Privacy'
+    'Fairness': '#c23bec',  // Colore di hover per 'Fairness'
+    'Explainability': '#ff8f71' // Colore di hover per 'Explainability'
   };
 
   
 
 
   const phaseButtons = ['All', 'Deployment', 'Design', 'Testing', 'RE', 'Monitoring', 'Development'];
+
+ 
 
   const filteredFlashcards = flashcards.filter(flashcard => {
     const categoryMatch = filterCategory === 'All' || flashcard.Category === filterCategory;
@@ -147,6 +167,20 @@ const Catalogue = () => {
     const button = document.querySelector(`.${category}`);
     if (button && activeCategoryButton !== category) {
       button.style.backgroundColor = hoverColors[category];
+    }
+  };
+
+  const handleMouseEnter2 = (phase) => {
+    const button = document.querySelector(`.${phase}`);
+    if (button && activePhaseButton !== phase) {
+      button.style.backgroundColor = hoverColorsPhase[phase];
+    }
+  };
+
+  const handleMouseLeave2 = (phase) => {
+    const button = document.querySelector(`.${phase}`);
+    if (button && activePhaseButton !== phase) {
+      button.style.backgroundColor = phaseColors[phase];
     }
   };
   
@@ -169,6 +203,23 @@ const Catalogue = () => {
         }
       }
     });
+    AOS.refresh();
+  };
+  
+  const handlePhaseFilter2 = (phase) => {
+    setFilterPhase(phase);
+    setActivePhaseButton(phase); // Imposta il bottone attivo per la fase
+  
+    // Ripristina il colore predefinito degli altri bottoni delle fasi
+    Object.keys(phaseColors).forEach((ph) => {
+      if (ph !== phase) {
+        const button = document.querySelector(`.${ph}`);
+        if (button) {
+          button.style.backgroundColor = phaseColors[ph];
+        }
+      }
+    });
+  
     AOS.refresh();
   };
   
@@ -201,12 +252,18 @@ const Catalogue = () => {
           {phaseButtons.map(phase => (
             <button 
               key={phase} 
-              onClick={() => handlePhaseFilter(phase)} 
-              className={`phase-button ${activePhaseButton === phase ? 'button-active' : ''}`}
+              onClick={() => handlePhaseFilter2(phase)} 
+              onMouseEnter={() => handleMouseEnter2(phase)} 
+              onMouseLeave={() => handleMouseLeave2(phase)} 
+              className={`phase-button ${activePhaseButton === phase ? 'button-active' : ''}  ${phase}`}
               style={{
+                backgroundColor: phaseColors[phase],
                 border: '1px solid black', // Aggiunto bordo nero
-                cursor: 'pointer'
+                cursor: 'pointer',
+                
               }}
+              
+              
             >
               {phase === 'RE' ? 'Requirements Elicitation' : phase}
             </button>
