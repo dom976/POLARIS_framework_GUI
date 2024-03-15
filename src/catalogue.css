@@ -1,82 +1,100 @@
 /* catalogue.css */
 
 .flashcard {
-    border: 1px solid #ccc;
-    padding: 5px;
-    border-radius: 5px;
-    position: relative;
-    transition: width 0.3s ease-in-out;
-  }
-  
-  .flashcard h4 {
-    margin: 0;
-  }
-  
-  .flashcard-content {
-    font-size: 14px;
-    margin: 5px 0;
-    font-family: 'Lucida Fax';
-  }
-  
-  .phases-container {
-    margin-bottom: 5px;
-    font-size: 14px;
-  }
-  
-  .phase-button {
-    margin-right: 5px;
-    margin-bottom: 5px;
-    font-size: 14px;
-  }
-  
-  .container {
-    padding: 20px;
-    width: 100%;
-  }
-  
-  .buttons-container {
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .buttons-container button {
-    border-radius: 20px;
-    padding: 10px 20px;
-    margin-right: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    font-family: 'Lucida Fax';
-  }
-  
-  .input-container {
-    position: relative;
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  
-  .input-container input[type="text"] {
-    padding: 8px;
-    font-size: 14px;
-    width: calc(50% - 32px);
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    margin: 0 auto;
-    display: block;
-  }
-  
-  .flashcards-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin: 0 20px;
-    width: 100%;
-  }
-  
-  .button-active {
-    background-color: #ec89aa; /* Cambia il colore di sfondo quando il bottone è attivo */
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5); /* Aggiungi un'ombreggiatura interna */
-    text-decoration: underline;
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 5px;
+  position: relative;
+  transition: width 0.3s ease-in-out;
+}
 
-  }
-  
+.flashcard h4 {
+  margin: 0;
+}
+
+.flashcard-content {
+  font-size: 14px;
+  margin: 5px 0;
+  font-family: 'Lucida Fax';
+}
+
+.phases-container {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.phase-button {
+  margin-right: 5px;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.container {
+  padding: 20px;
+  width: 100%;
+}
+
+.buttons-container {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.buttons-container button {
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin-right: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Lucida Fax';
+}
+
+.input-container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.input-container input[type="text"] {
+  padding: 8px;
+  font-size: 14px;
+  width: calc(50% - 32px);
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin: 0 auto;
+  display: block;
+}
+
+.flashcards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 0 20px;
+  width: 100%;
+}
+
+.button-active, .phase-button:hover {
+  background-color: #ec89aa; /* Cambia il colore di sfondo quando il bottone è attivo */
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5); /* Aggiungi un'ombreggiatura interna */
+  text-decoration: underline;
+
+}
+
+
+.category-button.Fairness:hover {
+  background-color: #7b04f2;
+}
+
+.category-button.Explainability:hover {
+  background-color: #ef6509;
+}
+
+.category-button.Security:hover {
+  background-color: #99b3cc;
+}
+
+.category-button.Privacy:hover {
+  background-color: #b3d9b3;
+}
+
+

@@ -67,11 +67,6 @@ const Catalogue = () => {
     }));
   };
 
-  const handleCategoryFilter = (category) => {
-    setFilterCategory(category);
-    setActiveCategoryButton(category); // Imposta il bottone attivo per la categoria
-    AOS.refresh();
-  };
 
   const handlePhaseFilter = (phase) => {
     setFilterPhase(phase);
@@ -128,12 +123,57 @@ const Catalogue = () => {
     'Explainability': '#ffcc99'
   };
 
+  const hoverColors = {
+    'All': '#d4d2d2',
+    'Security': '#5eabfb', // Colore di hover per 'Security'
+    'Privacy': '#7af47a',   // Colore di hover per 'Privacy'
+    'Fairness': '#fb95fb',  // Colore di hover per 'Fairness'
+    'Explainability': '#ffc299' // Colore di hover per 'Explainability'
+  };
+
+  
+
+
+  const phaseButtons = ['All', 'Deployment', 'Design', 'Testing', 'RE', 'Monitoring', 'Development'];
+
   const filteredFlashcards = flashcards.filter(flashcard => {
     const categoryMatch = filterCategory === 'All' || flashcard.Category === filterCategory;
     const phaseMatch = filterPhase === 'All' || Object.keys(flashcard.phases).some(phase => phase === filterPhase);
     const searchTermMatch = searchTerm === '' || Object.values(flashcard).join('').toLowerCase().includes(searchTerm.toLowerCase());
     return categoryMatch && phaseMatch && searchTermMatch;
   });
+
+  const handleMouseEnter = (category) => {
+    const button = document.querySelector(`.${category}`);
+    if (button && activeCategoryButton !== category) {
+      button.style.backgroundColor = hoverColors[category];
+    }
+  };
+  
+  const handleMouseLeave = (category) => {
+    const button = document.querySelector(`.${category}`);
+    if (button && activeCategoryButton !== category) {
+      button.style.backgroundColor = categoryColors[category];
+    }
+  };
+  
+  const handleCategoryFilter = (category) => {
+    setFilterCategory(category);
+    setActiveCategoryButton(category); // Imposta il bottone attivo per la categoria
+    // Ripristina il colore predefinito degli altri bottoni delle categorie
+    Object.keys(categoryColors).forEach((cat) => {
+      if (cat !== category) {
+        const button = document.querySelector(`.${cat}`);
+        if (button) {
+          button.style.backgroundColor = categoryColors[cat];
+        }
+      }
+    });
+    AOS.refresh();
+  };
+  
+
+
 
   return (
     <body>
@@ -143,10 +183,14 @@ const Catalogue = () => {
             <button 
               key={category} 
               onClick={() => handleCategoryFilter(category)} 
-              className={activeCategoryButton === category ? 'button-active' : ''}
+              onMouseEnter={() => handleMouseEnter(category)} 
+              onMouseLeave={() => handleMouseLeave(category)} 
+              className={`category-button ${activeCategoryButton === category ? 'button-active' : ''} ${category}`}
               style={{ 
                 backgroundColor: categoryColors[category],
-                boxShadow: `inset 0 0 5px ${activeCategoryButton === category ? categoryDarkColors[category] : 'transparent'}`
+                boxShadow: `inset 0 0 5px ${activeCategoryButton === category ? categoryDarkColors[category] : 'transparent'}`,
+                border: '1px solid black', // Aggiunto bordo nero
+                cursor: 'pointer'
               }}
             >
               {category}
@@ -154,48 +198,19 @@ const Catalogue = () => {
           ))}
         </div>
         <div className="buttons-container">
-          <button 
-            onClick={() => handlePhaseFilter('All')} 
-            className={activePhaseButton === 'All' ? 'button-active' : ''}
-          >
-            All Phases
-          </button>
-          <button 
-            onClick={() => handlePhaseFilter('Deployment')} 
-            className={activePhaseButton === 'Deployment' ? 'button-active' : ''}
-          >
-            Deployment
-          </button>
-          <button 
-            onClick={() => handlePhaseFilter('Design')} 
-            className={activePhaseButton === 'Design' ? 'button-active' : ''}
-          >
-            Design
-          </button>
-          <button 
-            onClick={() => handlePhaseFilter('Testing')} 
-            className={activePhaseButton === 'Testing' ? 'button-active' : ''}
-          >
-            Testing
-          </button>
-          <button 
-            onClick={() => handlePhaseFilter('RE')} 
-            className={activePhaseButton === 'RE' ? 'button-active' : ''}
-          >
-            Requirements Elicitation
-          </button>
-          <button 
-            onClick={() => handlePhaseFilter('Monitoring')} 
-            className={activePhaseButton === 'Monitoring' ? 'button-active' : ''}
-          >
-            Monitoring
-          </button>
-          <button 
-            onClick={() => handlePhaseFilter('Development')} 
-            className={activePhaseButton === 'Development' ? 'button-active' : ''}
-          >
-            Development
-          </button>
+          {phaseButtons.map(phase => (
+            <button 
+              key={phase} 
+              onClick={() => handlePhaseFilter(phase)} 
+              className={`phase-button ${activePhaseButton === phase ? 'button-active' : ''}`}
+              style={{
+                border: '1px solid black', // Aggiunto bordo nero
+                cursor: 'pointer'
+              }}
+            >
+              {phase === 'RE' ? 'Requirements Elicitation' : phase}
+            </button>
+          ))}
         </div>
         <div className="input-container">
           <input
@@ -224,6 +239,10 @@ const Catalogue = () => {
                       key={idx}
                       className="phase-button"
                       onClick={() => handlePhaseSelection(phase, flashcard.id)}
+                      style={{
+                        border: '1px solid black', // Aggiunto bordo nero
+                        cursor: 'pointer'
+                      }}
                     >
                       {handlePhaseName(phase)}
                     </button>
