@@ -67,20 +67,6 @@ const Catalogue = () => {
     }));
   };
 
-
-  const handlePhaseFilter = (phase) => {
-    setFilterPhase(phase);
-    setActivePhaseButton(phase); // Imposta il bottone attivo per la fase
-    AOS.refresh();
-  };
-
-  const handlePhaseName = (name) => {
-    if (name === 'RE') {
-      return 'Requirements Elicitation';
-    }
-    return name;
-  };
-
   const formatText = (text) => {
     // Dividi il testo in paragrafi quando incontra un salto di riga (\n)
     const paragraphs = text.split('\n');
@@ -107,6 +93,14 @@ const Catalogue = () => {
     return explanationGoal;
   };
 
+  const handlePhaseName = (name) => {
+    if (name === 'RE') {
+      return 'Requirements Elicitation';
+    }
+    return name;
+  };
+  
+
   const categoryColors = {
     'All': '#ffffff',
     'Security': '#86e2ff',
@@ -132,7 +126,7 @@ const Catalogue = () => {
     'Testing' : '#fc5c5c',
     'Monitoring': '#fc5c5c',
     'RE': '#fc5c5c'
-  }
+  };
 
   const categoryDarkColors = {
     'All': '#cccccc',
@@ -149,12 +143,7 @@ const Catalogue = () => {
     'Explainability': '#ff8f71' // Colore di hover per 'Explainability'
   };
 
-  
-
-
   const phaseButtons = ['All', 'Deployment', 'Design', 'Testing', 'RE', 'Monitoring', 'Development'];
-
- 
 
   const filteredFlashcards = flashcards.filter(flashcard => {
     const categoryMatch = filterCategory === 'All' || flashcard.Category === filterCategory;
@@ -162,13 +151,6 @@ const Catalogue = () => {
     const searchTermMatch = searchTerm === '' || Object.values(flashcard).join('').toLowerCase().includes(searchTerm.toLowerCase());
     return categoryMatch && phaseMatch && searchTermMatch;
   });
-
-  const handleMouseEnter = (category) => {
-    const button = document.querySelector(`.${category}`);
-    if (button && activeCategoryButton !== category) {
-      button.style.backgroundColor = hoverColors[category];
-    }
-  };
 
   const handleMouseEnter2 = (phase) => {
     const button = document.querySelector(`.${phase}`);
@@ -183,135 +165,156 @@ const Catalogue = () => {
       button.style.backgroundColor = phaseColors[phase];
     }
   };
-  
+
+  const handleMouseEnter = (category) => {
+    const button = document.querySelector(`.${category}`);
+    if (button && activeCategoryButton !== category) {
+      button.style.backgroundColor = hoverColors[category];
+    }
+  };
+
   const handleMouseLeave = (category) => {
     const button = document.querySelector(`.${category}`);
     if (button && activeCategoryButton !== category) {
       button.style.backgroundColor = categoryColors[category];
     }
   };
-  
+
   const handleCategoryFilter = (category) => {
-    setFilterCategory(category);
-    setActiveCategoryButton(category); // Imposta il bottone attivo per la categoria
-    // Ripristina il colore predefinito degli altri bottoni delle categorie
+    // Ciclo attraverso tutti i bottoni delle categorie e reimposto i loro colori corretti
     Object.keys(categoryColors).forEach((cat) => {
-      if (cat !== category) {
-        const button = document.querySelector(`.${cat}`);
-        if (button) {
-          button.style.backgroundColor = categoryColors[cat];
-        }
+      const button = document.querySelector(`.${cat}`);
+      if (button) {
+        button.style.backgroundColor = categoryColors[cat];
       }
     });
+
+    // Controllo se il bottone cliccato è già attivo
+    const isButtonActive = activeCategoryButton === category;
+
+    // Se il bottone cliccato è già attivo, deseleziono il filtro e il bottone
+    if (isButtonActive) {
+      setFilterCategory('All');
+      setActiveCategoryButton('');
+    } else {
+      // Imposto il colore del bottone cliccato
+      const button = document.querySelector(`.${category}`);
+      if (button) {
+        button.style.backgroundColor = hoverColors[category];
+      }
+
+      setFilterCategory(category);
+      setActiveCategoryButton(category);
+    }
+
     AOS.refresh();
   };
-  
+
   const handlePhaseFilter2 = (phase) => {
-    setFilterPhase(phase);
-    setActivePhaseButton(phase); // Imposta il bottone attivo per la fase
-  
-    // Ripristina il colore predefinito degli altri bottoni delle fasi
+    // Ciclo attraverso tutti i bottoni delle fasi e reimposto i loro colori corretti
     Object.keys(phaseColors).forEach((ph) => {
-      if (ph !== phase) {
-        const button = document.querySelector(`.${ph}`);
-        if (button) {
-          button.style.backgroundColor = phaseColors[ph];
-        }
+      const button = document.querySelector(`.${ph}`);
+      if (button) {
+        button.style.backgroundColor = phaseColors[ph];
       }
     });
-  
+
+    // Controllo se il bottone cliccato è già attivo
+    const isButtonActive = activePhaseButton === phase;
+
+    // Se il bottone cliccato è già attivo, deseleziono il filtro e il bottone
+    if (isButtonActive) {
+      setFilterPhase('All');
+      setActivePhaseButton('');
+    } else {
+      // Imposto il colore del bottone cliccato
+      const button = document.querySelector(`.${phase}`);
+      if (button) {
+        button.style.backgroundColor = hoverColorsPhase[phase];
+      }
+
+      setFilterPhase(phase);
+      setActivePhaseButton(phase);
+    }
+
     AOS.refresh();
   };
-  
-
-
 
   return (
-    <body>
-      <div className="container">
-        <div className="buttons-container">
-          {Object.keys(categoryColors).map(category => (
-            <button 
-              key={category} 
-              onClick={() => handleCategoryFilter(category)} 
-              onMouseEnter={() => handleMouseEnter(category)} 
-              onMouseLeave={() => handleMouseLeave(category)} 
-              className={`category-button ${activeCategoryButton === category ? 'button-active' : ''} ${category}`}
-              style={{ 
-                backgroundColor: categoryColors[category],
-                boxShadow: `inset 0 0 5px ${activeCategoryButton === category ? categoryDarkColors[category] : 'transparent'}`,
-                border: '1px solid black', // Aggiunto bordo nero
-                cursor: 'pointer'
-              }}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-        <div className="buttons-container">
-          {phaseButtons.map(phase => (
-            <button 
-              key={phase} 
-              onClick={() => handlePhaseFilter2(phase)} 
-              onMouseEnter={() => handleMouseEnter2(phase)} 
-              onMouseLeave={() => handleMouseLeave2(phase)} 
-              className={`phase-button ${activePhaseButton === phase ? 'button-active' : ''}  ${phase}`}
-              style={{
-                backgroundColor: phaseColors[phase],
-                border: '1px solid black', // Aggiunto bordo nero
-                cursor: 'pointer',
-                
-              }}
-              
-              
-            >
-              {phase === 'RE' ? 'Requirements Elicitation' : phase}
-            </button>
-          ))}
-        </div>
-        <div className="input-container">
-          <input
-            type="text"
-            placeholder="Search"
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-        </div>
-        <div className="flashcards-container">
-          {filteredFlashcards.map((flashcard, index) => (
-            <div
-              key={index}
-              className="flashcard"
-              style={{ backgroundColor: categoryColors[flashcard.Category], width: expandedFlashcard === flashcard.id ? '100%' : 'calc(33% - 20px)' }}
-              onClick={() => toggleExpansion(flashcard.id)}
-            >
-              <h4>{flashcard.Category}</h4>
-              <div className="flashcard-content">
-                {expandedFlashcard === flashcard.id ? (flashcard.Category === 'Explainability' ? formatText(flashcard['Explanation Goal']) : formatText(flashcard.fullDescription)) : (flashcard.Category === 'Explainability' ? formatText(truncateExplanationGoal(flashcard.previewExplanationGoal)) : formatText(truncateDescription(flashcard.previewDescription)))}
-              </div>
-              {expandedFlashcard === flashcard.id && (
-                <div onClick={(e) => e.stopPropagation()}>
-                  <div className="phases-container">SDLC Phase:</div>
-                  {Object.entries(flashcard.phases).map(([phase, action], idx) => (
-                    <button
-                      key={idx}
-                      className="phase-button"
-                      onClick={() => handlePhaseSelection(phase, flashcard.id)}
-                      style={{
-                        border: '1px solid black', // Aggiunto bordo nero
-                        cursor: 'pointer'
-                      }}
-                    >
-                      {handlePhaseName(phase)}
-                    </button>
-                  ))}
-                  <p className="action-text">Action: {formatText(flashcard.phases[selectedPhase[flashcard.id]])}</p>
+    <FadeIn>
+      <body>
+        <div className="container">
+          <div className="buttons-container">
+            {Object.keys(categoryColors).map(category => (
+              <button 
+                key={category} 
+                onClick={() => handleCategoryFilter(category)} 
+                onMouseEnter={() => handleMouseEnter(category)} 
+                onMouseLeave={() => handleMouseLeave(category)} 
+                className={`category-button ${activeCategoryButton === category ? 'button-active' : ''} ${category}`}
+                style={{ 
+                  backgroundColor: categoryColors[category],
+                  border: '1px solid black', // Aggiunto bordo nero
+                  cursor: 'pointer'
+                }}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+          <div className="buttons-container">
+            {phaseButtons.map(phase => (
+              <button 
+                key={phase} 
+                onClick={() => handlePhaseFilter2(phase)} 
+                onMouseEnter={() => handleMouseEnter2(phase)} 
+                onMouseLeave={() => handleMouseLeave2(phase)} 
+                className={`phase-button ${activePhaseButton === phase ? 'button-active' : ''}  ${phase}`}
+                style={{
+                  backgroundColor: phaseColors[phase],
+                  border: '1px solid black', // Aggiunto bordo nero
+                  cursor: 'pointer'
+                }}
+              >
+                {phase === 'RE' ? 'Requirements Elicitation' : phase}
+              </button>
+            ))}
+          </div>
+          <div className="input-container">
+            <input
+              type="text"
+              placeholder="Search"
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </div>
+          <div className="flashcards-container">
+            {filteredFlashcards.map((flashcard, index) => (
+              <div
+                key={index}
+                className="flashcard"
+                style={{ backgroundColor: categoryColors[flashcard.Category], width: expandedFlashcard === flashcard.id ? '100%' : 'calc(33% - 20px)' }}
+                onClick={() => toggleExpansion(flashcard.id)}
+              >
+                <h4>{flashcard.Category}</h4>
+                <div className="flashcard-content">
+                  {expandedFlashcard === flashcard.id ? (flashcard.Category === 'Explainability' ? formatText(flashcard['Explanation Goal']) : formatText(flashcard.fullDescription)) : (flashcard.Category === 'Explainability' ? formatText(truncateExplanationGoal(flashcard.previewExplanationGoal)) : formatText(truncateDescription(flashcard.previewDescription)))}
                 </div>
-              )}
-            </div>
-          ))}
+                {expandedFlashcard === flashcard.id && (
+                  <div onClick={(e) => e.stopPropagation()}>
+                    <div className="phases-container">SDLC Phase:</div>
+                    {Object.entries(flashcard.phases).map(([phase, action], idx) => (
+                      <p key={idx} className="phase-info">
+                        <strong>{handlePhaseName(phase)}:</strong> {action}
+                      </p>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </body>
+      </body>
+    </FadeIn>
   );
 };
 
