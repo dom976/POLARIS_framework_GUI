@@ -90,10 +90,45 @@ const Catalogue = () => {
     return name;
   };
 
-  const categoryColors = {'All': '#ffffff', 'Security': '#86e2ff', 'Privacy': '#9aff9a', 'Fairness': '#e290fd','Explainability': '#ffd771'};
-  const phaseColors = {'All' : '#ffffff','Design' : '#ffd1d7','Development' : '#ffd1d7','Deployment' : '#ffd1d7','Testing' : '#ffd1d7','Monitoring': '#ffd1d7', 'RE': '#ffd1d7'};
-  const hoverColorsPhase = {'Design' : '#fc5c5c','Development' : '#fc5c5c','Deployment' : '#fc5c5c','Testing' : '#fc5c5c','Monitoring': '#fc5c5c','RE': '#fc5c5c' };
-  const hoverColors = {'Security': '#86a4ff', 'Privacy': '#00f496','Fairness': '#c23bec','Explainability': '#ff8f71'};
+  // Definisci i colori per i bottoni delle categorie
+  const categoryColors = {
+    'All': '#ffffff',
+    'Security': '#86e2ff',
+    'Privacy': '#9aff9a',
+    'Fairness': '#e290fd',
+    'Explainability': '#ffd771'
+  };
+
+  // Definisci i colori per i bottoni delle fasi del SDLC
+  const phaseColors = {
+    'All': '#ffffff',
+    'Design': '#ffd1d7',
+    'Development': '#ffd1d7',
+    'Deployment': '#ffd1d7',
+    'Testing': '#ffd1d7',
+    'Monitoring': '#ffd1d7',
+    'RE': '#ffd1d7'
+  };
+
+  // Definisci i colori di sfondo quando i bottoni delle categorie sono attivi
+  const hoverColorsCategory = {
+    'All': '#ffffff',
+    'Security': '#86a4ff',
+    'Privacy': '#00f496',
+    'Fairness': '#c23bec',
+    'Explainability': '#ff8f71'
+  };
+
+  const hoverColorsPhase = {
+    'All': '#ffffff',
+    'Design': '#fc5c5c',
+    'Development': '#fc5c5c',
+    'Deployment': '#fc5c5c',
+    'Testing': '#fc5c5c',
+    'Monitoring': '#fc5c5c',
+    'RE': '#fc5c5c'
+  };
+
   const phaseButtons = ['All', 'Deployment', 'Design', 'Testing', 'RE', 'Monitoring', 'Development'];
 
   const filteredFlashcards = flashcards.filter(flashcard => {
@@ -103,85 +138,89 @@ const Catalogue = () => {
     return categoryMatch && phaseMatch && searchTermMatch;
   });
 
-  const handleMouseEnter2 = (phase) => {
-    const button = document.querySelector(`.${phase}`);
-    if (button && !activePhaseButtons.includes(phase)) {
-      button.style.backgroundColor = hoverColorsPhase[phase];
-    }
-  };
-
-  const handleMouseLeave2 = (phase) => {
-    const button = document.querySelector(`.${phase}`);
-    if (button && !activePhaseButtons.includes(phase)) {
-      button.style.backgroundColor = phaseColors[phase];
-    }
-  };
-
-  const handleMouseEnter = (category) => {
-    const button = document.querySelector(`.${category}`);
-    if (button && !activeCategoryButtons.includes(category)) {
-      button.style.backgroundColor = hoverColors[category];
-    }
-  };
-
-  const handleMouseLeave = (category) => {
-    const button = document.querySelector(`.${category}`);
-    if (button && !activeCategoryButtons.includes(category)) {
-      button.style.backgroundColor = categoryColors[category];
-    }
-  };
-
   const handleCategoryFilter = (category) => {
     const updatedCategories = [...filterCategories];
     const updatedActiveCategoryButtons = [...activeCategoryButtons];
-    const categoryIndex = updatedCategories.indexOf(category);
     
-    if (categoryIndex === -1) {
-      updatedCategories.push(category);
-      updatedActiveCategoryButtons.push(category);
+    if (category === 'All') {
+      updatedCategories.splice(0, updatedCategories.length, 'All');
+      updatedActiveCategoryButtons.splice(0, updatedActiveCategoryButtons.length, 'All');
     } else {
-      updatedCategories.splice(categoryIndex, 1);
-      updatedActiveCategoryButtons.splice(updatedActiveCategoryButtons.indexOf(category), 1);
+      const categoryIndex = updatedCategories.indexOf(category);
+      if (categoryIndex === -1) {
+        updatedCategories.push(category);
+        updatedActiveCategoryButtons.push(category);
+      } else {
+        updatedCategories.splice(categoryIndex, 1);
+        updatedActiveCategoryButtons.splice(updatedActiveCategoryButtons.indexOf(category), 1);
+      }
+
+      // Verifica se tutte le categorie sono state deselezionate o se solo 'All' è rimasto selezionato
+      if (updatedCategories.length === 0 || (updatedCategories.length === 1 && updatedCategories.includes('All'))) {
+        updatedCategories.push('All');
+        updatedActiveCategoryButtons.push('All');
+      } else if (updatedCategories.includes('All')) {
+        updatedCategories.splice(updatedCategories.indexOf('All'), 1);
+        updatedActiveCategoryButtons.splice(updatedActiveCategoryButtons.indexOf('All'), 1);
+      }
     }
-  
-    if (updatedCategories.length === 0 || (updatedCategories.length === 1 && updatedCategories.includes('All'))) {
-      updatedCategories.push('All');
-      updatedActiveCategoryButtons.push('All');
-    } else if (updatedCategories.includes('All')) {
-      updatedCategories.splice(updatedCategories.indexOf('All'), 1);
-      updatedActiveCategoryButtons.splice(updatedActiveCategoryButtons.indexOf('All'), 1);
-    }
-  
+
+    // Aggiorna lo stato dei filtri e dei bottoni delle categorie
     setFilterCategories(updatedCategories);
     setActiveCategoryButtons(updatedActiveCategoryButtons);
     AOS.refresh();
+
+    // Aggiorna il colore di tutti i bottoni delle categorie in base alla loro attività
+    Object.keys(categoryColors).forEach(categoryKey => {
+      const button = document.querySelector(`.${categoryKey}`);
+      if (button) {
+        const isActive = updatedActiveCategoryButtons.includes(categoryKey);
+        button.style.backgroundColor = isActive ? hoverColorsCategory[categoryKey] : categoryColors[categoryKey];
+      }
+    });
   };
 
-  const handlePhaseFilter2 = (phase) => {
-  const updatedPhases = [...filterPhases];
-  const updatedActivePhaseButtons = [...activePhaseButtons];
-  const phaseIndex = updatedPhases.indexOf(phase);
+  const handlePhaseFilter = (phase) => {
+    const updatedPhases = [...filterPhases];
+    const updatedActivePhaseButtons = [...activePhaseButtons];
+  
+    if (phase === 'All') {
+      updatedPhases.splice(0, updatedPhases.length, 'All');
+      updatedActivePhaseButtons.splice(0, updatedActivePhaseButtons.length, 'All');
+    } else {
+      const phaseIndex = updatedPhases.indexOf(phase);
+      if (phaseIndex === -1) {
+        updatedPhases.push(phase);
+        updatedActivePhaseButtons.push(phase);
+      } else {
+        updatedPhases.splice(phaseIndex, 1);
+        updatedActivePhaseButtons.splice(updatedActivePhaseButtons.indexOf(phase), 1);
+      }
 
-  if (phaseIndex === -1) {
-    updatedPhases.push(phase);
-    updatedActivePhaseButtons.push(phase);
-  } else {
-    updatedPhases.splice(phaseIndex, 1);
-    updatedActivePhaseButtons.splice(updatedActivePhaseButtons.indexOf(phase), 1);
-  }
+      // Verifica se tutte le fasi sono state deselezionate o se solo 'All' è rimasto selezionato
+      if (updatedPhases.length === 0 || (updatedPhases.length === 1 && updatedPhases.includes('All'))) {
+        updatedPhases.push('All');
+        updatedActivePhaseButtons.push('All');
+      } else if (updatedPhases.includes('All')) {
+        updatedPhases.splice(updatedPhases.indexOf('All'), 1);
+        updatedActivePhaseButtons.splice(updatedActivePhaseButtons.indexOf('All'), 1);
+      }
+    }
 
-  if (updatedPhases.length === 0 || (updatedPhases.length === 1 && updatedPhases.includes('All'))) {
-    updatedPhases.push('All');
-    updatedActivePhaseButtons.push('All');
-  } else if (updatedPhases.includes('All')) {
-    updatedPhases.splice(updatedPhases.indexOf('All'), 1);
-    updatedActivePhaseButtons.splice(updatedActivePhaseButtons.indexOf('All'), 1);
-  }
+    // Aggiorna lo stato dei filtri e dei bottoni delle fasi del SDLC
+    setFilterPhases(updatedPhases);
+    setActivePhaseButtons(updatedActivePhaseButtons);
+    AOS.refresh();
 
-  setFilterPhases(updatedPhases);
-  setActivePhaseButtons(updatedActivePhaseButtons);
-  AOS.refresh();
-};
+    // Aggiorna il colore di tutti i bottoni delle fasi del SDLC in base alla loro attività
+    phaseButtons.forEach(phaseKey => {
+      const button = document.querySelector(`.${phaseKey}`);
+      if (button) {
+        const isActive = updatedActivePhaseButtons.includes(phaseKey);
+        button.style.backgroundColor = isActive ? hoverColorsPhase[phaseKey] : phaseColors[phaseKey];
+      }
+    });
+  };
 
   return (
     <FadeIn>
@@ -191,8 +230,6 @@ const Catalogue = () => {
             <button 
               key={category} 
               onClick={() => handleCategoryFilter(category)} 
-              onMouseEnter={() => handleMouseEnter(category)} 
-              onMouseLeave={() => handleMouseLeave(category)} 
               className={`category-button ${activeCategoryButtons.includes(category) ? 'button-active' : ''} ${category}`}
               style={{ 
                 backgroundColor: categoryColors[category],
@@ -208,9 +245,7 @@ const Catalogue = () => {
           {phaseButtons.map(phase => (
             <button 
               key={phase} 
-              onClick={() => handlePhaseFilter2(phase)} 
-              onMouseEnter={() => handleMouseEnter2(phase)} 
-              onMouseLeave={() => handleMouseLeave2(phase)} 
+              onClick={() => handlePhaseFilter(phase)} 
               className={`phase-button ${activePhaseButtons.includes(phase) ? 'button-active' : ''}  ${phase}`}
               style={{
                 backgroundColor: phaseColors[phase],

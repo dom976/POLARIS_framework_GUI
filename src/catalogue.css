@@ -95,21 +95,7 @@
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
-.phase-button {
-  background-color: #ffd1d7;
-  border: 1px solid black;
-  cursor: pointer;
-}
 
-.phase-button.button-active {
-  background-color: #ec89aa;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
-  text-decoration: underline;
-}
-
-.phase-button:hover {
-  background-color: #fc5c5c;
-}
 
 .input-container {
   width: 100%;
