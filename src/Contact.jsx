@@ -29,6 +29,7 @@ const Contact = () => {
 
   return (
     <>
+    
       <link rel="stylesheet" href="assets/css/buttonhover.css" />
       <meta charSet="utf-8" />
       <meta
@@ -122,6 +123,15 @@ const Contact = () => {
           </div>
         </div>
       </div>
+
+
+
+
+
+
+
+
+
     </>
   );
 };

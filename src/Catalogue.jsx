@@ -6,23 +6,21 @@ import './catalogue.css'; // Importa i tuoi stili CSS
 
 const Catalogue = () => {
   const [flashcards, setFlashcards] = useState([]);
-  const [filterCategory, setFilterCategory] = useState('All');
-  const [filterPhase, setFilterPhase] = useState('All');
-  const [selectedPhase, setSelectedPhase] = useState({});
+  const [filterCategories, setFilterCategories] = useState(['All']);
+  const [filterPhases, setFilterPhases] = useState(['All']);
   const [expandedFlashcard, setExpandedFlashcard] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
-  const [activeCategoryButton, setActiveCategoryButton] = useState('All'); // Aggiunto stato per il bottone attivo della categoria
-  const [activePhaseButton, setActivePhaseButton] = useState('All'); // Aggiunto stato per il bottone attivo della fase
+  const [activeCategoryButtons, setActiveCategoryButtons] = useState(['All']);
+  const [activePhaseButtons, setActivePhaseButtons] = useState(['All']);
 
   useEffect(() => {
-    fetch('/csvjson.json')
+    fetch('/Catalogue.json')
       .then(response => response.json())
       .then(data => {
-        // Sostituisci il carattere speciale '�' con l'apostrofo "'" in tutti i campi del JSON
         const sanitizedData = data.map(item => {
           const sanitizedItem = {};
           for (let key in item) {
-            sanitizedItem[key] = item[key].replace(/�/g, "'"); // Sostituisci tutti i caratteri '�' con l'apostrofo "'"
+            sanitizedItem[key] = item[key].replace(/�/g, "'");
           }
           return sanitizedItem;
         });
@@ -47,7 +45,7 @@ const Catalogue = () => {
         }, {});
 
         setFlashcards(Object.values(groupedByCategory));
-        setSelectedPhase(initialPhases);
+        setExpandedFlashcard(initialPhases);
       })
       .catch(error => console.error('Error loading JSON file:', error));
 
@@ -60,15 +58,7 @@ const Catalogue = () => {
     setExpandedFlashcard(expandedFlashcard === id ? null : id);
   };
 
-  const handlePhaseSelection = (phase, id) => {
-    setSelectedPhase(prev => ({
-      ...prev,
-      [id]: phase,
-    }));
-  };
-
   const formatText = (text) => {
-    // Dividi il testo in paragrafi quando incontra un salto di riga (\n)
     const paragraphs = text.split('\n');
     return paragraphs.map((paragraph, index) => (
       <p key={index} className="flashcard-content">
@@ -99,221 +89,172 @@ const Catalogue = () => {
     }
     return name;
   };
-  
 
-  const categoryColors = {
-    'All': '#ffffff',
-    'Security': '#86e2ff',
-    'Privacy': '#9aff9a',
-    'Fairness': '#e290fd',
-    'Explainability': '#ffd771'
-  };
-
-  const phaseColors = {
-    'All' : '#ffffff',
-    'Design' : '#ffd1d7',
-    'Development' : '#ffd1d7',
-    'Deployment' : '#ffd1d7',
-    'Testing' : '#ffd1d7',
-    'Monitoring': '#ffd1d7',
-    'RE': '#ffd1d7'
-  };
-
-  const hoverColorsPhase = {
-    'Design' : '#fc5c5c',
-    'Development' : '#fc5c5c',
-    'Deployment' : '#fc5c5c',
-    'Testing' : '#fc5c5c',
-    'Monitoring': '#fc5c5c',
-    'RE': '#fc5c5c'
-  };
-
-  const categoryDarkColors = {
-    'All': '#cccccc',
-    'Security': '#95a3f1',
-    'Privacy': '#66cc66',
-    'Fairness': '#cc99cc',
-    'Explainability': '#ffcc99'
-  };
-
-  const hoverColors = {
-    'Security': '#86a4ff', // Colore di hover per 'Security'
-    'Privacy': '#00f496',   // Colore di hover per 'Privacy'
-    'Fairness': '#c23bec',  // Colore di hover per 'Fairness'
-    'Explainability': '#ff8f71' // Colore di hover per 'Explainability'
-  };
-
+  const categoryColors = {'All': '#ffffff', 'Security': '#86e2ff', 'Privacy': '#9aff9a', 'Fairness': '#e290fd','Explainability': '#ffd771'};
+  const phaseColors = {'All' : '#ffffff','Design' : '#ffd1d7','Development' : '#ffd1d7','Deployment' : '#ffd1d7','Testing' : '#ffd1d7','Monitoring': '#ffd1d7', 'RE': '#ffd1d7'};
+  const hoverColorsPhase = {'Design' : '#fc5c5c','Development' : '#fc5c5c','Deployment' : '#fc5c5c','Testing' : '#fc5c5c','Monitoring': '#fc5c5c','RE': '#fc5c5c' };
+  const hoverColors = {'Security': '#86a4ff', 'Privacy': '#00f496','Fairness': '#c23bec','Explainability': '#ff8f71'};
   const phaseButtons = ['All', 'Deployment', 'Design', 'Testing', 'RE', 'Monitoring', 'Development'];
 
   const filteredFlashcards = flashcards.filter(flashcard => {
-    const categoryMatch = filterCategory === 'All' || flashcard.Category === filterCategory;
-    const phaseMatch = filterPhase === 'All' || Object.keys(flashcard.phases).some(phase => phase === filterPhase);
+    const categoryMatch = filterCategories.includes('All') || filterCategories.includes(flashcard.Category);
+    const phaseMatch = filterPhases.includes('All') || Object.keys(flashcard.phases).some(phase => filterPhases.includes(phase));
     const searchTermMatch = searchTerm === '' || Object.values(flashcard).join('').toLowerCase().includes(searchTerm.toLowerCase());
     return categoryMatch && phaseMatch && searchTermMatch;
   });
 
   const handleMouseEnter2 = (phase) => {
     const button = document.querySelector(`.${phase}`);
-    if (button && activePhaseButton !== phase) {
+    if (button && !activePhaseButtons.includes(phase)) {
       button.style.backgroundColor = hoverColorsPhase[phase];
     }
   };
 
   const handleMouseLeave2 = (phase) => {
     const button = document.querySelector(`.${phase}`);
-    if (button && activePhaseButton !== phase) {
+    if (button && !activePhaseButtons.includes(phase)) {
       button.style.backgroundColor = phaseColors[phase];
     }
   };
 
   const handleMouseEnter = (category) => {
     const button = document.querySelector(`.${category}`);
-    if (button && activeCategoryButton !== category) {
+    if (button && !activeCategoryButtons.includes(category)) {
       button.style.backgroundColor = hoverColors[category];
     }
   };
 
   const handleMouseLeave = (category) => {
     const button = document.querySelector(`.${category}`);
-    if (button && activeCategoryButton !== category) {
+    if (button && !activeCategoryButtons.includes(category)) {
       button.style.backgroundColor = categoryColors[category];
     }
   };
 
   const handleCategoryFilter = (category) => {
-    // Ciclo attraverso tutti i bottoni delle categorie e reimposto i loro colori corretti
-    Object.keys(categoryColors).forEach((cat) => {
-      const button = document.querySelector(`.${cat}`);
-      if (button) {
-        button.style.backgroundColor = categoryColors[cat];
-      }
-    });
-
-    // Controllo se il bottone cliccato è già attivo
-    const isButtonActive = activeCategoryButton === category;
-
-    // Se il bottone cliccato è già attivo, deseleziono il filtro e il bottone
-    if (isButtonActive) {
-      setFilterCategory('All');
-      setActiveCategoryButton('');
+    const updatedCategories = [...filterCategories];
+    const updatedActiveCategoryButtons = [...activeCategoryButtons];
+    const categoryIndex = updatedCategories.indexOf(category);
+    
+    if (categoryIndex === -1) {
+      updatedCategories.push(category);
+      updatedActiveCategoryButtons.push(category);
     } else {
-      // Imposto il colore del bottone cliccato
-      const button = document.querySelector(`.${category}`);
-      if (button) {
-        button.style.backgroundColor = hoverColors[category];
-      }
-
-      setFilterCategory(category);
-      setActiveCategoryButton(category);
+      updatedCategories.splice(categoryIndex, 1);
+      updatedActiveCategoryButtons.splice(updatedActiveCategoryButtons.indexOf(category), 1);
     }
-
+  
+    if (updatedCategories.length === 0 || (updatedCategories.length === 1 && updatedCategories.includes('All'))) {
+      updatedCategories.push('All');
+      updatedActiveCategoryButtons.push('All');
+    } else if (updatedCategories.includes('All')) {
+      updatedCategories.splice(updatedCategories.indexOf('All'), 1);
+      updatedActiveCategoryButtons.splice(updatedActiveCategoryButtons.indexOf('All'), 1);
+    }
+  
+    setFilterCategories(updatedCategories);
+    setActiveCategoryButtons(updatedActiveCategoryButtons);
     AOS.refresh();
   };
 
   const handlePhaseFilter2 = (phase) => {
-    // Ciclo attraverso tutti i bottoni delle fasi e reimposto i loro colori corretti
-    Object.keys(phaseColors).forEach((ph) => {
-      const button = document.querySelector(`.${ph}`);
-      if (button) {
-        button.style.backgroundColor = phaseColors[ph];
-      }
-    });
+  const updatedPhases = [...filterPhases];
+  const updatedActivePhaseButtons = [...activePhaseButtons];
+  const phaseIndex = updatedPhases.indexOf(phase);
 
-    // Controllo se il bottone cliccato è già attivo
-    const isButtonActive = activePhaseButton === phase;
+  if (phaseIndex === -1) {
+    updatedPhases.push(phase);
+    updatedActivePhaseButtons.push(phase);
+  } else {
+    updatedPhases.splice(phaseIndex, 1);
+    updatedActivePhaseButtons.splice(updatedActivePhaseButtons.indexOf(phase), 1);
+  }
 
-    // Se il bottone cliccato è già attivo, deseleziono il filtro e il bottone
-    if (isButtonActive) {
-      setFilterPhase('All');
-      setActivePhaseButton('');
-    } else {
-      // Imposto il colore del bottone cliccato
-      const button = document.querySelector(`.${phase}`);
-      if (button) {
-        button.style.backgroundColor = hoverColorsPhase[phase];
-      }
+  if (updatedPhases.length === 0 || (updatedPhases.length === 1 && updatedPhases.includes('All'))) {
+    updatedPhases.push('All');
+    updatedActivePhaseButtons.push('All');
+  } else if (updatedPhases.includes('All')) {
+    updatedPhases.splice(updatedPhases.indexOf('All'), 1);
+    updatedActivePhaseButtons.splice(updatedActivePhaseButtons.indexOf('All'), 1);
+  }
 
-      setFilterPhase(phase);
-      setActivePhaseButton(phase);
-    }
-
-    AOS.refresh();
-  };
+  setFilterPhases(updatedPhases);
+  setActivePhaseButtons(updatedActivePhaseButtons);
+  AOS.refresh();
+};
 
   return (
     <FadeIn>
-      <body>
-        <div className="container">
-          <div className="buttons-container">
-            {Object.keys(categoryColors).map(category => (
-              <button 
-                key={category} 
-                onClick={() => handleCategoryFilter(category)} 
-                onMouseEnter={() => handleMouseEnter(category)} 
-                onMouseLeave={() => handleMouseLeave(category)} 
-                className={`category-button ${activeCategoryButton === category ? 'button-active' : ''} ${category}`}
-                style={{ 
-                  backgroundColor: categoryColors[category],
-                  border: '1px solid black', // Aggiunto bordo nero
-                  cursor: 'pointer'
-                }}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-          <div className="buttons-container">
-            {phaseButtons.map(phase => (
-              <button 
-                key={phase} 
-                onClick={() => handlePhaseFilter2(phase)} 
-                onMouseEnter={() => handleMouseEnter2(phase)} 
-                onMouseLeave={() => handleMouseLeave2(phase)} 
-                className={`phase-button ${activePhaseButton === phase ? 'button-active' : ''}  ${phase}`}
-                style={{
-                  backgroundColor: phaseColors[phase],
-                  border: '1px solid black', // Aggiunto bordo nero
-                  cursor: 'pointer'
-                }}
-              >
-                {phase === 'RE' ? 'Requirements Elicitation' : phase}
-              </button>
-            ))}
-          </div>
-          <div className="input-container">
-            <input
-              type="text"
-              placeholder="Search"
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-          </div>
-          <div className="flashcards-container">
-            {filteredFlashcards.map((flashcard, index) => (
-              <div
-                key={index}
-                className="flashcard"
-                style={{ backgroundColor: categoryColors[flashcard.Category], width: expandedFlashcard === flashcard.id ? '100%' : 'calc(33% - 20px)' }}
-                onClick={() => toggleExpansion(flashcard.id)}
-              >
-                <h4>{flashcard.Category}</h4>
-                <div className="flashcard-content">
-                  {expandedFlashcard === flashcard.id ? (flashcard.Category === 'Explainability' ? formatText(flashcard['Explanation Goal']) : formatText(flashcard.fullDescription)) : (flashcard.Category === 'Explainability' ? formatText(truncateExplanationGoal(flashcard.previewExplanationGoal)) : formatText(truncateDescription(flashcard.previewDescription)))}
-                </div>
-                {expandedFlashcard === flashcard.id && (
-                  <div onClick={(e) => e.stopPropagation()}>
-                    <div className="phases-container">SDLC Phase:</div>
-                    {Object.entries(flashcard.phases).map(([phase, action], idx) => (
-                      <p key={idx} className="phase-info">
-                        <strong>{handlePhaseName(phase)}:</strong> {action}
-                      </p>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+      <div className="container">
+        <div className="buttons-container">
+          {Object.keys(categoryColors).map(category => (
+            <button 
+              key={category} 
+              onClick={() => handleCategoryFilter(category)} 
+              onMouseEnter={() => handleMouseEnter(category)} 
+              onMouseLeave={() => handleMouseLeave(category)} 
+              className={`category-button ${activeCategoryButtons.includes(category) ? 'button-active' : ''} ${category}`}
+              style={{ 
+                backgroundColor: categoryColors[category],
+                border: '1px solid black', // Aggiunto bordo nero
+                cursor: 'pointer'
+              }}
+            >
+              {category}
+            </button>
+          ))}
         </div>
-      </body>
+        <div className="buttons-container">
+          {phaseButtons.map(phase => (
+            <button 
+              key={phase} 
+              onClick={() => handlePhaseFilter2(phase)} 
+              onMouseEnter={() => handleMouseEnter2(phase)} 
+              onMouseLeave={() => handleMouseLeave2(phase)} 
+              className={`phase-button ${activePhaseButtons.includes(phase) ? 'button-active' : ''}  ${phase}`}
+              style={{
+                backgroundColor: phaseColors[phase],
+                border: '1px solid black', // Aggiunto bordo nero
+                cursor: 'pointer'
+              }}
+            >
+              {phase === 'RE' ? 'Requirements Elicitation' : phase}
+            </button>
+          ))}
+        </div>
+        <div className="input-container">
+          <input
+            type="text"
+            placeholder="Search"
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
+        <div className="flashcards-container">
+          {filteredFlashcards.map((flashcard, index) => (
+            <div
+              key={index}
+              className="flashcard"
+              style={{ backgroundColor: categoryColors[flashcard.Category], width: expandedFlashcard === flashcard.id ? '100%' : 'calc(33% - 20px)' }}
+              onClick={() => toggleExpansion(flashcard.id)}
+            >
+              <h4>{flashcard.Category}</h4>
+              <div className="flashcard-content">
+                {expandedFlashcard === flashcard.id ? (flashcard.Category === 'Explainability' ? formatText(flashcard['Explanation Goal']) : formatText(flashcard.fullDescription)) : (flashcard.Category === 'Explainability' ? formatText(truncateExplanationGoal(flashcard.previewExplanationGoal)) : formatText(truncateDescription(flashcard.previewDescription)))}
+              </div>
+              {expandedFlashcard === flashcard.id && (
+                <div onClick={(e) => e.stopPropagation()}>
+                  <div className="phases-container">SDLC Phase:</div>
+                  {Object.entries(flashcard.phases).map(([phase, action], idx) => (
+                    <p key={idx} className="phase-info">
+                      <strong>{handlePhaseName(phase)}:</strong> {action}
+                    </p>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
     </FadeIn>
   );
 };
