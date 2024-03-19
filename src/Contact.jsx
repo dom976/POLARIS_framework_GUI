@@ -5,6 +5,7 @@ import './assets/css/buttonhover.css';
 import Hover from './Hover';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Newsletter from './Newsletter';
 
 const Contact = () => {
   const form = useRef();
@@ -28,8 +29,13 @@ const Contact = () => {
   };
 
   return (
+
+
     <>
     
+  
+
+
       <link rel="stylesheet" href="assets/css/buttonhover.css" />
       <meta charSet="utf-8" />
       <meta
@@ -124,7 +130,7 @@ const Contact = () => {
         </div>
       </div>
 
-
+<Newsletter></Newsletter>
 
 
 

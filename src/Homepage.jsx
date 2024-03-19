@@ -3,6 +3,7 @@
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./Navbar";
 import Contact from "./Contact";
+import Newsletter from "./Newsletter";
 function Homepage() {
   return (
     <>
@@ -168,6 +169,7 @@ function Homepage() {
                   </strong>
                 </p>
               </div>
+          
             </div>
             <div className="col">
               <div
@@ -205,6 +207,8 @@ function Homepage() {
             <div className="w-100" />
           </div>
         </div>
+
+                    
         <footer>
           <div
             className="container py-4 py-lg-5"
@@ -338,7 +342,10 @@ function Homepage() {
                 </li>
               </ul>
             </div>
+
           </div>
+        
+
         </footer>
         <footer />
       </section>

@@ -12,9 +12,13 @@
   "dependencies": {
     "@emailjs/browser": "^4.2.0",
     "aos": "^2.3.4",
+    "axios": "^1.6.8",
     "bootstrap": "^5.3.3",
     "emailjs-com": "^3.2.0",
+    "google-spreadsheet": "^4.1.1",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
+    "react-axios": "^2.0.6",
     "react-dom": "^18.2.0",
     "react-fade-in": "^2.0.1",
     "react-helmet": "^6.1.0",
