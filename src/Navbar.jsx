@@ -89,6 +89,19 @@ function Navbar() {
                 >
                   Contact
                 </NavLink>
+                <a
+  href="https://www.il-tuo-sito.com"
+  style={baseStyle} // Applica lo stile di base
+  onMouseEnter={(e) => {
+    e.target.style.textDecoration = "underline"; // Aggiunge sottolineatura on hover
+  }}
+  onMouseLeave={(e) => {
+    e.target.style.textDecoration = "none"; // Rimuove la sottolineatura on hover
+  }}
+>
+  Forum
+</a>
+
               </li>
               <li className="nav-item" />
             </ul>
