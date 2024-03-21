@@ -1,8 +1,10 @@
+import React from "react";
 import { useState } from "react";
-import { Outlet, Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom"; // Import NavLink
 import Contact from "./Contact";
 import Homepage from "./Homepage";
 import Catalogue from "./Catalogue";
+import About from "./About"; // Import the About component
 
 function Navbar() {
   const [expanded, setExpanded] = useState(false); // State per gestire l'apertura e la chiusura della navbar su display più piccoli
@@ -70,6 +72,19 @@ function Navbar() {
                 >
                   Forum
                 </a>
+              </li>
+              {/* Add NavLink for the About page */}
+              <li className="nav-item">
+                <NavLink
+                  to="/About"
+                  style={({ isActive }) => ({
+                    ...baseStyle,
+                    ...(isActive ? activeHoverStyle : {}),
+                  })}
+                  className="nav-link"
+                >
+                  About
+                </NavLink>
               </li>
             </ul>
             <NavLink
