@@ -1,9 +1,12 @@
+import { useState } from "react";
 import { Outlet, Link, NavLink } from "react-router-dom";
 import Contact from "./Contact";
 import Homepage from "./Homepage";
 import Catalogue from "./Catalogue";
 
 function Navbar() {
+  const [expanded, setExpanded] = useState(false); // State per gestire l'apertura e la chiusura della navbar su display più piccoli
+
   const baseStyle = {
     color: "black", // Colore di default dei link
     fontSize: "30px", // Dimensione del font
@@ -19,93 +22,56 @@ function Navbar() {
 
   return (
     <>
-      <nav
-        className="navbar navbar-expand-md sticky-top py-3"
-        style={{ background: "#b39ddb", height: 137 }}
-      >
-        <style
-          /* Sottolineatura dell'oggetto all'interno della navbar quando ci si trova all'interno di una pagina o quando si passa sopra
-     col cursore del mouse ai vari oggetti della navbar */
-          dangerouslySetInnerHTML={{
-            __html:
-              ".nav-link:hover {\n            text-decoration: underline;\n          }\n          \n          .nav-link.active {\n            text-decoration: underline;\n          }",
-          }}
-        />
-
+      <nav className="navbar navbar-expand-md sticky-top" style={{ background: "#b39ddb", }}>
         <div className="container">
+          <nav className="navbar-brand">
+            <img src="assets/img/NAVBAR%20LOGO.png" width={100} height={100} alt="Logo" />
+          </nav>
           <button
-            data-bs-toggle="collapse"
             className="navbar-toggler"
-            data-bs-target="#navcol-5"
+            type="button"
+            onClick={() => setExpanded(!expanded)} // Cambia lo stato di espansione della navbar
           >
-            <span className="visually-hidden">Toggle navigation</span>
             <span className="navbar-toggler-icon" />
           </button>
-          <div
-            className="collapse navbar-collapse"
-            id="navcol-5"
-            style={{ height: 130 }}
-          >
-            <img src="assets/img/NAVBAR%20LOGO.png" width={165} height={162} />
+          <div className={`collapse navbar-collapse ${expanded ? 'show' : ''}`}>
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
                 <NavLink
                   to="/Homepage"
                   style={({ isActive }) => ({
                     ...baseStyle,
-                    ...(isActive ? activeHoverStyle : {}), // Applica stile attivo se il link è attivo
+                    ...(isActive ? activeHoverStyle : {}),
                   })}
-                  onMouseEnter={(e) => {
-                    e.target.style.textDecoration = "underline"; // Aggiunge sottolineatura on hover
-                  }}
-                  onMouseLeave={(e) => {
-                    // Rimuove la sottolineatura on hover se il link non è attivo
-                    e.target.style.textDecoration = e.target.getAttribute(
-                      "aria-current"
-                    )
-                      ? "underline"
-                      : "none";
-                  }}
+                  className="nav-link"
                 >
                   Home
                 </NavLink>
+              </li>
+              <li className="nav-item">
                 <NavLink
                   to="/Contact"
                   style={({ isActive }) => ({
                     ...baseStyle,
-                    ...(isActive ? activeHoverStyle : {}), // Applica stile attivo se il link è attivo
+                    ...(isActive ? activeHoverStyle : {}),
                   })}
-                  onMouseEnter={(e) => {
-                    e.target.style.textDecoration = "underline"; // Aggiunge sottolineatura on hover
-                  }}
-                  onMouseLeave={(e) => {
-                    // Rimuove la sottolineatura on hover se il link non è attivo
-                    e.target.style.textDecoration = e.target.getAttribute(
-                      "aria-current"
-                    )
-                      ? "underline"
-                      : "none";
-                  }}
+                  className="nav-link"
                 >
                   Contact
                 </NavLink>
-                <a
-  href="https://www.il-tuo-sito.com"
-  style={baseStyle} // Applica lo stile di base
-  onMouseEnter={(e) => {
-    e.target.style.textDecoration = "underline"; // Aggiunge sottolineatura on hover
-  }}
-  onMouseLeave={(e) => {
-    e.target.style.textDecoration = "none"; // Rimuove la sottolineatura on hover
-  }}
->
-  Forum
-</a>
-
               </li>
-              <li className="nav-item" />
+              <li className="nav-item">
+                <a
+                  href="https://localhost/securedevai"
+                  style={baseStyle}
+                  className="nav-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Forum
+                </a>
+              </li>
             </ul>
-
             <NavLink
               to="/Catalogue"
               className="btn btn-primary ms-md-2"
