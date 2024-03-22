@@ -4,8 +4,19 @@ Se non dovesse funzionare utilizzare "npm install --force" e successivamente "np
 
 
 -----
-Avvio del forum:
+Avvio del forum su Windows:
 1)Scaricare Xampp
 2)Inserire securedevai dentro la directory htdocs di Xampp
 3)Dall'interfaccia dell'App di Xampp andare su phpmyadmin e importare il database in formato .sql chiamandolo wpframework
 4)Cliccare su Start sui servizi Apache e MySQL e digitare l'url localhost/securedevai per avviare il forum
+
+-----
+1) Scaricare il file zip "securedevai", rimuovere la cartella iniziale e metterlo in /var/www
+2) Scaricare il file wpframework.zip (contenente il DB in formato .sql)
+3) Nel file .sql, cambiare tutti i riferimenti a localhost/securedevai con il dominio locale scelto (es: dev.securedevai_forum)
+4) Creare il DB su mysql: lanciare `mysql -u USER -p` -> `CREATE DATABASE wpframework;` -> `mysql -u USER -p wpframework < wpframework1.sql`
+5) Creare il file di configurazione Apache `securedevai_forum.conf` in /etc/apache2/sites-available
+6) Abilitare il sito con `sudo a2ensite securedevai_forum.conf`
+7) Fare reload di Apache: `sudo systemctl reload apache2`
+8) Aggiungere il nuovo dominio `dev.securedevai_forum` in `/etc/hosts`
+9) Inserire le credenziali per accedere al DB nel file wp-config.php
