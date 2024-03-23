@@ -1713,7 +1713,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Feature- based explanation\nFeature Attribution\nPro: Simple and easy to understand; Can answer how and why AI reaches its decisions. \nCons: Illusion of causality, confirmation bias\nComprensibilit� della spiegazione: 3"
+    "Action": "Feature- based explanation\nFeature Attribution\nPro: Simple and easy to understand; Can answer how and why AI reaches its decisions. \nCons: Illusion of causality, confirmation bias\nComprensibilità della spiegazione: 3"
   },
   {
     "Category": "Explainability",
@@ -1737,7 +1737,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Example- based explanation\nSimilar Example\nPro: Easy to comprehend, users intuitively verify AI�s decision using analogical reasoning on similar examples\nCons: It does not highlight features within examples to enable users� side-by-side comparison\nComprensibilit� della spiegazione: 3"
+    "Action": "Example- based explanation\nSimilar Example\nPro: Easy to comprehend, users intuitively verify AI�s decision using analogical reasoning on similar examples\nCons: It does not highlight features within examples to enable users� side-by-side comparison\nComprensibilità della spiegazione: 3"
   },
   {
     "Category": "Explainability",
@@ -1761,7 +1761,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Example- based explanation\nTypical Example\nPro: Use prototypical instances to show learned representation; Reveal potential problems of the model\nCons: Users may not appreciate the idea of typical cases\nComprensibilit� della spiegazione: 2"
+    "Action": "Example- based explanation\nTypical Example\nPro: Use prototypical instances to show learned representation; Reveal potential problems of the model\nCons: Users may not appreciate the idea of typical cases\nComprensibilità della spiegazione: 2"
   },
   {
     "Category": "Explainability",
@@ -1785,7 +1785,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Example- based explanation\nCounterfactual Example\nPro: Helpful to identify the differences between the current outcome and another contrastive outcome \nCons: Hard to understand, may cause confusion\nComprensibilit� della spiegazione: 2"
+    "Action": "Example- based explanation\nCounterfactual Example\nPro: Helpful to identify the differences between the current outcome and another contrastive outcome \nCons: Hard to understand, may cause confusion\nComprensibilità della spiegazione: 2"
   },
   {
     "Category": "Explainability",
@@ -1809,7 +1809,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Feature- based explanation\nFeature Attribution\nPro: Simple and easy to understand; Can answer how and why AI reaches its decisions. \nCons: Illusion of causality, confirmation bias\nComprensibilit� della spiegazione: 3"
+    "Action": "Feature- based explanation\nFeature Attribution\nPro: Simple and easy to understand; Can answer how and why AI reaches its decisions. \nCons: Illusion of causality, confirmation bias\nComprensibilità della spiegazione: 3"
   },
   {
     "Category": "Explainability",
@@ -1833,7 +1833,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Feature- based explanation\nFeature Shape \nPro: Graphical representation, easy to understand the relationship between one feature and prediction\nCons: Lacks feature interaction; Information overload if multiple feature shapes are presented\nComprensibilit� della spiegazione: 2"
+    "Action": "Feature- based explanation\nFeature Shape \nPro: Graphical representation, easy to understand the relationship between one feature and prediction\nCons: Lacks feature interaction; Information overload if multiple feature shapes are presented\nComprensibilità della spiegazione: 2"
   },
   {
     "Category": "Explainability",
@@ -1857,7 +1857,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Feature- based explanation\nFeature Interaction\nPro: Show feature-feature interaction\nCons: The diagram on multiple features is difficult to interpret\nComprensibilit� della spiegazione: 1"
+    "Action": "Feature- based explanation\nFeature Interaction\nPro: Show feature-feature interaction\nCons: The diagram on multiple features is difficult to interpret\nComprensibilità della spiegazione: 1"
   },
   {
     "Category": "Explainability",
@@ -1881,7 +1881,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Example- based explanation\nTypical Example\nPro: Use prototypical instances to show learned representation; Reveal potential problems of the model\nCons: Users may not appreciate the idea of typical cases\nComprensibilit� della spiegazione: 2"
+    "Action": "Example- based explanation\nTypical Example\nPro: Use prototypical instances to show learned representation; Reveal potential problems of the model\nCons: Users may not appreciate the idea of typical cases\nComprensibilità della spiegazione: 2"
   },
   {
     "Category": "Explainability",
@@ -1905,7 +1905,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Rule- based explanation\nDecision Rules/Sets\nPro: Need to carefully balance between completeness and simplicity of explanation\nCons: Trim rules and show on-demand; Highlight local rule clauses related to user�s interested instances\nComprensibilit� della spiegazione: 2"
+    "Action": "Rule- based explanation\nDecision Rules/Sets\nPro: Need to carefully balance between completeness and simplicity of explanation\nCons: Trim rules and show on-demand; Highlight local rule clauses related to user�s interested instances\nComprensibilità della spiegazione: 2"
   },
   {
     "Category": "Explainability",
@@ -1929,7 +1929,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Rule- based explanation\nDecision tree\nPro: Show decision process, explain the differences\nCons: Too much information, complicated to understand\nComprensibilit� della spiegazione: 3"
+    "Action": "Rule- based explanation\nDecision tree\nPro: Show decision process, explain the differences\nCons: Too much information, complicated to understand\nComprensibilità della spiegazione: 3"
   },
   {
     "Category": "Explainability",
@@ -1953,7 +1953,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Feature- based explanation\nFeature Attribution\nPro: Simple and easy to understand; Can answer how and why AI reaches its decisions. \nCons: Illusion of causality, confirmation bias\nComprensibilit� della spiegazione: 3"
+    "Action": "Feature- based explanation\nFeature Attribution\nPro: Simple and easy to understand; Can answer how and why AI reaches its decisions. \nCons: Illusion of causality, confirmation bias\nComprensibilità della spiegazione: 3"
   },
   {
     "Category": "Explainability",
@@ -1977,7 +1977,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Example- based explanation\nSimilar Example\nPro: Easy to comprehend, users intuitively verify AI�s decision using analogical reasoning on similar examples\nCons: It does not highlight features within examples to enable users� side-by-side comparison\nComprensibilit� della spiegazione: 3"
+    "Action": "Example- based explanation\nSimilar Example\nPro: Easy to comprehend, users intuitively verify AI�s decision using analogical reasoning on similar examples\nCons: It does not highlight features within examples to enable users� side-by-side comparison\nComprensibilità della spiegazione: 3"
   },
   {
     "Category": "Explainability",
@@ -2001,7 +2001,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Example- based explanation\nTypical Example\nPro: Use prototypical instances to show learned representation; Reveal potential problems of the model\nCons: Users may not appreciate the idea of typical cases\nComprensibilit� della spiegazione: 2"
+    "Action": "Example- based explanation\nTypical Example\nPro: Use prototypical instances to show learned representation; Reveal potential problems of the model\nCons: Users may not appreciate the idea of typical cases\nComprensibilità della spiegazione: 2"
   },
   {
     "Category": "Explainability",
@@ -2025,7 +2025,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Example- based explanation\nCounterfactual Example\nPro: Helpful to identify the differences between the current outcome and another contrastive outcome \nCons: Hard to understand, may cause confusion\nComprensibilit� della spiegazione: 2"
+    "Action": "Example- based explanation\nCounterfactual Example\nPro: Helpful to identify the differences between the current outcome and another contrastive outcome \nCons: Hard to understand, may cause confusion\nComprensibilità della spiegazione: 2"
   },
   {
     "Category": "Explainability",
@@ -2049,7 +2049,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Feature- based explanation\nFeature Attribution\nPro: Simple and easy to understand; Can answer how and why AI reaches its decisions. \nCons: Illusion of causality, confirmation bias\nComprensibilit� della spiegazione: 3"
+    "Action": "Feature- based explanation\nFeature Attribution\nPro: Simple and easy to understand; Can answer how and why AI reaches its decisions. \nCons: Illusion of causality, confirmation bias\nComprensibilità della spiegazione: 3"
   },
   {
     "Category": "Explainability",
@@ -2073,7 +2073,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Example- based explanation\nTypical Example\nPro: Use prototypical instances to show learned representation; Reveal potential problems of the model\nCons: Users may not appreciate the idea of typical cases\nComprensibilit� della spiegazione: 2"
+    "Action": "Example- based explanation\nTypical Example\nPro: Use prototypical instances to show learned representation; Reveal potential problems of the model\nCons: Users may not appreciate the idea of typical cases\nComprensibilità della spiegazione: 2"
   },
   {
     "Category": "Explainability",
@@ -2097,7 +2097,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Rule- based explanation\nDecision Rules/Sets\nPro: Need to carefully balance between completeness and simplicity of explanation\nCons: Trim rules and show on-demand; Highlight local rule clauses related to user�s interested instances\nComprensibilit� della spiegazione: 2"
+    "Action": "Rule- based explanation\nDecision Rules/Sets\nPro: Need to carefully balance between completeness and simplicity of explanation\nCons: Trim rules and show on-demand; Highlight local rule clauses related to user�s interested instances\nComprensibilità della spiegazione: 2"
   },
   {
     "Category": "Explainability",
@@ -2121,7 +2121,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Rule- based explanation\nDecision tree\nPro: Show decision process, explain the differences\nCons: Too much information, complicated to understand\nComprensibilit� della spiegazione: 3"
+    "Action": "Rule- based explanation\nDecision tree\nPro: Show decision process, explain the differences\nCons: Too much information, complicated to understand\nComprensibilità della spiegazione: 3"
   },
   {
     "Category": "Explainability",

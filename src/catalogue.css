@@ -12,11 +12,13 @@
   margin: 0;
 }
 
-.flashcard-content {
+.flashcard-list-item {
   font-size: 14px;
-  margin: 5px 0;
+  margin-left: 20px;
   font-family: 'Lucida Fax';
+  list-style-type: none; /* Removes default list styling */
 }
+
 
 .phases-container {
   margin-bottom: 5px;

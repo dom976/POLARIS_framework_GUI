@@ -35,7 +35,7 @@ const Catalogue = () => {
             previewExplanationGoal: item.Category === 'Explainability' ? truncateExplanationGoal(item['Explanation Goal']) : '',
             phases: {}
           };
-          acc[id].phases[item['SDLC Phase']] = item.Action;
+          acc[id].phases[item['SDLC Phase']] = formatText(item.Action);
           return acc;
         }, {});
 
@@ -58,14 +58,18 @@ const Catalogue = () => {
     setExpandedFlashcard(expandedFlashcard === id ? null : id);
   };
 
+
   const formatText = (text) => {
+    // Dividi il testo in paragrafi quando incontra un salto di riga (\n)
     const paragraphs = text.split('\n');
     return paragraphs.map((paragraph, index) => (
-      <p key={index} className="flashcard-content">
+      <p key={index} style={{ marginBottom: '5px', fontSize: '14px', whiteSpace: 'pre-wrap', fontFamily: 'Lucida Fax' }}>
         {paragraph}
       </p>
     ));
   };
+  
+  
 
   const truncateDescription = (description) => {
     const words = description.split(' ');
@@ -273,9 +277,12 @@ const Catalogue = () => {
               onClick={() => toggleExpansion(flashcard.id)}
             >
               <h4>{flashcard.Category}</h4>
-              <div className="flashcard-content">
-                {expandedFlashcard === flashcard.id ? (flashcard.Category === 'Explainability' ? formatText(flashcard['Explanation Goal']) : formatText(flashcard.fullDescription)) : (flashcard.Category === 'Explainability' ? formatText(truncateExplanationGoal(flashcard.previewExplanationGoal)) : formatText(truncateDescription(flashcard.previewDescription)))}
-              </div>
+
+
+              <div style={{ fontSize: '14px', margin: '5px 0', fontFamily: 'Lucida Fax' }}>
+                  {expandedFlashcard === flashcard.id ? (flashcard.Category === 'Explainability' ? formatText(flashcard['Explanation Goal']) : formatText(flashcard.fullDescription)) : (flashcard.Category === 'Explainability' ? formatText(truncateExplanationGoal(flashcard.previewExplanationGoal)) : formatText(truncateDescription(flashcard.previewDescription)))}
+                </div>
+
               {expandedFlashcard === flashcard.id && (
                 <div onClick={(e) => e.stopPropagation()}>
                   <div className="phases-container">SDLC Phase:</div>
