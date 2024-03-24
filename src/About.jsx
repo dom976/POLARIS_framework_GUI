@@ -339,7 +339,7 @@ function About() {
 </strong>
 
 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', margin: '0' }}> {/* Imposta la larghezza e l'altezza al 100% del viewport e rimuove il margine */}
-  <div style={{ width: '10%', maxWidth: '400px', margin: '0' }}> {/* Imposta la larghezza massima e relativa e rimuove il margine */}
+  <div style={{ width: '12%', maxWidth: '400px', margin: '0' }}> {/* Imposta la larghezza massima e relativa e rimuove il margine */}
     <img 
       src="/assets/img/fairness-svgrepo-com.svg" 
       alt="Fairness Image" 
@@ -373,6 +373,18 @@ function About() {
     opinions and should be encouraged.
     <br />
     <br />
+
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', margin: '0' }}> {/* Imposta la larghezza e l'altezza al 100% del viewport e rimuove il margine */}
+  <div style={{ width: '20%', maxWidth: '400px', margin: '0' }}> {/* Imposta la larghezza massima e relativa e rimuove il margine */}
+    <img 
+      src="/assets/img/Protected_Attributes.png" 
+      alt="Fairness Image" 
+      style={{ width: '100%', maxWidth: '100%', display: 'block' }} // Aggiunta maxWidth: '100%'
+    />
+  </div>
+</div>
+<br />
+<br />
     <strong style={{ display: 'block', width: '100%', textAlign: 'center', fontSize: '17px'}}>
         <br />
           Examples of Fairness: 
@@ -383,10 +395,148 @@ function About() {
         <li> • A system for allocating medical resources in emergency situations should be based solely on the severity of the patient's condition and medical need, without taking into account factors such as social status or income;</li>
         <li> • A scholarship distribution system should evaluate students' academic merit and financial need fairly, without discriminating based on religion, political orientation or other personal characteristics.</li>
       </ul>
+      <br />
+      <br />
+      <strong style={{ display: 'block', width: '100%', textAlign: 'center', fontSize: '17px'}}>
+        <br />
+          BYAS ANALYSIS 
+          </strong>
+        <br />
+        <br />
+        <strong style={{ display: 'block', width: '100%', textAlign: 'center', fontSize: '17px'}}>
+        <br />
+          Steps 
+          </strong>
+          <br />
+          <ul style={{ textAlign: 'left', listStyle: 'initial', marginLeft: '2em' }}>
+        <li> 1. Selecting the scale of the bias analysis by choosing between individual and group-level fairness</li>
+        <li> 1b. Collect required information</li>
+        <li> 2. Choosing a fairness definition</li>
+        <li> 3. Selecting a single or multiple fairness metrics that correspond with the adopted fairness definition</li>
+        <li> 4. Defining the demographic groups of interest</li>
+        <li> 5. Applying the fairness metrics on the groups to compare them and find the groups for which the model produces skewed and unfavourable results</li>
+        <li> 6. Determining the bias decision thresholds that determine which actions policy makers should take based on the bias analysis results</li>
+      </ul>
+      <br />
+      <br />
+      <strong style={{ display: 'block', width: '100%', textAlign: 'center', fontSize: '17px'}}>
+        <br />
+          Concepts 
+          </strong>
+          <br />
+          <ul style={{ textAlign: 'left', listStyle: 'initial', marginLeft: '2em' }}>
+        <li>  1. Individual versus Group Fairness</li>
+        <li>  1b. Requirements for the Bias Analysis</li>
+      </ul>
+      <br />
+      <br />
+      <strong style={{ display: 'block', width: '100%', textAlign: 'center', fontSize: '17px'}}>
+        <br />
+          Description 
+          </strong>
+          <br />
+          <ul style={{ textAlign: 'left', listStyle: 'initial', marginLeft: '2em' }}>
+  <li><strong>1.</strong> Individual fairness examines if a model gives similar results for similar individuals, a challenging task due to difficulties in measuring individual similarity. Group fairness assesses if the model treats different demographic groups defined by sensitive characteristics differently. Focusing on group fairness is recommended for its broader range of applicable metrics.</li>
+  <br />
+  <li><strong>1b.</strong> Components for group-level fairness metrics include the model's results displayed in a confusion matrix, which allows for calculating performance ratios for protected groups, and identifying dataset groups based on sensitive attributes for comparison.</li>
+  <br />
+  <li><strong>2.</strong> A key challenge in bias analysis is defining fairness, as perceptions vary among stakeholders. Recommendations include stakeholder meetings to discuss fairness perspectives, simulations using different confusion matrix outcomes to visualize disparities, and diving into the selection of fairness metrics which helps define the fairness concept.</li>
+  <br />
+  <li><strong>3.</strong> Fairness metrics help compare model performance across groups. The "Aequitas Fairness tree" is a useful guide for selecting appropriate metrics and definitions, providing a structured approach for policymakers and data scientists.</li>
+  <br />
+  <li><strong>4.</strong> After selecting fairness metrics, one must compute performance disparities across groups. Creating groups for comparison can be complex due to intersectional bias, with advice to consult domain experts and to create groups informed by feature and error distributions.</li>
+  <br />
+  <li><strong>6.</strong> Post-application of fairness metrics, stakeholders must collaboratively establish metric thresholds to conclude bias presence and magnitude, and decide on mitigating actions. Currently, there is no widely accepted method for setting these thresholds, necessitating a customized approach.</li>
+</ul>
 
     <br />
     <br />
-    <br />
+    <strong style={{ display: 'block', width: '100%', textAlign: 'center', fontSize: '17px'}}>
+        <br />
+          Confusion Matrix 
+          </strong>
+          <br />
+
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', margin: '0' }}> {/* Imposta la larghezza e l'altezza al 100% del viewport e rimuove il margine */}
+  <div style={{ width: '1300px', maxWidth: '1300px', margin: '0' }}> {/* Imposta la larghezza massima e relativa e rimuove il margine */}
+    <img 
+      src="/assets/img/Confusion_Matrix.png" 
+      alt="Matrix Image" 
+      style={{ width: '1300px', maxWidth: '1300px', display: 'block' }} // Aggiunta maxWidth: '100%'
+    />
+  </div>
+</div>
+
+<strong style={{ display: 'block', width: '100%', textAlign: 'center', fontSize: '17px'}}>
+        <br />
+        <br />
+          Tree Concepts
+          <br />
+          <br />
+          </strong>
+         
+
+<ul style={{ textAlign: 'left', listStyle: 'initial', marginLeft: '2em' }}>
+  <li>1. Disparate Representation versus Disparate Errors</li>
+  <li>3. Trusting the Labels</li> 
+  <li>5. Punitive versus Assistive Interventions</li>
+  <li>7. Models with Punitive Interventions</li>
+  <br />
+</ul>
+
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', margin: '0' }}> {/* Imposta la larghezza e l'altezza al 100% del viewport e rimuove il margine */}
+  <div style={{ width: '1300px', maxWidth: '1300px', margin: '0' }}> {/* Imposta la larghezza massima e relativa e rimuove il margine */}
+    <img 
+      src="/assets/img/Tree_Concepts.png" 
+      alt="Tree Image" 
+      style={{ width: '1300px', maxWidth: '1300px', display: 'block' }} // Aggiunta maxWidth: '100%'
+    />
+  </div>
+</div>
+
+<ul style={{ textAlign: 'left', listStyle: 'initial', marginLeft: '2em' }}>
+  <li>
+  <br />
+    <strong>1- </strong> The first decision concerns choosing between metrics to evaluate whether the model is fair based on disparate representation or on disparate errors.
+  <br />
+  <br />
+Representation-based metrics compare whether persons from both advantaged and disadvantaged groups have equal probability of being selected by the model, also named the
+selection rate. This method is often used to evaluate whether persons from different groups have equal access to be selected by the model for a desired service or good, such as a loan, insurance or admission to a school programme. These metrics are Demographic Parity and Equal Selection Rate Parity.
+<br /> <br />
+Error-based metrics evaluate the difference in error rates across groups. Suppose to have a model that either denies or approves of a loan and one wants to know if there is a bias
+against women, e.g., women are more often wrongly denied a loan. Using error-based fairness metrics, one can compare the False Negatives Rate (FNR) between men and women and determine whether women have a substantially higher False Negative Rate than men. The error-based metrics include False Positives Rate Parity, False Negatives Rate Parity and False Omission Rate Parity.</li>
+<li>  <br />  <br />
+  <strong>2- </strong>Returning to the Fairness Tree,  there is a choice to be made that depends on whether one can trust the labels.
+Suppose to use a fraud prediction model. The dataset contains features, such as ‘transactions’ and ‘average spend’, and a label for each instance, such as ‘high risk’ or ‘low risk’. As Machine Learning models are trained on the dataset, the labels should be trustworthy to ensure that the correct patterns are learned. Generally, of most datasets we can say that we can trust the labels. If not, then other, more creative options should be sought to work with the faulty dataset, such as Counterfactual Fairness.</li>
+<li><br /> <br />
+  <strong>3- </strong>The distinction between punitive and assistive interventions plays an important role in our bias analysis, as it helps with determining which type of errors (e.g., False Positives or False Negatives) are most harmful.
+When a model has interventions that are assistive in nature, people might be harmed when the model fails to intervene on them when they have need (Rodolfa et al., https://textbook.coleridgeinitiative.org/chap-bias.html#dealing-with-bias). A high rate of False Negatives is therefore undesirable, as it would mean that the model wrongly withholds this intervention from people. For example, for a model that decides who should receive a governmental subsidy, we could compare the False Negatives Rate across groups to see whether there is a large discrepancy between advantaged and disadvantaged groups. 
+On the other hand, with punitive models, people are harmed by the intervention, which makes the False Positives more suitable to further explore during the bias analysis. Suppose we have a model that predicts which of the defendants who committed a crime are likely to reoffend. If our model produces substantially more False Positives for people with a non-Dutch ethnicity when compared with people with a Dutch ethnicity, we can say that the model discriminates against people with a non-Dutch ethnicity. 
+<br /><br />
+For both the assistive and the punitive models, there are different metrics available, each of which can be used to find error rate disparities across groups. The main differences between these metrics can be attributed to the size of the intervention and the type of groups that are compared with each other.
+<br /><br />
+The Fairness Tree shows the following four metrics applicable for models with assistive interventions:
+<ul>
+  <li> • Group Size-Adjusted False Negatives (FN/GSP)</li>
+  <li> • False Omission Rate (FOR)</li>
+  <li> • False Negative Rate (FNR)</li>
+  <li></li>
+</ul>
+
+  • Recall/True Positives Parity</li>
+
+  <br /><br />
+  <li><strong>4- </strong>Three metrics fall under the scope of the punitive interventions, these are:
+  <br /><br />
+  • Group-Size Adjusted False Positives (FP/GSP)
+<br />
+  • False Discovery Rate Parity (FDR)
+<br />
+ • False Positive Rate Parity
+<br />
+<br />
+As discussed, for models with punitive interventions we often investigate the False Positives during the bias analysis to prevent that innocent people are picked out by the model for an undesired intervention.</li>
+</ul> 
   </p>
 
 
