@@ -1,11 +1,21 @@
-/* catalogue.css */
+/* Stili generali */
+.container {
+  padding: 20px;
+  width: 100%;
+}
 
 .flashcard {
   border: 1px solid #ccc;
   padding: 5px;
   border-radius: 5px;
   position: relative;
-  transition: width 0.3s ease-in-out;
+  background-color: #ffffff;
+  transition: all 0.3s ease-in-out;
+  width: calc(33% - 20px);
+}
+
+.flashcard:hover {
+  background-color: #f0f0f0;
 }
 
 .flashcard h4 {
@@ -19,7 +29,6 @@
   list-style-type: none; /* Removes default list styling */
 }
 
-
 .phases-container {
   margin-bottom: 5px;
   font-size: 14px;
@@ -31,75 +40,8 @@
   font-size: 14px;
 }
 
-.container {
-  padding: 20px;
-  width: 100%;
-}
-
-.buttons-container {
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
-}
-
-.buttons-container button {
-  border-radius: 20px;
-  padding: 10px 20px;
-  margin-right: 10px;
-  font-size: 16px;
-  font-weight: bold;
-  font-family: 'Lucida Fax';
-}
-
 .input-container {
   position: relative;
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.input-container input[type="text"] {
-  padding: 8px;
-  font-size: 14px;
-  width: calc(50% - 32px);
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  margin: 0 auto;
-  display: block;
-}
-
-.flashcards-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin: 0 20px;
-  width: 100%;
-}
-
-.button-active, .phase-button:hover {
-  background-color: #ec89aa; /* Cambia il colore di sfondo quando il bottone è attivo */
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5); /* Aggiungi un'ombreggiatura interna */
-  text-decoration: underline;
-
-}
-
-
-
-
-
-.category-button {
-  background-color: #ffffff;
-  border: 1px solid black;
-  cursor: pointer;
-}
-
-.category-button.button-active {
-  background-color: #cccccc;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
-}
-
-
-
-.input-container {
   width: 100%;
   margin-bottom: 20px;
 }
@@ -112,11 +54,71 @@
   border: 1px solid #ccc;
 }
 
-.flashcard {
-  background-color: #ffffff;
-  width: calc(33% - 20px);
+.flashcards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 0 20px;
 }
 
-.flashcard:hover {
-  background-color: #f0f0f0;
+.button-active, .phase-button:hover {
+  background-color: #ec89aa;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+  text-decoration: underline;
+}
+
+.category-button {
+  background-color: #ffffff;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.category-button.button-active {
+  background-color: #cccccc;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Stili per i container dei bottoni */
+.buttons-container {
+  display: flex;
+  flex-wrap: wrap; /* Permette agli elementi di andare a capo */
+  justify-content: center; /* Centra gli elementi nel container */
+  gap: 10px; /* Distanza tra i bottoni */
+  margin-bottom: 20px;
+}
+
+.buttons-container button {
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Lucida Fax';
+  cursor: pointer;
+  transition: background-color 0.2s; /* Rende il cambio di colore più fluido */
+}
+
+/* Adattamenti per schermi medi (tablet) */
+@media (max-width: 768px) {
+  .category-button, .phase-button {
+    padding: 8px 12px; /* Leggermente ridotto il padding */
+    font-size: 14px; /* Riduzione leggera della dimensione del testo */
+  }
+
+  .flashcard {
+    width: calc(50% - 20px); /* Aumenta la larghezza per migliorare la leggibilità */
+  }
+}
+
+/* Adattamenti per schermi piccoli (smartphone) */
+@media (max-width: 480px) {
+  .category-button, .phase-button {
+    padding: 6px 10px; /* Ulteriore riduzione del padding */
+    font-size: 12px; /* Ulteriore riduzione della dimensione del testo */
+    flex-basis: 100%; /* Fa occupare al bottone l'intera larghezza del container */
+    margin-bottom: 10px; /* Aumenta lo spazio sotto ogni bottone */
+  }
+
+  .flashcard {
+    width: 100%; /* Rende le flashcard a piena larghezza per una migliore visualizzazione */
+  }
 }
