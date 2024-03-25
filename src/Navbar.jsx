@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom"; // Import NavLink
 import Contact from "./Contact";
 import Homepage from "./Homepage";
 import Catalogue from "./Catalogue";
-import About from "./About"; // Import the About component
+import Learning from "./Learning"; // Import the About component
 
 function Navbar() {
   const [expanded, setExpanded] = useState(false); // State per gestire l'apertura e la chiusura della navbar su display più piccoli
@@ -76,14 +76,14 @@ function Navbar() {
               {/* Add NavLink for the About page */}
               <li className="nav-item">
                 <NavLink
-                  to="/About"
+                  to="/Learning"
                   style={({ isActive }) => ({
                     ...baseStyle,
                     ...(isActive ? activeHoverStyle : {}),
                   })}
                   className="nav-link"
                 >
-                  About
+                  Learning
                 </NavLink>
               </li>
             </ul>

@@ -1,6 +1,6 @@
 import FadeIn from "react-fade-in/lib/FadeIn";
 
-function About() {
+function Learning() {
     return (
       <>
 
@@ -10,7 +10,7 @@ function About() {
   name="viewport"
   content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
 />
-<title>ABOUT</title>
+<title>Learning</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
 <style>
   {`
@@ -22,7 +22,7 @@ function About() {
 
     .wrapper {
       height: 100%;
-      background: linear-gradient(to top, #eaccf5 35%, #aca7eb 77%);
+      background: #aca7eb;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -30,14 +30,14 @@ function About() {
 
     .wrapper2 {
       height: 100%;
-      background: linear-gradient(#eaccf5 35%, #aca7eb 77%);
+      background: #eaccf5
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
     .container2 {
-      width: 95%; /* Imposta la larghezza al 100% */
+      width: 100%; /* Imposta la larghezza al 100% */
       padding: 0; /* Elimina il padding */
       margin: 0; /* Elimina il margin */
       background: linear-gradient(to center, #eaccf5 35%, #aca7eb 77%);
@@ -51,9 +51,9 @@ function About() {
 <FadeIn>
   <div className="wrapper">
     <div className="container2" style={{ 
-      background: "linear-gradient(to top, rgba(234, 204, 245, 0.5) 35%, rgba(172, 167, 235, 0.5) 77%)", // Imposta lo sfondo con opacità
+      background: "#bebaf5", // Imposta lo sfondo con opacità
       fontFamily: "Lucida Fax, sans-serif", // Imposta il font del testo su Lucida Fax
-      textAlign: "center",
+      textAlign: "left",
       padding: "20px" // Aggiunge un po' di spazio intorno al contenuto
     }}>
 
@@ -99,9 +99,9 @@ function About() {
   <FadeIn>
   <div className="wrapper2">
     <div className="container2" style={{ 
-      background: "linear-gradient(rgba(234, 204, 245, 0.5) 35%, rgba(172, 167, 235, 0.5) 77%)", // Imposta lo sfondo con opacità
+      background: "#eaccf5", // Imposta lo sfondo con opacità
       fontFamily: "Lucida Fax, sans-serif", // Imposta il font del testo su Lucida Fax
-      textAlign: "center",
+      textAlign: "left",
       padding: "20px" // Aggiunge un po' di spazio intorno al contenuto
     }}>
         
@@ -222,9 +222,9 @@ function About() {
   <FadeIn>
   <div className="wrapper">
     <div className="container2" style={{ 
-      background: "linear-gradient(to top, rgba(234, 204, 245, 0.5) 35%, rgba(172, 167, 235, 0.5) 77%)", // Imposta lo sfondo con opacità
+      background: "#bebaf5", // Imposta lo sfondo con opacità
       fontFamily: "Lucida Fax, sans-serif", // Imposta il font del testo su Lucida Fax
-      textAlign: "center",
+      textAlign: "left",
       padding: "20px" // Aggiunge un po' di spazio intorno al contenuto
     }}>
 
@@ -324,9 +324,9 @@ function About() {
 <FadeIn>
 <div className="wrapper2">
     <div className="container2" style={{ 
-      background: "linear-gradient(rgba(234, 204, 245, 0.5) 35%, rgba(172, 167, 235, 0.5) 77%)", // Imposta lo sfondo con opacità
+      background: "#eaccf5", // Imposta lo sfondo con opacità
       fontFamily: "Lucida Fax, sans-serif", // Imposta il font del testo su Lucida Fax
-      textAlign: "center",
+      textAlign: "left",
       padding: "20px" // Aggiunge un po' di spazio intorno al contenuto
     }}>
   <strong style={{ display: 'block', width: '100%', textAlign: 'center', fontSize: '21px' }}>
@@ -436,17 +436,17 @@ function About() {
           </strong>
           <br />
           <ul style={{ textAlign: 'left', listStyle: 'initial', marginLeft: '2em' }}>
-  <li><strong>1.</strong> Individual fairness examines if a model gives similar results for similar individuals, a challenging task due to difficulties in measuring individual similarity. Group fairness assesses if the model treats different demographic groups defined by sensitive characteristics differently. Focusing on group fairness is recommended for its broader range of applicable metrics.</li>
+  <li><strong>1. Individual fairness</strong> examines if a model gives <strong>similar results</strong> for similar individuals, a challenging task due to difficulties in measuring individual similarity. Group fairness assesses if the model treats different demographic groups defined by sensitive characteristics differently. Focusing on group fairness is recommended for its broader range of applicable metrics.</li>
   <br />
-  <li><strong>1b.</strong> Components for group-level fairness metrics include the model's results displayed in a confusion matrix, which allows for calculating performance ratios for protected groups, and identifying dataset groups based on sensitive attributes for comparison.</li>
+  <li><strong>1b.</strong> Components for group-level fairness metrics include the model's results displayed in a <strong>confusion matrix</strong>, which allows for <strong>calculating performance ratios for protected groups</strong>, and identifying dataset groups based on sensitive attributes for comparison.</li>
   <br />
-  <li><strong>2.</strong> A key challenge in bias analysis is defining fairness, as perceptions vary among stakeholders. Recommendations include stakeholder meetings to discuss fairness perspectives, simulations using different confusion matrix outcomes to visualize disparities, and diving into the selection of fairness metrics which helps define the fairness concept.</li>
+  <li><strong>2.</strong> A key challenge in bias analysis is <strong>defining fairness,</strong> as perceptions vary <strong>among stakeholders</strong>. Recommendations include stakeholder meetings to discuss fairness perspectives, simulations using different confusion matrix outcomes to visualize disparities, and diving into the selection of fairness metrics which helps define the fairness concept.</li>
   <br />
-  <li><strong>3.</strong> Fairness metrics help compare model performance across groups. The "Aequitas Fairness tree" is a useful guide for selecting appropriate metrics and definitions, providing a structured approach for policymakers and data scientists.</li>
+  <li><strong>3.</strong> <strong>Fairness metrics help compare model performance across groups</strong>. The "Aequitas Fairness tree" is a useful guide for selecting appropriate metrics and definitions, providing a structured approach for policymakers and data scientists.</li>
   <br />
-  <li><strong>4.</strong> After selecting fairness metrics, one must compute performance disparities across groups. Creating groups for comparison can be complex due to intersectional bias, with advice to consult domain experts and to create groups informed by feature and error distributions.</li>
+  <li><strong>4.</strong> After selecting fairness metrics,<strong> one must compute performance disparities across groups.</strong> Creating groups for comparison can be complex due to intersectional bias, with advice to consult domain experts and to create groups informed by feature and error distributions.</li>
   <br />
-  <li><strong>6.</strong> Post-application of fairness metrics, stakeholders must collaboratively establish metric thresholds to conclude bias presence and magnitude, and decide on mitigating actions. Currently, there is no widely accepted method for setting these thresholds, necessitating a customized approach.</li>
+  <li><strong>5.</strong> Post-application of fairness metrics, <strong>stakeholders must</strong> collaboratively <strong>establish metric thresholds</strong> to conclude bias presence and magnitude, and <strong>decide on mitigating actions</strong>. Currently, there is no widely accepted method for setting these thresholds, necessitating a customized approach.</li>
 </ul>
 
     <br />
@@ -500,18 +500,18 @@ function About() {
     <strong>1- </strong> The first decision concerns choosing between metrics to evaluate whether the model is fair based on disparate representation or on disparate errors.
   <br />
   <br />
-Representation-based metrics compare whether persons from both advantaged and disadvantaged groups have equal probability of being selected by the model, also named the
-selection rate. This method is often used to evaluate whether persons from different groups have equal access to be selected by the model for a desired service or good, such as a loan, insurance or admission to a school programme. These metrics are Demographic Parity and Equal Selection Rate Parity.
+<strong>Representation-based metrics </strong>compare whether persons from both advantaged and disadvantaged groups have <strong>equal probability </strong>of being selected by the model, also named the
+selection rate. This method is often used to evaluate whether persons from different groups have <strong>equal access </strong>to be selected by the model for a desired service or good, such as a loan, insurance or admission to a school programme. These metrics are Demographic Parity and Equal Selection Rate Parity.
 <br /> <br />
-Error-based metrics evaluate the difference in error rates across groups. Suppose to have a model that either denies or approves of a loan and one wants to know if there is a bias
+<strong>Error-based metrics </strong>evaluate the <strong>difference in error rates </strong>across groups. Suppose to have a model that either denies or approves of a loan and one wants to know if there is a bias
 against women, e.g., women are more often wrongly denied a loan. Using error-based fairness metrics, one can compare the False Negatives Rate (FNR) between men and women and determine whether women have a substantially higher False Negative Rate than men. The error-based metrics include False Positives Rate Parity, False Negatives Rate Parity and False Omission Rate Parity.</li>
 <li>  <br />  <br />
-  <strong>2- </strong>Returning to the Fairness Tree,  there is a choice to be made that depends on whether one can trust the labels.
-Suppose to use a fraud prediction model. The dataset contains features, such as ‘transactions’ and ‘average spend’, and a label for each instance, such as ‘high risk’ or ‘low risk’. As Machine Learning models are trained on the dataset, the labels should be trustworthy to ensure that the correct patterns are learned. Generally, of most datasets we can say that we can trust the labels. If not, then other, more creative options should be sought to work with the faulty dataset, such as Counterfactual Fairness.</li>
+  <strong>2- </strong>Returning to the Fairness Tree,  there is a choice to be made that depends on whether one can <strong>trust the labels. </strong>
+Suppose to use a fraud prediction model. The dataset contains features, such as ‘transactions’ and ‘average spend’, and a label for each instance, such as ‘high risk’ or ‘low risk’. As Machine Learning models are trained on the dataset, the <strong>labels should be trustworthy </strong>to ensure that the correct patterns are learned. Generally, of most datasets we can say that we can trust the labels. If not, then other, more creative options should be sought to work with the faulty dataset, such as Counterfactual Fairness.</li>
 <li><br /> <br />
-  <strong>3- </strong>The distinction between punitive and assistive interventions plays an important role in our bias analysis, as it helps with determining which type of errors (e.g., False Positives or False Negatives) are most harmful.
-When a model has interventions that are assistive in nature, people might be harmed when the model fails to intervene on them when they have need (Rodolfa et al., https://textbook.coleridgeinitiative.org/chap-bias.html#dealing-with-bias). A high rate of False Negatives is therefore undesirable, as it would mean that the model wrongly withholds this intervention from people. For example, for a model that decides who should receive a governmental subsidy, we could compare the False Negatives Rate across groups to see whether there is a large discrepancy between advantaged and disadvantaged groups. 
-On the other hand, with punitive models, people are harmed by the intervention, which makes the False Positives more suitable to further explore during the bias analysis. Suppose we have a model that predicts which of the defendants who committed a crime are likely to reoffend. If our model produces substantially more False Positives for people with a non-Dutch ethnicity when compared with people with a Dutch ethnicity, we can say that the model discriminates against people with a non-Dutch ethnicity. 
+  <strong>3- </strong>The <strong>distinction between punitive and assistive interventions</strong> plays an important role in our bias analysis, as it helps with <strong>determining which type of errors </strong>(e.g., False Positives or False Negatives) are most harmful.
+When a model has interventions that are <strong>assistive </strong>in nature, people might be harmed when <strong>the model fails to intervene </strong>on them when they have need (Rodolfa et al., https://textbook.coleridgeinitiative.org/chap-bias.html#dealing-with-bias). A high rate of False Negatives is therefore undesirable, as it would mean that the model wrongly withholds this intervention from people. For example, for a model that decides who should receive a governmental subsidy, we could compare the False Negatives Rate across groups to see whether there is a large discrepancy between advantaged and disadvantaged groups. 
+On the other hand, with <strong>punitive models,</strong> people are harmed by <strong>the intervention,</strong> which makes the False Positives more suitable to further explore during the bias analysis. Suppose we have a model that predicts which of the defendants who committed a crime are likely to reoffend. If our model produces substantially more False Positives for people with a non-Dutch ethnicity when compared with people with a Dutch ethnicity, we can say that the model discriminates against people with a non-Dutch ethnicity. 
 <br /><br />
 For both the assistive and the punitive models, there are different metrics available, each of which can be used to find error rate disparities across groups. The main differences between these metrics can be attributed to the size of the intervention and the type of groups that are compared with each other.
 <br /><br />
@@ -548,9 +548,9 @@ As discussed, for models with punitive interventions we often investigate the Fa
 <FadeIn>
 <div className="wrapper">
     <div className="container2" style={{ 
-      background: "linear-gradient(to top, rgba(234, 204, 245, 0.5) 35%, rgba(172, 167, 235, 0.5) 77%)", // Imposta lo sfondo con opacità
+      background: "#bebaf5", // Imposta lo sfondo con opacità
       fontFamily: "Lucida Fax, sans-serif", // Imposta il font del testo su Lucida Fax
-      textAlign: "center",
+      textAlign: "left",
       padding: "20px" // Aggiunge un po' di spazio intorno al contenuto
     }}>
 
@@ -628,10 +628,10 @@ As discussed, for models with punitive interventions we often investigate the Fa
 <FadeIn>
 <div className="wrapper2">
     <div className="container2" style={{ 
-      background: "linear-gradient(rgba(234, 204, 245, 0.5) 35%, rgba(172, 167, 235, 0.5) 77%)", // Imposta lo sfondo con opacità
+      background: "#eaccf5", // Imposta lo sfondo con opacità
       fontFamily: "Lucida Fax, sans-serif", // Imposta il font del testo su Lucida Fax
-      textAlign: "center",
-      padding: "20px" // Aggiunge un po' di spazio intorno al contenuto
+      textAlign: "left",
+      padding: "20px", // Aggiunge un po' di spazio intorno al contenuto
     }}>
 
     
@@ -710,4 +710,4 @@ As discussed, for models with punitive interventions we often investigate the Fa
   )
     }
 
-export default About;
+export default Learning;
