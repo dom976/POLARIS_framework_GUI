@@ -54,7 +54,7 @@ const Contact = () => {
           data-aos="fade-up"
           style={{
             background: '#fff',
-            maxWidth: '800px',
+            maxWidth: '600px', // Riduci la larghezza massima
             width: '90%',
             borderRadius: '24px',
             boxShadow: '16px 16px 8px rgba(0, 0, 0, 0.1)',
@@ -71,14 +71,15 @@ const Contact = () => {
               width: '100%',
               display: 'flex',
               justifyContent: 'center',
-              alignItems: 'center'
+              alignItems: 'center',
+              marginBottom: '10px' // Riduci il margine inferiore
             }}
           >
             <img
               src={myImage}
-              width={280}
-              height={280}
-              style={{ marginBottom: '20px' }}
+              width={200} // Riduci le dimensioni dell'immagine
+              height={200}
+              style={{ marginBottom: '10px' }}
               data-aos="zoom-in"
               data-aos-duration="1000"
             />
@@ -103,9 +104,9 @@ const Contact = () => {
               <span
                 className="form-header"
                 style={{
-                  fontSize: '2em',
+                  fontSize: '1.5em', // Riduci la dimensione del titolo
                   fontWeight: 700,
-                  marginBottom: '20px'
+                  marginBottom: '10px' // Riduci il margine inferiore
                 }}
               >
                 Contact us
@@ -119,11 +120,11 @@ const Contact = () => {
                   border: 'none',
                   outline: 'none',
                   background: '#eee',
-                  padding: '20px',
+                  padding: '15px', // Riduci il padding
                   borderRadius: '6px',
                   width: '100%',
-                  fontSize: '100%',
-                  marginBottom: '20px',
+                  fontSize: '90%', // Riduci la dimensione del testo
+                  marginBottom: '10px', // Riduci il margine inferiore
                 }}
               />
               <textarea
@@ -133,11 +134,11 @@ const Contact = () => {
                   outline: 'none',
                   resize: 'none',
                   background: '#eee',
-                  padding: '20px',
+                  padding: '15px', // Riduci il padding
                   borderRadius: '6px',
                   width: '100%',
-                  fontSize: '100%',
-                  marginBottom: '20px',
+                  fontSize: '90%', // Riduci la dimensione del testo
+                  marginBottom: '10px', // Riduci il margine inferiore
                 }}
                 cols={30}
                 name="message"
