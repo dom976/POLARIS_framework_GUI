@@ -54,7 +54,7 @@ function Learning() {
       background: "#bebaf5", // Imposta lo sfondo con opacità
       fontFamily: "Lucida Fax, sans-serif", // Imposta il font del testo su Lucida Fax
       textAlign: "left",
-      padding: "20px" // Aggiunge un po' di spazio intorno al contenuto
+      padding: "80px" // Aggiunge un po' di spazio intorno al contenuto
     }}>
 
       <strong style={{ display: 'block', width: '100%', textAlign: 'center', fontSize: '24px' }}>
@@ -65,7 +65,7 @@ function Learning() {
       </strong>
 
       <p>
-        In order to make AI trustworthy, it is good to follow some  <strong>Guidelines.</strong>
+        In order to make AI trustworthy, it is good to follow some  <strong>Guidelines. </strong>
         Trustworthy AI is based on <strong>three pillars</strong> that must be present throughout the
         system:
         <br />
@@ -102,7 +102,7 @@ function Learning() {
       background: "#eaccf5", // Imposta lo sfondo con opacità
       fontFamily: "Lucida Fax, sans-serif", // Imposta il font del testo su Lucida Fax
       textAlign: "left",
-      padding: "20px" // Aggiunge un po' di spazio intorno al contenuto
+      padding: "80px" // Aggiunge un po' di spazio intorno al contenuto
     }}>
         
 
@@ -225,7 +225,7 @@ function Learning() {
       background: "#bebaf5", // Imposta lo sfondo con opacità
       fontFamily: "Lucida Fax, sans-serif", // Imposta il font del testo su Lucida Fax
       textAlign: "left",
-      padding: "20px" // Aggiunge un po' di spazio intorno al contenuto
+      padding: "80px" // Aggiunge un po' di spazio intorno al contenuto
     }}>
 
   <strong style={{ display: 'block', width: '100%', textAlign: 'center', fontSize: '24px' }}>
@@ -327,7 +327,7 @@ function Learning() {
       background: "#eaccf5", // Imposta lo sfondo con opacità
       fontFamily: "Lucida Fax, sans-serif", // Imposta il font del testo su Lucida Fax
       textAlign: "left",
-      padding: "20px" // Aggiunge un po' di spazio intorno al contenuto
+      padding: "80px" // Aggiunge un po' di spazio intorno al contenuto
     }}>
   <strong style={{ display: 'block', width: '100%', textAlign: 'center', fontSize: '21px' }}>
   <br />
@@ -378,7 +378,7 @@ function Learning() {
   <div style={{ width: '20%', maxWidth: '400px', margin: '0' }}> {/* Imposta la larghezza massima e relativa e rimuove il margine */}
     <img 
       src="/assets/img/Protected_Attributes.png" 
-      alt="Fairness Image" 
+      alt="Attributes Image" 
       style={{ width: '100%', maxWidth: '100%', display: 'block' }} // Aggiunta maxWidth: '100%'
     />
   </div>
@@ -432,6 +432,8 @@ function Learning() {
       <br />
       <strong style={{ display: 'block', width: '100%', textAlign: 'center', fontSize: '17px'}}>
         <br />
+
+
           Description 
           </strong>
           <br />
@@ -444,28 +446,50 @@ function Learning() {
   <br />
   <li><strong>3.</strong> <strong>Fairness metrics help compare model performance across groups</strong>. The "Aequitas Fairness tree" is a useful guide for selecting appropriate metrics and definitions, providing a structured approach for policymakers and data scientists.</li>
   <br />
+  <a>
+    <div id="matrix-containero"> 
+
+</div>
+    </a>
   <li><strong>4.</strong> After selecting fairness metrics,<strong> one must compute performance disparities across groups.</strong> Creating groups for comparison can be complex due to intersectional bias, with advice to consult domain experts and to create groups informed by feature and error distributions.</li>
   <br />
+
   <li><strong>5.</strong> Post-application of fairness metrics, <strong>stakeholders must</strong> collaboratively <strong>establish metric thresholds</strong> to conclude bias presence and magnitude, and <strong>decide on mitigating actions</strong>. Currently, there is no widely accepted method for setting these thresholds, necessitating a customized approach.</li>
+
 </ul>
 
     <br />
+    
     <br />
-    <strong style={{ display: 'block', width: '100%', textAlign: 'center', fontSize: '17px'}}>
+    
+ 
+    <div  alt="Confusion_Matrix" style ={{margin: '50px 0 0 0'}}  > <strong style={{ display: 'block', width: '100%', textAlign: 'center', fontSize: '17px'}}>
         <br />
           Confusion Matrix 
           </strong>
-          <br />
+          <br /></div>
 
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', margin: '0' }}> {/* Imposta la larghezza e l'altezza al 100% del viewport e rimuove il margine */}
-  <div style={{ width: '1300px', maxWidth: '1300px', margin: '0' }}> {/* Imposta la larghezza massima e relativa e rimuove il margine */}
-    <img 
-      src="/assets/img/Confusion_Matrix.png" 
-      alt="Matrix Image" 
-      style={{ width: '1300px', maxWidth: '1300px', display: 'block' }} // Aggiunta maxWidth: '100%'
-    />
-  </div>
+         
+          
+  <div  style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', margin: '0' }}>
+    <div style={{ width: '1300px', maxWidth: '1300px', margin: '0' }}>
+
+
+      <img 
+        src="/assets/img/Confusion_Matrix.png" 
+        alt="Matrix Image" 
+        style={{ width: '1300px', maxWidth: '1300px', display: 'block' }} // Aggiunta maxWidth: '100%'
+      />
+    </div>
+    <a>
+    <div id="tree"> 
+
 </div>
+    </a>
+
+  </div>
+
+
 
 <strong style={{ display: 'block', width: '100%', textAlign: 'center', fontSize: '17px'}}>
         <br />
@@ -551,7 +575,7 @@ As discussed, for models with punitive interventions we often investigate the Fa
       background: "#bebaf5", // Imposta lo sfondo con opacità
       fontFamily: "Lucida Fax, sans-serif", // Imposta il font del testo su Lucida Fax
       textAlign: "left",
-      padding: "20px" // Aggiunge un po' di spazio intorno al contenuto
+      padding: "80px" // Aggiunge un po' di spazio intorno al contenuto
     }}>
 
   <strong style={{ display: 'block', width: '100%', textAlign: 'center', fontSize: '21px' }}>
@@ -631,7 +655,7 @@ As discussed, for models with punitive interventions we often investigate the Fa
       background: "#eaccf5", // Imposta lo sfondo con opacità
       fontFamily: "Lucida Fax, sans-serif", // Imposta il font del testo su Lucida Fax
       textAlign: "left",
-      padding: "20px", // Aggiunge un po' di spazio intorno al contenuto
+      padding: "80px", // Aggiunge un po' di spazio intorno al contenuto
     }}>
 
     
