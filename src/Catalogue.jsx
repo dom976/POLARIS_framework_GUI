@@ -58,35 +58,42 @@ const Catalogue = () => {
     setExpandedFlashcard(expandedFlashcard === id ? null : id);
   };
 
-
   const formatText = (text) => {
     // Dividi il testo in paragrafi quando incontra un salto di riga (\n)
     const paragraphs = text.split('\n');
     return paragraphs.map((paragraph, index) => {
-      // Utilizza un'espressione regolare per individuare i link nel testo
-      const linkRegex = /(https?:\/\/[^\s]+)/g;
-      const matches = paragraph.match(linkRegex);
-  
-      if (matches) {
-        // Se sono presenti link, sostituisci i link con gli elementi <a>
-        const parts = paragraph.split(linkRegex);
-        return (
-          <p key={index} style={{ marginBottom: '5px', fontSize: '14px', whiteSpace: 'pre-wrap', fontFamily: 'Lucida Fax' }}>
-            {parts.map((part, i) => (
-              i % 2 === 0 ? part : <a key={i} href={part} target="_blank" rel="noopener noreferrer">{part}</a>
-            ))}
-          </p>
-        );
-      } else {
-        // Altrimenti, restituisci il paragrafo normale
-        return (
-          <p key={index} style={{ marginBottom: '5px', fontSize: '14px', whiteSpace: 'pre-wrap', fontFamily: 'Lucida Fax' }}>
-            {paragraph}
-          </p>
-        );
+      // Utilizzo un'espressione regolare per individuare i link nel testo
+      const linkRegex = /\((https?:\/\/[^\s\(\)]+)\)|\[(https?:\/\/[^\s\[\]]+)\]|https?:\/\/[^\s\(\[\])]+/g;
+      let lastIndex = 0;
+      const matches = [];
+      let match;
+      // Trova tutti i link nel testo
+      while ((match = linkRegex.exec(paragraph)) !== null) {
+        const url = match[1] || match[2] || match[0]; // Usa il gruppo catturato se presente, altrimenti l'intero match
+        matches.push({
+          index: match.index,
+          url: url
+        });
       }
+      // Costruisci i paragrafi con i link correttamente formattati
+      return (
+        <p key={index} style={{ marginBottom: '5px', fontSize: '14px', whiteSpace: 'pre-wrap', fontFamily: 'Lucida Fax' }}>
+          {matches.map((link, i) => {
+            const textBeforeLink = paragraph.substring(lastIndex, link.index);
+            lastIndex = link.index + link.url.length + 2; // Aggiungi 2 per considerare le parentesi
+            return (
+              <React.Fragment key={i}>
+                {textBeforeLink}
+                <a href={link.url} target="_blank" rel="noopener noreferrer">{link.url}</a>
+              </React.Fragment>
+            );
+          })}
+          {lastIndex < paragraph.length && <span>{paragraph.substring(lastIndex)}</span>}
+        </p>
+      );
     });
   };
+  
   
   
 

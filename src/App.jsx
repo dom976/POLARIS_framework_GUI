@@ -19,6 +19,7 @@ function App() {
           <Route path="/Catalogue" element={<Catalogue />} />
           <Route path="/Learning" element={<Learning />} />
         </Routes>
+        
       </BrowserRouter>
     </>
   );
