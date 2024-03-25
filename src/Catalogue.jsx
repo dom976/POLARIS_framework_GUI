@@ -62,11 +62,30 @@ const Catalogue = () => {
   const formatText = (text) => {
     // Dividi il testo in paragrafi quando incontra un salto di riga (\n)
     const paragraphs = text.split('\n');
-    return paragraphs.map((paragraph, index) => (
-      <p key={index} style={{ marginBottom: '5px', fontSize: '14px', whiteSpace: 'pre-wrap', fontFamily: 'Lucida Fax' }}>
-        {paragraph}
-      </p>
-    ));
+    return paragraphs.map((paragraph, index) => {
+      // Utilizza un'espressione regolare per individuare i link nel testo
+      const linkRegex = /(https?:\/\/[^\s]+)/g;
+      const matches = paragraph.match(linkRegex);
+  
+      if (matches) {
+        // Se sono presenti link, sostituisci i link con gli elementi <a>
+        const parts = paragraph.split(linkRegex);
+        return (
+          <p key={index} style={{ marginBottom: '5px', fontSize: '14px', whiteSpace: 'pre-wrap', fontFamily: 'Lucida Fax' }}>
+            {parts.map((part, i) => (
+              i % 2 === 0 ? part : <a key={i} href={part} target="_blank" rel="noopener noreferrer">{part}</a>
+            ))}
+          </p>
+        );
+      } else {
+        // Altrimenti, restituisci il paragrafo normale
+        return (
+          <p key={index} style={{ marginBottom: '5px', fontSize: '14px', whiteSpace: 'pre-wrap', fontFamily: 'Lucida Fax' }}>
+            {paragraph}
+          </p>
+        );
+      }
+    });
   };
   
   
@@ -102,6 +121,7 @@ const Catalogue = () => {
     'Fairness': '#e290fd',
     'Explainability': '#ffd771'
   };
+  
 
   // Definisci i colori per i bottoni delle fasi del SDLC
   const phaseColors = {
@@ -168,6 +188,7 @@ const Catalogue = () => {
         updatedActiveCategoryButtons.splice(updatedActiveCategoryButtons.indexOf('All'), 1);
       }
     }
+    
 
     // Aggiorna lo stato dei filtri e dei bottoni delle categorie
     setFilterCategories(updatedCategories);
