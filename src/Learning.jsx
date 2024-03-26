@@ -211,9 +211,15 @@ function Learning() {
     compromises. Some fundamental rights and related principles are absolute and
     intransigent, such as human dignity.
     <br />
+    <a>
+    <div id="explainability"> 
+
+</div>
+    </a> 
     <br />
     <br />
   </p>
+
 
   </div>
   </div>
@@ -228,12 +234,16 @@ function Learning() {
       padding: "80px" // Aggiunge un po' di spazio intorno al contenuto
     }}>
 
+
+
   <strong style={{ display: 'block', width: '100%', textAlign: 'center', fontSize: '24px' }}>
   THE PILLAR PRINCIPLES
   <br />
   <br />
   <br />
 </strong>
+
+
 
 <strong style={{ display: 'block', width: '100%', textAlign: 'center', fontSize: '21px' }}>
   
@@ -314,7 +324,11 @@ function Learning() {
     <br />
     <br />
   </p>
+  <a>
+    <div id="fairness"> 
 
+</div>
+    </a>   
 
 
 </div>
@@ -562,7 +576,11 @@ The Fairness Tree shows the following four metrics applicable for models with as
 As discussed, for models with punitive interventions we often investigate the False Positives during the bias analysis to prevent that innocent people are picked out by the model for an undesired intervention.</li>
 </ul> 
   </p>
+  <a>
+    <div id="security"> 
 
+</div>
+    </a>   
 
 
 </div>
@@ -643,6 +661,11 @@ As discussed, for models with punitive interventions we often investigate the Fa
     <br />
   </p>
 
+  <a>
+    <div id="privacy"> 
+
+</div>
+    </a>    
 
 
 </div>
@@ -658,7 +681,7 @@ As discussed, for models with punitive interventions we often investigate the Fa
       padding: "80px", // Aggiunge un po' di spazio intorno al contenuto
     }}>
 
-    
+
 
       <strong style={{ display: 'block', width: '100%', textAlign: 'center', fontSize: '21px' }}>
       <br />

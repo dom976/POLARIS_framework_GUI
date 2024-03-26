@@ -7,34 +7,36 @@ function Infocard(){
       style={{ paddingTop: 0, paddingBottom: 85, margin: "-118px -12px 0px" }}
     >
       <div className="col" style={{ paddingTop: 0, paddingBottom: 0 }}>
-        <div
-         data-aos="fade-up"
-         data-aos-duration={1500}
-         data-aos-once="true"
-          id="cardEntrada-2"
-          className="p-4 text-center shadow-lg m-5 rounded-5"
-          style={{
-            background:
-              "linear-gradient(171deg, var(--bs-primary-border-subtle) 0%, var(--bs-indigo) 100%), var(--bs-purple)",
-            width: 280
-          }}
-        >
-          <img 
-          
-          className="pt-2 w-50" src="assets/img/privacy-svgrepo-com.svg" />
-          <h3 className="text-white text-center pt-2">Privacy</h3>
-          <hr className="text-white" />
-          <p style={{ color: "var(--bs-body-bg)" }} />
-          <p style={{ color: "var(--bs-body-bg)" }}>
-            <strong>
-              This principle emphasizes the importance of protecting personal
-              and sensitive data processed by AI systems, ensuring
-              confidentiality and compliance with data protection regulations
-            </strong>
-          </p>
-        </div>
-      </div>
+  <a href="http://localhost:5173/Learning#privacy" style={{ textDecoration: 'none' }}>
+    <div
+      data-aos="fade-up"
+      data-aos-duration={1500}
+      data-aos-once="true"
+      id="cardEntrada-2"
+      className="p-4 text-center shadow-lg m-5 rounded-5"
+      style={{
+        background:
+          "linear-gradient(171deg, var(--bs-primary-border-subtle) 0%, var(--bs-indigo) 100%), var(--bs-purple)",
+        width: 280,
+        cursor: 'pointer', // Aggiunto per indicare la cliccabilità
+      }}
+    >
+      <img className="pt-2 w-50" src="assets/img/privacy-svgrepo-com.svg" />
+      <h3 className="text-white text-center pt-2">Privacy</h3>
+      <hr className="text-white" />
+      <p style={{ color: "var(--bs-body-bg)" }}>
+        <strong>
+          This principle emphasizes the importance of protecting personal
+          and sensitive data processed by AI systems, ensuring
+          confidentiality and compliance with data protection regulations
+        </strong>
+      </p>
+    </div>
+  </a>
+</div>
+
       <div className="col">
+        <a href="http://localhost:5173/Learning#security" style={{ textDecoration: 'none' }}>
         <div
          data-aos="fade-up"
          data-aos-duration={1500}
@@ -58,8 +60,12 @@ function Infocard(){
             <br />
           </p>
         </div>
+        </a>
       </div>
+
+
       <div className="col">
+      <a href="http://localhost:5173/Learning#explainability" style={{ textDecoration: 'none' }}>
         <div
          data-aos="fade-up"
          data-aos-duration={1500}
@@ -83,8 +89,10 @@ function Infocard(){
             </strong>
           </p>
         </div>
+        </a>
       </div>
       <div className="col">
+      <a href="http://localhost:5173/Learning#fairness" style={{ textDecoration: 'none' }}>
         <div
          data-aos="fade-up"
          data-aos-duration={1500}
@@ -113,8 +121,11 @@ function Infocard(){
             <br />
           </p>
         </div>
+        </a>
       </div>
+      
     </div>
+    
   </div></>)
 }
 
