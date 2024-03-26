@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import Contact from "./Contact";
 import Catalogue from "./Catalogue";
 import Learning from "./Learning";
+import How from "./How";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/Contact" element={<Contact />} />
           <Route path="/Catalogue" element={<Catalogue />} />
           <Route path="/Learning" element={<Learning />} />
+          <Route path="/How" element={<How />} />
         </Routes>
         
       </BrowserRouter>

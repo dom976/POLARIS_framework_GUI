@@ -27,13 +27,18 @@ function Intro(){
                   data-aos-once="true"
             className="btn btn-primary ms-md-2"
             role="button"
-            href="/Catalogue"
+            href="/How"
             style={{ fontSize: 30 }}
           >
-            <strong>Catalogue</strong>
+            <strong>HowTo</strong>
           </a>
       </div>
+    
     </div>
+
+
+
+      
     <div className="col-md-6 col-lg-6 offset-lg-0 text-center">
       <img
                 data-aos="fade-left"

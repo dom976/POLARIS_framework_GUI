@@ -52,6 +52,18 @@ function Navbar() {
               </li>
               <li className="nav-item">
                 <NavLink
+                  to="/How"
+                  style={({ isActive }) => ({
+                    ...baseStyle,
+                    ...(isActive ? activeHoverStyle : {}),
+                  })}
+                  className="nav-link"
+                >
+                  HowTo
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
                   to="/Contact"
                   style={({ isActive }) => ({
                     ...baseStyle,
