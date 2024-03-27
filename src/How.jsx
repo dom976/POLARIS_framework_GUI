@@ -2,8 +2,11 @@ import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 function How() {
+
+
     const settings = {
         dots: true,
         infinite: true,
@@ -11,6 +14,12 @@ function How() {
         slidesToShow: 1,
         slidesToScroll: 1
     };
+
+    const images = [
+        "https://i.imgur.com/EsqNo18.png",
+        "https://i.imgur.com/kuqOxEg.png",
+        "https://i.imgur.com/YfvVAov.png",
+      ];
 
     return (
         <div style={{ 
@@ -47,6 +56,16 @@ function How() {
                     </li>
                 </ul>
             </div>
+
+            <div className="box">
+      <Carousel useKeyboardArrows={true}>
+        {images.map((URL, index) => (
+          <div className="slide">
+            <img alt="sample_file" src={URL} key={index} />
+          </div>
+        ))}
+      </Carousel>
+    </div>
         </div>
     );
 }
