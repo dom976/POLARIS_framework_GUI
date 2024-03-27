@@ -1,12 +1,11 @@
 import React from 'react';
-import Slider from 'react-slick';
+import Slider from 'react-slick'; // Se non usato, rimuovere
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+
 function How() {
-
-
     const settings = {
         dots: true,
         infinite: true,
@@ -19,14 +18,13 @@ function How() {
         "https://i.imgur.com/EsqNo18.png",
         "https://i.imgur.com/kuqOxEg.png",
         "https://i.imgur.com/YfvVAov.png",
-      ];
+    ];
 
     return (
         <div style={{ 
-            background: "linear-gradient(#eaccf5 35%, #aca7eb 77%)", 
-            minHeight: "100vh", 
+            background: "linear-gradient(#eaccf5 35%, #aca7eb 77%)",
             width: "100%", 
-            paddingTop: "50px", 
+            paddingTop: "50px", // già presente
             boxSizing: "border-box",
             textAlign: "center" 
         }}>
@@ -57,15 +55,15 @@ function How() {
                 </ul>
             </div>
 
-            <div className="box">
-      <Carousel useKeyboardArrows={true}>
-        {images.map((URL, index) => (
-          <div className="slide">
-            <img alt="sample_file" src={URL} key={index} />
-          </div>
-        ))}
-      </Carousel>
-    </div>
+            <div className="box" style={{ paddingTop: "20px" }}> 
+                <Carousel useKeyboardArrows={true} style={{ margin: "auto" }}>
+                    {images.map((URL, index) => (
+                        <div key={index} className="slide">
+                            <img alt="sample_file" src={URL} />
+                        </div>
+                    ))}
+                </Carousel>
+            </div>
         </div>
     );
 }
