@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import emailjs from 'emailjs-com';
 import myImage from './assets/img/Screenshot_2.png';
 import './assets/css/buttonhover.css';
@@ -7,8 +7,10 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Newsletter from './Newsletter';
 
+
 const Contact = () => {
   const form = useRef();
+  const [isSubmitted, setIsSubmitted] = useState(false); // Inizializza lo stato isSubmitted a false
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
@@ -21,6 +23,9 @@ const Contact = () => {
       .then(
         (result) => {
           console.log('SUCCESS!', result.text);
+          setIsSubmitted(true); // Imposta lo stato a true dopo l'invio del form
+          setTimeout(() => setIsSubmitted(false), 5000); // Reimposta lo stato dopo 5 secondi
+          form.current.reset(); // Resetta i campi del form
         },
         (error) => {
           console.log('FAILED...', error.text);
@@ -90,6 +95,9 @@ const Contact = () => {
               width: '100%'
             }}
           >
+        {isSubmitted && (
+              <p style={{ color: 'green' }}>Thanks for your report! We'll answer soon.</p>
+            )}
             <form
               ref={form}
               onSubmit={handleSubmit}
