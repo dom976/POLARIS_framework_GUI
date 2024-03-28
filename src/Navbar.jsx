@@ -75,18 +75,6 @@ function Navbar() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink
-                  to="/Contact"
-                  style={({ isActive }) => ({
-                    ...baseStyle,
-                    ...(isActive ? activeHoverStyle : {}),
-                  })}
-                  className="nav-link"
-                >
-                  Contact
-                </NavLink>
-              </li>
-              <li className="nav-item">
                 <a
                   href="https://localhost/securedevai"
                   style={baseStyle}

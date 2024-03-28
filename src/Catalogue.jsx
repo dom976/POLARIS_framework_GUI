@@ -297,32 +297,44 @@ const Catalogue = () => {
           />
         </div>
         <div className="flashcards-container">
-          {filteredFlashcards.map((flashcard, index) => (
-            <div
-              key={index}
-              className="flashcard"
-              style={{ backgroundColor: categoryColors[flashcard.Category], width: expandedFlashcard === flashcard.id ? '100%' : 'calc(33% - 20px)' }}
-              onClick={() => toggleExpansion(flashcard.id)}
-            >
-              <h4>{flashcard.Category}</h4>
+        {filteredFlashcards.map((flashcard, index) => (
+  <div
+    key={index}
+    className="flashcard"
+    style={{ backgroundColor: categoryColors[flashcard.Category], width: expandedFlashcard === flashcard.id ? '100%' : 'calc(33% - 20px)' }}
+    onClick={() => toggleExpansion(flashcard.id)}
+  >
+    <h4>{flashcard.Category}</h4>
+
+    <div style={{ fontSize: '14px', margin: '5px 0', fontFamily: 'Lucida Fax' }}>
+      {expandedFlashcard === flashcard.id ? (flashcard.Category === 'Explainability' ? formatText(flashcard['Explanation Goal']) : formatText(flashcard.fullDescription)) : (flashcard.Category === 'Explainability' ? formatText(truncateExplanationGoal(flashcard.previewExplanationGoal)) : formatText(truncateDescription(flashcard.previewDescription)))}
+    </div>
 
 
-              <div style={{ fontSize: '14px', margin: '5px 0', fontFamily: 'Lucida Fax' }}>
-                  {expandedFlashcard === flashcard.id ? (flashcard.Category === 'Explainability' ? formatText(flashcard['Explanation Goal']) : formatText(flashcard.fullDescription)) : (flashcard.Category === 'Explainability' ? formatText(truncateExplanationGoal(flashcard.previewExplanationGoal)) : formatText(truncateDescription(flashcard.previewDescription)))}
-                </div>
+    {expandedFlashcard === flashcard.id && (
+      <div onClick={(e) => e.stopPropagation()}>
+        <div className="phases-container"><strong>SDLC Phase:</strong></div>
+        {Object.entries(flashcard.phases).map(([phase, action], idx) => (
+          <p key={idx} className="phase-info">
+            <strong>{handlePhaseName(phase)}:</strong> {action}
+          </p>
+        ))}
 
-              {expandedFlashcard === flashcard.id && (
-                <div onClick={(e) => e.stopPropagation()}>
-                  <div className="phases-container">SDLC Phase:</div>
-                  {Object.entries(flashcard.phases).map(([phase, action], idx) => (
-                    <p key={idx} className="phase-info">
-                      <strong>{handlePhaseName(phase)}:</strong> {action}
-                    </p>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
+        {flashcard.Threat && (
+          <p className="threat-info">
+            <strong>Threat:</strong> {flashcard.Threat}
+          </p>
+        )}
+
+        {flashcard['Sub-Threat'] && (
+          <p className="sub-threat-info">
+            <strong>Sub-Threat:</strong> {flashcard['Sub-Threat']}
+          </p>
+        )}
+      </div>
+    )}
+  </div>
+))}
         </div>
       </div>
     </FadeIn>
