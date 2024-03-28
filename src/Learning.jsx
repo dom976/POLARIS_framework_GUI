@@ -66,24 +66,22 @@ function Learning() {
 
       <p>
         In order to make AI trustworthy, it is good to follow some  <strong>Guidelines. </strong>
-        Trustworthy AI is based on <strong>three pillars</strong> that must be present throughout the
+        Trustworthy AI is based on <strong>four pillars</strong> that must be present throughout the
         system:
         <br />
         <br />
 
         <ul style={{ textAlign: 'left', listStyle: 'initial', marginLeft: '2em' }}>
-        <li> • <strong>Legal compliance</strong>, ensuring that AI complies with all laws and regulations
-        in force;</li>
-        <li> • <strong>Ethical integrity</strong>, ensuring compliance with the principles and moral
-        values;</li>
-        <li> • <strong>Robustness</strong>, both technically and socially, since, even with the best
-        intentions, AI systems can cause unintentional harm.</li>
+        <li> • <strong>Explainability</strong>, which ensures that each AI-based system is clear and transparent about the actions and decisions they take;</li>
+        <li> • <strong>Fairness</strong>, which ensures every form of equality and respect for human rights, avoiding forms of racism or preferentialism;</li>
+        <li> • <strong>Privacy</strong>, which guarantees the confidentiality of the sensitive data of each user of a system, according to the legislative regulations of the GDPR;</li>
+        <li> • <strong>Security</strong>, which protects data from any type of modification or falsification attack by unauthorized persons or malicious attackers.</li>
       </ul>
 
         <br />
         <br />
         Each pillar, while essential, is not sufficient on its own to ensure trusted
-        AI. Ideally, <strong>these three elements should interact in harmony and overlap</strong>;
+        AI. Ideally, <strong>four three elements should interact in harmony and overlap</strong>;
         should practical tensions emerge between them, society should work to
         resolve them.
         <br />
@@ -413,7 +411,7 @@ function Learning() {
       <br />
       <strong style={{ display: 'block', width: '100%', textAlign: 'center', fontSize: '17px'}}>
         <br />
-          BYAS ANALYSIS 
+          BIAS ANALYSIS 
           </strong>
         <br />
         <br />
@@ -508,7 +506,10 @@ function Learning() {
 <strong style={{ display: 'block', width: '100%', textAlign: 'center', fontSize: '17px'}}>
         <br />
         <br />
-          Tree Concepts
+          Decision Tree 
+          <br />
+          <br />
+          Concepts
           <br />
           <br />
           </strong>

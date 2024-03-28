@@ -64,6 +64,18 @@ function Navbar() {
               </li>
               <li className="nav-item">
                 <NavLink
+                  to="/Learning"
+                  style={({ isActive }) => ({
+                    ...baseStyle,
+                    ...(isActive ? activeHoverStyle : {}),
+                  })}
+                  className="nav-link"
+                >
+                  Learning
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
                   to="/Contact"
                   style={({ isActive }) => ({
                     ...baseStyle,
@@ -85,28 +97,20 @@ function Navbar() {
                   Forum
                 </a>
               </li>
-              {/* Add NavLink for the About page */}
-              <li className="nav-item">
+              <li>
                 <NavLink
-                  to="/Learning"
+                  to="/Catalogue"
                   style={({ isActive }) => ({
-                    ...baseStyle,
-                    ...(isActive ? activeHoverStyle : {}),
+                  ...baseStyle,
+                  ...(isActive ? activeHoverStyle : {}),
+                  color: 'white', /* Aggiunto per rendere il testo bianco */
                   })}
                   className="nav-link"
-                >
-                  Learning
+                  >
+                <strong>Catalogue</strong>
                 </NavLink>
-              </li>
+              </li> 
             </ul>
-            <NavLink
-              to="/Catalogue"
-              className="btn btn-primary ms-md-2"
-              style={{ fontSize: 30 }}
-              role="button"
-            >
-              <strong>Catalogue</strong>
-            </NavLink>
           </div>
         </div>
       </nav>

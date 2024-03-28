@@ -123,41 +123,41 @@ const Catalogue = () => {
   // Definisci i colori per i bottoni delle categorie
   const categoryColors = {
     'All': '#ffffff',
-    'Security': '#86e2ff',
-    'Privacy': '#9aff9a',
+    'Security': '#9da6db',
+    'Privacy': '#aecd76',
     'Fairness': '#e290fd',
-    'Explainability': '#ffd771'
+    'Explainability': '#dbb39d'
   };
   
 
   // Definisci i colori per i bottoni delle fasi del SDLC
   const phaseColors = {
     'All': '#ffffff',
-    'Design': '#ffd1d7',
-    'Development': '#ffd1d7',
-    'Deployment': '#ffd1d7',
-    'Testing': '#ffd1d7',
-    'Monitoring': '#ffd1d7',
-    'RE': '#ffd1d7'
+    'Design': '#d1c4e9',
+    'Development': '#d1c4e9',
+    'Deployment': '#d1c4e9',
+    'Testing': '#d1c4e9',
+    'Monitoring': '#d1c4e9',
+    'RE': '#d1c4e9'
   };
 
   // Definisci i colori di sfondo quando i bottoni delle categorie sono attivi
   const hoverColorsCategory = {
     'All': '#ffffff',
     'Security': '#86a4ff',
-    'Privacy': '#00f496',
-    'Fairness': '#c23bec',
-    'Explainability': '#ff8f71'
+    'Privacy': '#c5db9d',
+    'Fairness': '#e3c4e9',
+    'Explainability': '#eddeda'
   };
 
   const hoverColorsPhase = {
     'All': '#ffffff',
-    'Design': '#fc5c5c',
-    'Development': '#fc5c5c',
-    'Deployment': '#fc5c5c',
-    'Testing': '#fc5c5c',
-    'Monitoring': '#fc5c5c',
-    'RE': '#fc5c5c'
+    'Design': '#B39DDB',
+    'Development': '#B39DDB',
+    'Deployment': '#B39DDB',
+    'Testing': '#B39DDB',
+    'Monitoring': '#B39DDB',
+    'RE': '#B39DDB'
   };
 
   const phaseButtons = ['All', 'Deployment', 'Design', 'Testing', 'RE', 'Monitoring', 'Development'];
