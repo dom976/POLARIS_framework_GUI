@@ -95,7 +95,6 @@ const Catalogue = () => {
   };
   
   
-  
 
   const truncateDescription = (description) => {
     const words = description.split(' ');
@@ -120,7 +119,7 @@ const Catalogue = () => {
     return name;
   };
 
-  // Definisci i colori per i bottoni delle categorie
+  // Definisco i colori per i bottoni delle categorie
   const categoryColors = {
     'All': '#ffffff',
     'Security': '#9da6db',
@@ -141,7 +140,7 @@ const Catalogue = () => {
     'RE': '#d1c4e9'
   };
 
-  // Definisci i colori di sfondo quando i bottoni delle categorie sono attivi
+  // Definisco i colori di sfondo quando i bottoni delle categorie sono attivi
   const hoverColorsCategory = {
     'All': '#ffffff',
     'Security': '#86a4ff',
@@ -211,6 +210,23 @@ const Catalogue = () => {
       }
     });
   };
+  
+  // Gestione hover dei bottoni delle categorie
+const handleCategoryButtonHover = (category, isHovering) => {
+  const button = document.querySelector(`.${category}`);
+  if (button && !activeCategoryButtons.includes(category)) {
+    button.style.backgroundColor = isHovering ? hoverColorsCategory[category] : categoryColors[category];
+  }
+};
+
+// Gestione hover dei bottoni delle fasi del SDLC
+const handlePhaseButtonHover = (phase, isHovering) => {
+  const button = document.querySelector(`.${phase}`);
+  if (button && !activePhaseButtons.includes(phase)) {
+    button.style.backgroundColor = isHovering ? hoverColorsPhase[phase] : phaseColors[phase];
+  }
+};
+
 
   const handlePhaseFilter = (phase) => {
     const updatedPhases = [...filterPhases];
@@ -258,36 +274,40 @@ const Catalogue = () => {
     <FadeIn>
       <div className="container">
         <div className="buttons-container">
-          {Object.keys(categoryColors).map(category => (
-            <button 
-              key={category} 
-              onClick={() => handleCategoryFilter(category)} 
-              className={`category-button ${activeCategoryButtons.includes(category) ? 'button-active' : ''} ${category}`}
-              style={{ 
-                backgroundColor: categoryColors[category],
-                border: '1px solid black', // Aggiunto bordo nero
-                cursor: 'pointer'
-              }}
-            >
-              {category}
-            </button>
+        {Object.keys(categoryColors).map(category => (
+          <button 
+          key={category} 
+          onClick={() => handleCategoryFilter(category)} 
+          onMouseEnter={() => handleCategoryButtonHover(category, true)} // Aggiunto evento onMouseEnter
+          onMouseLeave={() => handleCategoryButtonHover(category, false)} // Aggiunto evento onMouseLeave
+          className={`category-button ${activeCategoryButtons.includes(category) ? 'button-active' : ''} ${category}`}
+          style={{ 
+          backgroundColor: categoryColors[category],
+          border: '1px solid black', // Aggiunto bordo nero
+          cursor: 'pointer'
+          }}
+          >
+          {category}
+          </button>
           ))}
         </div>
         <div className="buttons-container">
-          {phaseButtons.map(phase => (
-            <button 
-              key={phase} 
-              onClick={() => handlePhaseFilter(phase)} 
-              className={`phase-button ${activePhaseButtons.includes(phase) ? 'button-active' : ''}  ${phase}`}
-              style={{
-                backgroundColor: phaseColors[phase],
-                border: '1px solid black', // Aggiunto bordo nero
-                cursor: 'pointer'
-              }}
-            >
-              {phase === 'RE' ? 'Requirements Elicitation' : phase}
-            </button>
-          ))}
+        {phaseButtons.map(phase => (
+  <button 
+    key={phase} 
+    onClick={() => handlePhaseFilter(phase)} 
+    onMouseEnter={() => handlePhaseButtonHover(phase, true)} // Aggiunto evento onMouseEnter
+    onMouseLeave={() => handlePhaseButtonHover(phase, false)} // Aggiunto evento onMouseLeave
+    className={`phase-button ${activePhaseButtons.includes(phase) ? 'button-active' : ''}  ${phase}`}
+    style={{
+      backgroundColor: phaseColors[phase],
+      border: '1px solid black', // Aggiunto bordo nero
+      cursor: 'pointer'
+    }}
+  >
+    {phase === 'RE' ? 'Requirements Elicitation' : phase}
+  </button>
+))}
         </div>
         <div className="input-container">
           <input
@@ -331,6 +351,14 @@ const Catalogue = () => {
             <strong>Sub-Threat:</strong> {flashcard['Sub-Threat']}
           </p>
         )}
+
+      {flashcard['Vulnerability (consequence)'] && (
+      <p className="vulnerability-info">
+        <strong>Vulnerability (Consequence):</strong> {flashcard['Vulnerability (consequence)']}
+      </p>
+    )}
+
+        
       </div>
     )}
   </div>
