@@ -24,67 +24,78 @@ const Catalogue = () => {
           }
           return sanitizedItem;
         });
-
+  
+        let actionCounters = {}; // Oggetto per tenere traccia del numero di azioni per ogni ID base
+  
         const groupedByCategory = sanitizedData.reduce((acc, item) => {
-          const id = item.Category === 'Explainability' ? item['Explanation Goal'].substring(0, 100) : item.Description.substring(0, 100);
-          acc[id] = acc[id] || {
+          // Genera un ID base che non considera l'Action
+          const baseId = item.Category + ':' + (item.Category === 'Explainability' ? item['Explanation Goal'].substring(0, 100) : item.Description.substring(0, 100)) + ':' + item['SDLC Phase'];
+          
+          // Incrementa il contatore per questo ID base o inizializzalo se non esiste
+          actionCounters[baseId] = (actionCounters[baseId] || 0) + 1;
+          
+          // Crea un ID unico che include il contatore di azione
+          const uniqueId = `${baseId}:${actionCounters[baseId]}`;
+  
+          acc[uniqueId] = {
             ...item,
-            id,
+            id: uniqueId,
             fullDescription: item.Description,
             previewDescription: item.Category !== 'Explainability' ? truncateDescription(item.Description) : '',
             previewExplanationGoal: item.Category === 'Explainability' ? truncateExplanationGoal(item['Explanation Goal']) : '',
-            phases: {}
+            phases: { [item['SDLC Phase']]: formatText(item.Action) }
           };
-          acc[id].phases[item['SDLC Phase']] = formatText(item.Action);
+  
           return acc;
         }, {});
-
-        const initialPhases = Object.values(groupedByCategory).reduce((acc, item) => {
-          acc[item.id] = Object.keys(item.phases)[0];
-          return acc;
-        }, {});
-
+  
         setFlashcards(Object.values(groupedByCategory));
-        setExpandedFlashcard(initialPhases);
+        // Qui potresti voler rivedere come gestisci expandedFlashcard se necessario
       })
       .catch(error => console.error('Error loading JSON file:', error));
-
+  
     AOS.init({
       once: true,
     });
   }, []);
+  
 
   const toggleExpansion = (id) => {
     setExpandedFlashcard(expandedFlashcard === id ? null : id);
   };
 
   const formatText = (text) => {
-    // Dividi il testo in paragrafi quando incontra un salto di riga (\n)
     const paragraphs = text.split('\n');
     return paragraphs.map((paragraph, index) => {
-      // Utilizzo un'espressione regolare per individuare i link nel testo
-      const linkRegex = /\((https?:\/\/[^\s\(\)]+)\)|\[(https?:\/\/[^\s\[\]]+)\]|https?:\/\/[^\s\(\[\])]+/g;
+      // Estendo l'espressione regolare per riconoscere anche i tag <a> con gli attributi href
+      const linkRegex = /<a href='(https?:\/\/[^\s']+)'>([^<]+)<\/a>|\((https?:\/\/[^\s\(\)]+)\)|\[(https?:\/\/[^\s\[\]]+)\]|https?:\/\/[^\s\(\[\])]+/g;
       let lastIndex = 0;
       const matches = [];
       let match;
-      // Trova tutti i link nel testo
       while ((match = linkRegex.exec(paragraph)) !== null) {
-        const url = match[1] || match[2] || match[0]; // Usa il gruppo catturato se presente, altrimenti l'intero match
+        const url = match[1] || match[3] || match[4] || match[0];
+        const linkText = match[2] || url; // Usa il testo del link se presente, altrimenti l'URL
         matches.push({
           index: match.index,
-          url: url
+          url: url,
+          text: linkText,
+          isTag: !!match[2] // Se abbiamo catturato il testo del link, significa che è un tag <a>
         });
       }
-      // Costruisci i paragrafi con i link correttamente formattati
+  
       return (
         <p key={index} style={{ marginBottom: '5px', fontSize: '14px', whiteSpace: 'pre-wrap', fontFamily: 'Lucida Fax' }}>
-          {matches.map((link, i) => {
-            const textBeforeLink = paragraph.substring(lastIndex, link.index);
-            lastIndex = link.index + link.url.length + 2; // Aggiungi 2 per considerare le parentesi
+          {matches.map((match, i) => {
+            const textBeforeLink = paragraph.substring(lastIndex, match.index);
+            lastIndex = match.index + (match.isTag ? match.text.length + match.url.length + 15 : match.url.length); // Aggiusta lastIndex basandosi su se è un tag o un URL
             return (
               <React.Fragment key={i}>
                 {textBeforeLink}
-                <a href={link.url} target="_blank" rel="noopener noreferrer">{link.url}</a>
+                {match.isTag ? (
+                  <a href={match.url} target="_blank" rel="noopener noreferrer">{match.text}</a>
+                ) : (
+                  <a href={match.url} target="_blank" rel="noopener noreferrer">{match.url}</a>
+                )}
               </React.Fragment>
             );
           })}
@@ -93,6 +104,7 @@ const Catalogue = () => {
       );
     });
   };
+  
   
   
 
