@@ -59,6 +59,7 @@ const Catalogue = () => {
     });
   }, []);
   
+  
 
   const toggleExpansion = (id) => {
     setExpandedFlashcard(expandedFlashcard === id ? null : id);

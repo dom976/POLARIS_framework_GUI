@@ -9,7 +9,7 @@
     "Sub-Threat": "N.A.",
     "Description": "A type of attack in which the attacker altered data or model to modify the ML algorithm's behavior in a chosen direction (e.g. to sabotage its results, to insert a backdoor). It is as if the attacker conditioned the algorithm according to its motivations.\nSuch attacks are also called causative attacks.\nExample: massively indicating to an image recognition algorithm that images of dogs are indeed cats to lead it to interpret it this way.",
     "Vulnerability (consequence)": "Implement processes to maintain security levels of ML components over time",
-    "Action": "(Specific ML) Choose and define a more resilient model design: \nSome model designs can be more robust than others against attacks. For instance, ensemble methods like bagging can mitigate the impact of poisoning during the training phase (Bagging for fighting poisoning attacks [https://link.springer.com/chapter/10.1007/978-3-642-21557-5_37]). Another example is defensive distillation, which may allow deep neural networks to better deal with evasion attacks (Robust Linear Regression Against Training Data Poisoning [https://www.ccs.neu.edu/home/alina/papers/RobustRegression.pdf]).\nMore details in: https://arxiv.org/pdf/2306.00687.pdf"
+    "Action": "(Specific ML) Choose and define a more resilient model design: \nSome model designs can be more robust than others against attacks. For instance, ensemble methods like bagging can mitigate the impact of poisoning during the training phase (Bagging for fighting <a href='https://link.springer.com/chapter/10.1007/978-3-642-21557-5_37'>poisoning attacks </a>. Another example is defensive distillation, which may allow deep neural networks to better deal with evasion attacks (Robust Linear Regression Against <a href='https://www.ccs.neu.edu/home/alina/papers/RobustRegression.pdf'>Training Data Poisoning </a>).\n<a href='https://arxiv.org/pdf/2306.00687.pdf'> More details.</a> "
   },
   {
     "Category": "Security",
@@ -21,7 +21,7 @@
     "Sub-Threat": "Targeted Data Poisoning\n\n\n\n\n\n\n\n\n\n\nIndiscriminate Data Poisoning",
     "Description": "The goal of the attacker is to contaminate the machine model generated in the training phase, so that predictions on new data will be modified in the testing phase[1]. In targeted poisoning attacks, the attacker wants to misclassify specific examples to cause specific actions to be taken or omitted.\nExample: Submitting AV software as malware to force its misclassification as malicious and eliminate the use of targeted AV software on client systems.\n\nGoal is to ruin the quality/integrity of the data set being attacked. Many datasets are public/untrusted/uncurated, so this creates additional concerns around the ability to spot such data integrity violations in the first place. Training on unknowingly compromised data is a garbage-in/garbage-out situation. Once detected, triage needs to determine the extent of data that has been breached and quarantine/retrain.\nExample: A company scrapes a well-known and trusted website for oil futures data to train their models. The data provider�s website is subsequently compromised via SQL Injection attack. The attacker can poison the dataset at will and the model being trained has no notion that the data is tainted.",
     "Vulnerability (consequence)": "Model easy to poison",
-    "Action": "(Specific ML) Implement processes to maintain security levels of ML components over time\nML is a rapidly evolving field, especially regarding its cybersecurity. Regular checking of new attacks and defenses must be integrated into the processes for maintaining security level applications. The security level should thus be regularly assessed too.\nAn useful tool to keep updating on new attacks and defenses is: https://atlas.mitre.org/"
+    "Action": "(Specific ML) Implement processes to maintain security levels of ML components over time\nML is a rapidly evolving field, especially regarding its cybersecurity. Regular checking of new attacks and defenses must be integrated into the processes for maintaining security level applications. The security level should thus be regularly assessed too.\nAn useful tool to keep updating on new attacks and defenses is <a href='https://atlas.mitre.org/'>this</a>."
   },
   {
     "Category": "Security",
@@ -33,7 +33,7 @@
     "Sub-Threat": "Targeted Data Poisoning\n\n\n\n\n\n\n\n\n\n\nIndiscriminate Data Poisoning",
     "Description": "The goal of the attacker is to contaminate the machine model generated in the training phase, so that predictions on new data will be modified in the testing phase[1]. In targeted poisoning attacks, the attacker wants to misclassify specific examples to cause specific actions to be taken or omitted.\nExample: Submitting AV software as malware to force its misclassification as malicious and eliminate the use of targeted AV software on client systems.\n\nGoal is to ruin the quality/integrity of the data set being attacked. Many datasets are public/untrusted/uncurated, so this creates additional concerns around the ability to spot such data integrity violations in the first place. Training on unknowingly compromised data is a garbage-in/garbage-out situation. Once detected, triage needs to determine the extent of data that has been breached and quarantine/retrain.\nExample: A company scrapes a well-known and trusted website for oil futures data to train their models. The data provider�s website is subsequently compromised via SQL Injection attack. The attacker can poison the dataset at will and the model being trained has no notion that the data is tainted.",
     "Vulnerability (consequence)": "Model easy to poison",
-    "Action": "(Specific ML) Implement processes to maintain security levels of ML components over time\nML is a rapidly evolving field, especially regarding its cybersecurity. Regular checking of new attacks and defenses must be integrated into the processes for maintaining security level applications. The security level should thus be regularly assessed too.\nAn useful tool to keep updating on new attacks and defenses is: https://atlas.mitre.org/"
+    "Action": "(Specific ML) Implement processes to maintain security levels of ML components over time\nML is a rapidly evolving field, especially regarding its cybersecurity. Regular checking of new attacks and defenses must be integrated into the processes for maintaining security level applications. The security level should thus be regularly assessed too.\nAn useful tool to keep updating on new attacks and defenses is <a href='https://atlas.mitre.org/'>this</a>."
   },
   {
     "Category": "Security",
@@ -273,7 +273,7 @@
     "Sub-Threat": "Targeted Data Poisoning\n\n\n\n\n\n\n\n\n\n\nIndiscriminate Data Poisoning",
     "Description": "The goal of the attacker is to contaminate the machine model generated in the training phase, so that predictions on new data will be modified in the testing phase[1]. In targeted poisoning attacks, the attacker wants to misclassify specific examples to cause specific actions to be taken or omitted.\nExample: Submitting AV software as malware to force its misclassification as malicious and eliminate the use of targeted AV software on client systems.\n\nGoal is to ruin the quality/integrity of the data set being attacked. Many datasets are public/untrusted/uncurated, so this creates additional concerns around the ability to spot such data integrity violations in the first place. Training on unknowingly compromised data is a garbage-in/garbage-out situation. Once detected, triage needs to determine the extent of data that has been breached and quarantine/retrain.\nExample: A company scrapes a well-known and trusted website for oil futures data to train their models. The data provider�s website is subsequently compromised via SQL Injection attack. The attacker can poison the dataset at will and the model being trained has no notion that the data is tainted.",
     "Vulnerability (consequence)": "Lack of control for poisoning",
-    "Action": "(Specific ML) Integrate poisoning control after the \"model evaluation\" phase: \nBefore moving the model to production and then on a regular basis, the model should be evaluated to ensure it has not been poisoned. This differs from the security control �Use methods to clean the training dataset from suspicious samples�. Indeed, here, it�s the model itself that is evaluated. For example: deep learning classification algorithms can be checked for poisoning using the STRIP (https://arxiv.org/pdf/2104.02971.pdf) technique. The principle is to disturb the inputs and observe the randomness of the predictions."
+    "Action": "(Specific ML) Integrate poisoning control after the \"model evaluation\" phase: \nBefore moving the model to production and then on a regular basis, the model should be evaluated to ensure it has not been poisoned. This differs from the security control �Use methods to clean the training dataset from suspicious samples�. Indeed, here, it�s the model itself that is evaluated. For example: deep learning classification algorithms can be checked for poisoning using the <a href='https://arxiv.org/pdf/2104.02971.pdf'>STRIP technique</a>. The principle is to disturb the inputs and observe the randomness of the predictions."
   },
   {
     "Category": "Security",
@@ -441,7 +441,7 @@
     "Sub-Threat": "Lack of malicious behaviours discover",
     "Description": "Measures which not address a specific threat but contribute to make the model more robust and policy-compliant",
     "Vulnerability (consequence)": "Difficult to discover runtime misbheaviours or malicious behaviours against the model",
-    "Action": "ICO 4.3 - Document and define technical and organisational measures that will reduce security risks to detect and correct security vulnerabilities.\n- You should assess the trade-off between explainability of your model and the risk of a security breach.\n- You should proactively monitor your AI system and investigate any anomalies.\n- You should introduce real-time monitoring techniques that can detect anomalies (eg 'rate limiting' which reduces the number of queries that can be performed by a particular user in a given time limit: https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/rai-governance-via-apis/).\n- You should deny anonymous use of your AI system by implementing processes that require user identity.\n- You could employ someone to regularly debug your model."
+    "Action": "ICO 4.3 - Document and define technical and organisational measures that will reduce security risks to detect and correct security vulnerabilities.\n- You should assess the trade-off between explainability of your model and the risk of a security breach.\n- You should proactively monitor your AI system and investigate any anomalies.\n- You should introduce real-time monitoring techniques that can detect anomalies (eg <a href='https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/rai-governance-via-apis/'>'rate limiting'</a> which reduces the number of queries that can be performed by a particular user in a given time limit).\n- You should deny anonymous use of your AI system by implementing processes that require user identity.\n- You could employ someone to regularly debug your model."
   },
   {
     "Category": "Security",
@@ -453,7 +453,7 @@
     "Sub-Threat": "N.A.",
     "Description": "Measures which not address a specific threat but contribute to make the model more robust and policy-compliant",
     "Vulnerability (consequence)": "Model less robust and possibly not policy-compliant",
-    "Action": "(Pattern) Continuous ethical validator\nhttps://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/continuous-rai-validator/\n- Choose the architecture and deployment option to realize the pattern"
+    "Action": "<a href='https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/continuous-rai-validator/'>(Pattern) Continuous ethical validator</a>\n- Choose the architecture and deployment option to realize the pattern"
   },
   {
     "Category": "Security",
@@ -465,7 +465,7 @@
     "Sub-Threat": "N.A.",
     "Description": "Measures which not address a specific threat but contribute to make the model more robust and policy-compliant",
     "Vulnerability (consequence)": "Model less robust and possibly not policy-compliant",
-    "Action": "(Pattern) Continuous ethical validator\nhttps://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/continuous-rai-validator/\n- Choose the architecture and deployment option to realize the pattern"
+    "Action": "<a href='https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/continuous-rai-validator/'>(Pattern) Continuous ethical validator</a>\n- Choose the architecture and deployment option to realize the pattern"
   },
   {
     "Category": "Security",
@@ -477,7 +477,7 @@
     "Sub-Threat": "N.A.",
     "Description": "Measures which not address a specific threat but contribute to make the model more robust and policy-compliant",
     "Vulnerability (consequence)": "Model less robust and possibly not policy-compliant",
-    "Action": "(Pattern) Continuous ethical validator\nhttps://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/continuous-rai-validator/\n- Choose the architecture and deployment option to realize the pattern"
+    "Action": "<a href='https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/continuous-rai-validator/'>(Pattern) Continuous ethical validator</a>\n- Choose the architecture and deployment option to realize the pattern"
   },
   {
     "Category": "Security",
@@ -489,7 +489,7 @@
     "Sub-Threat": "N.A.",
     "Description": "Measures which not address a specific threat but contribute to make the model more robust and policy-compliant",
     "Vulnerability (consequence)": "Model less robust and possibly not policy-compliant",
-    "Action": "(Pattern) Continuous ethical validator\nhttps://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/continuous-rai-validator/\n- Choose the architecture and deployment option to realize the pattern"
+    "Action": "<a href='https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/continuous-rai-validator/'>(Pattern) Continuous ethical validator</a>\n- Choose the architecture and deployment option to realize the pattern"
   },
   {
     "Category": "Security",
@@ -501,7 +501,7 @@
     "Sub-Threat": "N.A.",
     "Description": "A type of attack in which the attacker works on the ML algorithm's inputs to find small perturbations leading to large modification of its outputs (e.g. decision errors). It is as if the attacker created an optical illusion for the algorithm. Such modified inputs are often called adversarial examples.\nExample: the projection of images on a house could lead the algorithm of an autonomous car to take the decision to suddenly make it brake.",
     "Vulnerability (consequence)": "Lack of detection of abnormal inputs",
-    "Action": "(Specific ML) Implement tools to detect if a data point is an adversarial example or not\nInput-based detection tools can be of interest to identify whether a given input has been modified by an attacker or not. One example, in the case of Deep Neural Networks (DNNs), is to add a neural subnetwork to an architecture trained to detect adversarial examples.\nMore details can be found in: https://arxiv.org/pdf/1709.05583.pdf"
+    "Action": "(Specific ML) Implement tools to detect if a data point is an adversarial example or not\nInput-based detection tools can be of interest to identify whether a given input has been modified by an attacker or not. One example, in the case of Deep Neural Networks (DNNs), is to add a neural subnetwork to an architecture trained to detect adversarial examples.\n<a href='https://arxiv.org/pdf/1709.05583.pdf'>More details</a>"
   },
   {
     "Category": "Security",
@@ -513,7 +513,7 @@
     "Sub-Threat": "N.A.",
     "Description": "A type of attack in which the attacker works on the ML algorithm's inputs to find small perturbations leading to large modification of its outputs (e.g. decision errors). It is as if the attacker created an optical illusion for the algorithm. Such modified inputs are often called adversarial examples.\nExample: the projection of images on a house could lead the algorithm of an autonomous car to take the decision to suddenly make it brake.",
     "Vulnerability (consequence)": "Lack of detection of abnormal inputs",
-    "Action": "(Specific ML) Implement tools to detect if a data point is an adversarial example or not\nInput-based detection tools can be of interest to identify whether a given input has been modified by an attacker or not. One example, in the case of Deep Neural Networks (DNNs), is to add a neural subnetwork to an architecture trained to detect adversarial examples.\nMore details can be found in: https://arxiv.org/pdf/1709.05583.pdf"
+    "Action": "(Specific ML) Implement tools to detect if a data point is an adversarial example or not\nInput-based detection tools can be of interest to identify whether a given input has been modified by an attacker or not. One example, in the case of Deep Neural Networks (DNNs), is to add a neural subnetwork to an architecture trained to detect adversarial examples.\n<a href='https://arxiv.org/pdf/1709.05583.pdf'>More details</a> "
   },
   {
     "Category": "Security",
@@ -525,7 +525,7 @@
     "Sub-Threat": "N.A.",
     "Description": "A type of attack in which the attacker works on the ML algorithm's inputs to find small perturbations leading to large modification of its outputs (e.g. decision errors). It is as if the attacker created an optical illusion for the algorithm. Such modified inputs are often called adversarial examples.\nExample: the projection of images on a house could lead the algorithm of an autonomous car to take the decision to suddenly make it brake.",
     "Vulnerability (consequence)": "Lack of detection of abnormal inputs",
-    "Action": "(Specific ML) Implement tools to detect if a data point is an adversarial example or not\nInput-based detection tools can be of interest to identify whether a given input has been modified by an attacker or not. One example, in the case of Deep Neural Networks (DNNs), is to add a neural subnetwork to an architecture trained to detect adversarial examples.\nMore details can be found in: https://arxiv.org/pdf/1709.05583.pdf"
+    "Action": "(Specific ML) Implement tools to detect if a data point is an adversarial example or not\nInput-based detection tools can be of interest to identify whether a given input has been modified by an attacker or not. One example, in the case of Deep Neural Networks (DNNs), is to add a neural subnetwork to an architecture trained to detect adversarial examples.\n<a href='https://arxiv.org/pdf/1709.05583.pdf'>More details</a>"
   },
   {
     "Category": "Security",
@@ -573,7 +573,7 @@
     "Sub-Threat": "N.A.",
     "Description": "A type of attack in which the attacker works on the ML algorithm's inputs to find small perturbations leading to large modification of its outputs (e.g. decision errors). It is as if the attacker created an optical illusion for the algorithm. Such modified inputs are often called adversarial examples.\nExample: the projection of images on a house could lead the algorithm of an autonomous car to take the decision to suddenly make it brake. Following is a more detailed explanation.\n\nIn case Targeted miscalssification, attackers generate a sample that is not in the input class of the target classifier but gets classified by the model as that particular input class. The adversarial sample can appear like random noise to human eyes but attackers have some knowledge of the target machine learning system to generate a white noise that is not random but is exploiting some specific aspects of the target model. The adversary gives an input sample that is not a legitimate sample, but the target system classifies it as a legitimate class.\n\nIn case Random miscalssification, the attacker�s target classification can be anything other than the legitimate source classification. The attack generally involves injection of noise randomly into the source data being classified to reduce the likelihood of the correct classification being used in the future [3].\n\nIn case Confidence reduction, the attacker�s target classification can be anything other than the legitimate source classification. The attack generally involves injection of noise randomly into the source data being classified to reduce the likelihood of the correct classification being used in the future.\nAn attacker can craft inputs to reduce the confidence level of correct classification, especially in high-consequence scenarios. This can also take the form of a large number of false positives meant to overwhelm administrators or monitoring systems with fraudulent alerts indistinguishable from legitimate alerts.",
     "Vulnerability (consequence)": "Lack of training based on adversarial attacks",
-    "Action": "(Specific ML) Add some adversarial examples to the training dataset\nInclude adversarial examples to the algorithm's training to enable it to be more resilient to such attacks. Depending on the application domain and ambient conditions, such training could be done continuously.\nThere exist many techniques to generate these samples; most common is Fast Gradient Sign Method (FGSM) and all details, including other alternative techniques, can be found in: https://arxiv.org/abs/2303.06302"
+    "Action": "(Specific ML) Add some adversarial examples to the training dataset\nInclude adversarial examples to the algorithm's training to enable it to be more resilient to such attacks. Depending on the application domain and ambient conditions, such training could be done continuously.\nThere exist many techniques to generate these samples; most common is Fast Gradient Sign Method (FGSM) and all details, including other alternative techniques, can be found <a href='https://arxiv.org/abs/2303.06302'>here</a>. "
   },
   {
     "Category": "Security",
@@ -609,7 +609,7 @@
     "Sub-Threat": "Source/Target misclassification",
     "Description": "This is characterized as an attempt by an attacker to get a model to return their desired label for a given input. This usually forces a model to return a false positive or false negative. The end result is a subtle takeover of the model�s classification accuracy, whereby an attacker can induce specific bypasses at will.\nWhile this attack has a significant detrimental impact to classification accuracy, it can also be more time-intensive to carry out given that an adversary must not only manipulate the source data so that it is no longer labeled correctly, but also labeled specifically with the desired fraudulent label. These attacks often involve multiple steps/attempts to force misclassification [3]. If the model is susceptible to transfer learning attacks which force targeted misclassification, there may be no discernable attacker traffic footprint as the probing attacks can be carried out offline.",
     "Vulnerability (consequence)": "Lack of training based on adversarial attacks",
-    "Action": "Reactive/Defensive Detection Actions\n- Implement a minimum time threshold between calls to the API providing classification results. This slows down multi-step attack testing by increasing the overall amount of time required to find a success perturbation.\nProactive/Protective Actions\nThis attack can be mitigated by including adversarial examples to the algorithm's training to enable it to be more resilient to such attacks. Depending on the application domain and ambient conditions, such training could be done continuously.\nThere exist many techniques to generate these samples; most common is Fast Gradient Sign Method (FGSM) and all details, including other alternative techniques, can be found in: https://arxiv.org/abs/2303.06302"
+    "Action": "Reactive/Defensive Detection Actions\n- Implement a minimum time threshold between calls to the API providing classification results. This slows down multi-step attack testing by increasing the overall amount of time required to find a success perturbation.\nProactive/Protective Actions\nThis attack can be mitigated by including adversarial examples to the algorithm's training to enable it to be more resilient to such attacks. Depending on the application domain and ambient conditions, such training could be done continuously.\nThere exist many techniques to generate these samples; most common is Fast Gradient Sign Method (FGSM) and all details, including other alternative techniques, can be found <a href='https://arxiv.org/abs/2303.06302'>here</a>. "
   },
   {
     "Category": "Security",
@@ -981,7 +981,7 @@
     "Sub-Threat": "N.A.",
     "Description": "This threat refers to the compromise of a component or developing tool of the ML application.\nExample: compromise of one of the open-source libraries used by the developers to implement the ML algorithm.",
     "Vulnerability (consequence)": "Lack of security process to maintain a good security level of the components of the ML application",
-    "Action": "(Specific ML) Implement processes to maintain security levels of ML components over time\nML is a rapidly evolving field, especially regarding its cybersecurity. Regular checking of new attacks and defenses must be integrated into the processes for maintaining security level applications. The security level should thus be regularly assessed too.\nAn useful tool to keep updating on new attacks and defenses is: https://atlas.mitre.org/"
+    "Action": "(Specific ML) Implement processes to maintain security levels of ML components over time\nML is a rapidly evolving field, especially regarding its cybersecurity. Regular checking of new attacks and defenses must be integrated into the processes for maintaining security level applications. The security level should thus be regularly assessed too.\nAn useful tool to keep updating on new attacks and defenses is <a href='https://atlas.mitre.org/'>this</a>. "
   },
   {
     "Category": "Security",
@@ -993,7 +993,7 @@
     "Sub-Threat": "N.A.",
     "Description": "This threat refers to the compromise of a component or developing tool of the ML application.\nExample: compromise of one of the open-source libraries used by the developers to implement the ML algorithm.",
     "Vulnerability (consequence)": "Lack of security process to maintain a good security level of the components of the ML application",
-    "Action": "(Specific ML) Implement processes to maintain security levels of ML components over time\nML is a rapidly evolving field, especially regarding its cybersecurity. Regular checking of new attacks and defenses must be integrated into the processes for maintaining security level applications. The security level should thus be regularly assessed too.\nAn useful tool to keep updating on new attacks and defenses is: https://atlas.mitre.org/"
+    "Action": "(Specific ML) Implement processes to maintain security levels of ML components over time\nML is a rapidly evolving field, especially regarding its cybersecurity. Regular checking of new attacks and defenses must be integrated into the processes for maintaining security level applications. The security level should thus be regularly assessed too.\nAn useful tool to keep updating on new attacks and defenses is <a href='https://atlas.mitre.org/'>this</a>."
   },
   {
     "Category": "Security",
@@ -1257,7 +1257,7 @@
     "Sub-Threat": "N.A.",
     "Description": "This threat refers to the compromise of a component or developing tool of the ML application.\nExample: compromise of one of the open-source libraries used by the developers to implement the ML algorithm.",
     "Vulnerability (consequence)": "Contract with a low security third party",
-    "Action": "By keeping the data encrypted during the entire model lifecycle, the risk of data breach becomes very low. Anyway, this is a very difficult measure to apply at the moment.\n\nEncrypted-data-based trainer (pattern)\nhttps://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/homomorphic-encryption/"
+    "Action": "By keeping the data encrypted during the entire model lifecycle, the risk of data breach becomes very low. Anyway, this is a very difficult measure to apply at the moment.\n\n<a href='https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/homomorphic-encryption/'>Encrypted-data-based trainer (pattern)</a>."
   },
   {
     "Category": "Security",
@@ -1293,7 +1293,7 @@
     "Sub-Threat": "N.A.",
     "Description": "This threat refers to the compromise of a component or developing tool of the ML application.\nExample: compromise of one of the open-source libraries used by the developers to implement the ML algorithm.",
     "Vulnerability (consequence)": "Contract with a low security third party",
-    "Action": "By keeping the data encrypted during the entire model lifecycle, the risk od data breach becomes very low. Anyway, this is a veryy difficl measure to apply at the moment.\n\nEncrypted-data-based trainer (pattern)\nhttps://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/homomorphic-encryption/"
+    "Action": "By keeping the data encrypted during the entire model lifecycle, the risk od data breach becomes very low. Anyway, this is a veryy difficl measure to apply at the moment.\n\n<a href='https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/homomorphic-encryption/'>Encrypted-data-based trainer (pattern)</a>"
   },
   {
     "Category": "Security",
@@ -1317,7 +1317,7 @@
     "Sub-Threat": "N.A.",
     "Description": "This threat refers to the compromise of a component or developing tool of the ML application.\nExample: compromise of one of the open-source libraries used by the developers to implement the ML algorithm.",
     "Vulnerability (consequence)": "Contract with a low security third party",
-    "Action": "By keeping the data encrypted during the entire model lifecycle, the risk of data breach becomes very low. Anyway, this is a very difficult measure to apply at the moment.\n\nEncrypted-data-based trainer (pattern)\nhttps://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/homomorphic-encryption/"
+    "Action": "By keeping the data encrypted during the entire model lifecycle, the risk of data breach becomes very low. Anyway, this is a very difficult measure to apply at the moment.\n\n<a href='https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/homomorphic-encryption/'>Encrypted-data-based trainer (pattern)</a>"
   },
   {
     "Category": "Security",
@@ -1341,7 +1341,7 @@
     "Sub-Threat": "N.A.",
     "Description": "This threat refers to the compromise of a component or developing tool of the ML application.\nExample: compromise of one of the open-source libraries used by the developers to implement the ML algorithm.",
     "Vulnerability (consequence)": "Contract with a low security third party",
-    "Action": "By keeping the data encrypted during the entire model lifecycle, the risk of data breach becomes very low. Anyway, this is a very difficult measure to apply at the moment.\n\nEncrypted-data-based trainer (pattern)\nhttps://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/homomorphic-encryption/"
+    "Action": "By keeping the data encrypted during the entire model lifecycle, the risk of data breach becomes very low. Anyway, this is a very difficult measure to apply at the moment.\n\n<a href='https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/homomorphic-encryption/'>Encrypted-data-based trainer (pattern)</a>"
   },
   {
     "Category": "Security",
@@ -1401,7 +1401,7 @@
     "Sub-Threat": "N.A.",
     "Description": "This threat refers to the compromise of a component or developing tool of the ML application.\nExample: compromise of one of the open-source libraries used by the developers to implement the ML algorithm.",
     "Vulnerability (consequence)": "Exploit software dependencies of the ML system\nIn this attack, the attacker does NOT manipulate the algorithms. Instead, exploits software vulnerabilities such as buffer overflows or cross-site scripting[1]. It is still easier to compromise software layers beneath AI/ML than attack the learning layer directly, so traditional security threat mitigation practices detailed in the Security Development Lifecycle are essential.",
-    "Action": "Apply Security Development Lifecycle/Operational Security Assurance best practices for non-AI systems: https://www.microsoft.com/en-us/securityengineering/sdl/practices"
+    "Action": "Apply Security Development Lifecycle/Operational Security Assurance best practices for non-AI systems <a href='https://www.microsoft.com/en-us/securityengineering/sdl/practices'>here</a>."
   },
   {
     "Category": "Security",
@@ -1485,7 +1485,7 @@
     "Sub-Threat": "N.A.",
     "Description": "This threat refers to ML application failure (e.g. denial of service due to bad input, unavailability due to a handling error). Example: the service level of the support infrastructure of the ML application hosted by a third party is too low compared to the business needs, the application is regularly unavailable. Note that this threat does not consider failure of business use cases (for example, the algorithm fails because it is not accurate enough to handle all real-life situations it is exposed to).",
     "Vulnerability (consequence)": "Lack of security process to maintain a good security level of the components of the ML application",
-    "Action": "(Specific ML) Implement processes to maintain security levels of ML components over time\nML is a rapidly evolving field, especially regarding its cybersecurity. Regular checking of new attacks and defenses must be integrated into the processes for maintaining security level applications. The security level should thus be regularly assessed too.\nAn useful tool to keep updating on new attacks and defenses is: https://atlas.mitre.org/"
+    "Action": "(Specific ML) Implement processes to maintain security levels of ML components over time\nML is a rapidly evolving field, especially regarding its cybersecurity. Regular checking of new attacks and defenses must be integrated into the processes for maintaining security level applications. The security level should thus be regularly assessed too.\nAn useful tool to keep updating on new attacks and defenses is <a href='https://atlas.mitre.org/'>this</a>. "
   },
   {
     "Category": "Security",
@@ -1497,7 +1497,7 @@
     "Sub-Threat": "N.A.",
     "Description": "This threat refers to ML application failure (e.g. denial of service due to bad input, unavailability due to a handling error). Example: the service level of the support infrastructure of the ML application hosted by a third party is too low compared to the business needs, the application is regularly unavailable. Note that this threat does not consider failure of business use cases (for example, the algorithm fails because it is not accurate enough to handle all real-life situations it is exposed to).",
     "Vulnerability (consequence)": "Lack of security process to maintain a good security level of the components of the ML application",
-    "Action": "(Specific ML) Implement processes to maintain security levels of ML components over time\nML is a rapidly evolving field, especially regarding its cybersecurity. Regular checking of new attacks and defenses must be integrated into the processes for maintaining security level applications. The security level should thus be regularly assessed too.\nAn useful tool to keep updating on new attacks and defenses is: https://atlas.mitre.org/"
+    "Action": "(Specific ML) Implement processes to maintain security levels of ML components over time\nML is a rapidly evolving field, especially regarding its cybersecurity. Regular checking of new attacks and defenses must be integrated into the processes for maintaining security level applications. The security level should thus be regularly assessed too.\nAn useful tool to keep updating on new attacks and defenses is <a href='https://atlas.mitre.org/'>this</a>."
   },
   {
     "Category": "Security",
@@ -2157,7 +2157,7 @@
     "Sub-Threat": "N.A.",
     "Description": "the potential of technology as a means to solve a problem is often overestimated, leading to a higher risk of falling into the Solutionist trap.",
     "Vulnerability (consequence)": "",
-    "Action": "Conduct an Artificial Intelligence Impact Assessment (AIIA) by following https://static1.squarespace.com/static/5b7877457c9327fa97fef427/t/5c368c611ae6cf01ea0fba53/1547078768062/Artificial+Intelligence+Impact+Assessment+-+English.pdf\nTo answer previous questions"
+    "Action": "Conduct an Artificial Intelligence Impact Assessment (AIIA) by following this <a href='https://static1.squarespace.com/static/5b7877457c9327fa97fef427/t/5c368c611ae6cf01ea0fba53/1547078768062/Artificial+Intelligence+Impact+Assessment+-+English.pdf'>guide</a>.\nTo answer previous questions"
   },
   {
     "Category": "Fairness",
@@ -2169,7 +2169,7 @@
     "Sub-Threat": "N.A.",
     "Description": "the potential of technology as a means to solve a problem is often overestimated, leading to a higher risk of falling into the Solutionist trap.",
     "Vulnerability (consequence)": "",
-    "Action": "Since many key choices are made during this phase that can introduce bias, it�s important to elaborate on these decisions.\nMoreover, during this phase we should establish who our stakeholders are, so we can educate them on the model development cycle. All these findings will be documented so that we can continuously evaluate these decisions during later phases.\nThe discussions and documentation should at least cover the following topics:\n1. Stakeholders: Describe the stakeholders who will be involved in the development and deployment of the model, such as the decision-makers and all the other people (in)directly affected by the system. It is important to involve stakeholders continuously throughout the lifecycle of the algorithm, since they all bring in their own valuable expertise and experiences about the problem. Using these multiple perspectives, we can minimise the risks observed.\n2. Demographic Groups: Define the demographic groups which the AI system is likely to impact. These demographic groups can be formed by (combinations of) sensitive attributes, such as by race, gender, age, or disability. \n- In Figure there is an overview of all the sensitive attributes.\n- The use of personas can also help to better describe the demographic groups. These can be created in collaboration with stakeholders and verified by domain experts who have experience with the population of interest. See also this introduction on personas website (https://www.interaction-design.org/literature/article/personas-why-and-how-you-should-use-them) for more information about how to create these descriptions.\n3. Fairness Definitions and Metrics: it is recommended considering the fairness of the algorithm as early as possible. More specifically for this stage, we can begin to think about what fairness definition and metrics would be applicable to our algorithm. The sheet \"Tree metrics\"((https://docs.google.com/spreadsheets/d/1Y3PucJ2PM277dr8qGgpnw3_zRPACOA58IYiGJaQYmPw/edit?usp=sharing)) can be used as guidance.\n- Discuss with stakeholders: Which types of mistakes are you more willing to make? This question helps with scoping the bias analysis.\n- Define the fairness definitions and metrics.\n4. Target Variable and Sensitive Attributes: Describe the considerations made for the target variable and the sensitive attributes to avoid construct validity bias. Pay specific attention to describing how these variables will be measured.\n5. Socio-technical Context: Describe the socio-technical environment in which the model will be deployed.\n- How can the sociotechnical context be described in this AI system?\n- How will the working process change due to the new AI system?\n- Are there any relevant regulations, standards or policies that should also be considered?"
+    "Action": "Since many key choices are made during this phase that can introduce bias, it�s important to elaborate on these decisions.\nMoreover, during this phase we should establish who our stakeholders are, so we can educate them on the model development cycle. All these findings will be documented so that we can continuously evaluate these decisions during later phases.\nThe discussions and documentation should at least cover the following topics:\n1. Stakeholders: Describe the stakeholders who will be involved in the development and deployment of the model, such as the decision-makers and all the other people (in)directly affected by the system. It is important to involve stakeholders continuously throughout the lifecycle of the algorithm, since they all bring in their own valuable expertise and experiences about the problem. Using these multiple perspectives, we can minimise the risks observed.\n2. Demographic Groups: Define the demographic groups which the AI system is likely to impact. These demographic groups can be formed by (combinations of) sensitive attributes, such as by race, gender, age, or disability. \n- In Figure there is an overview of all the sensitive attributes.\n- The use of personas can also help to better describe the demographic groups. These can be created in collaboration with stakeholders and verified by domain experts who have experience with the population of interest. See also this introduction on <a href='https://www.interaction-design.org/literature/article/personas-why-and-how-you-should-use-them'>personas website </a> for more information about how to create these descriptions.\n3. Fairness Definitions and Metrics: it is recommended considering the fairness of the algorithm as early as possible. More specifically for this stage, we can begin to think about what fairness definition and metrics would be applicable to our algorithm. The sheet \"<a href='https://docs.google.com/spreadsheets/d/1Y3PucJ2PM277dr8qGgpnw3_zRPACOA58IYiGJaQYmPw/edit?usp=sharing'>Tree metrics</a>\" can be used as guidance.\n- Discuss with stakeholders: Which types of mistakes are you more willing to make? This question helps with scoping the bias analysis.\n- Define the fairness definitions and metrics.\n4. Target Variable and Sensitive Attributes: Describe the considerations made for the target variable and the sensitive attributes to avoid construct validity bias. Pay specific attention to describing how these variables will be measured.\n5. Socio-technical Context: Describe the socio-technical environment in which the model will be deployed.\n- How can the sociotechnical context be described in this AI system?\n- How will the working process change due to the new AI system?\n- Are there any relevant regulations, standards or policies that should also be considered?"
   },
   {
     "Category": "Fairness",
@@ -2205,7 +2205,7 @@
     "Sub-Threat": "N.A.",
     "Description": "This complex bias occurs when we use features or target variables that are difficult to measure because they are unobservable constructs, such as socio-economic status\nor fraudulent behaviour, resulting in a mismatch between the real-world problem and the model. When using unobservable constructs as features or predict a target, there is a high risk of ending up with a model that poorly represents these concepts.",
     "Vulnerability (consequence)": "",
-    "Action": "Inspecting an AI system for traces of construct validity bias is not an easy task. We need to gain deep insight into how proxy variables (including the target variable) are constructed. A way to mitigate this type of bias is by collecting multiple measures to form the target variable. In addition, the conceptualization framework of construct validity in What is Construct Validity? (https://fairlearn.org/v0.7.0/user_guide/fairness_in_machine_learning.html#what-is-construct-validity) offers a starting point to evaluate the construct validity of your variables."
+    "Action": "Inspecting an AI system for traces of construct validity bias is not an easy task. We need to gain deep insight into how proxy variables (including the target variable) are constructed. A way to mitigate this type of bias is by collecting multiple measures to form the target variable. In addition, the conceptualization framework of construct validity in What is Construct Validity? <a href='https://fairlearn.org/v0.7.0/user_guide/fairness_in_machine_learning.html#what-is-construct-validity'>This website</a> offers a starting point to evaluate the construct validity of your variables."
   },
   {
     "Category": "Fairness",
@@ -2217,7 +2217,7 @@
     "Sub-Threat": "N.A.",
     "Description": "This type of bias is caused by data that reflects the human biases,\nprejudices and other effects of societal or historical inequities,\nleading to representation and allocation harm.",
     "Vulnerability (consequence)": "",
-    "Action": "We identified the following mitigation techniques:\n- Analyse which unjust patterns are embedded in the dataset in collaboration with domain experts. Based on the demographic groups defined in the first phase, further research can be done to investigate how these groups are represented in the dataset.\n- Additionally, since historical bias is often caused by problematic distributions of the features and/or the target variable for the minority groups in the dataset, we could improve these distributions with over and undersampling techniques. \nThese sampling techniques can be used to systematically over or undersample the features and the target for minority groups, for example by assigning more desired target labels to minority groups which increases the probability that they receive a desired outcome by the model. For more information, see the mitigation techniques for representation bias.\n- Inspect the decisions and interventions that result from the outcomes of the model, especially when they have a punitive nature. Discuss with stakeholders how to extend the set of decisions and interventions with more assistive actions. For example, for loan eligibility models, extend the decision space with options to offer different interest rates and payment terms (https://www.annualreviews.org/doi/10.1146/annurev-statistics-042720-125902)."
+    "Action": "We identified the following mitigation techniques:\n- Analyse which unjust patterns are embedded in the dataset in collaboration with domain experts. Based on the demographic groups defined in the first phase, further research can be done to investigate how these groups are represented in the dataset.\n- Additionally, since historical bias is often caused by problematic distributions of the features and/or the target variable for the minority groups in the dataset, we could improve these distributions with over and undersampling techniques. \nThese sampling techniques can be used to systematically over or undersample the features and the target for minority groups, for example by assigning more desired target labels to minority groups which increases the probability that they receive a desired outcome by the model. For more information, see the mitigation techniques for representation bias.\n- Inspect the decisions and interventions that result from the outcomes of the model, especially when they have a punitive nature. Discuss with stakeholders how to extend the set of decisions and interventions with more assistive actions. For example, for loan eligibility models, extend the decision space with options to offer different interest rates and payment terms. <a href='https://www.annualreviews.org/doi/10.1146/annurev-statistics-042720-125902'>More details</a>"
   },
   {
     "Category": "Fairness",
@@ -2227,7 +2227,7 @@
     "Explanation Goal": "",
     "Threat": "Statistical bias",
     "Sub-Threat": "N.A.",
-    "Description": "Statistical bias stems from a mismatch between the sample used to train a predictive model and the world as it currently is (https://doi.org/10.1145/3465416.3483305).",
+    "Description": "Statistical bias stems from a mismatch between the sample used to train a predictive model and the world as it currently is. <a href='https://doi.org/10.1145/3465416.3483305'>More details</a>",
     "Vulnerability (consequence)": "",
     "Action": "/"
   },
@@ -2239,7 +2239,7 @@
     "Explanation Goal": "",
     "Threat": "Statistical bias",
     "Sub-Threat": "Representation bias",
-    "Description": "This type of bias occurs when some groups are underrepresented in the dataset, leading the model to not generalize well for these groups and eventually causing quality-of-service harm (https://github.com/pyladiesams/ml-fairness-beginner-nov2021/blob/master/workshop/measuringgroupfairness.ipynb). The underrepresentation of demographic groups in the dataset is often caused by selection bias, where a sample is selected as dataset in a way that is  irreflective of the real-world distribution.",
+    "Description": "This type of bias occurs when some groups are underrepresented in the dataset, leading the model to not generalize well for these groups and eventually causing <a href='https://github.com/pyladiesams/ml-fairness-beginner-nov2021/blob/master/workshop/measuringgroupfairness.ipynb'>quality-of-service harm </a>. The underrepresentation of demographic groups in the dataset is often caused by selection bias, where a sample is selected as dataset in a way that is  irreflective of the real-world distribution.",
     "Vulnerability (consequence)": "",
     "Action": "To prevent representation bias:\n- Be aware of your own blind spots as a data scientist and consult domain experts;\n- Develop the model with a diverse team;\n- Ensure your dataset contains sufficient instances of minority groups. \nThe population selected for the algorithm�s training should have similar distributions and proportions for all subgroups and for each protected attribute. Data visualisation techniques can be helpful to gain more insight into the differences between the data of the minority groups and the majority group."
   },
@@ -2251,9 +2251,9 @@
     "Explanation Goal": "",
     "Threat": "Statistical bias",
     "Sub-Threat": "Representation bias",
-    "Description": "This type of bias occurs when some groups are underrepresented in the dataset, leading the model to not generalize well for these groups and eventually causing quality-of-service harm (https://github.com/pyladiesams/ml-fairness-beginner-nov2021/blob/master/workshop/measuringgroupfairness.ipynb). The underrepresentation of demographic groups in the dataset is often caused by selection bias, where a sample is selected as dataset in a way that is  irreflective of the real-world distribution.",
+    "Description": "This type of bias occurs when some groups are underrepresented in the dataset, leading the model to not generalize well for these groups and eventually causing <a href='https://github.com/pyladiesams/ml-fairness-beginner-nov2021/blob/master/workshop/measuringgroupfairness.ipynb'>quality-of-service harm </a>. The underrepresentation of demographic groups in the dataset is often caused by selection bias, where a sample is selected as dataset in a way that is  irreflective of the real-world distribution.",
     "Vulnerability (consequence)": "",
-    "Action": "To mitigate representation bias:\n- Collect additional data to mitigate the dataset imbalance;\n- Find ways to deal with sampling errors. Consider pre-processing mitigation algorithms like methods to reweigh the instances of the dataset such that people from unprivileged groups with favourable labels get assigned higher weights while privileged people with favourable labels are assigned lower weights. \n- Use sampling techniques to obtain balanced dataset, for example with oversampling, undersampling and stratified sampling. These sampling techniques are only conducted on the training set: the validation and test set remain untouched. For a Python package about dealing with imbalanced data, we recommend the Imbalanced-Learn  package and reading through the corresponding paper (https://jmlr.org/papers/v18/16-365.html)"
+    "Action": "To mitigate representation bias:\n- Collect additional data to mitigate the dataset imbalance;\n- Find ways to deal with sampling errors. Consider pre-processing mitigation algorithms like methods to reweigh the instances of the dataset such that people from unprivileged groups with favourable labels get assigned higher weights while privileged people with favourable labels are assigned lower weights. \n- Use sampling techniques to obtain balanced dataset, for example with oversampling, undersampling and stratified sampling. These sampling techniques are only conducted on the training set: the validation and test set remain untouched. For a Python package about dealing with imbalanced data, we recommend the Imbalanced-Learn  package and reading through the corresponding <a href='https://jmlr.org/papers/v18/16-365.html'>paper</a>."
   },
   {
     "Category": "Fairness",
@@ -2277,7 +2277,7 @@
     "Sub-Threat": "Measurement bias",
     "Description": "Measurement bias occurs when the data contains systematic\npatterns of measurement errors which are greater for some groups\nthan for others, leading to a greater magnitude of errors for these\ngroups and resulting in quality-of-service harm.",
     "Vulnerability (consequence)": "",
-    "Action": "DATASHEET: It is important to describe the choices behind the data collection and sampling process in detail, as this gives insight into the distribution of the sampled population and can be used to find traces of representation bias. The datasheets introduced by Gebru et al. (https://doi.org/10.1145/3458723) can be useful here: this tool helps with documenting the key information about the dataset). The datasheet includes information about the following dataset properties: \n- The source of the dataset;\n- The timeframe over which the data was collected;\n- The collection, aggregation or curation process of the dataset, which also includes the used software, hardware, or infrastructure to collect and process the data;\n- The (pre)processing techniques used to prepare the dataset for the model training phase."
+    "Action": "DATASHEET: It is important to describe the choices behind the data collection and sampling process in detail, as this gives insight into the distribution of the sampled population and can be used to find traces of representation bias. The <a href='https://doi.org/10.1145/3458723'>datasheets</a> introduced by Gebru et al.  can be useful here: this tool helps with documenting the key information about the dataset). The datasheet includes information about the following dataset properties: \n- The source of the dataset;\n- The timeframe over which the data was collected;\n- The collection, aggregation or curation process of the dataset, which also includes the used software, hardware, or infrastructure to collect and process the data;\n- The (pre)processing techniques used to prepare the dataset for the model training phase."
   },
   {
     "Category": "Fairness",
@@ -2313,7 +2313,7 @@
     "Sub-Threat": "N.A.",
     "Description": "There is a greater risk for aggregation bias when a single model is applied on data consisting of (demographic) groups with distinct distributions that should be treated differently. In other words, the model wrongly assumes that the data distribution is homogeneous.",
     "Vulnerability (consequence)": "",
-    "Action": "- Adjust the objective function to include the group differences in the data. In some cases, incorporating information about group differences into the design of the model can lead to a simpler function that the model can learn, which in turn can improve performance across groups. A branch to look into are coupled learning methods such as multitask learning, which modify the parameters of the model objective to also consider the group differences (https://doi.org/10.1145/3465416.3483305).\n- Adjust the training data to fit the objective function better, for example with data transformation techniques such as the Fair Representation Learning method introduced by (https://proceedings.mlr.press/v28/zemel13.html)."
+    "Action": "- Adjust the objective function to include the group differences in the data. In some cases, incorporating information about group differences into the design of the model can lead to a simpler function that the model can learn, which in turn can improve performance across groups. A branch to look into are coupled learning methods such as multitask learning, which modify the parameters of the <a href='https://doi.org/10.1145/3465416.3483305'>model objective</a> to also consider the group differences .\n- Adjust the training data to fit the objective function better, for example with data transformation techniques such as the <a href='https://proceedings.mlr.press/v28/zemel13.html'>Fair Representation Learning method</a>."
   },
   {
     "Category": "Fairness",
@@ -2323,9 +2323,9 @@
     "Explanation Goal": "",
     "Threat": "Omitted Variable Bias",
     "Sub-Threat": "N.A.",
-    "Description": "This type of bias occurs when a single or multiple important features are left out of the model (https://doi.org/10.1145/3194770.3194776).",
+    "Description": "This type of bias occurs when a single or multiple important features are left out of the <a href='https://doi.org/10.1145/3194770.3194776'> model </a> .",
     "Vulnerability (consequence)": "",
-    "Action": "To mitigate this risk, use feature importance methods to evaluate the relationship between each feature and the target variable.\nThe Permutation Feature Importance method is one of the techniques that could be used (https://christophm.github.io/interpretable-ml-book/pdp.html). This method measures the increase in the prediction error of the model after permuting the feature�s values. Consult this source for a more detailed explanation about Permutation Feature Importance."
+    "Action": "To mitigate this risk, use feature importance methods to evaluate the relationship between each feature and the target variable.\nThe <a href='https://christophm.github.io/interpretable-ml-book/pdp.html'>Permutation Feature Importance method</a> is one of the techniques that could be used . This method measures the increase in the prediction error of the model after permuting the feature�s values. Consult this source for a more detailed explanation about Permutation Feature Importance."
   },
   {
     "Category": "Fairness",
@@ -2335,7 +2335,7 @@
     "Explanation Goal": "",
     "Threat": "Omitted Variable Bias",
     "Sub-Threat": "N.A.",
-    "Description": "This type of bias occurs when a single or multiple important features are left out of the model (https://doi.org/10.1145/3194770.3194776).",
+    "Description": "This type of bias occurs when a single or multiple important features are left out of the <a href='https://doi.org/10.1145/3194770.3194776'> model </a>.",
     "Vulnerability (consequence)": "",
     "Action": "It is crucial to diagnose the model and the generated outcomes for presence of bias and to grasp why the model arrived at its outcomes. The more transparent the model is, the easier this process will be, so make sure to look into methods for increasing transparency and understandability of the model.\nWhen prioritizing transparency and understandability, the most straightforward option is to choose human-interpretable models, such as regression models, <a href='http://localhost:5173/Learning#tree'>decision trees</a>, Na�ve Bayes Classifiers and K-Nearest Neighbours. The open-source book �Interpretable Machine Learning� by Christoph Molnar (Learning�) is a recommended read for learning more about how to select interpretable models, or how to implement model-agnostic methods in more complex algorithmes to understand the decisions generated by the model."
   },
@@ -2347,7 +2347,7 @@
     "Explanation Goal": "",
     "Threat": "Omitted Variable Bias",
     "Sub-Threat": "N.A.",
-    "Description": "This type of bias occurs when a single or multiple important features are left out of the model (https://doi.org/10.1145/3194770.3194776).",
+    "Description": "This type of bias occurs when a single or multiple important features are left out of the <a href='https://doi.org/10.1145/3194770.3194776'> model </a>.",
     "Vulnerability (consequence)": "",
     "Action": "Feature Importance Methods: After training the model, feature importance methods such as Permutation Feature Importance or SHAP can be used to calculate the relative importance of each feature. These results should be communicated with the domain exports and end users to evaluate whether the most predictive values are proxies for indirect bias and whether these features are indeed essential for solving the problem in the real world.\nIf stakeholders do not recognize the most predictive features being essential for the real-world problem, it is advisable to re-evaluate the features and the functioning of the model. By doing so, the risk that the model produces harmful and erroneous outcomes is minimized. Finally, make sure to register the feature importance results in the Feature Review."
   },
@@ -2359,7 +2359,7 @@
     "Explanation Goal": "",
     "Threat": "Omitted Variable Bias",
     "Sub-Threat": "N.A.",
-    "Description": "This type of bias occurs when a single or multiple important features are left out of the model (https://doi.org/10.1145/3194770.3194776).",
+    "Description": "This type of bias occurs when a single or multiple important features are left out of the<a href='https://doi.org/10.1145/3194770.3194776'> model </a>.",
     "Vulnerability (consequence)": "",
     "Action": "Explore Counterfactuals: With counterfactuals, we change the values of sensitive attributes (or features linking to sensitive information) and observe whether the model outcome changes positively or negatively. Suppose, for example, we inspect a model that determines eligibility for a life insurance, and we include a feature that indirectly links to nationality, such as history of foreign travel. If changing the value of this feature from Italy to Lebanon increases the insurance rate significantly, the model might be biased against\nnationality, ethnicity or migration background. To experiment with counterfactuals, Google's What-If Tool offers a wide range of possibilities to probe your model and investigate\nwhich counterfactuals are present. The insights obtained from exploring counterfactuals can, for example, help with determining whether the decision space of the model should be extended with more interventions."
   },
@@ -2385,7 +2385,7 @@
     "Sub-Threat": "N.A.",
     "Description": "Evaluation bias occurs when the evaluation metrics are inappropriate for the model and dataset, hereby disguising the model�s performance for smaller-sized demographic groups.",
     "Vulnerability (consequence)": "",
-    "Action": "Use disaggregated evaluation metrics on smaller groups of data to gain more insight in the model�s performance on minority groups. These subgroup metrics can also be used to compare the performance of groups with each other to find performance disparities, which often indicate various kinds of biases that we discussed. For example, both accuracy and precision could be calculated and compared for the self-defined groups. \nKeep in mind that selecting smaller-sized groups and metrics is always application-dependent, and it often requires intersectional analysis and privacy considerations. Therefore, input should be sought from domain experts and affected populations who understand the usage and consequences of the model (https://doi.org/10.1145/3465416.3483305). Tools such as the <a href='http://localhost:5173/Learning#tree'>Fairness tree</a> can assist in selecting these appropriate metrics.\nBesides reporting the performance of models on more granular subsets of data, we also recommend to closely inspect the data distribution for dataset imbalances that cause the model to underperform for certain subpopulations. If the subgroup evaluation metrics indicate a disparity in performance, then considering new ways to generate more representative data could be helpful to mitigate the evaluation bias, which are mentioned at the solution strategies for representation bias."
+    "Action": "Use disaggregated evaluation metrics on smaller groups of data to gain more insight in the model�s performance on minority groups. These subgroup metrics can also be used to compare the performance of groups with each other to find performance disparities, which often indicate various kinds of biases that we discussed. For example, both accuracy and precision could be calculated and compared for the self-defined groups. \nKeep in mind that selecting smaller-sized groups and metrics is always application-dependent, and it often requires intersectional analysis and privacy considerations. Therefore, input should be sought from domain experts and affected populations who understand the usage and consequences of the <a href='https://doi.org/10.1145/3465416.3483305'>model</a>. Tools such as the <a href='http://localhost:5173/Learning#tree'>Fairness tree</a> can assist in selecting these appropriate metrics.\nBesides reporting the performance of models on more granular subsets of data, we also recommend to closely inspect the data distribution for dataset imbalances that cause the model to underperform for certain subpopulations. If the subgroup evaluation metrics indicate a disparity in performance, then considering new ways to generate more representative data could be helpful to mitigate the evaluation bias, which are mentioned at the solution strategies for representation bias."
   },
   {
     "Category": "Fairness",
@@ -2432,7 +2432,7 @@
     "Explanation Goal": "",
     "Threat": "Deployment Bias",
     "Sub-Threat": "N.A.",
-    "Description": "Deployment bias occurs when decision-makers and other end users behave unexpectedly with the AI system, hereby resulting in unfair outcomes and interventions (https://doi.org/10.1145/3465416.3483305).",
+    "Description": "Deployment bias occurs when decision-makers and other end users behave unexpectedly with the AI system, hereby resulting in unfair <a href='https://doi.org/10.1145/3465416.3483305'>outcomes and interventions</a> .",
     "Vulnerability (consequence)": "",
     "Action": "The mitigation strategies that we mention are identical to those to mitigate automation bias: they are aimed at educating the stakeholders about the AI system and informing them about the potential risks and harms when deploying the model into the real world.\nIt�s also important to keep in mind that most issues caused by automation and deployment bias can be traced back to the abstraction and framing traps that we discussed in the first phase of the model development cycle."
   },
@@ -2456,9 +2456,9 @@
     "Explanation Goal": "",
     "Threat": "Lack of explanatory capabilities",
     "Sub-Threat": "N.A.",
-    "Description": "if the results of the model cannot easily be understood or interpreted, it is difficult to assess its fairness, hereby making a system vulnerable for biases (https://doi.org/10.1007/978-3-030-77211-6_1).",
+    "Description": "if the results of the model cannot easily be understood or interpreted, it is difficult to assess its fairness, hereby making a system vulnerable for biases. <a href='https://doi.org/10.1007/978-3-030-77211-6_1'>More details</a>",
     "Vulnerability (consequence)": "",
-    "Action": "Visualisations and User Interfaces: First, to educate stakeholders about the functioning of the AI systems, create intuitive visualisations and user interfaces that give insight into how the model arrived at its outcome, including:\n- Reporting and visualising which features and values played an important role for generated decision, for example with SHAP (https://proceedings.neurips.cc/paper/2017/) or Partial Dependence Plots (https://christophm.github.io/interpretable-ml-book/pdp.html)\n- With how much certainty the outcome was generated. This guides end users to use their own judgments more when the model generates an outcome with low certainty.\n- Additional information to support the stakeholders� judgments."
+    "Action": "Visualisations and User Interfaces: First, to educate stakeholders about the functioning of the AI systems, create intuitive visualisations and user interfaces that give insight into how the model arrived at its outcome, including:\n- Reporting and visualising which features and values played an important role for generated decision, for example with <a href='https://proceedings.neurips.cc/paper/2017/'>SHAP</a> or <a href='https://christophm.github.io/interpretable-ml-book/pdp.html'>Partial Dependence Plots</a>\n- With how much certainty the outcome was generated. This guides end users to use their own judgments more when the model generates an outcome with low certainty.\n- Additional information to support the stakeholders� judgments."
   },
   {
     "Category": "Fairness",
@@ -2468,9 +2468,9 @@
     "Explanation Goal": "",
     "Threat": "Lack of explanatory capabilities",
     "Sub-Threat": "N.A.",
-    "Description": "if the results of the model cannot easily be understood or interpreted, it is difficult to assess its fairness, hereby making a system vulnerable for biases (https://doi.org/10.1007/978-3-030-77211-6_1).",
+    "Description": "if the results of the model cannot easily be understood or interpreted, it is difficult to assess its fairness, hereby making a system vulnerable for biases. <a href='https://doi.org/10.1007/978-3-030-77211-6_1'>More details</a>",
     "Vulnerability (consequence)": "",
-    "Action": "Model Cards: Despite all our actions in the Fairness Pipeline, each model will continue to have vulnerabilities that could potentially lead to discriminatory behavior against minority groups. The eradication of  biases is a continuous process in which human biases are interwoven into the data and the model development process in complicated ways.\nIt is therefore crucial to be transparent about these vulnerabilities, so that policy makers can take these risks into account when they write policies about the use of the model. Model cards are useful tools to document the most important information of the data, the model and its performance comprehensively.\nModel cards are short documents (one or two pages) that report the model�s performance for the demographic groups in the dataset and summarize the ethical, inclusive and fair considerations of the model (https://doi.org/10.1145/3287560.3287596). See also the Model Card Prompts in the Appendix for an overview of the components that can be included on model cards."
+    "Action": "Model Cards: Despite all our actions in the Fairness Pipeline, each model will continue to have vulnerabilities that could potentially lead to discriminatory behavior against minority groups. The eradication of  biases is a continuous process in which human biases are interwoven into the data and the model development process in complicated ways.\nIt is therefore crucial to be transparent about these vulnerabilities, so that policy makers can take these risks into account when they write policies about the use of the model. Model cards are useful tools to document the most important information of the data, the model and its performance comprehensively.\nModel cards are short documents (one or two pages) that report the model�s performance for the demographic groups in the dataset and summarize the ethical, inclusive and fair considerations of the <a href='https://doi.org/10.1145/3287560.3287596'>model</a>. See also the Model Card Prompts in the Appendix for an overview of the components that can be included on model cards."
   },
   {
     "Category": "Fairness",
@@ -2480,7 +2480,7 @@
     "Explanation Goal": "",
     "Threat": "Lack of explanatory capabilities",
     "Sub-Threat": "N.A.",
-    "Description": "if the results of the model cannot easily be understood or interpreted, it is difficult to assess its fairness, hereby making a system vulnerable for biases (https://doi.org/10.1007/978-3-030-77211-6_1).",
+    "Description": "if the results of the model cannot easily be understood or interpreted, it is difficult to assess its fairness, hereby making a system vulnerable for biases. <a href='https://doi.org/10.1007/978-3-030-77211-6_1'>More details</a>",
     "Vulnerability (consequence)": "",
     "Action": "Monitoring Plan: Finally, we want ensure that the model�s functioning can be monitored, and feedback can be provided to prevent the bias caused by a reinforcement feedback loop. This can be done with a monitoring plan describing the responsibilities and tasks of employees in monitoring the AI system after deployment. These responsibilities include:\n- Handling complaints of people on the AI system. Everyone should be able to report discriminatory or biased practices, and the appointed employees should investigate these cases;\n- Registering the errors of the model."
   },
@@ -2590,7 +2590,7 @@
     "Sub-Threat": "Model Inversion Attack & Membership Inference Attack",
     "Description": "A type of attack in which the attacker explores a model by providing a series of carefully crafted inputs and observing outputs. These attacks can be previous steps to more harmful types, evasion or poisoning for example. It is as if the attacker made the model talk to then better compromise it or to obtain information about it (e.g. model extraction) or its training data (e.g. membership inferences attacks and Inversion attacks). \nExample: an attacker studies the set of input-output pairs and uses the results to retrieve training data.",
     "Vulnerability (consequence)": "Lack of security process to maintain a good security level of the components of the ML application",
-    "Action": "(Specific ML) Implement processes to maintain security levels of ML components over time\nML is a rapidly evolving field, especially regarding its cybersecurity. Regular checking of new attacks and defenses must be integrated into the processes for maintaining security level applications. The security level should thus be regularly assessed too.\nAn useful tool to keep updating on new attacks and defenses is: https://atlas.mitre.org/"
+    "Action": "(Specific ML) Implement processes to maintain security levels of ML components over time\nML is a rapidly evolving field, especially regarding its cybersecurity. Regular checking of new attacks and defenses must be integrated into the processes for maintaining security level applications. The security level should thus be regularly assessed too.\nAn useful tool to keep updating on new attacks and defenses is <a href='https://atlas.mitre.org/'>this</a>"
   },
   {
     "Category": "Privacy",
@@ -2614,7 +2614,7 @@
     "Sub-Threat": "Model Inversion Attack & Membership Inference Attack",
     "Description": "A type of attack in which the attacker explores a model by providing a series of carefully crafted inputs and observing outputs. These attacks can be previous steps to more harmful types, evasion or poisoning for example. It is as if the attacker made the model talk to then better compromise it or to obtain information about it (e.g. model extraction) or its training data (e.g. membership inferences attacks and Inversion attacks). \nExample: an attacker studies the set of input-output pairs and uses the results to retrieve training data.",
     "Vulnerability (consequence)": "Lack of security process to maintain a good security level of the components of the ML application",
-    "Action": "(Specific ML) Implement processes to maintain security levels of ML components over time\nML is a rapidly evolving field, especially regarding its cybersecurity. Regular checking of new attacks and defenses must be integrated into the processes for maintaining security level applications. The security level should thus be regularly assessed too.\nAn useful tool to keep updating on new attacks and defenses is: https://atlas.mitre.org/"
+    "Action": "(Specific ML) Implement processes to maintain security levels of ML components over time\nML is a rapidly evolving field, especially regarding its cybersecurity. Regular checking of new attacks and defenses must be integrated into the processes for maintaining security level applications. The security level should thus be regularly assessed too.\nAn useful tool to keep updating on new attacks and defenses is <a href='https://atlas.mitre.org/'>this</a>."
   },
   {
     "Category": "Privacy",
@@ -2626,7 +2626,7 @@
     "Sub-Threat": "Model Inversion Attack & Membership Inference Attack",
     "Description": "A type of attack in which the attacker explores a model by providing a series of carefully crafted inputs and observing outputs. These attacks can be previous steps to more harmful types, evasion or poisoning for example. It is as if the attacker made the model talk to then better compromise it or to obtain information about it (e.g. model extraction) or its training data (e.g. membership inferences attacks and Inversion attacks). \nExample: an attacker studies the set of input-output pairs and uses the results to retrieve training data.",
     "Vulnerability (consequence)": "Lack of security process to maintain a good security level of the components of the ML application",
-    "Action": "By keeping the data encrypted during the entire model lifecycle, the risk of data breach becomes very low. Anyway, this is a very difficult measure to apply at the moment.\n\nEncrypted-data-based trainer (pattern)\nhttps://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/homomorphic-encryption/"
+    "Action": "By keeping the data encrypted during the entire model lifecycle, the risk of data breach becomes very low. Anyway, this is a very difficult measure to apply at the moment.\n\n<a href='https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/homomorphic-encryption/'>Encrypted-data-based trainer (pattern)</a>"
   },
   {
     "Category": "Privacy",
@@ -2746,7 +2746,7 @@
     "Sub-Threat": "RAI intervention documentation",
     "Description": "Measures which not address a technical issue but are needed to make the model compliant with data regulation",
     "Vulnerability (consequence)": "Unability to demonstrate suitable RAI prevention measures where put in place",
-    "Action": "(Pattern) RAI user story\nhttps://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/rai-user-story/"
+    "Action": "<a href='https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/rai-user-story/'>(Pattern) RAI user story</a>"
   },
   {
     "Category": "Privacy",
@@ -2758,7 +2758,7 @@
     "Sub-Threat": "RAI intervention documentation",
     "Description": "Measures which not address a technical issue but are needed to make the model compliant with data regulation",
     "Vulnerability (consequence)": "Unability to demonstrate suitable RAI prevention measures where put in place",
-    "Action": "(Pattern) Ethical assessment for test cases\nhttps://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/rai-assessment-for-test-cases/\n\n(Pattern) RAI acceptance testing\nhttps://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/rai-acceptance-testing/"
+    "Action": "<a href='https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/rai-assessment-for-test-cases/'>(Pattern) Ethical assessment for test cases</a>\n\n<a href='https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/rai-acceptance-testing/'>(Pattern) RAI acceptance testing</a>"
   },
   {
     "Category": "Privacy",
@@ -2770,7 +2770,7 @@
     "Sub-Threat": "RAI intervention documentation",
     "Description": "Measures which not address a technical issue but are needed to make the model compliant with data regulation",
     "Vulnerability (consequence)": "Unability to demonstrate suitable RAI prevention measures where put in place",
-    "Action": "(Pattern) Ethical assessment for test cases\nhttps://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/rai-assessment-for-test-cases/\n\n(Pattern) RAI acceptance testing\nhttps://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/rai-acceptance-testing/"
+    "Action": "<a href='https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/rai-assessment-for-test-cases/'>(Pattern) Ethical assessment for test cases</a>\n\n<a href='https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/rai-acceptance-testing/'>(Pattern) RAI acceptance testing</a>"
   },
   {
     "Category": "Privacy",
@@ -2782,7 +2782,7 @@
     "Sub-Threat": "RAI intervention documentation",
     "Description": "Measures which not address a technical issue but are needed to make the model compliant with data regulation",
     "Vulnerability (consequence)": "Unability to demonstrate suitable RAI prevention measures where put in place",
-    "Action": "(Pattern) Continuous ethical validator\nhttps://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/continuous-ethical-validator/"
+    "Action": "<a href='https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/continuous-rai-validator/'>(Pattern) Continuous ethical validator</a>"
   },
   {
     "Category": "Privacy",
@@ -2806,7 +2806,7 @@
     "Sub-Threat": "Unlawful consent and data acquisition",
     "Description": "Measures which not address a technical issue but are needed to make the model compliant with data regulation",
     "Vulnerability (consequence)": "Unability to demonstrate suitable data protection measures where put in place",
-    "Action": "To conduct DPIA with an online tool, it is possible to use:\n\nhttps://www.enisa.europa.eu/risk-level-tool/risk"
+    "Action": "To conduct DPIA with an online tool, it is possible to use <a href='https://www.enisa.europa.eu/risk-level-tool/risk'>this tool</a>."
   },
   {
     "Category": "Privacy",
@@ -3082,7 +3082,7 @@
     "Sub-Threat": "N.A.",
     "Description": "This threat refers to the possibility of leakage of all or partial information about the model.\nExample: the outputs of a ML algorithm are so verbose that they give information about its configuration (or leakage of sensitive data)",
     "Vulnerability (consequence)": "Lack of security process to maintain a good security level of the components of the ML application",
-    "Action": "By keeping the data encrypted during the entire model lifecycle, the risk of data breach becomes very low. Anyway, this is a very difficult measure to apply at the moment.\n\nEncrypted-data-based trainer (pattern)\nhttps://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/homomorphic-encryption/"
+    "Action": "By keeping the data encrypted during the entire model lifecycle, the risk of data breach becomes very low. Anyway, this is a very difficult measure to apply at the moment.\n\n<a href='https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/homomorphic-encryption/'>Encrypted-data-based trainer (pattern)</a>"
   },
   {
     "Category": "Privacy",
