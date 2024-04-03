@@ -343,17 +343,7 @@ const handlePhaseButtonHover = (phase, isHovering) => {
       {expandedFlashcard === flashcard.id ? (flashcard.Category === 'Explainability' ? formatText(flashcard['Explanation Goal']) : formatText(flashcard.fullDescription)) : (flashcard.Category === 'Explainability' ? formatText(truncateExplanationGoal(flashcard.previewExplanationGoal)) : formatText(truncateDescription(flashcard.previewDescription)))}
     </div>
 
-
-    {expandedFlashcard === flashcard.id && (
-      <div onClick={(e) => e.stopPropagation()}>
-        <div className="phases-container"><strong>SDLC Phase:</strong></div>
-        {Object.entries(flashcard.phases).map(([phase, action], idx) => (
-          <p key={idx} className="phase-info">
-            <strong>{handlePhaseName(phase)}:</strong> {action}
-          </p>
-        ))}
-
-        {flashcard.Threat && (
+    {flashcard.Threat && (
           <p className="threat-info">
             <strong>Threat:</strong> {flashcard.Threat}
           </p>
@@ -364,6 +354,18 @@ const handlePhaseButtonHover = (phase, isHovering) => {
             <strong>Sub-Threat:</strong> {flashcard['Sub-Threat']}
           </p>
         )}
+
+
+    {expandedFlashcard === flashcard.id && (
+      <div onClick={(e) => e.stopPropagation()}>
+        <div className="phases-container"><strong>Actions to undertake for each SDLC phase:</strong></div>
+        {Object.entries(flashcard.phases).map(([phase, action], idx) => (
+          <p key={idx} className="phase-info">
+            <strong>{handlePhaseName(phase)}:</strong> {action}
+          </p>
+        ))}
+
+       
 
       {flashcard['Vulnerability (consequence)'] && (
       <p className="vulnerability-info">

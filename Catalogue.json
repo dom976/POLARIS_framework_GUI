@@ -2410,7 +2410,7 @@
     "Description": "Evaluation bias occurs when the evaluation metrics are inappropriate for the model and dataset, hereby disguising the model�s performance for smaller-sized demographic groups.",
     "Vulnerability (consequence)": "",
     
-    "Action": "Bias Scenario Simulations: An useful exercise within the bias analysis is to create realistic simulations of unfavorable outcomes for demographic groups and to discuss the follow-up steps of these results with stakeholders.\nThe simulations can be made using different <a href='http://localhost:5173/Learning#matrix-containero'>confusion matrix </a> outcomes for demographic groups, thereby highlighting how the model performs differently for advantaged versus disadvantaged groups. Simulating different scenarios helps with establishing the fairness definition, metrics and with determining suitable follow-up steps to mitigate the bias for the disadvantaged group."
+    "Action": "Bias Scenario Simulations: An useful exercise within the bias analysis is to create realistic simulations of unfavorable outcomes for demographic groups and to discuss the follow-up steps of these results with stakeholders.\nThe simulations can be made using different <a href='http://localhost:5173/Learning#matrix-container'>confusion matrix </a> outcomes for demographic groups, thereby highlighting how the model performs differently for advantaged versus disadvantaged groups. Simulating different scenarios helps with establishing the fairness definition, metrics and with determining suitable follow-up steps to mitigate the bias for the disadvantaged group."
   },
   {
     "Category": "Fairness",

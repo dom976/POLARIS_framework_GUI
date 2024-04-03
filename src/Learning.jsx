@@ -459,7 +459,7 @@ function Learning() {
   <li><strong>3.</strong> <strong>Fairness metrics help compare model performance across groups</strong>. The "Aequitas Fairness tree" is a useful guide for selecting appropriate metrics and definitions, providing a structured approach for policymakers and data scientists.</li>
   <br />
   <a>
-    <div id="matrix-containero"> 
+    <div id="matrix-container"> 
 
 </div>
     </a>
