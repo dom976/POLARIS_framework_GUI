@@ -20,3 +20,8 @@ Avvio del forum su Windows:
 7) Fare reload di Apache: `sudo systemctl reload apache2`
 8) Aggiungere il nuovo dominio `dev.securedevai_forum` in `/etc/hosts`
 9) Inserire le credenziali per accedere al DB nel file wp-config.php
+
+-----
+Path assoluti da modidicare all'interno del file Catalogue.json quando verrà eseguita la migrazione sul web:
+- http://localhost:5173/Learning#matrix-container (relativo all'immagine della Confusion Matrix; numero di occorrenze: 1);
+- http://localhost:5173/Learning#tree (relativo all'immagine del Decision Tree; numero di occorrenze: 4).
