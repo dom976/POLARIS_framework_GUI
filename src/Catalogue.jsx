@@ -344,36 +344,46 @@ const handlePhaseButtonHover = (phase, isHovering) => {
     </div>
 
     {flashcard.Threat && (
-          <p className="threat-info">
-            <strong>Threat:</strong> {flashcard.Threat}
-          </p>
-        )}
+      <p className="threat-info">
+        <strong>Threat:</strong> {flashcard.Threat}
+      </p>
+    )}
 
-        {flashcard['Sub-Threat'] && (
-          <p className="sub-threat-info">
-            <strong>Sub-Threat:</strong> {flashcard['Sub-Threat']}
-          </p>
-        )}
+    {flashcard['Sub-Threat'] && (
+      <p className="sub-threat-info">
+        <strong>Sub-Threat:</strong> {flashcard['Sub-Threat']}
+      </p>
+    )}
 
+    {flashcard['Data type'] && (
+      <p className="data-type-info">
+        <strong>Data type:</strong> {flashcard['Data type']}
+      </p>
+    )}
+
+    {flashcard['Local/Global Explanation'] && (
+      <p className="explanation-type-info">
+        <strong>Local/Global Explanation:</strong> {flashcard['Local/Global Explanation']}
+      </p>
+    )}
 
     {expandedFlashcard === flashcard.id && (
       <div onClick={(e) => e.stopPropagation()}>
-        <div className="phases-container"><strong>Actions to undertake for each SDLC phase:</strong></div>
-        {Object.entries(flashcard.phases).map(([phase, action], idx) => (
-          <p key={idx} className="phase-info">
-            <strong>{handlePhaseName(phase)}:</strong> {action}
-          </p>
-        ))}
+      <i>Actions to undertake for each SDLC phase</i>
+      {Object.entries(flashcard.phases).map(([phase, action], idx) => (
+        <p key={idx} className="phase-info">
+          <strong>{handlePhaseName(phase)}:</strong> {action}
+        </p>
+      ))}
 
        
 
       {flashcard['Vulnerability (consequence)'] && (
-      <p className="vulnerability-info">
-        <strong>Vulnerability (Consequence):</strong> {flashcard['Vulnerability (consequence)']}
-      </p>
-    )}
+        <p className="vulnerability-info">
+          <strong>Vulnerability (Consequence):</strong> {flashcard['Vulnerability (consequence)']}
+        </p>
+      )}
 
-        
       </div>
     )}
   </div>
