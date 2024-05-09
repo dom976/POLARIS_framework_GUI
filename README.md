@@ -1,6 +1,12 @@
+-----
+Avvio del progetto
 Per avviare il progetto assicurarsi di avere node.js installato sul proprio dispositivo.
 Successivamente aprire la cartella del progetto nel CMD e digitare "npm run dev"
 Se non dovesse funzionare utilizzare "npm install --force" e successivamente "npm run dev"
+
+Se si utilizza Docker, lanciare i seguenti comandi:
+1) docker build -t "polaris" .
+2) docker run -dp 8000:5173 polaris
 
 
 -----
