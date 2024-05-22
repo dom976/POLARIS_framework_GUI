@@ -9,7 +9,7 @@
     "Sub-Threat": "N.A.",
     "Description": "A type of attack in which the attacker altered data or model to modify the ML algorithm's behavior in a chosen direction (e.g. to sabotage its results, to insert a backdoor). It is as if the attacker conditioned the algorithm according to its motivations.\nSuch attacks are also called causative attacks.\nExample: massively indicating to an image recognition algorithm that images of dogs are indeed cats to lead it to interpret it this way.",
     "Vulnerability (consequence)": "Implement processes to maintain security levels of ML components over time",
-    "Action": "(Specific ML) Choose and define a more resilient model design: \nSome model designs can be more robust than others against attacks. For instance, ensemble methods like bagging can mitigate the impact of poisoning during the training phase (Bagging for fighting <a href='https://link.springer.com/chapter/10.1007/978-3-642-21557-5_37'>poisoning attacks</a>. Another example is defensive distillation, which may allow deep neural networks to better deal with evasion attacks (Robust Linear Regression Against <a href='https://www.ccs.neu.edu/home/alina/papers/RobustRegression.pdf'>Training Data Poisoning</a>).\n<a href='https://arxiv.org/pdf/2306.00687.pdf'> More details.</a> "
+    "Action": "(Specific ML) Choose and define a more resilient model design: \nSome model designs can be more robust than others against attacks. For instance, ensemble methods like bagging can mitigate the impact of poisoning during the training phase (Bagging for fighting <a href='https://link.springer.com/chapter/10.1007/978-3-642-21557-5_37'>poisoning attacks</a>. Another example is defensive distillation, which may allow deep neural networks to better deal with evasion attacks (Robust Linear Regression Against <a href='https://www.ccs.neu.edu/home/alina/papers/RobustRegression.pdf'>Training Data Poisoning</a>). For further reading, \n<a href='https://arxiv.org/pdf/2306.00687.pdf'> refer here</a>."
   },
   {
     "Category": "Security",
@@ -501,7 +501,7 @@
     "Sub-Threat": "N.A.",
     "Description": "A type of attack in which the attacker works on the ML algorithm's inputs to find small perturbations leading to large modification of its outputs (e.g. decision errors). It is as if the attacker created an optical illusion for the algorithm. Such modified inputs are often called adversarial examples.\nExample: the projection of images on a house could lead the algorithm of an autonomous car to take the decision to suddenly make it brake.",
     "Vulnerability (consequence)": "Lack of detection of abnormal inputs",
-    "Action": "(Specific ML) Implement tools to detect if a data point is an adversarial example or not\nInput-based detection tools can be of interest to identify whether a given input has been modified by an attacker or not. One example, in the case of Deep Neural Networks (DNNs), is to add a neural subnetwork to an architecture trained to detect adversarial examples.\n<a href='https://arxiv.org/pdf/1709.05583.pdf'>More details</a>"
+    "Action": "(Specific ML) Implement tools to detect if a data point is an adversarial example or not\nInput-based detection tools can be of interest to identify whether a given input has been modified by an attacker or not. One example, in the case of Deep Neural Networks (DNNs), is to add a neural subnetwork to an architecture trained to detect adversarial examples.\nFor further reading <a href='https://arxiv.org/pdf/1709.05583.pdf'>refer here</a>."
   },
   {
     "Category": "Security",
@@ -513,7 +513,7 @@
     "Sub-Threat": "N.A.",
     "Description": "A type of attack in which the attacker works on the ML algorithm's inputs to find small perturbations leading to large modification of its outputs (e.g. decision errors). It is as if the attacker created an optical illusion for the algorithm. Such modified inputs are often called adversarial examples.\nExample: the projection of images on a house could lead the algorithm of an autonomous car to take the decision to suddenly make it brake.",
     "Vulnerability (consequence)": "Lack of detection of abnormal inputs",
-    "Action": "(Specific ML) Implement tools to detect if a data point is an adversarial example or not\nInput-based detection tools can be of interest to identify whether a given input has been modified by an attacker or not. One example, in the case of Deep Neural Networks (DNNs), is to add a neural subnetwork to an architecture trained to detect adversarial examples.\n<a href='https://arxiv.org/pdf/1709.05583.pdf'>More details</a> "
+    "Action": "(Specific ML) Implement tools to detect if a data point is an adversarial example or not\nInput-based detection tools can be of interest to identify whether a given input has been modified by an attacker or not. One example, in the case of Deep Neural Networks (DNNs), is to add a neural subnetwork to an architecture trained to detect adversarial examples.\nFor further reading <a href='https://arxiv.org/pdf/1709.05583.pdf'> refer here</a>."
   },
   {
     "Category": "Security",
@@ -525,7 +525,7 @@
     "Sub-Threat": "N.A.",
     "Description": "A type of attack in which the attacker works on the ML algorithm's inputs to find small perturbations leading to large modification of its outputs (e.g. decision errors). It is as if the attacker created an optical illusion for the algorithm. Such modified inputs are often called adversarial examples.\nExample: the projection of images on a house could lead the algorithm of an autonomous car to take the decision to suddenly make it brake.",
     "Vulnerability (consequence)": "Lack of detection of abnormal inputs",
-    "Action": "(Specific ML) Implement tools to detect if a data point is an adversarial example or not\nInput-based detection tools can be of interest to identify whether a given input has been modified by an attacker or not. One example, in the case of Deep Neural Networks (DNNs), is to add a neural subnetwork to an architecture trained to detect adversarial examples.\n<a href='https://arxiv.org/pdf/1709.05583.pdf'>More details</a>"
+    "Action": "(Specific ML) Implement tools to detect if a data point is an adversarial example or not\nInput-based detection tools can be of interest to identify whether a given input has been modified by an attacker or not. One example, in the case of Deep Neural Networks (DNNs), is to add a neural subnetwork to an architecture trained to detect adversarial examples.\nFor further reading <a href='https://arxiv.org/pdf/1709.05583.pdf'>refer here</a>."
   },
   {
     "Category": "Security",
@@ -2217,7 +2217,7 @@
     "Sub-Threat": "N.A.",
     "Description": "This type of bias is caused by data that reflects the human biases,\nprejudices and other effects of societal or historical inequities,\nleading to representation and allocation harm.",
     "Vulnerability (consequence)": "",
-    "Action": "We identified the following mitigation techniques:\n- Analyse which unjust patterns are embedded in the dataset in collaboration with domain experts. Based on the demographic groups defined in the first phase, further research can be done to investigate how these groups are represented in the dataset.\n- Additionally, since historical bias is often caused by problematic distributions of the features and/or the target variable for the minority groups in the dataset, we could improve these distributions with over and undersampling techniques. \nThese sampling techniques can be used to systematically over or undersample the features and the target for minority groups, for example by assigning more desired target labels to minority groups which increases the probability that they receive a desired outcome by the model. For more information, see the mitigation techniques for representation bias.\n- Inspect the decisions and interventions that result from the outcomes of the model, especially when they have a punitive nature. Discuss with stakeholders how to extend the set of decisions and interventions with more assistive actions. For example, for loan eligibility models, extend the decision space with options to offer different interest rates and payment terms. <a href='https://www.annualreviews.org/doi/10.1146/annurev-statistics-042720-125902'>More details</a>"
+    "Action": "We identified the following mitigation techniques:\n- Analyse which unjust patterns are embedded in the dataset in collaboration with domain experts. Based on the demographic groups defined in the first phase, further research can be done to investigate how these groups are represented in the dataset.\n- Additionally, since historical bias is often caused by problematic distributions of the features and/or the target variable for the minority groups in the dataset, we could improve these distributions with over and undersampling techniques. \nThese sampling techniques can be used to systematically over or undersample the features and the target for minority groups, for example by assigning more desired target labels to minority groups which increases the probability that they receive a desired outcome by the model. For more information, see the mitigation techniques for representation bias.\n- Inspect the decisions and interventions that result from the outcomes of the model, especially when they have a punitive nature. Discuss with stakeholders how to extend the set of decisions and interventions with more assistive actions. For example, for loan eligibility models, extend the decision space with options to offer different interest rates and payment terms. For further reading <a href='https://www.annualreviews.org/doi/10.1146/annurev-statistics-042720-125902'>refer here</a>."
   },
   {
     "Category": "Fairness",
@@ -2227,7 +2227,7 @@
     "Explanation Goal": "",
     "Threat": "Statistical bias",
     "Sub-Threat": "N.A.",
-    "Description": "Statistical bias stems from a mismatch between the sample used to train a predictive model and the world as it currently is. <a href='https://doi.org/10.1145/3465416.3483305'>More details</a>",
+    "Description": "Statistical bias stems from a mismatch between the sample used to train a predictive model and the world as it currently is. For further reading <a href='https://doi.org/10.1145/3465416.3483305'>refer here</a>.",
     "Vulnerability (consequence)": "",
     "Action": "/"
   },
@@ -2456,7 +2456,7 @@
     "Explanation Goal": "",
     "Threat": "Lack of explanatory capabilities",
     "Sub-Threat": "N.A.",
-    "Description": "if the results of the model cannot easily be understood or interpreted, it is difficult to assess its fairness, hereby making a system vulnerable for biases. <a href='https://doi.org/10.1007/978-3-030-77211-6_1'>More details</a>",
+    "Description": "if the results of the model cannot easily be understood or interpreted, it is difficult to assess its fairness, hereby making a system vulnerable for biases. For further reading <a href='https://doi.org/10.1007/978-3-030-77211-6_1'>refer here</a>.",
     "Vulnerability (consequence)": "",
     "Action": "Visualisations and User Interfaces: First, to educate stakeholders about the functioning of the AI systems, create intuitive visualisations and user interfaces that give insight into how the model arrived at its outcome, including:\n- Reporting and visualising which features and values played an important role for generated decision, for example with <a href='https://proceedings.neurips.cc/paper/2017/'>SHAP</a> or <a href='https://christophm.github.io/interpretable-ml-book/pdp.html'>Partial Dependence Plots</a>\n- With how much certainty the outcome was generated. This guides end users to use their own judgments more when the model generates an outcome with low certainty.\n- Additional information to support the stakeholders� judgments."
   },
@@ -2468,7 +2468,7 @@
     "Explanation Goal": "",
     "Threat": "Lack of explanatory capabilities",
     "Sub-Threat": "N.A.",
-    "Description": "if the results of the model cannot easily be understood or interpreted, it is difficult to assess its fairness, hereby making a system vulnerable for biases. <a href='https://doi.org/10.1007/978-3-030-77211-6_1'>More details</a>",
+    "Description": "if the results of the model cannot easily be understood or interpreted, it is difficult to assess its fairness, hereby making a system vulnerable for biases. For further reading <a href='https://doi.org/10.1007/978-3-030-77211-6_1'>refer here</a>.",
     "Vulnerability (consequence)": "",
     "Action": "Model Cards: Despite all our actions in the Fairness Pipeline, each model will continue to have vulnerabilities that could potentially lead to discriminatory behavior against minority groups. The eradication of  biases is a continuous process in which human biases are interwoven into the data and the model development process in complicated ways.\nIt is therefore crucial to be transparent about these vulnerabilities, so that policy makers can take these risks into account when they write policies about the use of the model. Model cards are useful tools to document the most important information of the data, the model and its performance comprehensively.\nModel cards are short documents (one or two pages) that report the model�s performance for the demographic groups in the dataset and summarize the ethical, inclusive and fair considerations of the <a href='https://doi.org/10.1145/3287560.3287596'>model</a>. See also the Model Card Prompts in the Appendix for an overview of the components that can be included on model cards."
   },
@@ -2480,7 +2480,7 @@
     "Explanation Goal": "",
     "Threat": "Lack of explanatory capabilities",
     "Sub-Threat": "N.A.",
-    "Description": "if the results of the model cannot easily be understood or interpreted, it is difficult to assess its fairness, hereby making a system vulnerable for biases. <a href='https://doi.org/10.1007/978-3-030-77211-6_1'>More details</a>",
+    "Description": "if the results of the model cannot easily be understood or interpreted, it is difficult to assess its fairness, hereby making a system vulnerable for biases. For further reading <a href='https://doi.org/10.1007/978-3-030-77211-6_1'>refer here</a>.",
     "Vulnerability (consequence)": "",
     "Action": "Monitoring Plan: Finally, we want ensure that the model�s functioning can be monitored, and feedback can be provided to prevent the bias caused by a reinforcement feedback loop. This can be done with a monitoring plan describing the responsibilities and tasks of employees in monitoring the AI system after deployment. These responsibilities include:\n- Handling complaints of people on the AI system. Everyone should be able to report discriminatory or biased practices, and the appointed employees should investigate these cases;\n- Registering the errors of the model."
   },
