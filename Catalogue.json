@@ -1305,7 +1305,7 @@
     "Sub-Threat": "N.A.",
     "Description": "This threat refers to the compromise of a component or developing tool of the ML application.\nExample: compromise of one of the open-source libraries used by the developers to implement the ML algorithm.",
     "Vulnerability (consequence)": "Contract with a low security third party",
-    "Action": "https://aka.ms/SEALonAML"
+    "Action": "You can use the following tool: https://aka.ms/SEALonAML"
   },
   {
     "Category": "Security",
@@ -1329,7 +1329,7 @@
     "Sub-Threat": "N.A.",
     "Description": "This threat refers to the compromise of a component or developing tool of the ML application.\nExample: compromise of one of the open-source libraries used by the developers to implement the ML algorithm.",
     "Vulnerability (consequence)": "Contract with a low security third party",
-    "Action": "https://aip360.mybluemix.net/tools#encrypted"
+    "Action": "You can use the following tool: https://aip360.mybluemix.net/tools#encrypted"
   },
   {
     "Category": "Security",
@@ -1353,7 +1353,7 @@
     "Sub-Threat": "N.A.",
     "Description": "This threat refers to the compromise of a component or developing tool of the ML application.\nExample: compromise of one of the open-source libraries used by the developers to implement the ML algorithm.",
     "Vulnerability (consequence)": "Contract with a low security third party",
-    "Action": "https://www.intel.com/content/www/us/en/developer/tools/homomorphic-encryption/overview.html#gs.iqs52j"
+    "Action": "You can use the following tool: https://www.intel.com/content/www/us/en/developer/tools/homomorphic-encryption/overview.html#gs.iqs52j"
   },
   {
     "Category": "Security",
@@ -1365,7 +1365,7 @@
     "Sub-Threat": "N.A.",
     "Description": "This threat refers to the compromise of a component or developing tool of the ML application.\nExample: compromise of one of the open-source libraries used by the developers to implement the ML algorithm.",
     "Vulnerability (consequence)": "Contract with a low security third party",
-    "Action": "https://www.intel.com/content/www/us/en/developer/tools/homomorphic-encryption/overview.html#gs.iqs52j"
+    "Action": "You can use the following tool: https://www.intel.com/content/www/us/en/developer/tools/homomorphic-encryption/overview.html#gs.iqs52j"
   },
   {
     "Category": "Security",
@@ -1725,7 +1725,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "LIME [79], SHAP [67], CAM [105], LRP [17], TCAV [53]"
+    "Action": "LIME (Local Interpretable Model-agnostic Explanations) is a technique used to explain the predictions of machine learning models by approximating them locally with interpretable models. For example, LIME can be applied to interpret the decisions made by a deep neural network in medical imaging for diagnosing diseases. For further reading, refer to [79].\nSHAP (SHapley Additive exPlanations) is a method that assigns an importance value to each feature in a prediction, based on Shapley values from cooperative game theory. This can be used in credit scoring to understand the impact of different financial factors on a person's creditworthiness. For further reading, refer to [67].\nCAM (Class Activation Mapping) is a technique used to visualize which parts of an image are important for a deep neural network's prediction. For instance, CAM can be used in autonomous driving systems to identify the objects that the vehicle needs to react to in real-time. For further reading, refer to [105].\nLRP (Layer-wise Relevance Propagation) is a method for explaining the predictions of neural networks by attributing relevance scores to each input feature. This can be applied in natural language processing to understand which words contribute most to the sentiment of a text. For further reading, refer to [17].\nTCAV (Testing with Concept Activation Vectors) is a technique used to understand what concepts a neural network has learned to recognize. For example, TCAV can be applied in medical imaging to validate that a model is detecting relevant medical features rather than spurious correlations. For further reading, refer to [53]."
   },
   {
     "Category": "Explainability",
@@ -1749,7 +1749,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Nearest neighbour, CBR [55]"
+    "Action": "Nearest neighbor is a simple classification algorithm that classifies an unlabeled data point based on the majority class of its nearest labeled data points. For example, it can be used in recommendation systems to suggest products to users based on the preferences of similar users.\nCase-Based Reasoning (CBR) is a method where new problems are solved based on the solutions of similar past problems. For further reading, refer to [55]."
   },
   {
     "Category": "Explainability",
@@ -1773,7 +1773,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "k-Mediods, MMD-critic [52], Generate prototype [68, 84], CNN prototype [27, 59]"
+    "Action": "k-Medoids is a clustering algorithm that classifies objects into clusters by finding representative points (medoids) that minimize the distance within clusters. For example, it can be used in market segmentation to group similar customers. For further reading, refer to [52].\nMaximum Mean Discrepancy (MMD)-critic is a method used to evaluate the quality of generated samples by comparing their distribution to the real data distribution. This can be applied in generative models to ensure the generated data closely resembles the real data. For further reading, refer to [52].\nGenerate prototype involves creating representative examples (prototypes) of different classes within a dataset. For instance, in image recognition, prototypes can help in understanding the typical features of each class. For further reading, refer to [68, 84].\nCNN (Convolutional Neural Network) prototype refers to generating representative images that highlight the features learned by a CNN. This is useful in visualizing and interpreting how a CNN classifies images. For further reading, refer to [27, 59]."
   },
   {
     "Category": "Explainability",
@@ -1797,7 +1797,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Inverse classification [58]), MMD-critic [52], Progression [51], Visual [38]"
+    "Action": "Inverse classification is a technique used to identify the necessary changes to input features in order to achieve a desired output from a model. For example, it can be used in healthcare to suggest lifestyle changes for improving patient health outcomes. For further reading, refer to [58].\nMaximum Mean Discrepancy (MMD)-critic is a method used to evaluate the quality of generated samples by comparing their distribution to the real data distribution. This can be applied in generative models to ensure the generated data closely resembles the real data. For further reading, refer to [52].\nProgression refers to modeling and predicting the future states or stages of a process over time. This can be used in disease progression modeling to predict how a patient's condition will evolve. For further reading, refer to [51].\nVisual techniques involve using graphical representations to interpret and understand the data and model outcomes. For example, visualizations can be used to display the feature importance in a model, making it easier to understand how decisions are made. For further reading, refer to [38]."
   },
   {
     "Category": "Explainability",
@@ -1821,7 +1821,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "LIME [79], SHAP [67], CAM [105], LRP [17], TCAV [53]"
+    "Action": "Local Interpretable Model-agnostic Explanations (LIME) is a technique that explains the predictions of any machine learning model by approximating it locally with an interpretable model. For example, LIME can be used to explain why a specific medical diagnosis was made by highlighting the most influential factors. For further reading, refer to [79].\nSHapley Additive exPlanations (SHAP) is a method that explains the output of a machine learning model by assigning each feature an importance value based on Shapley values from cooperative game theory. This can be applied in credit scoring to determine which factors most influenced a person's credit score. For further reading, refer to [67].\nClass Activation Mapping (CAM) is a technique used to identify the regions in an image that are most relevant to a convolutional neural network's prediction. For example, CAM can be used to highlight the parts of an X-ray image that led to a particular diagnosis. For further reading, refer to [105].\nLayer-wise Relevance Propagation (LRP) is a method that decomposes the prediction of a neural network by propagating the prediction backward through the network to identify the contribution of each input feature. This technique can be used in sentiment analysis to determine which words in a review most influenced the sentiment score. For further reading, refer to [17].\nTesting with Concept Activation Vectors (TCAV) is a technique that quantifies the importance of high-level concepts for a model's predictions. For example, TCAV can be used to understand how concepts like "stripes" influence the classification of images as zebras. For further reading, refer to [53]."
   },
   {
     "Category": "Explainability",
@@ -1845,7 +1845,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "PDP [35], ALE [15], GAM [87], SHAP dependence [67]"
+    "Action": "Partial Dependence Plot (PDP) is a technique used to visualize the marginal effect of a feature on the predicted outcome of a machine learning model while marginalizing over all other features. For example, PDP can be used to understand how the price of a house changes with respect to its size while keeping other features constant. For further reading, refer to [35].\nAccumulated Local Effects (ALE) is a method that estimates the average effect of a feature on the predicted outcome across different values of other features. This can be applied in healthcare to understand how a patient's age affects the likelihood of a certain medical condition across different levels of other risk factors. For further reading, refer to [15].\nGeneralized Additive Model (GAM) is a flexible regression model that allows for non-linear relationships between features and the predicted outcome. For example, GAM can be used in environmental science to model the relationship between temperature and the growth of a species of plant. For further reading, refer to [87].\nSHAP dependence plots visualize how the predicted outcome of a machine learning model changes as a function of a feature, while taking into account the interaction effects with other features. For instance, SHAP dependence plots can be used in finance to understand how changes in interest rates affect the predicted stock prices while considering the influence of other market factors. For further reading, refer to [67]."
   },
   {
     "Category": "Explainability",
@@ -1869,7 +1869,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "PDP [35], ALE [15], GA2M [25], SHAP interaction [67]"
+    "Action": "Partial Dependence Plot (PDP) is a technique used to visualize the marginal effect of a feature on the predicted outcome of a machine learning model while marginalizing over all other features. For example, PDP can be used to understand how the price of a house changes with respect to its size while keeping other features constant. For further reading, refer to [35].\nAccumulated Local Effects (ALE) is a method that estimates the average effect of a feature on the predicted outcome across different values of other features. This can be applied in healthcare to understand how a patient's age affects the likelihood of a certain medical condition across different levels of other risk factors. For further reading, refer to [15].\nGeneralized Additive 2-Model (GA2M) is a machine learning model that captures non-linear relationships between features and the predicted outcome by combining multiple base models. For example, GA2M can be used in marketing to predict customer response to advertising campaigns based on various demographic and behavioral features. For further reading, refer to [25].\nSHAP interaction plots visualize how the predicted outcome of a machine learning model changes as a function of two interacting features, while accounting for the influence of other features. For instance, SHAP interaction plots can be used in bioinformatics to study how gene expression levels interact to affect the susceptibility to a disease. For further reading, refer to [67]."
   },
   {
     "Category": "Explainability",
@@ -1893,7 +1893,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "k-Mediods, MMD-critic [52], Generate prototype [68, 84], CNN prototype [27, 59]"
+    "Action": "k-Medoids is a clustering algorithm that classifies objects into clusters by finding representative points (medoids) that minimize the distance within clusters. For example, it can be used in market segmentation to group similar customers. For further reading, refer to [52].\nMaximum Mean Discrepancy (MMD)-critic is a method used to evaluate the quality of generated samples by comparing their distribution to the real data distribution. This can be applied in generative models to ensure the generated data closely resembles the real data. For further reading, refer to [52].\nGenerate prototype involves creating representative examples (prototypes) of different classes within a dataset. For instance, in image recognition, prototypes can help in understanding the typical features of each class. For further reading, refer to [68, 84].\nCNN (Convolutional Neural Network) prototype refers to generating representative images that highlight the features learned by a CNN. This is useful in visualizing and interpreting how a CNN classifies images. For further reading, refer to [27, 59]."
   },
   {
     "Category": "Explainability",
@@ -1917,7 +1917,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Bayesian Rule Lists [95], LORE [41], Anchors [80]"
+    "Action": "Bayesian Rule Lists is a machine learning model that combines decision rules with Bayesian inference to make predictions. For example, it can be used in healthcare to predict patient outcomes based on a set of rules derived from medical guidelines and patient data. For further reading, refer to [95].\nLORE (Learning One-Rule Explanations) is a method that generates simple, human-interpretable rules to explain the predictions of machine learning models. This can be applied in credit scoring to provide customers with explanations for why their credit application was accepted or rejected. For further reading, refer to [41].\nAnchors is a technique used to generate faithful and human-friendly explanations for individual predictions made by complex machine learning models. For instance, Anchors can be used in fraud detection systems to explain why a particular transaction was flagged as fraudulent. For further reading, refer to [80]."
   },
   {
     "Category": "Explainability",
@@ -1941,7 +1941,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Model distillation [36], Disentangle CNN [102]"
+    "Action": "Model distillation is a technique used to transfer knowledge from a complex model (teacher) to a simpler model (student) by training the student model to mimic the predictions of the teacher model. For example, it can be used to compress large deep learning models for deployment on resource-constrained devices. For further reading, refer to [36].\nDisentangle CNN (Convolutional Neural Network) is a method aimed at learning disentangled representations of data by encouraging the network to learn separate and meaningful factors of variation. This can be applied in computer vision tasks to disentangle object shape, pose, and texture for better understanding of visual scenes. For further reading, refer to [102]."
   },
   {
     "Category": "Explainability",
@@ -1965,7 +1965,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "LIME [79], SHAP [67], CAM [105], LRP [17], TCAV [53]"
+    "Action": "Local Interpretable Model-agnostic Explanations (LIME) is a technique used to explain the predictions of machine learning models by approximating them locally with interpretable models. For example, LIME can be applied to interpret the decisions made by a deep neural network in medical imaging for diagnosing diseases. For further reading, refer to [79].\nSHapley Additive exPlanations (SHAP) is a method that assigns an importance value to each feature in a prediction, based on Shapley values from cooperative game theory. This can be used in credit scoring to understand the impact of different financial factors on a person's creditworthiness. For further reading, refer to [67].\nClass Activation Mapping (CAM) is a technique used to visualize which parts of an image are important for a deep neural network's prediction. For instance, CAM can be used in autonomous driving systems to identify the objects that the vehicle needs to react to in real-time. For further reading, refer to [105].\nLayer-wise Relevance Propagation (LRP) is a method for explaining the predictions of neural networks by attributing relevance scores to each input feature. This can be applied in natural language processing to understand which words contribute most to the sentiment of a text. For further reading, refer to [17].\nTesting with Concept Activation Vectors (TCAV) is a technique used to understand what concepts a neural network has learned to recognize. For example, TCAV can be applied in medical imaging to validate that a model is detecting relevant medical features rather than spurious correlations. For further reading, refer to [53]."
   },
   {
     "Category": "Explainability",
@@ -1989,7 +1989,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Nearest neighbour, CBR [55]"
+    "Action": "Nearest neighbor is a simple classification algorithm that classifies an unlabeled data point based on the majority class of its nearest labeled data points. For example, it can be used in recommendation systems to suggest products to users based on the preferences of similar users.\nCase-Based Reasoning (CBR) is a problem-solving method that relies on past experiences (cases) to solve new problems. This can be applied in medical diagnosis to suggest treatments for new patients based on similar cases from the past. For further reading, refer to [55]."
   },
   {
     "Category": "Explainability",
@@ -2013,7 +2013,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "k-Mediods, MMD-critic [52], Generate prototype [68, 84], CNN prototype [27, 59]"
+    "Action": "k-Medoids is a clustering algorithm that aims to partition data into clusters around representative points called medoids. For instance, it can be applied in customer segmentation to group similar customers based on their purchasing behavior. For further reading, refer to [52].\nMaximum Mean Discrepancy (MMD)-critic is a method used to evaluate the quality of generated samples by comparing their distribution to that of real data. This can be applied in generative models to ensure that the generated data closely matches the characteristics of the real data. For further reading, refer to [52].\nGenerate prototype involves creating representative examples (prototypes) for different classes within a dataset. For example, in image classification tasks, prototypes can be generated to represent different object categories, aiding in model interpretation. For further reading, refer to [68, 84].\nCNN (Convolutional Neural Network) prototype refers to generating prototype images that highlight the features learned by a CNN. This can be useful for visualizing and understanding how a CNN makes predictions. For example, in image recognition, CNN prototypes can help identify the features important for distinguishing different objects. For further reading, refer to [27, 59]."
   },
   {
     "Category": "Explainability",
@@ -2037,7 +2037,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Inverse classification [58]), MMD-critic [52], Progression [51], Visual [38]"
+    "Action": "Inverse classification is a technique used to identify the necessary changes to input features in order to achieve a desired output from a model. For example, it can be used in healthcare to suggest lifestyle changes for improving patient health outcomes. For further reading, refer to [58].\nMaximum Mean Discrepancy (MMD)-critic is a method used to evaluate the quality of generated samples by comparing their distribution to the real data distribution. This can be applied in generative models to ensure the generated data closely resembles the real data. For further reading, refer to [52].\nProgression refers to modeling and predicting the future states or stages of a process over time. This can be used in disease progression modeling to predict how a patient's condition will evolve. For further reading, refer to [51].\nVisual techniques involve using graphical representations to interpret and understand the data and model outcomes. For example, visualizations can be used to display the feature importance in a model, making it easier to understand how decisions are made. For further reading, refer to [38]."
   },
   {
     "Category": "Explainability",
@@ -2061,7 +2061,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "LIME [79], SHAP [67], CAM [105], LRP [17], TCAV [53]"
+    "Action": "LIME (Local Interpretable Model-agnostic Explanations) is a technique used to explain the predictions of machine learning models by approximating them locally with interpretable models. For example, LIME can be applied to interpret the decisions made by a deep neural network in medical imaging for diagnosing diseases. For further reading, refer to [79].\nSHAP (SHapley Additive exPlanations) is a method that assigns an importance value to each feature in a prediction, based on Shapley values from cooperative game theory. This can be used in credit scoring to understand the impact of different financial factors on a person's creditworthiness. For further reading, refer to [67].\nCAM (Class Activation Mapping) is a technique used to visualize which parts of an image are important for a deep neural network's prediction. For instance, CAM can be used in autonomous driving systems to identify the objects that the vehicle needs to react to in real-time. For further reading, refer to [105].\nLRP (Layer-wise Relevance Propagation) is a method for explaining the predictions of neural networks by attributing relevance scores to each input feature. This can be applied in natural language processing to understand which words contribute most to the sentiment of a text. For further reading, refer to [17].\nTCAV (Testing with Concept Activation Vectors) is a technique used to understand what concepts a neural network has learned to recognize. For example, TCAV can be applied in medical imaging to validate that a model is detecting relevant medical features rather than spurious correlations. For further reading, refer to [53]."
   },
   {
     "Category": "Explainability",
@@ -2085,7 +2085,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "k-Mediods, MMD-critic [52], Generate prototype [68, 84], CNN prototype [27, 59]"
+    "Action": "k-Medoids is a clustering algorithm that aims to partition data into clusters around representative points called medoids. For instance, it can be applied in customer segmentation to group similar customers based on their purchasing behavior. For further reading, refer to [52].\nMMD-critic is a method used to evaluate the quality of generated samples by comparing their distribution to that of real data. This can be applied in generative models to ensure the generated data closely matches the characteristics of the real data. For further reading, refer to [52].\nGenerate prototype involves creating representative examples (prototypes) for different classes within a dataset. For example, in image classification tasks, prototypes can be generated to represent different object categories, aiding in model interpretation. For further reading, refer to [68, 84].\nCNN (Convolutional Neural Network) prototype refers to generating prototype images that highlight the features learned by a CNN. This can be useful for visualizing and understanding how a CNN makes predictions. For example, in image recognition, CNN prototypes can help identify the features important for distinguishing different objects. For further reading, refer to [27, 59]."
   },
   {
     "Category": "Explainability",
@@ -2109,7 +2109,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Bayesian Rule Lists [95], LORE [41], Anchors [80]"
+    "Action": "Bayesian Rule Lists is a machine learning model that combines decision rules with Bayesian inference to make predictions. For example, it can be used in healthcare to predict patient outcomes based on a set of rules derived from medical guidelines and patient data. For further reading, refer to [95].\nLORE (Learning One-Rule Explanations) is a method that generates simple, human-interpretable rules to explain the predictions of machine learning models. This can be applied in credit scoring to provide customers with explanations for why their credit application was accepted or rejected. For further reading, refer to [41].\nAnchors is a technique used to generate faithful and human-friendly explanations for individual predictions made by complex machine learning models. For instance, Anchors can be used in fraud detection systems to explain why a particular transaction was flagged as fraudulent. For further reading, refer to [80]."
   },
   {
     "Category": "Explainability",
@@ -2133,7 +2133,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Model distillation [36], Disentangle CNN [102]"
+    "Action": "Model distillation is a technique used to transfer knowledge from a complex model (teacher) to a simpler model (student) by training the student model to mimic the predictions of the teacher model. For example, it can be used to compress large deep learning models for deployment on resource-constrained devices. For further reading, refer to [36].\nDisentangle CNN (Convolutional Neural Network) is a method aimed at learning disentangled representations of data by encouraging the network to learn separate and meaningful factors of variation. This can be applied in computer vision tasks to disentangle object shape, pose, and texture for better understanding of visual scenes. For further reading, refer to [102]."
   },
   {
     "Category": "Fairness",
@@ -2229,7 +2229,7 @@
     "Sub-Threat": "N.A.",
     "Description": "Statistical bias stems from a mismatch between the sample used to train a predictive model and the world as it currently is. For further reading <a href='https://doi.org/10.1145/3465416.3483305'>refer here</a>.",
     "Vulnerability (consequence)": "",
-    "Action": "/"
+    "Action": "Analyze and comprehend this threat, togheter with all the related sub-threats."
   },
   {
     "Category": "Fairness",
@@ -2602,7 +2602,7 @@
     "Sub-Threat": "Model Inversion Attack & Membership Inference Attack",
     "Description": "A type of attack in which the attacker explores a model by providing a series of carefully crafted inputs and observing outputs. These attacks can be previous steps to more harmful types, evasion or poisoning for example. It is as if the attacker made the model talk to then better compromise it or to obtain information about it (e.g. model extraction) or its training data (e.g. membership inferences attacks and Inversion attacks). \nExample: an attacker studies the set of input-output pairs and uses the results to retrieve training data.",
     "Vulnerability (consequence)": "Lack of security process to maintain a good security level of the components of the ML application",
-    "Action": "https://blog.tensorflow.org/2020/06/introducing-new-privacy-testing-library.html"
+    "Action": "You can use the following tool: https://blog.tensorflow.org/2020/06/introducing-new-privacy-testing-library.html"
   },
   {
     "Category": "Privacy",
@@ -2746,7 +2746,7 @@
     "Sub-Threat": "RAI intervention documentation",
     "Description": "Measures which not address a technical issue but are needed to make the model compliant with data regulation",
     "Vulnerability (consequence)": "Unability to demonstrate suitable RAI prevention measures where put in place",
-    "Action": "<a href='https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/rai-user-story/'>(Pattern) RAI user story</a>"
+    "Action": "(Pattern) RAI user story\nYou can implement the following pattern(s): https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/rai-user-story/"
   },
   {
     "Category": "Privacy",
@@ -2758,7 +2758,7 @@
     "Sub-Threat": "RAI intervention documentation",
     "Description": "Measures which not address a technical issue but are needed to make the model compliant with data regulation",
     "Vulnerability (consequence)": "Unability to demonstrate suitable RAI prevention measures where put in place",
-    "Action": "<a href='https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/rai-assessment-for-test-cases/'>(Pattern) Ethical assessment for test cases</a>\n\n<a href='https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/rai-acceptance-testing/'>(Pattern) RAI acceptance testing</a>"
+    "Action": "(Pattern) Ethical assessment for test cases\nYou can implement the following pattern(s): https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/rai-assessment-for-test-cases/\n\n(Pattern) RAI acceptance testing\nYou can implement the following pattern(s): https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/rai-acceptance-testing/"
   },
   {
     "Category": "Privacy",
@@ -2770,7 +2770,7 @@
     "Sub-Threat": "RAI intervention documentation",
     "Description": "Measures which not address a technical issue but are needed to make the model compliant with data regulation",
     "Vulnerability (consequence)": "Unability to demonstrate suitable RAI prevention measures where put in place",
-    "Action": "<a href='https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/rai-assessment-for-test-cases/'>(Pattern) Ethical assessment for test cases</a>\n\n<a href='https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/rai-acceptance-testing/'>(Pattern) RAI acceptance testing</a>"
+    "Action": "(Pattern) Ethical assessment for test cases\nYou can implement the following pattern(s): https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/rai-assessment-for-test-cases/\n\n(Pattern) RAI acceptance testing\nYou can implement the following pattern(s): https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/rai-acceptance-testing/"
   },
   {
     "Category": "Privacy",
@@ -2782,7 +2782,7 @@
     "Sub-Threat": "RAI intervention documentation",
     "Description": "Measures which not address a technical issue but are needed to make the model compliant with data regulation",
     "Vulnerability (consequence)": "Unability to demonstrate suitable RAI prevention measures where put in place",
-    "Action": "<a href='https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/continuous-rai-validator/'>(Pattern) Continuous ethical validator</a>"
+    "Action": "(Pattern) Continuous ethical validator\nYou can implement the following pattern(s): https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/continuous-rai-validator/"
   },
   {
     "Category": "Privacy",
@@ -2818,7 +2818,7 @@
     "Sub-Threat": "Unlawful consent and data acquisition",
     "Description": "Measures which not address a technical issue but are needed to make the model compliant with data regulation",
     "Vulnerability (consequence)": "Unability to demonstrate suitable data protection measures where put in place",
-    "Action": "https://aip360.res.ibm.com/tools#assessment"
+    "Action": "You can use the following tool: https://aip360.res.ibm.com/tools#assessment"
   },
   {
     "Category": "Privacy",
@@ -2962,7 +2962,7 @@
     "Sub-Threat": "N.A.",
     "Description": "This threat refers to the possibility of leakage of all or partial information about the model.\nExample: the outputs of a ML algorithm are so verbose that they give information about its configuration (or leakage of sensitive data)",
     "Vulnerability (consequence)": "Existence of unidentified compromise scenarios",
-    "Action": "https://aip360.res.ibm.com/tools#assessment"
+    "Action": "You can use the following tool: https://aip360.res.ibm.com/tools#assessment"
   },
   {
     "Category": "Privacy",
@@ -2974,7 +2974,7 @@
     "Sub-Threat": "N.A.",
     "Description": "This threat refers to the possibility of leakage of all or partial information about the model.\nExample: the outputs of a ML algorithm are so verbose that they give information about its configuration (or leakage of sensitive data)",
     "Vulnerability (consequence)": "Existence of unidentified compromise scenarios",
-    "Action": "https://aip360.res.ibm.com/tools#assessment"
+    "Action": "You can use the following tool: https://aip360.res.ibm.com/tools#assessment"
   },
   {
     "Category": "Privacy",
