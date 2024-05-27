@@ -1713,7 +1713,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Feature- based explanation\nFeature Attribution\nPro: Simple and easy to understand; Can answer how and why AI reaches its decisions. \nCons: Illusion of causality, confirmation bias\nComprensibilità della spiegazione: 3"
+    "Action": "Feature- based explanation\nFeature Attribution\nPro: Simple and easy to understand; Can answer how and why AI reaches its decisions. \nCons: Illusion of causality, confirmation bias"
   },
   {
     "Category": "Explainability",
@@ -1737,7 +1737,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Example- based explanation\nSimilar Example\nPro: Easy to comprehend, users intuitively verify AI�s decision using analogical reasoning on similar examples\nCons: It does not highlight features within examples to enable users� side-by-side comparison\nComprensibilità della spiegazione: 3"
+    "Action": "Example- based explanation\nSimilar Example\nPro: Easy to comprehend, users intuitively verify AI�s decision using analogical reasoning on similar examples\nCons: It does not highlight features within examples to enable users� side-by-side comparison\n"
   },
   {
     "Category": "Explainability",
@@ -1761,7 +1761,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Example- based explanation\nTypical Example\nPro: Use prototypical instances to show learned representation; Reveal potential problems of the model\nCons: Users may not appreciate the idea of typical cases\nComprensibilità della spiegazione: 2"
+    "Action": "Example- based explanation\nTypical Example\nPro: Use prototypical instances to show learned representation; Reveal potential problems of the model\nCons: Users may not appreciate the idea of typical cases"
   },
   {
     "Category": "Explainability",
@@ -1785,7 +1785,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Example- based explanation\nCounterfactual Example\nPro: Helpful to identify the differences between the current outcome and another contrastive outcome \nCons: Hard to understand, may cause confusion\nComprensibilità della spiegazione: 2"
+    "Action": "Example- based explanation\nCounterfactual Example\nPro: Helpful to identify the differences between the current outcome and another contrastive outcome \nCons: Hard to understand, may cause confusion"
   },
   {
     "Category": "Explainability",
@@ -1809,7 +1809,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Feature- based explanation\nFeature Attribution\nPro: Simple and easy to understand; Can answer how and why AI reaches its decisions. \nCons: Illusion of causality, confirmation bias\nComprensibilità della spiegazione: 3"
+    "Action": "Feature- based explanation\nFeature Attribution\nPro: Simple and easy to understand; Can answer how and why AI reaches its decisions. \nCons: Illusion of causality, confirmation bias"
   },
   {
     "Category": "Explainability",
@@ -1821,7 +1821,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Local Interpretable Model-agnostic Explanations (LIME) is a technique that explains the predictions of any machine learning model by approximating it locally with an interpretable model. For example, LIME can be used to explain why a specific medical diagnosis was made by highlighting the most influential factors. For further reading, refer to [79].\nSHapley Additive exPlanations (SHAP) is a method that explains the output of a machine learning model by assigning each feature an importance value based on Shapley values from cooperative game theory. This can be applied in credit scoring to determine which factors most influenced a person's credit score. For further reading, refer to [67].\nClass Activation Mapping (CAM) is a technique used to identify the regions in an image that are most relevant to a convolutional neural network's prediction. For example, CAM can be used to highlight the parts of an X-ray image that led to a particular diagnosis. For further reading, refer to [105].\nLayer-wise Relevance Propagation (LRP) is a method that decomposes the prediction of a neural network by propagating the prediction backward through the network to identify the contribution of each input feature. This technique can be used in sentiment analysis to determine which words in a review most influenced the sentiment score. For further reading, refer to [17].\nTesting with Concept Activation Vectors (TCAV) is a technique that quantifies the importance of high-level concepts for a model's predictions. For example, TCAV can be used to understand how concepts like "stripes" influence the classification of images as zebras. For further reading, refer to [53]."
+    "Action": "Local Interpretable Model-agnostic Explanations (LIME) is a technique that explains the predictions of any machine learning model by approximating it locally with an interpretable model. For example, LIME can be used to explain why a specific medical diagnosis was made by highlighting the most influential factors. For further reading, refer to [79].\nSHapley Additive exPlanations (SHAP) is a method that explains the output of a machine learning model by assigning each feature an importance value based on Shapley values from cooperative game theory. This can be applied in credit scoring to determine which factors most influenced a person's credit score. For further reading, refer to [67].\nClass Activation Mapping (CAM) is a technique used to identify the regions in an image that are most relevant to a convolutional neural network's prediction. For example, CAM can be used to highlight the parts of an X-ray image that led to a particular diagnosis. For further reading, refer to [105].\nLayer-wise Relevance Propagation (LRP) is a method that decomposes the prediction of a neural network by propagating the prediction backward through the network to identify the contribution of each input feature. This technique can be used in sentiment analysis to determine which words in a review most influenced the sentiment score. For further reading, refer to [17].\nTesting with Concept Activation Vectors (TCAV) is a technique that quantifies the importance of high-level concepts for a model's predictions. For example, TCAV can be used to understand how concepts like \"stripes\" influence the classification of images as zebras. For further reading, refer to [53]."
   },
   {
     "Category": "Explainability",
@@ -1833,7 +1833,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Feature- based explanation\nFeature Shape \nPro: Graphical representation, easy to understand the relationship between one feature and prediction\nCons: Lacks feature interaction; Information overload if multiple feature shapes are presented\nComprensibilità della spiegazione: 2"
+    "Action": "Feature- based explanation\nFeature Shape \nPro: Graphical representation, easy to understand the relationship between one feature and prediction\nCons: Lacks feature interaction; Information overload if multiple feature shapes are presented"
   },
   {
     "Category": "Explainability",
@@ -1857,7 +1857,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Feature- based explanation\nFeature Interaction\nPro: Show feature-feature interaction\nCons: The diagram on multiple features is difficult to interpret\nComprensibilità della spiegazione: 1"
+    "Action": "Feature- based explanation\nFeature Interaction\nPro: Show feature-feature interaction\nCons: The diagram on multiple features is difficult to interpret"
   },
   {
     "Category": "Explainability",
@@ -1881,7 +1881,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Example- based explanation\nTypical Example\nPro: Use prototypical instances to show learned representation; Reveal potential problems of the model\nCons: Users may not appreciate the idea of typical cases\nComprensibilità della spiegazione: 2"
+    "Action": "Example- based explanation\nTypical Example\nPro: Use prototypical instances to show learned representation; Reveal potential problems of the model\nCons: Users may not appreciate the idea of typical cases"
   },
   {
     "Category": "Explainability",
@@ -1905,7 +1905,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Rule- based explanation\nDecision Rules/Sets\nPro: Need to carefully balance between completeness and simplicity of explanation\nCons: Trim rules and show on-demand; Highlight local rule clauses related to user�s interested instances\nComprensibilità della spiegazione: 2"
+    "Action": "Rule- based explanation\nDecision Rules/Sets\nPro: Need to carefully balance between completeness and simplicity of explanation\nCons: Trim rules and show on-demand; Highlight local rule clauses related to user�s interested instances"
   },
   {
     "Category": "Explainability",
@@ -1929,7 +1929,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Rule- based explanation\n<a href='http://localhost:5173/Learning#tree'>Decision tree</a>\nPro: Show decision process, explain the differences\nCons: Too much information, complicated to understand\nComprensibilità della spiegazione: 3"
+    "Action": "Rule- based explanation\n<a href='http://localhost:5173/Learning#tree'>Decision tree</a>\nPro: Show decision process, explain the differences\nCons: Too much information, complicated to understand"
   },
   {
     "Category": "Explainability",
@@ -1953,7 +1953,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Feature- based explanation\nFeature Attribution\nPro: Simple and easy to understand; Can answer how and why AI reaches its decisions. \nCons: Illusion of causality, confirmation bias\nComprensibilità della spiegazione: 3"
+    "Action": "Feature- based explanation\nFeature Attribution\nPro: Simple and easy to understand; Can answer how and why AI reaches its decisions. \nCons: Illusion of causality, confirmation bias"
   },
   {
     "Category": "Explainability",
@@ -1977,7 +1977,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Example- based explanation\nSimilar Example\nPro: Easy to comprehend, users intuitively verify AI�s decision using analogical reasoning on similar examples\nCons: It does not highlight features within examples to enable users� side-by-side comparison\nComprensibilità della spiegazione: 3"
+    "Action": "Example- based explanation\nSimilar Example\nPro: Easy to comprehend, users intuitively verify AI�s decision using analogical reasoning on similar examples\nCons: It does not highlight features within examples to enable users� side-by-side comparison"
   },
   {
     "Category": "Explainability",
@@ -2001,7 +2001,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Example- based explanation\nTypical Example\nPro: Use prototypical instances to show learned representation; Reveal potential problems of the model\nCons: Users may not appreciate the idea of typical cases\nComprensibilità della spiegazione: 2"
+    "Action": "Example- based explanation\nTypical Example\nPro: Use prototypical instances to show learned representation; Reveal potential problems of the model\nCons: Users may not appreciate the idea of typical cases"
   },
   {
     "Category": "Explainability",
@@ -2025,7 +2025,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Example- based explanation\nCounterfactual Example\nPro: Helpful to identify the differences between the current outcome and another contrastive outcome \nCons: Hard to understand, may cause confusion\nComprensibilità della spiegazione: 2"
+    "Action": "Example- based explanation\nCounterfactual Example\nPro: Helpful to identify the differences between the current outcome and another contrastive outcome \nCons: Hard to understand, may cause confusion"
   },
   {
     "Category": "Explainability",
@@ -2049,7 +2049,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Feature- based explanation\nFeature Attribution\nPro: Simple and easy to understand; Can answer how and why AI reaches its decisions. \nCons: Illusion of causality, confirmation bias\nComprensibilità della spiegazione: 3"
+    "Action": "Feature- based explanation\nFeature Attribution\nPro: Simple and easy to understand; Can answer how and why AI reaches its decisions. \nCons: Illusion of causality, confirmation bias"
   },
   {
     "Category": "Explainability",
@@ -2073,7 +2073,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Example- based explanation\nTypical Example\nPro: Use prototypical instances to show learned representation; Reveal potential problems of the model\nCons: Users may not appreciate the idea of typical cases\nComprensibilità della spiegazione: 2"
+    "Action": "Example- based explanation\nTypical Example\nPro: Use prototypical instances to show learned representation; Reveal potential problems of the model\nCons: Users may not appreciate the idea of typical cases"
   },
   {
     "Category": "Explainability",
@@ -2097,7 +2097,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Rule- based explanation\nDecision Rules/Sets\nPro: Need to carefully balance between completeness and simplicity of explanation\nCons: Trim rules and show on-demand; Highlight local rule clauses related to user�s interested instances\nComprensibilità della spiegazione: 2"
+    "Action": "Rule- based explanation\nDecision Rules/Sets\nPro: Need to carefully balance between completeness and simplicity of explanation\nCons: Trim rules and show on-demand; Highlight local rule clauses related to user�s interested instances"
   },
   {
     "Category": "Explainability",
@@ -2121,7 +2121,7 @@
     "Sub-Threat": "",
     "Description": "",
     "Vulnerability (consequence)": "",
-    "Action": "Rule- based explanation\n<a href='http://localhost:5173/Learning#tree'>Decision tree</a>\nPro: Show decision process, explain the differences\nCons: Too much information, complicated to understand\nComprensibilità della spiegazione: 3"
+    "Action": "Rule- based explanation\n<a href='http://localhost:5173/Learning#tree'>Decision tree</a>\nPro: Show decision process, explain the differences\nCons: Too much information, complicated to understand"
   },
   {
     "Category": "Explainability",
