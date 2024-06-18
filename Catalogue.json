@@ -2625,6 +2625,7 @@
     "Action": "Monitoring Plan: Finally, we want ensure that the model�s functioning can be monitored, and feedback can be provided to prevent the bias caused by a reinforcement feedback loop. This can be done with a monitoring plan describing the responsibilities and tasks of employees in monitoring the AI system after deployment. These responsibilities include:\n- Handling complaints of people on the AI system. Everyone should be able to report discriminatory or biased practices, and the appointed employees should investigate these cases;\n- Registering the errors of the model."
   },
   {
+    "Title": "(Organizational) Apply a RBAC model, respecting the least privileged principle",
     "Category": "Privacy",
     "SDLC Phase": "Design",
     "Data type": "",
@@ -2634,9 +2635,10 @@
     "Sub-Threat": "Model Inversion Attack & Membership Inference Attack",
     "Description": "A type of attack in which the attacker explores a model by providing a series of carefully crafted inputs and observing outputs. These attacks can be previous steps to more harmful types, evasion or poisoning for example. It is as if the attacker made the model talk to then better compromise it or to obtain information about it (e.g. model extraction) or its training data (e.g. membership inferences attacks and Inversion attacks). \nExample: an attacker studies the set of input-output pairs and uses the results to retrieve training data.",
     "Vulnerability (consequence)": "Poor access rights management",
-    "Action": "(Organizational) Apply a RBAC model, respecting the least privileged principle: \nDefine access rights management using a RBAC (Role Based Access Control) model respecting the least privileged principle. This should cover all components of the ML model (e.g. host infrastructures) and allow for the protection of resources such as the model (e.g. its configuration, its code) and the data it used (e.g. training data). It is notable that the roles to be included also concern the end user. For example: the end user who can submit inputs to the model should not be able to have access to its configuration."
+    "Action": "Define access rights management using a RBAC (Role Based Access Control) model respecting the least privileged principle. This should cover all components of the ML model (e.g. host infrastructures) and allow for the protection of resources such as the model (e.g. its configuration, its code) and the data it used (e.g. training data). It is notable that the roles to be included also concern the end user. For example: the end user who can submit inputs to the model should not be able to have access to its configuration."
   },
   {
+    "Title": "(Organizational) Apply a RBAC model, respecting the least privileged principle",
     "Category": "Privacy",
     "SDLC Phase": "Development",
     "Data type": "",
@@ -2646,9 +2648,10 @@
     "Sub-Threat": "Model Inversion Attack & Membership Inference Attack",
     "Description": "A type of attack in which the attacker explores a model by providing a series of carefully crafted inputs and observing outputs. These attacks can be previous steps to more harmful types, evasion or poisoning for example. It is as if the attacker made the model talk to then better compromise it or to obtain information about it (e.g. model extraction) or its training data (e.g. membership inferences attacks and Inversion attacks). \nExample: an attacker studies the set of input-output pairs and uses the results to retrieve training data.",
     "Vulnerability (consequence)": "Poor access rights management",
-    "Action": "(Organizational) Apply a RBAC model, respecting the least privileged principle: \nDefine access rights management using a RBAC (Role Based Access Control) model respecting the least privileged principle. This should cover all components of the ML model (e.g. host infrastructures) and allow for the protection of resources such as the model (e.g. its configuration, its code) and the data it used (e.g. training data). It is notable that the roles to be included also concern the end user. For example: the end user who can submit inputs to the model should not be able to have access to its configuration."
+    "Action": "Define access rights management using a RBAC (Role Based Access Control) model respecting the least privileged principle. This should cover all components of the ML model (e.g. host infrastructures) and allow for the protection of resources such as the model (e.g. its configuration, its code) and the data it used (e.g. training data). It is notable that the roles to be included also concern the end user. For example: the end user who can submit inputs to the model should not be able to have access to its configuration."
   },
   {
+    "Title": "(Organizational) Apply a RBAC model, respecting the least privileged principle",
     "Category": "Privacy",
     "SDLC Phase": "Deployment",
     "Data type": "",
@@ -2658,9 +2661,10 @@
     "Sub-Threat": "Model Inversion Attack & Membership Inference Attack",
     "Description": "A type of attack in which the attacker explores a model by providing a series of carefully crafted inputs and observing outputs. These attacks can be previous steps to more harmful types, evasion or poisoning for example. It is as if the attacker made the model talk to then better compromise it or to obtain information about it (e.g. model extraction) or its training data (e.g. membership inferences attacks and Inversion attacks). \nExample: an attacker studies the set of input-output pairs and uses the results to retrieve training data.",
     "Vulnerability (consequence)": "Poor access rights management",
-    "Action": "(Organizational) Apply a RBAC model, respecting the least privileged principle: \nDefine access rights management using a RBAC (Role Based Access Control) model respecting the least privileged principle. This should cover all components of the ML model (e.g. host infrastructures) and allow for the protection of resources such as the model (e.g. its configuration, its code) and the data it used (e.g. training data). It is notable that the roles to be included also concern the end user. For example: the end user who can submit inputs to the model should not be able to have access to its configuration."
+    "Action": "Define access rights management using a RBAC (Role Based Access Control) model respecting the least privileged principle. This should cover all components of the ML model (e.g. host infrastructures) and allow for the protection of resources such as the model (e.g. its configuration, its code) and the data it used (e.g. training data). It is notable that the roles to be included also concern the end user. For example: the end user who can submit inputs to the model should not be able to have access to its configuration."
   },
   {
+    "Title": "(Specific ML) Ensure that models respect differential privacy (to a sufficient degree)",
     "Category": "Privacy",
     "SDLC Phase": "Design",
     "Data type": "",
@@ -2670,9 +2674,10 @@
     "Sub-Threat": "Model Inversion Attack & Membership Inference Attack",
     "Description": "A type of attack in which the attacker explores a model by providing a series of carefully crafted inputs and observing outputs. These attacks can be previous steps to more harmful types, evasion or poisoning for example. It is as if the attacker made the model talk to then better compromise it or to obtain information about it (e.g. model extraction) or its training data (e.g. membership inferences attacks and Inversion attacks). \nExample: an attacker studies the set of input-output pairs and uses the results to retrieve training data.",
     "Vulnerability (consequence)": "The model allows private information to be retrieved",
-    "Action": "(Specific ML) Ensure that models respect differential privacy (to a sufficient degree)\nDifferential privacy (DP) is a strong, mathematical definition of privacy in the context of statistical and ML analysis. According to this mathematical definition, DP is a criterion of privacy protection, which many tools for analysing sensitive personal information have been devised to satisfy. It is noticeable that this security control can greatly reduce the performance of the model. It is therefore important to estimate the need for data or model protection. Example: Differential privacy makes it possible for technology companies to collect and share aggregate information about user habits, while maintaining the privacy of individual users.\n\nhttps://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/differential-privacy/"
+    "Action": "Differential privacy (DP) is a strong, mathematical definition of privacy in the context of statistical and ML analysis. According to this mathematical definition, DP is a criterion of privacy protection, which many tools for analysing sensitive personal information have been devised to satisfy. It is noticeable that this security control can greatly reduce the performance of the model. It is therefore important to estimate the need for data or model protection. Example: Differential privacy makes it possible for technology companies to collect and share aggregate information about user habits, while maintaining the privacy of individual users.\n\nhttps://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/differential-privacy/"
   },
   {
+    "Title": "Rely on the use of external tools for differential privacy implementation",
     "Category": "Privacy",
     "SDLC Phase": "Development",
     "Data type": "",
@@ -2682,9 +2687,10 @@
     "Sub-Threat": "Model Inversion Attack & Membership Inference Attack",
     "Description": "A type of attack in which the attacker explores a model by providing a series of carefully crafted inputs and observing outputs. These attacks can be previous steps to more harmful types, evasion or poisoning for example. It is as if the attacker made the model talk to then better compromise it or to obtain information about it (e.g. model extraction) or its training data (e.g. membership inferences attacks and Inversion attacks). \nExample: an attacker studies the set of input-output pairs and uses the results to retrieve training data.",
     "Vulnerability (consequence)": "The model allows private information to be retrieved",
-    "Action": "To implement diffierential privacy, is possible to use one of these tools:\nhttps://aip360.res.ibm.com/tools#differential\nhttps://opacus.ai/#quickstart"
+    "Action": "To implement differential privacy, is possible to use one of these tools: https://aip360.res.ibm.com/tools#differential, https://opacus.ai/#quickstart"
   },
   {
+    "Title": "(Specific ML) Reduce the information given by the model",
     "Category": "Privacy",
     "SDLC Phase": "Design",
     "Data type": "",
@@ -2694,9 +2700,10 @@
     "Sub-Threat": "Model Inversion Attack & Membership Inference Attack",
     "Description": "A type of attack in which the attacker explores a model by providing a series of carefully crafted inputs and observing outputs. These attacks can be previous steps to more harmful types, evasion or poisoning for example. It is as if the attacker made the model talk to then better compromise it or to obtain information about it (e.g. model extraction) or its training data (e.g. membership inferences attacks and Inversion attacks). \nExample: an attacker studies the set of input-output pairs and uses the results to retrieve training data.",
     "Vulnerability (consequence)": "Too much information about the model given in its outputs",
-    "Action": "(Specific ML) Reduce the information given by the model\nControlling the information (like its verbosity) provided by the model by applying basic cybersecurity hygiene rules is a way of limiting the techniques that an attacker can use to build adversarial examples. One of the basic rules of hygiene, for example, is to reduce the information of the output determined by the model to the maximum, or by profiling who is making the request. \nFor example: considering a classification application, it would consist of communicating only the predicted class to the users of solution, not the associated probability. \nTo summarize, some of the possible valid techniques are:\n- Rate-limit queries allowed by model\n- Minimize or obfuscate the details returned in prediction APIs while still maintaining their usefulness to �honest� applications. For further reading refer <a href='https://en.wikipedia.org/wiki/Form_follows_function'>here</a>.'\n- Define a well-formed query for your model inputs and only return results in response to completed, well-formed inputs matching that format.\n- Return rounded confidence values. Most legitimate callers do not need multiple decimal places of precision."
+    "Action": "Controlling the information (like its verbosity) provided by the model by applying basic cybersecurity hygiene rules is a way of limiting the techniques that an attacker can use to build adversarial examples. One of the basic rules of hygiene, for example, is to reduce the information of the output determined by the model to the maximum, or by profiling who is making the request. \nFor example: considering a classification application, it would consist of communicating only the predicted class to the users of solution, not the associated probability. \nTo summarize, some of the possible valid techniques are:\n- Rate-limit queries allowed by model\n- Minimize or obfuscate the details returned in prediction APIs while still maintaining their usefulness to �honest� applications. For further reading refer <a href='https://en.wikipedia.org/wiki/Form_follows_function'>here</a>.'\n- Define a well-formed query for your model inputs and only return results in response to completed, well-formed inputs matching that format.\n- Return rounded confidence values. Most legitimate callers do not need multiple decimal places of precision."
   },
   {
+    "Title": "(Specific ML) Reduce the information given by the model",
     "Category": "Privacy",
     "SDLC Phase": "Development",
     "Data type": "",
@@ -2706,9 +2713,10 @@
     "Sub-Threat": "Model Inversion Attack & Membership Inference Attack",
     "Description": "A type of attack in which the attacker explores a model by providing a series of carefully crafted inputs and observing outputs. These attacks can be previous steps to more harmful types, evasion or poisoning for example. It is as if the attacker made the model talk to then better compromise it or to obtain information about it (e.g. model extraction) or its training data (e.g. membership inferences attacks and Inversion attacks). \nExample: an attacker studies the set of input-output pairs and uses the results to retrieve training data.",
     "Vulnerability (consequence)": "Too much information about the model given in its outputs",
-    "Action": "(Specific ML) Reduce the information given by the model\nControlling the information (like its verbosity) provided by the model by applying basic cybersecurity hygiene rules is a way of limiting the techniques that an attacker can use to build adversarial examples. One of the basic rules of hygiene, for example, is to reduce the information of the output determined by the model to the maximum, or by profiling who is making the request. \nFor example: considering a classification application, it would consist of communicating only the predicted class to the users of solution, not the associated probability. \nTo summarize, some of the possible valid techniques are:\n- Rate-limit queries allowed by model\n- Minimize or obfuscate the details returned in prediction APIs while still maintaining their usefulness to �honest� applications. For further reading refer <a href='https://en.wikipedia.org/wiki/Form_follows_function'>here</a>.\n- Define a well-formed query for your model inputs and only return results in response to completed, well-formed inputs matching that format.\n- Return rounded confidence values. Most legitimate callers do not need multiple decimal places of precision."
+    "Action": "Controlling the information (like its verbosity) provided by the model by applying basic cybersecurity hygiene rules is a way of limiting the techniques that an attacker can use to build adversarial examples. One of the basic rules of hygiene, for example, is to reduce the information of the output determined by the model to the maximum, or by profiling who is making the request. \nFor example: considering a classification application, it would consist of communicating only the predicted class to the users of solution, not the associated probability. \nTo summarize, some of the possible valid techniques are:\n- Rate-limit queries allowed by model\n- Minimize or obfuscate the details returned in prediction APIs while still maintaining their usefulness to �honest� applications. For further reading refer <a href='https://en.wikipedia.org/wiki/Form_follows_function'>here</a>.\n- Define a well-formed query for your model inputs and only return results in response to completed, well-formed inputs matching that format.\n- Return rounded confidence values. Most legitimate callers do not need multiple decimal places of precision."
   },
   {
+    "Title": "(Specific ML) Reduce the information given by the model",
     "Category": "Privacy",
     "SDLC Phase": "Deployment",
     "Data type": "",
@@ -2718,9 +2726,10 @@
     "Sub-Threat": "Model Inversion Attack & Membership Inference Attack",
     "Description": "A type of attack in which the attacker explores a model by providing a series of carefully crafted inputs and observing outputs. These attacks can be previous steps to more harmful types, evasion or poisoning for example. It is as if the attacker made the model talk to then better compromise it or to obtain information about it (e.g. model extraction) or its training data (e.g. membership inferences attacks and Inversion attacks). \nExample: an attacker studies the set of input-output pairs and uses the results to retrieve training data.",
     "Vulnerability (consequence)": "Too much information about the model given in its outputs",
-    "Action": "(Specific ML) Reduce the information given by the model\nControlling the information (like its verbosity) provided by the model by applying basic cybersecurity hygiene rules is a way of limiting the techniques that an attacker can use to build adversarial examples. One of the basic rules of hygiene, for example, is to reduce the information of the output determined by the model to the maximum, or by profiling who is making the request. \nFor example: considering a classification application, it would consist of communicating only the predicted class to the users of solution, not the associated probability. \nTo summarize, some of the possible valid techniques are:\n- Rate-limit queries allowed by model\n- Minimize or obfuscate the details returned in prediction APIs while still maintaining their usefulness to �honest� applications. For further reading refer <a href='https://en.wikipedia.org/wiki/Form_follows_function'>here</a>.\n- Define a well-formed query for your model inputs and only return results in response to completed, well-formed inputs matching that format.\n- Return rounded confidence values. Most legitimate callers do not need multiple decimal places of precision."
+    "Action": "Controlling the information (like its verbosity) provided by the model by applying basic cybersecurity hygiene rules is a way of limiting the techniques that an attacker can use to build adversarial examples. One of the basic rules of hygiene, for example, is to reduce the information of the output determined by the model to the maximum, or by profiling who is making the request. \nFor example: considering a classification application, it would consist of communicating only the predicted class to the users of solution, not the associated probability. \nTo summarize, some of the possible valid techniques are:\n- Rate-limit queries allowed by model\n- Minimize or obfuscate the details returned in prediction APIs while still maintaining their usefulness to �honest� applications. For further reading refer <a href='https://en.wikipedia.org/wiki/Form_follows_function'>here</a>.\n- Define a well-formed query for your model inputs and only return results in response to completed, well-formed inputs matching that format.\n- Return rounded confidence values. Most legitimate callers do not need multiple decimal places of precision."
   },
   {
+    "Title": "(Specific ML) Implement processes to maintain security levels of ML components over time",
     "Category": "Privacy",
     "SDLC Phase": "Design",
     "Data type": "",
@@ -2730,9 +2739,10 @@
     "Sub-Threat": "Model Inversion Attack & Membership Inference Attack",
     "Description": "A type of attack in which the attacker explores a model by providing a series of carefully crafted inputs and observing outputs. These attacks can be previous steps to more harmful types, evasion or poisoning for example. It is as if the attacker made the model talk to then better compromise it or to obtain information about it (e.g. model extraction) or its training data (e.g. membership inferences attacks and Inversion attacks). \nExample: an attacker studies the set of input-output pairs and uses the results to retrieve training data.",
     "Vulnerability (consequence)": "Lack of security process to maintain a good security level of the components of the ML application",
-    "Action": "(Specific ML) Implement processes to maintain security levels of ML components over time\nML is a rapidly evolving field, especially regarding its cybersecurity. Regular checking of new attacks and defenses must be integrated into the processes for maintaining security level applications. The security level should thus be regularly assessed too.\nAn useful tool to keep updating on new attacks and defenses is <a href='https://atlas.mitre.org/'>this</a>"
+    "Action": "ML is a rapidly evolving field, especially regarding its cybersecurity. Regular checking of new attacks and defenses must be integrated into the processes for maintaining security level applications. The security level should thus be regularly assessed too.\nAn useful tool to keep updating on new attacks and defenses is <a href='https://atlas.mitre.org/'>this</a>"
   },
   {
+    "Title": "Rely on the use of a external tool",
     "Category": "Privacy",
     "SDLC Phase": "Testing",
     "Data type": "",
@@ -2745,6 +2755,7 @@
     "Action": "You can use the following tool: https://blog.tensorflow.org/2020/06/introducing-new-privacy-testing-library.html"
   },
   {
+    "Title": "(Specific ML) Implement processes to maintain security levels of ML components over time",
     "Category": "Privacy",
     "SDLC Phase": "Monitoring",
     "Data type": "",
@@ -2754,9 +2765,10 @@
     "Sub-Threat": "Model Inversion Attack & Membership Inference Attack",
     "Description": "A type of attack in which the attacker explores a model by providing a series of carefully crafted inputs and observing outputs. These attacks can be previous steps to more harmful types, evasion or poisoning for example. It is as if the attacker made the model talk to then better compromise it or to obtain information about it (e.g. model extraction) or its training data (e.g. membership inferences attacks and Inversion attacks). \nExample: an attacker studies the set of input-output pairs and uses the results to retrieve training data.",
     "Vulnerability (consequence)": "Lack of security process to maintain a good security level of the components of the ML application",
-    "Action": "(Specific ML) Implement processes to maintain security levels of ML components over time\nML is a rapidly evolving field, especially regarding its cybersecurity. Regular checking of new attacks and defenses must be integrated into the processes for maintaining security level applications. The security level should thus be regularly assessed too.\nAn useful tool to keep updating on new attacks and defenses is <a href='https://atlas.mitre.org/'>this</a>."
+    "Action": "ML is a rapidly evolving field, especially regarding its cybersecurity. Regular checking of new attacks and defenses must be integrated into the processes for maintaining security level applications. The security level should thus be regularly assessed too.\nAn useful tool to keep updating on new attacks and defenses is <a href='https://atlas.mitre.org/'>this</a>."
   },
   {
+    "Title": "Use of homomorphic pattern encryption",
     "Category": "Privacy",
     "SDLC Phase": "Design",
     "Data type": "",
@@ -2769,6 +2781,7 @@
     "Action": "By keeping the data encrypted during the entire model lifecycle, the risk of data breach becomes very low. Anyway, this is a very difficult measure to apply at the moment.\n\n<a href='https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/homomorphic-encryption/'>Encrypted-data-based trainer (pattern)</a>"
   },
   {
+    "Title": "Tools for encryption in AI",
     "Category": "Privacy",
     "SDLC Phase": "Development",
     "Data type": "",
@@ -2781,6 +2794,7 @@
     "Action": "To implement encryption in AI, you can use one of the following tools:\nhttps://azure.microsoft.com/en-us/blog/azure-confidential-computing/\nhttps://www.intel.com/content/www/us/en/developer/tools/homomorphic-encryption/overview.html#gs.iqs52j"
   },
   {
+    "Title": "Tools for encryption in AI",
     "Category": "Privacy",
     "SDLC Phase": "Deployment",
     "Data type": "",
@@ -2793,6 +2807,7 @@
     "Action": "To implement encryption in AI, you can use one of the following tools:\nhttps://azure.microsoft.com/en-us/blog/azure-confidential-computing/\nhttps://www.intel.com/content/www/us/en/developer/tools/homomorphic-encryption/overview.html#gs.iqs52j"
   },
   {
+    "Title": "(Organizational) Ensure ML applications comply with identity management, authentication, and access control policies",
     "Category": "Privacy",
     "SDLC Phase": "Design",
     "Data type": "",
@@ -2802,9 +2817,10 @@
     "Sub-Threat": "Model Inversion Attack & Membership Inference Attack",
     "Description": "A type of attack in which the attacker explores a model by providing a series of carefully crafted inputs and observing outputs. These attacks can be previous steps to more harmful types, evasion or poisoning for example. It is as if the attacker made the model talk to then better compromise it or to obtain information about it (e.g. model extraction) or its training data (e.g. membership inferences attacks and Inversion attacks). \nExample: an attacker studies the set of input-output pairs and uses the results to retrieve training data.",
     "Vulnerability (consequence)": "Weak access protection mechanisms for ML model components",
-    "Action": "(Organizational) Ensure ML applications comply with identity management, authentication, and access control policies\nAs all applications, those using ML must comply with defined policies regarding identity management (e.g. ensure all users are integrated in the departure process), authentication (e.g. passwords complexity, use of Multi-Factors Authentication (MFA), access restriction) and access control (e.g. RBAC model, connection context). Underlying security requirements must be applied to all ML application components (e.g. model configuration, host infrastructures, training data)."
+    "Action": "As all applications, those using ML must comply with defined policies regarding identity management (e.g. ensure all users are integrated in the departure process), authentication (e.g. passwords complexity, use of Multi-Factors Authentication (MFA), access restriction) and access control (e.g. RBAC model, connection context). Underlying security requirements must be applied to all ML application components (e.g. model configuration, host infrastructures, training data)."
   },
   {
+    "Title": "(Organizational) Ensure ML applications comply with identity management, authentication, and access control policies",
     "Category": "Privacy",
     "SDLC Phase": "Development",
     "Data type": "",
@@ -2814,9 +2830,10 @@
     "Sub-Threat": "Model Inversion Attack & Membership Inference Attack",
     "Description": "A type of attack in which the attacker explores a model by providing a series of carefully crafted inputs and observing outputs. These attacks can be previous steps to more harmful types, evasion or poisoning for example. It is as if the attacker made the model talk to then better compromise it or to obtain information about it (e.g. model extraction) or its training data (e.g. membership inferences attacks and Inversion attacks). \nExample: an attacker studies the set of input-output pairs and uses the results to retrieve training data.",
     "Vulnerability (consequence)": "Weak access protection mechanisms for ML model components",
-    "Action": "(Organizational) Ensure ML applications comply with identity management, authentication, and access control policies\nAs all applications, those using ML must comply with defined policies regarding identity management (e.g. ensure all users are integrated in the departure process), authentication (e.g. passwords complexity, use of Multi-Factors Authentication (MFA), access restriction) and access control (e.g. RBAC model, connection context). Underlying security requirements must be applied to all ML application components (e.g. model configuration, host infrastructures, training data)."
+    "Action": "As all applications, those using ML must comply with defined policies regarding identity management (e.g. ensure all users are integrated in the departure process), authentication (e.g. passwords complexity, use of Multi-Factors Authentication (MFA), access restriction) and access control (e.g. RBAC model, connection context). Underlying security requirements must be applied to all ML application components (e.g. model configuration, host infrastructures, training data)."
   },
   {
+    "Title": "(Organizational) Ensure ML applications comply with identity management, authentication, and access control policies",
     "Category": "Privacy",
     "SDLC Phase": "Testing",
     "Data type": "Privacy",
@@ -2826,9 +2843,10 @@
     "Sub-Threat": "Model Inversion Attack & Membership Inference Attack",
     "Description": "A type of attack in which the attacker explores a model by providing a series of carefully crafted inputs and observing outputs. These attacks can be previous steps to more harmful types, evasion or poisoning for example. It is as if the attacker made the model talk to then better compromise it or to obtain information about it (e.g. model extraction) or its training data (e.g. membership inferences attacks and Inversion attacks). \nExample: an attacker studies the set of input-output pairs and uses the results to retrieve training data.",
     "Vulnerability (consequence)": "Weak access protection mechanisms for ML model components",
-    "Action": "(Organizational) Ensure ML applications comply with identity management, authentication, and access control policies\nAs all applications, those using ML must comply with defined policies regarding identity management (e.g. ensure all users are integrated in the departure process), authentication (e.g. passwords complexity, use of Multi-Factors Authentication (MFA), access restriction) and access control (e.g. RBAC model, connection context). Underlying security requirements must be applied to all ML application components (e.g. model configuration, host infrastructures, training data)."
+    "Action": "As all applications, those using ML must comply with defined policies regarding identity management (e.g. ensure all users are integrated in the departure process), authentication (e.g. passwords complexity, use of Multi-Factors Authentication (MFA), access restriction) and access control (e.g. RBAC model, connection context). Underlying security requirements must be applied to all ML application components (e.g. model configuration, host infrastructures, training data)."
   },
   {
+    "Title": "(Organizational) Ensure ML applications comply with identity management, authentication, and access control policies",
     "Category": "Privacy",
     "SDLC Phase": "Deployment",
     "Data type": "",
@@ -2838,9 +2856,10 @@
     "Sub-Threat": "Model Inversion Attack & Membership Inference Attack",
     "Description": "A type of attack in which the attacker explores a model by providing a series of carefully crafted inputs and observing outputs. These attacks can be previous steps to more harmful types, evasion or poisoning for example. It is as if the attacker made the model talk to then better compromise it or to obtain information about it (e.g. model extraction) or its training data (e.g. membership inferences attacks and Inversion attacks). \nExample: an attacker studies the set of input-output pairs and uses the results to retrieve training data.",
     "Vulnerability (consequence)": "Weak access protection mechanisms for ML model components",
-    "Action": "(Organizational) Ensure ML applications comply with identity management, authentication, and access control policies\nAs all applications, those using ML must comply with defined policies regarding identity management (e.g. ensure all users are integrated in the departure process), authentication (e.g. passwords complexity, use of Multi-Factors Authentication (MFA), access restriction) and access control (e.g. RBAC model, connection context). Underlying security requirements must be applied to all ML application components (e.g. model configuration, host infrastructures, training data)."
+    "Action": "As all applications, those using ML must comply with defined policies regarding identity management (e.g. ensure all users are integrated in the departure process), authentication (e.g. passwords complexity, use of Multi-Factors Authentication (MFA), access restriction) and access control (e.g. RBAC model, connection context). Underlying security requirements must be applied to all ML application components (e.g. model configuration, host infrastructures, training data)."
   },
   {
+    "Title": "(Organizational) Ensure ML applications comply with identity management, authentication, and access control policies",
     "Category": "Privacy",
     "SDLC Phase": "Monitoring",
     "Data type": "",
@@ -2850,9 +2869,10 @@
     "Sub-Threat": "Model Inversion Attack & Membership Inference Attack",
     "Description": "A type of attack in which the attacker explores a model by providing a series of carefully crafted inputs and observing outputs. These attacks can be previous steps to more harmful types, evasion or poisoning for example. It is as if the attacker made the model talk to then better compromise it or to obtain information about it (e.g. model extraction) or its training data (e.g. membership inferences attacks and Inversion attacks). \nExample: an attacker studies the set of input-output pairs and uses the results to retrieve training data.",
     "Vulnerability (consequence)": "Weak access protection mechanisms for ML model components",
-    "Action": "(Organizational) Ensure ML applications comply with identity management, authentication, and access control policies\nAs all applications, those using ML must comply with defined policies regarding identity management (e.g. ensure all users are integrated in the departure process), authentication (e.g. passwords complexity, use of Multi-Factors Authentication (MFA), access restriction) and access control (e.g. RBAC model, connection context). Underlying security requirements must be applied to all ML application components (e.g. model configuration, host infrastructures, training data)."
+    "Action": "As all applications, those using ML must comply with defined policies regarding identity management (e.g. ensure all users are integrated in the departure process), authentication (e.g. passwords complexity, use of Multi-Factors Authentication (MFA), access restriction) and access control (e.g. RBAC model, connection context). Underlying security requirements must be applied to all ML application components (e.g. model configuration, host infrastructures, training data)."
   },
   {
+    "Title": "Building Expertise in Differential Privacy: Mitigating Emerging Threats in Online Services Platforms",
     "Category": "Privacy",
     "SDLC Phase": "Design",
     "Data type": "",
@@ -2865,6 +2885,7 @@
     "Action": "Research papers demonstrating the viability of this attack indicate Differential Privacy would be an effective mitigation. For further reading refer <a href='https://captum.ai/Accessed: 2020-09-10'>here</a> and <a href='https://github.com/marcotcr/lime'>here</a>. This is still a nascent field at Microsoft and AETHER Security Engineering recommends building expertise with research investments in this space. This research would need to enumerate Differential Privacy capabilities and evaluate their practical effectiveness as mitigations, then design ways for these defenses to be inherited transparently on our online services platforms, similar to how compiling code in Visual Studio gives you on-by-default security protections which are transparent to the developer and users."
   },
   {
+    "Title": "Rely on the use of external tools for differential privacy implementation",
     "Category": "Privacy",
     "SDLC Phase": "Development",
     "Data type": "",
@@ -2874,9 +2895,10 @@
     "Sub-Threat": "Membership Inference Attack",
     "Description": "The attacker can determine whether a given data record was part of the model�s training dataset or not. For further reading refer <a href='https://doi.org/10.2861/293'>here</a>. Researchers were able to predict a patient�s main procedure (e.g: Surgery the patient went through) based on the attributes (e.g: age, gender, hospital). For further reading refer <a href='https://doi.org/10.2861/293'>here</a>.",
     "Vulnerability (consequence)": "The attacker can determine whether a given data record was part of the model�s training dataset or not",
-    "Action": "To implement diffierential privacy, is possible to use one of these tools:\nhttps://aip360.res.ibm.com/tools#differential\nhttps://opacus.ai/#quickstart"
+    "Action": "To implement differential privacy, is possible to use one of these tools:\nhttps://aip360.res.ibm.com/tools#differential\nhttps://opacus.ai/#quickstart"
   },
   {
+    "Title": "(Pattern) RAI user story",
     "Category": "Privacy",
     "SDLC Phase": "RE",
     "Data type": "",
@@ -2886,9 +2908,10 @@
     "Sub-Threat": "RAI intervention documentation",
     "Description": "Measures which not address a technical issue but are needed to make the model compliant with data regulation",
     "Vulnerability (consequence)": "Unability to demonstrate suitable RAI prevention measures where put in place",
-    "Action": "(Pattern) RAI user story\nYou can implement the following pattern(s): https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/rai-user-story/"
+    "Action": "You can implement the following pattern(s): https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/rai-user-story/"
   },
   {
+    "Title": "(Pattern) Ethical assessment for test cases",
     "Category": "Privacy",
     "SDLC Phase": "Design",
     "Data type": "",
@@ -2898,9 +2921,10 @@
     "Sub-Threat": "RAI intervention documentation",
     "Description": "Measures which not address a technical issue but are needed to make the model compliant with data regulation",
     "Vulnerability (consequence)": "Unability to demonstrate suitable RAI prevention measures where put in place",
-    "Action": "(Pattern) Ethical assessment for test cases\nYou can implement the following pattern(s): https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/rai-assessment-for-test-cases/\n\n(Pattern) RAI acceptance testing\nYou can implement the following pattern(s): https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/rai-acceptance-testing/"
+    "Action": "You can implement the following pattern(s): https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/rai-assessment-for-test-cases/\n\n(Pattern) RAI acceptance testing\nYou can implement the following pattern(s): https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/rai-acceptance-testing/"
   },
   {
+    "Title": "(Pattern) Ethical assessment for test cases",
     "Category": "Privacy",
     "SDLC Phase": "Testing",
     "Data type": "",
@@ -2910,9 +2934,10 @@
     "Sub-Threat": "RAI intervention documentation",
     "Description": "Measures which not address a technical issue but are needed to make the model compliant with data regulation",
     "Vulnerability (consequence)": "Unability to demonstrate suitable RAI prevention measures where put in place",
-    "Action": "(Pattern) Ethical assessment for test cases\nYou can implement the following pattern(s): https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/rai-assessment-for-test-cases/\n\n(Pattern) RAI acceptance testing\nYou can implement the following pattern(s): https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/rai-acceptance-testing/"
+    "Action": "You can implement the following pattern(s): https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/rai-assessment-for-test-cases/\n\n(Pattern) RAI acceptance testing\nYou can implement the following pattern(s): https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/rai-acceptance-testing/"
   },
   {
+    "Title": "(Pattern) Continuous ethical validator",
     "Category": "Privacy",
     "SDLC Phase": "Monitoring",
     "Data type": "",
@@ -2922,9 +2947,10 @@
     "Sub-Threat": "RAI intervention documentation",
     "Description": "Measures which not address a technical issue but are needed to make the model compliant with data regulation",
     "Vulnerability (consequence)": "Unability to demonstrate suitable RAI prevention measures where put in place",
-    "Action": "(Pattern) Continuous ethical validator\nYou can implement the following pattern(s): https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/continuous-rai-validator/"
+    "Action": "You can implement the following pattern(s): https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/continuous-rai-validator/"
   },
   {
+    "Title": "Implementing Data Protection Impact Assessments (DPIAs) for Effective Risk Mitigation in AI Systems",
     "Category": "Privacy",
     "SDLC Phase": "RE",
     "Data type": "",
@@ -2937,6 +2963,7 @@
     "Action": "ICO 1.1 - Conduct a data protection impact assessment (DPIA) to identify risks and implement appropriate technical and organisational measures to reduce them.\nhttps://ico.org.uk/for-organisations/guide-to-data-protection/key-dp-themes/guidance-on-ai-and-data-protection/what-are-the-accountability-and-governance-implications-of-ai/"
   },
   {
+    "Title": "Rely on the use of external tools for DPIA conduction",
     "Category": "Privacy",
     "SDLC Phase": "Design",
     "Data type": "",
@@ -2949,6 +2976,7 @@
     "Action": "To conduct DPIA with an online tool, it is possible to use <a href='https://www.enisa.europa.eu/risk-level-tool/risk'>this tool</a>."
   },
   {
+    "Title": "Rely on the use of a external tool",
     "Category": "Privacy",
     "SDLC Phase": "Development",
     "Data type": "",
@@ -2961,6 +2989,7 @@
     "Action": "You can use the following tool: https://aip360.res.ibm.com/tools#assessment"
   },
   {
+    "Title": "Ensuring Data Accuracy and Relevance in AI Training to Uphold Data Minimisation Principles",
     "Category": "Privacy",
     "SDLC Phase": "RE",
     "Data type": "",
@@ -2973,6 +3002,7 @@
     "Action": "ICO 1.7 - Document the data you will collect to train the AI system and assess whether it is accurate, adequate, relevant, and limited to your purpose(s) to demonstrate compliance with the data minimisation principle.\nhttps://ico.org.uk/for-organisations/guide-to-data-protection/key-dp-themes/guidance-on-ai-and-data-protection/how-should-we-assess-security-and-data-minimisation-in-ai/"
   },
   {
+    "Title": "ICO Guidance on Lawful Basis, De-identification, Data Relevance, and Model Monitoring in AI Systems",
     "Category": "Privacy",
     "SDLC Phase": "Design",
     "Data type": "",
@@ -2985,6 +3015,7 @@
     "Action": "ICO 2.1 - Failing to choose an appropriate lawful basis causes the unlawful collection of personal data. As a consequence, individuals lose trust over how their data is used and suffer from unfair processing.\n\nICO 2.8 - Apply de-identification techniques to training data before it is extracted from its source and shared internally or externally.\n\nICO 3.8 - Reassess and document what data is necessary, adequate, and relevant for training and testing your AI system. Erase any data that is not needed.\n\nICO 4.4 - Document and define mechanisms to monitor the performance of your model. Where model drift is identified, assess, and delete (or anonymise) training data that is inadequate or irrelevant to your model�s performance."
   },
   {
+    "Title": "Rely on the use of external tools",
     "Category": "Privacy",
     "SDLC Phase": "Development",
     "Data type": "",
@@ -2994,9 +3025,10 @@
     "Sub-Threat": "Unlawful consent and data acquisition",
     "Description": "Measures which not address a technical issue but are needed to make the model compliant with data regulation",
     "Vulnerability (consequence)": "Unability to demonstrate suitable data protection measures where put in place",
-    "Action": "Use one of the following tools:\nhttps://aip360.res.ibm.com/tools#anonymization\nhttps://aip360.res.ibm.com/tools#minimization\nhttps://github.com/Microsoft/presidio"
+    "Action": "Use one of the following tools: https://aip360.res.ibm.com/tools#anonymization, https://aip360.res.ibm.com/tools#minimization, https://github.com/Microsoft/presidio"
   },
   {
+    "Title": "Establishing Monitoring Mechanisms for Model Performance and Data Relevance in AI Systems",
     "Category": "Privacy",
     "SDLC Phase": "Monitoring",
     "Data type": "",
@@ -3009,6 +3041,7 @@
     "Action": "ICO 4.4 - Document and define mechanisms to monitor the performance of your model. Where model drift is identified, assess, and delete (or anonymise) training data that is inadequate or irrelevant to your model�s performance."
   },
   {
+    "Title": "Documenting and Assessing Purposes throughout the AI Lifecycle to Ensure Compatibility and Compliance",
     "Category": "Privacy",
     "SDLC Phase": "RE",
     "Data type": "",
@@ -3021,6 +3054,7 @@
     "Action": "ICO 1.3 - Document each purpose for using personal data at each stage of the AI lifecycle, assess whether they are compatible with the originally defined purpose, and schedule reviews to reassess your purposes and whether they remain compatible to define what your AI system will be used for, how personal data will be used and prevent incompatible processing taking place.\nhttps://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/principles/purpose-limitation/"
   },
   {
+    "Title": "Assessing, Documenting, and Managing Purpose Changes and Privacy Information in AI Systems",
     "Category": "Privacy",
     "SDLC Phase": "Design",
     "Data type": "",
@@ -3033,6 +3067,7 @@
     "Action": "ICO 3.1 - Assess and document whether your current purposes are different from your initial purposes to\n- detect any changes in the purposes of how you will deploy your AI system\n- correct any identified function creep risks. \n\nICO 2.7 - Assess, document, and publish privacy information about what personal data you will be processing and for what purposes to prevent data subjects losing control over how their personal data is processed."
   },
   {
+    "Title": "Establishing Mechanisms to Monitor Model Performance and Manage Training Data Relevance in AI Systems",
     "Category": "Privacy",
     "SDLC Phase": "Monitoring",
     "Data type": "",
@@ -3045,6 +3080,7 @@
     "Action": "ICO 4.4 - Document and define mechanisms to monitor the performance of your model. Where model drift is identified, assess, and delete (or anonymise) training data that is inadequate or irrelevant to your model�s performance."
   },
   {
+    "Title": "(Organizational) Apply a RBAC model, respecting the least privileged principle",
     "Category": "Privacy",
     "SDLC Phase": "Design",
     "Data type": "",
@@ -3054,9 +3090,10 @@
     "Sub-Threat": "N.A.",
     "Description": "This threat refers to the possibility of leakage of all or partial information about the model.\nExample: the outputs of a ML algorithm are so verbose that they give information about its configuration (or leakage of sensitive data)",
     "Vulnerability (consequence)": "Poor access rights management",
-    "Action": "(Organizational) Apply a RBAC model, respecting the least privileged principle: Define access rights management using a RBAC (Role Based Access Control) model respecting the least privileged principle. This should cover all components of the ML model (e.g. host infrastructures) and allow for the protection of resources such as the model (e.g. its configuration, its code) and the data it used (e.g. training data). It is notable that the roles to be included also concern the end user. For example: the end user who can submit inputs to the model should not be able to have access to its configuration."
+    "Action": "Define access rights management using a RBAC (Role Based Access Control) model respecting the least privileged principle. This should cover all components of the ML model (e.g. host infrastructures) and allow for the protection of resources such as the model (e.g. its configuration, its code) and the data it used (e.g. training data). It is notable that the roles to be included also concern the end user. For example: the end user who can submit inputs to the model should not be able to have access to its configuration."
   },
   {
+    "Title": "(Organizational) Apply a RBAC model, respecting the least privileged principle",
     "Category": "Privacy",
     "SDLC Phase": "Development",
     "Data type": "",
@@ -3066,9 +3103,10 @@
     "Sub-Threat": "N.A.",
     "Description": "This threat refers to the possibility of leakage of all or partial information about the model.\nExample: the outputs of a ML algorithm are so verbose that they give information about its configuration (or leakage of sensitive data)",
     "Vulnerability (consequence)": "Poor access rights management",
-    "Action": "(Organizational) Apply a RBAC model, respecting the least privileged principle: \nDefine access rights management using a RBAC (Role Based Access Control) model respecting the least privileged principle. This should cover all components of the ML model (e.g. host infrastructures) and allow for the protection of resources such as the model (e.g. its configuration, its code) and the data it used (e.g. training data). It is notable that the roles to be included also concern the end user. For example: the end user who can submit inputs to the model should not be able to have access to its configuration."
+    "Action": "Define access rights management using a RBAC (Role Based Access Control) model respecting the least privileged principle. This should cover all components of the ML model (e.g. host infrastructures) and allow for the protection of resources such as the model (e.g. its configuration, its code) and the data it used (e.g. training data). It is notable that the roles to be included also concern the end user. For example: the end user who can submit inputs to the model should not be able to have access to its configuration."
   },
   {
+    "Title": "(Organizational) Apply a RBAC model, respecting the least privileged principle",
     "Category": "Privacy",
     "SDLC Phase": "Deployment",
     "Data type": "",
@@ -3078,9 +3116,10 @@
     "Sub-Threat": "N.A.",
     "Description": "This threat refers to the possibility of leakage of all or partial information about the model.\nExample: the outputs of a ML algorithm are so verbose that they give information about its configuration (or leakage of sensitive data)",
     "Vulnerability (consequence)": "Poor access rights management",
-    "Action": "(Organizational) Apply a RBAC model, respecting the least privileged principle: \nDefine access rights management using a RBAC (Role Based Access Control) model respecting the least privileged principle. This should cover all components of the ML model (e.g. host infrastructures) and allow for the protection of resources such as the model (e.g. its configuration, its code) and the data it used (e.g. training data). It is notable that the roles to be included also concern the end user. For example: the end user who can submit inputs to the model should not be able to have access to its configuration."
+    "Action": "Define access rights management using a RBAC (Role Based Access Control) model respecting the least privileged principle. This should cover all components of the ML model (e.g. host infrastructures) and allow for the protection of resources such as the model (e.g. its configuration, its code) and the data it used (e.g. training data). It is notable that the roles to be included also concern the end user. For example: the end user who can submit inputs to the model should not be able to have access to its configuration."
   },
   {
+    "Title": "(Technical) Conduct a risk analysis of the ML application",
     "Category": "Privacy",
     "SDLC Phase": "Design",
     "Data type": "",
@@ -3090,9 +3129,10 @@
     "Sub-Threat": "N.A.",
     "Description": "This threat refers to the possibility of leakage of all or partial information about the model.\nExample: the outputs of a ML algorithm are so verbose that they give information about its configuration (or leakage of sensitive data)",
     "Vulnerability (consequence)": "Existence of unidentified compromise scenarios",
-    "Action": "(Technical) Conduct a risk analysis of the ML application\nA risk analysis of the overall application should be conducted to take into account the specificities of its context, including: \n- The attacker�s motivations \n- The sensitivity of the data handled (e.g. medical or personal and thus subject to regulatory constraints, strategic for the company and should thus be highly protected) \n- The application hosting (e.g. through third parties services, cloud or on premise environments) \n- The model architecture (e.g. its exposition, learning methods) \n- The ML application lifecycle (e.g., model sharing"
+    "Action": "A risk analysis of the overall application should be conducted to take into account the specificities of its context, including: \n- The attacker�s motivations \n- The sensitivity of the data handled (e.g. medical or personal and thus subject to regulatory constraints, strategic for the company and should thus be highly protected) \n- The application hosting (e.g. through third parties services, cloud or on premise environments) \n- The model architecture (e.g. its exposition, learning methods) \n- The ML application lifecycle (e.g., model sharing"
   },
   {
+    "Title": "Rely on the use of a external tool",
     "Category": "Privacy",
     "SDLC Phase": "Development",
     "Data type": "",
@@ -3105,6 +3145,7 @@
     "Action": "You can use the following tool: https://aip360.res.ibm.com/tools#assessment"
   },
   {
+    "Title": "Rely on the use of a external tool",
     "Category": "Privacy",
     "SDLC Phase": "Testing",
     "Data type": "",
@@ -3117,6 +3158,7 @@
     "Action": "You can use the following tool: https://aip360.res.ibm.com/tools#assessment"
   },
   {
+    "Title": "(Organizational) Ensure ML applications comply with identity management, authentication, and access control policies",
     "Category": "Privacy",
     "SDLC Phase": "Design",
     "Data type": "",
@@ -3126,9 +3168,10 @@
     "Sub-Threat": "N.A.",
     "Description": "This threat refers to the possibility of leakage of all or partial information about the model.\nExample: the outputs of a ML algorithm are so verbose that they give information about its configuration (or leakage of sensitive data)",
     "Vulnerability (consequence)": "Weak access protection mechanisms for ML model components",
-    "Action": "(Organizational) Ensure ML applications comply with identity management, authentication, and access control policies\nAs all applications, those using ML must comply with defined policies regarding identity management (e.g. ensure all users are integrated in the departure process), authentication (e.g. passwords complexity, use of Multi-Factors Authentication (MFA), access restriction) and access control (e.g. RBAC model, connection context). Underlying security requirements must be applied to all ML application components (e.g. model configuration, host infrastructures, training data)."
+    "Action": "As all applications, those using ML must comply with defined policies regarding identity management (e.g. ensure all users are integrated in the departure process), authentication (e.g. passwords complexity, use of Multi-Factors Authentication (MFA), access restriction) and access control (e.g. RBAC model, connection context). Underlying security requirements must be applied to all ML application components (e.g. model configuration, host infrastructures, training data)."
   },
   {
+    "Title": "(Organizational) Ensure ML applications comply with identity management, authentication, and access control policies",
     "Category": "Privacy",
     "SDLC Phase": "Development",
     "Data type": "",
@@ -3138,9 +3181,10 @@
     "Sub-Threat": "N.A.",
     "Description": "This threat refers to the possibility of leakage of all or partial information about the model.\nExample: the outputs of a ML algorithm are so verbose that they give information about its configuration (or leakage of sensitive data)",
     "Vulnerability (consequence)": "Weak access protection mechanisms for ML model components",
-    "Action": "(Organizational) Ensure ML applications comply with identity management, authentication, and access control policies\nAs all applications, those using ML must comply with defined policies regarding identity management (e.g. ensure all users are integrated in the departure process), authentication (e.g. passwords complexity, use of Multi-Factors Authentication (MFA), access restriction) and access control (e.g. RBAC model, connection context). Underlying security requirements must be applied to all ML application components (e.g. model configuration, host infrastructures, training data)."
+    "Action": "As all applications, those using ML must comply with defined policies regarding identity management (e.g. ensure all users are integrated in the departure process), authentication (e.g. passwords complexity, use of Multi-Factors Authentication (MFA), access restriction) and access control (e.g. RBAC model, connection context). Underlying security requirements must be applied to all ML application components (e.g. model configuration, host infrastructures, training data)."
   },
   {
+    "Title": "(Organizational) Ensure ML applications comply with identity management, authentication, and access control policies",
     "Category": "Privacy",
     "SDLC Phase": "Testing",
     "Data type": "",
@@ -3150,9 +3194,10 @@
     "Sub-Threat": "N.A.",
     "Description": "This threat refers to the possibility of leakage of all or partial information about the model.\nExample: the outputs of a ML algorithm are so verbose that they give information about its configuration (or leakage of sensitive data)",
     "Vulnerability (consequence)": "Weak access protection mechanisms for ML model components",
-    "Action": "(Organizational) Ensure ML applications comply with identity management, authentication, and access control policies\nAs all applications, those using ML must comply with defined policies regarding identity management (e.g. ensure all users are integrated in the departure process), authentication (e.g. passwords complexity, use of Multi-Factors Authentication (MFA), access restriction) and access control (e.g. RBAC model, connection context). Underlying security requirements must be applied to all ML application components (e.g. model configuration, host infrastructures, training data)."
+    "Action": "As all applications, those using ML must comply with defined policies regarding identity management (e.g. ensure all users are integrated in the departure process), authentication (e.g. passwords complexity, use of Multi-Factors Authentication (MFA), access restriction) and access control (e.g. RBAC model, connection context). Underlying security requirements must be applied to all ML application components (e.g. model configuration, host infrastructures, training data)."
   },
   {
+    "Title": "(Organizational) Ensure ML applications comply with identity management, authentication, and access control policies",
     "Category": "Privacy",
     "SDLC Phase": "Deployment",
     "Data type": "",
@@ -3162,9 +3207,10 @@
     "Sub-Threat": "N.A.",
     "Description": "This threat refers to the possibility of leakage of all or partial information about the model.\nExample: the outputs of a ML algorithm are so verbose that they give information about its configuration (or leakage of sensitive data)",
     "Vulnerability (consequence)": "Weak access protection mechanisms for ML model components",
-    "Action": "(Organizational) Ensure ML applications comply with identity management, authentication, and access control policies\nAs all applications, those using ML must comply with defined policies regarding identity management (e.g. ensure all users are integrated in the departure process), authentication (e.g. passwords complexity, use of Multi-Factors Authentication (MFA), access restriction) and access control (e.g. RBAC model, connection context). Underlying security requirements must be applied to all ML application components (e.g. model configuration, host infrastructures, training data)."
+    "Action": "As all applications, those using ML must comply with defined policies regarding identity management (e.g. ensure all users are integrated in the departure process), authentication (e.g. passwords complexity, use of Multi-Factors Authentication (MFA), access restriction) and access control (e.g. RBAC model, connection context). Underlying security requirements must be applied to all ML application components (e.g. model configuration, host infrastructures, training data)."
   },
   {
+    "Title": "(Organizational) Ensure ML applications comply with identity management, authentication, and access control policies",
     "Category": "Privacy",
     "SDLC Phase": "Monitoring",
     "Data type": "",
@@ -3174,9 +3220,10 @@
     "Sub-Threat": "N.A.",
     "Description": "This threat refers to the possibility of leakage of all or partial information about the model.\nExample: the outputs of a ML algorithm are so verbose that they give information about its configuration (or leakage of sensitive data)",
     "Vulnerability (consequence)": "Weak access protection mechanisms for ML model components",
-    "Action": "(Organizational) Ensure ML applications comply with identity management, authentication, and access control policies\nAs all applications, those using ML must comply with defined policies regarding identity management (e.g. ensure all users are integrated in the departure process), authentication (e.g. passwords complexity, use of Multi-Factors Authentication (MFA), access restriction) and access control (e.g. RBAC model, connection context). Underlying security requirements must be applied to all ML application components (e.g. model configuration, host infrastructures, training data)."
+    "Action": "As all applications, those using ML must comply with defined policies regarding identity management (e.g. ensure all users are integrated in the departure process), authentication (e.g. passwords complexity, use of Multi-Factors Authentication (MFA), access restriction) and access control (e.g. RBAC model, connection context). Underlying security requirements must be applied to all ML application components (e.g. model configuration, host infrastructures, training data)."
   },
   {
+    "Title": "(Specific ML) Implement processes to maintain security levels of ML components over time",
     "Category": "Privacy",
     "SDLC Phase": "Design",
     "Data type": "",
@@ -3186,9 +3233,10 @@
     "Sub-Threat": "N.A.",
     "Description": "This threat refers to the possibility of leakage of all or partial information about the model.\nExample: the outputs of a ML algorithm are so verbose that they give information about its configuration (or leakage of sensitive data)",
     "Vulnerability (consequence)": "Lack of security process to maintain a good security level of the components of the ML application",
-    "Action": "(Specific ML) Implement processes to maintain security levels of ML components over time\nML is a rapidly evolving field, especially regarding its cybersecurity. Regular checking of new attacks and defenses must be integrated into the processes for maintaining security level applications. The security level should thus be regularly assessed too."
+    "Action": "ML is a rapidly evolving field, especially regarding its cybersecurity. Regular checking of new attacks and defenses must be integrated into the processes for maintaining security level applications. The security level should thus be regularly assessed too."
   },
   {
+    "Title": "(Specific ML) Implement processes to maintain security levels of ML components over time",
     "Category": "Privacy",
     "SDLC Phase": "Development",
     "Data type": "",
@@ -3198,9 +3246,10 @@
     "Sub-Threat": "N.A.",
     "Description": "This threat refers to the possibility of leakage of all or partial information about the model.\nExample: the outputs of a ML algorithm are so verbose that they give information about its configuration (or leakage of sensitive data)",
     "Vulnerability (consequence)": "Lack of security process to maintain a good security level of the components of the ML application",
-    "Action": "(Specific ML) Implement processes to maintain security levels of ML components over time\nML is a rapidly evolving field, especially regarding its cybersecurity. Regular checking of new attacks and defenses must be integrated into the processes for maintaining security level applications. The security level should thus be regularly assessed too."
+    "Action": "ML is a rapidly evolving field, especially regarding its cybersecurity. Regular checking of new attacks and defenses must be integrated into the processes for maintaining security level applications. The security level should thus be regularly assessed too."
   },
   {
+    "Title": "(Specific ML) Implement processes to maintain security levels of ML components over time",
     "Category": "Privacy",
     "SDLC Phase": "Monitoring",
     "Data type": "",
@@ -3210,9 +3259,10 @@
     "Sub-Threat": "N.A.",
     "Description": "This threat refers to the possibility of leakage of all or partial information about the model.\nExample: the outputs of a ML algorithm are so verbose that they give information about its configuration (or leakage of sensitive data)",
     "Vulnerability (consequence)": "Lack of security process to maintain a good security level of the components of the ML application",
-    "Action": "(Specific ML) Implement processes to maintain security levels of ML components over time\nML is a rapidly evolving field, especially regarding its cybersecurity. Regular checking of new attacks and defenses must be integrated into the processes for maintaining security level applications. The security level should thus be regularly assessed too."
+    "Action": "ML is a rapidly evolving field, especially regarding its cybersecurity. Regular checking of new attacks and defenses must be integrated into the processes for maintaining security level applications. The security level should thus be regularly assessed too."
   },
   {
+    "Title": "Use of homomorphic pattern encryption",
     "Category": "Privacy",
     "SDLC Phase": "Design",
     "Data type": "",
@@ -3225,6 +3275,7 @@
     "Action": "By keeping the data encrypted during the entire model lifecycle, the risk of data breach becomes very low. Anyway, this is a very difficult measure to apply at the moment.\n\n<a href='https://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/homomorphic-encryption/'>Encrypted-data-based trainer (pattern)</a>"
   },
   {
+    "Title": "Tools for encryption in AI",
     "Category": "Privacy",
     "SDLC Phase": "Development",
     "Data type": "",
@@ -3237,6 +3288,7 @@
     "Action": "To implement encryption in AI, you can use one of the following tools:\nhttps://azure.microsoft.com/en-us/blog/azure-confidential-computing/\nhttps://www.intel.com/content/www/us/en/developer/tools/homomorphic-encryption/overview.html#gs.iqs52j"
   },
   {
+    "Title": "Tools for encryption in AI",
     "Category": "Privacy",
     "SDLC Phase": "Deployment",
     "Data type": "",
@@ -3249,6 +3301,7 @@
     "Action": "To implement encryption in AI, you can use one of the following tools:\nhttps://azure.microsoft.com/en-us/blog/azure-confidential-computing/\nhttps://www.intel.com/content/www/us/en/developer/tools/homomorphic-encryption/overview.html#gs.iqs52j"
   },
   {
+    "Title": "(Specific ML) Reduce the information given by the model",
     "Category": "Privacy",
     "SDLC Phase": "Design",
     "Data type": "",
@@ -3258,9 +3311,10 @@
     "Sub-Threat": "Data disclosure",
     "Description": "This threat refers to a leak of data manipulated by ML algorithms. This data leakage can be explained by an inadequate access control, a handling error of the project team or simply because sometimes the entity that owns the model and the entity that owns the data are distinct. To train the model, it is often necessary for the data to be accessed by the model provider. This involve sharing the data and thus share sensitive data with a third party.",
     "Vulnerability (consequence)": "Too much information about the model given in its outputs",
-    "Action": "(Specific ML) Reduce the information given by the model\nControlling the information (like its verbosity) provided by the model by applying basic cybersecurity hygiene rules is a way of limiting the techniques that an attacker can use to build adversarial examples. One of the basic rules of hygiene, for example, is to reduce the information of the output determined by the model to the maximum, or by profiling who is making the request. \nFor example: considering a classification application, it would consist of communicating only the predicted class to the users of solution, not the associated probability. \nTo summarize, some of the possible valid techniques are:\n- Rate-limit queries allowed by model\n- Minimize or obfuscate the details returned in prediction APIs while still maintaining their usefulness to �honest� applications. For further reading refer <a href='https://en.wikipedia.org/wiki/Form_follows_function'>here</a>.\n- Define a well-formed query for your model inputs and only return results in response to completed, well-formed inputs matching that format.\n- Return rounded confidence values. Most legitimate callers do not need multiple decimal places of precision."
+    "Action": "Controlling the information (like its verbosity) provided by the model by applying basic cybersecurity hygiene rules is a way of limiting the techniques that an attacker can use to build adversarial examples. One of the basic rules of hygiene, for example, is to reduce the information of the output determined by the model to the maximum, or by profiling who is making the request. \nFor example: considering a classification application, it would consist of communicating only the predicted class to the users of solution, not the associated probability. \nTo summarize, some of the possible valid techniques are:\n- Rate-limit queries allowed by model\n- Minimize or obfuscate the details returned in prediction APIs while still maintaining their usefulness to �honest� applications. For further reading refer <a href='https://en.wikipedia.org/wiki/Form_follows_function'>here</a>.\n- Define a well-formed query for your model inputs and only return results in response to completed, well-formed inputs matching that format.\n- Return rounded confidence values. Most legitimate callers do not need multiple decimal places of precision."
   },
   {
+    "Title": "(Specific ML) Reduce the information given by the model",
     "Category": "Privacy",
     "SDLC Phase": "Development",
     "Data type": "",
@@ -3270,9 +3324,10 @@
     "Sub-Threat": "Data disclosure",
     "Description": "This threat refers to a leak of data manipulated by ML algorithms. This data leakage can be explained by an inadequate access control, a handling error of the project team or simply because sometimes the entity that owns the model and the entity that owns the data are distinct. To train the model, it is often necessary for the data to be accessed by the model provider. This involve sharing the data and thus share sensitive data with a third party.",
     "Vulnerability (consequence)": "Too much information about the model given in its outputs",
-    "Action": "(Specific ML) Reduce the information given by the model\nControlling the information (like its verbosity) provided by the model by applying basic cybersecurity hygiene rules is a way of limiting the techniques that an attacker can use to build adversarial examples. One of the basic rules of hygiene, for example, is to reduce the information of the output determined by the model to the maximum, or by profiling who is making the request. \nFor example: considering a classification application, it would consist of communicating only the predicted class to the users of solution, not the associated probability. \nTo summarize, some of the possible valid techniques are:\n- Rate-limit queries allowed by model\n- Minimize or obfuscate the details returned in prediction APIs while still maintaining their usefulness to �honest� applications. For further reading refer <a href='https://en.wikipedia.org/wiki/Form_follows_function'>here</a>.\n- Define a well-formed query for your model inputs and only return results in response to completed, well-formed inputs matching that format.\n- Return rounded confidence values. Most legitimate callers do not need multiple decimal places of precision."
+    "Action": "Controlling the information (like its verbosity) provided by the model by applying basic cybersecurity hygiene rules is a way of limiting the techniques that an attacker can use to build adversarial examples. One of the basic rules of hygiene, for example, is to reduce the information of the output determined by the model to the maximum, or by profiling who is making the request. \nFor example: considering a classification application, it would consist of communicating only the predicted class to the users of solution, not the associated probability. \nTo summarize, some of the possible valid techniques are:\n- Rate-limit queries allowed by model\n- Minimize or obfuscate the details returned in prediction APIs while still maintaining their usefulness to �honest� applications. For further reading refer <a href='https://en.wikipedia.org/wiki/Form_follows_function'>here</a>.\n- Define a well-formed query for your model inputs and only return results in response to completed, well-formed inputs matching that format.\n- Return rounded confidence values. Most legitimate callers do not need multiple decimal places of precision."
   },
   {
+    "Title": "(Specific ML) Reduce the information given by the model",
     "Category": "Privacy",
     "SDLC Phase": "Deployment",
     "Data type": "",
@@ -3282,9 +3337,10 @@
     "Sub-Threat": "Data disclosure",
     "Description": "This threat refers to a leak of data manipulated by ML algorithms. This data leakage can be explained by an inadequate access control, a handling error of the project team or simply because sometimes the entity that owns the model and the entity that owns the data are distinct. To train the model, it is often necessary for the data to be accessed by the model provider. This involve sharing the data and thus share sensitive data with a third party.",
     "Vulnerability (consequence)": "Too much information about the model given in its outputs",
-    "Action": "(Specific ML) Reduce the information given by the model\nControlling the information (like its verbosity) provided by the model by applying basic cybersecurity hygiene rules is a way of limiting the techniques that an attacker can use to build adversarial examples. One of the basic rules of hygiene, for example, is to reduce the information of the output determined by the model to the maximum, or by profiling who is making the request. \nFor example: considering a classification application, it would consist of communicating only the predicted class to the users of solution, not the associated probability. \nTo summarize, some of the possible valid techniques are:\n- Rate-limit queries allowed by model\n- Minimize or obfuscate the details returned in prediction APIs while still maintaining their usefulness to �honest� applications. For further reading refer <a href='https://en.wikipedia.org/wiki/Form_follows_function'>here</a>.\n- Define a well-formed query for your model inputs and only return results in response to completed, well-formed inputs matching that format.\n- Return rounded confidence values. Most legitimate callers do not need multiple decimal places of precision."
+    "Action": "Controlling the information (like its verbosity) provided by the model by applying basic cybersecurity hygiene rules is a way of limiting the techniques that an attacker can use to build adversarial examples. One of the basic rules of hygiene, for example, is to reduce the information of the output determined by the model to the maximum, or by profiling who is making the request. \nFor example: considering a classification application, it would consist of communicating only the predicted class to the users of solution, not the associated probability. \nTo summarize, some of the possible valid techniques are:\n- Rate-limit queries allowed by model\n- Minimize or obfuscate the details returned in prediction APIs while still maintaining their usefulness to �honest� applications. For further reading refer <a href='https://en.wikipedia.org/wiki/Form_follows_function'>here</a>.\n- Define a well-formed query for your model inputs and only return results in response to completed, well-formed inputs matching that format.\n- Return rounded confidence values. Most legitimate callers do not need multiple decimal places of precision."
   },
   {
+    "Title": "(Specific ML) Ensure that models respect differential privacy (to a sufficient degree)",
     "Category": "Privacy",
     "SDLC Phase": "Design",
     "Data type": "",
@@ -3294,9 +3350,10 @@
     "Sub-Threat": "Data disclosure",
     "Description": "This threat refers to a leak of data manipulated by ML algorithms. This data leakage can be explained by an inadequate access control, a handling error of the project team or simply because sometimes the entity that owns the model and the entity that owns the data are distinct. To train the model, it is often necessary for the data to be accessed by the model provider. This involve sharing the data and thus share sensitive data with a third party.",
     "Vulnerability (consequence)": "The model allows private information to be retrieved",
-    "Action": "(Specific ML) Ensure that models respect differential privacy (to a sufficient degree)\nDifferential privacy (DP) is a strong, mathematical definition of privacy in the context of statistical and ML analysis. According to this mathematical definition, DP is a criterion of privacy protection, which many tools for analysing sensitive personal information have been devised to satisfy. It is noticeable that this security control can greatly reduce the performance of the model. It is therefore important to estimate the need for data or model protection. Example: Differential privacy makes it possible for technology companies to collect and share aggregate information about user habits, while maintaining the privacy of individual users.\n\nhttps://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/differential-privacy/"
+    "Action": "Differential privacy (DP) is a strong, mathematical definition of privacy in the context of statistical and ML analysis. According to this mathematical definition, DP is a criterion of privacy protection, which many tools for analysing sensitive personal information have been devised to satisfy. It is noticeable that this security control can greatly reduce the performance of the model. It is therefore important to estimate the need for data or model protection. Example: Differential privacy makes it possible for technology companies to collect and share aggregate information about user habits, while maintaining the privacy of individual users.\n\nhttps://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/differential-privacy/"
   },
   {
+    "Title": "Rely on the use of external tools for differential privacy implementation",
     "Category": "Privacy",
     "SDLC Phase": "Development",
     "Data type": "",
@@ -3306,9 +3363,10 @@
     "Sub-Threat": "Data disclosure",
     "Description": "This threat refers to a leak of data manipulated by ML algorithms. This data leakage can be explained by an inadequate access control, a handling error of the project team or simply because sometimes the entity that owns the model and the entity that owns the data are distinct. To train the model, it is often necessary for the data to be accessed by the model provider. This involve sharing the data and thus share sensitive data with a third party.",
     "Vulnerability (consequence)": "The model allows private information to be retrieved",
-    "Action": "To implement diffierential privacy, is possible to use one of these tools:\nhttps://aip360.res.ibm.com/tools#differential\nhttps://opacus.ai/#quickstart"
+    "Action": "To implement differential privacy, is possible to use one of these tools: https://aip360.res.ibm.com/tools#differential, https://opacus.ai/#quickstart"
   },
   {
+    "Title": "(Specific ML) Reduce the information given by the model",
     "Category": "Privacy",
     "SDLC Phase": "Design",
     "Data type": "",
@@ -3318,9 +3376,10 @@
     "Sub-Threat": "Data disclosure",
     "Description": "This threat refers to a leak of data manipulated by ML algorithms. This data leakage can be explained by an inadequate access control, a handling error of the project team or simply because sometimes the entity that owns the model and the entity that owns the data are distinct. To train the model, it is often necessary for the data to be accessed by the model provider. This involve sharing the data and thus share sensitive data with a third party.",
     "Vulnerability (consequence)": "Too much information about the model given in its outputs",
-    "Action": "(Specific ML) Reduce the information given by the model\nControlling the information (like its verbosity) provided by the model by applying basic cybersecurity hygiene rules is a way of limiting the techniques that an attacker can use to build adversarial examples. One of the basic rules of hygiene, for example, is to reduce the information of the output determined by the model to the maximum, or by profiling who is making the request. \nFor example: considering a classification application, it would consist of communicating only the predicted class to the users of solution, not the associated probability. \nTo summarize, some of the possible valid techniques are:\n- Rate-limit queries allowed by model\n- Minimize or obfuscate the details returned in prediction APIs while still maintaining their usefulness to �honest� applications. For further reading refer <a href='https://en.wikipedia.org/wiki/Form_follows_function'>here</a>.\n- Define a well-formed query for your model inputs and only return results in response to completed, well-formed inputs matching that format.\n- Return rounded confidence values. Most legitimate callers do not need multiple decimal places of precision."
+    "Action": "Controlling the information (like its verbosity) provided by the model by applying basic cybersecurity hygiene rules is a way of limiting the techniques that an attacker can use to build adversarial examples. One of the basic rules of hygiene, for example, is to reduce the information of the output determined by the model to the maximum, or by profiling who is making the request. \nFor example: considering a classification application, it would consist of communicating only the predicted class to the users of solution, not the associated probability. \nTo summarize, some of the possible valid techniques are:\n- Rate-limit queries allowed by model\n- Minimize or obfuscate the details returned in prediction APIs while still maintaining their usefulness to �honest� applications. For further reading refer <a href='https://en.wikipedia.org/wiki/Form_follows_function'>here</a>.\n- Define a well-formed query for your model inputs and only return results in response to completed, well-formed inputs matching that format.\n- Return rounded confidence values. Most legitimate callers do not need multiple decimal places of precision."
   },
   {
+    "Title": "(Specific ML) Reduce the information given by the model",
     "Category": "Privacy",
     "SDLC Phase": "Development",
     "Data type": "",
@@ -3330,9 +3389,10 @@
     "Sub-Threat": "Data disclosure",
     "Description": "This threat refers to a leak of data manipulated by ML algorithms. This data leakage can be explained by an inadequate access control, a handling error of the project team or simply because sometimes the entity that owns the model and the entity that owns the data are distinct. To train the model, it is often necessary for the data to be accessed by the model provider. This involve sharing the data and thus share sensitive data with a third party.",
     "Vulnerability (consequence)": "Too much information about the model given in its outputs",
-    "Action": "(Specific ML) Reduce the information given by the model\nControlling the information (like its verbosity) provided by the model by applying basic cybersecurity hygiene rules is a way of limiting the techniques that an attacker can use to build adversarial examples. One of the basic rules of hygiene, for example, is to reduce the information of the output determined by the model to the maximum, or by profiling who is making the request. \nFor example: considering a classification application, it would consist of communicating only the predicted class to the users of solution, not the associated probability. \nTo summarize, some of the possible valid techniques are:\n- Rate-limit queries allowed by model\n- Minimize or obfuscate the details returned in prediction APIs while still maintaining their usefulness to �honest� applications. For further reading refer <a href='https://en.wikipedia.org/wiki/Form_follows_function'>here</a>.\n- Define a well-formed query for your model inputs and only return results in response to completed, well-formed inputs matching that format.\n- Return rounded confidence values. Most legitimate callers do not need multiple decimal places of precision."
+    "Action": "Controlling the information (like its verbosity) provided by the model by applying basic cybersecurity hygiene rules is a way of limiting the techniques that an attacker can use to build adversarial examples. One of the basic rules of hygiene, for example, is to reduce the information of the output determined by the model to the maximum, or by profiling who is making the request. \nFor example: considering a classification application, it would consist of communicating only the predicted class to the users of solution, not the associated probability. \nTo summarize, some of the possible valid techniques are:\n- Rate-limit queries allowed by model\n- Minimize or obfuscate the details returned in prediction APIs while still maintaining their usefulness to �honest� applications. For further reading refer <a href='https://en.wikipedia.org/wiki/Form_follows_function'>here</a>.\n- Define a well-formed query for your model inputs and only return results in response to completed, well-formed inputs matching that format.\n- Return rounded confidence values. Most legitimate callers do not need multiple decimal places of precision."
   },
   {
+    "Title": "(Specific ML) Reduce the information given by the model",
     "Category": "Privacy",
     "SDLC Phase": "Deployment",
     "Data type": "",
@@ -3342,9 +3402,10 @@
     "Sub-Threat": "Data disclosure",
     "Description": "This threat refers to a leak of data manipulated by ML algorithms. This data leakage can be explained by an inadequate access control, a handling error of the project team or simply because sometimes the entity that owns the model and the entity that owns the data are distinct. To train the model, it is often necessary for the data to be accessed by the model provider. This involve sharing the data and thus share sensitive data with a third party.",
     "Vulnerability (consequence)": "Too much information about the model given in its outputs",
-    "Action": "(Specific ML) Reduce the information given by the model\nControlling the information (like its verbosity) provided by the model by applying basic cybersecurity hygiene rules is a way of limiting the techniques that an attacker can use to build adversarial examples. One of the basic rules of hygiene, for example, is to reduce the information of the output determined by the model to the maximum, or by profiling who is making the request. \nFor example: considering a classification application, it would consist of communicating only the predicted class to the users of solution, not the associated probability. \nTo summarize, some of the possible valid techniques are:\n- Rate-limit queries allowed by model\n- Minimize or obfuscate the details returned in prediction APIs while still maintaining their usefulness to �honest� applications. For further reading refer <a href='https://en.wikipedia.org/wiki/Form_follows_function'>here</a>.\n- Define a well-formed query for your model inputs and only return results in response to completed, well-formed inputs matching that format.\n- Return rounded confidence values. Most legitimate callers do not need multiple decimal places of precision."
+    "Action": "Controlling the information (like its verbosity) provided by the model by applying basic cybersecurity hygiene rules is a way of limiting the techniques that an attacker can use to build adversarial examples. One of the basic rules of hygiene, for example, is to reduce the information of the output determined by the model to the maximum, or by profiling who is making the request. \nFor example: considering a classification application, it would consist of communicating only the predicted class to the users of solution, not the associated probability. \nTo summarize, some of the possible valid techniques are:\n- Rate-limit queries allowed by model\n- Minimize or obfuscate the details returned in prediction APIs while still maintaining their usefulness to �honest� applications. For further reading refer <a href='https://en.wikipedia.org/wiki/Form_follows_function'>here</a>.\n- Define a well-formed query for your model inputs and only return results in response to completed, well-formed inputs matching that format.\n- Return rounded confidence values. Most legitimate callers do not need multiple decimal places of precision."
   },
   {
+    "Title": "(Specific ML) Use federated learning to minimize risk of data breaches",
     "Category": "Privacy",
     "SDLC Phase": "Design",
     "Data type": "",
@@ -3354,9 +3415,10 @@
     "Sub-Threat": "Data disclosure",
     "Description": "This threat refers to a leak of data manipulated by ML algorithms. This data leakage can be explained by an inadequate access control, a handling error of the project team or simply because sometimes the entity that owns the model and the entity that owns the data are distinct. To train the model, it is often necessary for the data to be accessed by the model provider. This involve sharing the data and thus share sensitive data with a third party.",
     "Vulnerability (consequence)": "Disclosure of sensitive data for ML algorithm training",
-    "Action": "(Specific ML) Use federated learning to minimize risk of data breaches\nFederated learning is a set of training techniques that trains a model on several decentraliser servers containing local data samples, without exchanging their data samples. This avoids the need to transfer the data and/or entrust it to an untrusted third party and thus helps to preserve the privacy of the data.\n\nhttps://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/secure-multi-party-computation/"
+    "Action": "Federated learning is a set of training techniques that trains a model on several decentraliser servers containing local data samples, without exchanging their data samples. This avoids the need to transfer the data and/or entrust it to an untrusted third party and thus helps to preserve the privacy of the data.\n\nhttps://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/secure-multi-party-computation/"
   },
   {
+    "Title": "Rely on the use of external tools for federating learning implementation in AI",
     "Category": "Privacy",
     "SDLC Phase": "Development",
     "Data type": "",
@@ -3366,9 +3428,10 @@
     "Sub-Threat": "Data disclosure",
     "Description": "This threat refers to a leak of data manipulated by ML algorithms. This data leakage can be explained by an inadequate access control, a handling error of the project team or simply because sometimes the entity that owns the model and the entity that owns the data are distinct. To train the model, it is often necessary for the data to be accessed by the model provider. This involve sharing the data and thus share sensitive data with a third party.",
     "Vulnerability (consequence)": "Disclosure of sensitive data for ML algorithm training",
-    "Action": "To implement federated learning in AI, you can use one of the following tools:\nhttps://www.tensorflow.org/federated\nhttps://aip360.res.ibm.com/tools#federated"
+    "Action": "To implement federated learning in AI, you can use one of the following tools: https://www.tensorflow.org/federated, https://aip360.res.ibm.com/tools#federated"
   },
   {
+    "Title": "(Specific ML) Ensure that models respect differential privacy (to a sufficient degree)",
     "Category": "Privacy",
     "SDLC Phase": "Design",
     "Data type": "",
@@ -3378,9 +3441,10 @@
     "Sub-Threat": "Model disclosure",
     "Description": "This threat refers to a leak of the internals (i.e. parameter values) of the ML model. This model leakage could occur because of human error or contraction with a third party with a too low security level.",
     "Vulnerability (consequence)": "The model allows private information to be retrieved",
-    "Action": "(Specific ML) Ensure that models respect differential privacy (to a sufficient degree)\nDifferential privacy (DP) is a strong, mathematical definition of privacy in the context of statistical and ML analysis. According to this mathematical definition, DP is a criterion of privacy protection, which many tools for analysing sensitive personal information have been devised to satisfy. It is noticeable that this security control can greatly reduce the performance of the model. It is therefore important to estimate the need for data or model protection. Example: Differential privacy makes it possible for technology companies to collect and share aggregate information about user habits, while maintaining the privacy of individual users.\n\nhttps://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/differential-privacy/"
+    "Action": "Differential privacy (DP) is a strong, mathematical definition of privacy in the context of statistical and ML analysis. According to this mathematical definition, DP is a criterion of privacy protection, which many tools for analysing sensitive personal information have been devised to satisfy. It is noticeable that this security control can greatly reduce the performance of the model. It is therefore important to estimate the need for data or model protection. Example: Differential privacy makes it possible for technology companies to collect and share aggregate information about user habits, while maintaining the privacy of individual users.\n\nhttps://research.csiro.au/ss/science/projects/responsible-ai-pattern-catalogue/differential-privacy/"
   },
   {
+    "Title": "Rely on the use of external tools for differential privacy implementation",
     "Category": "Privacy",
     "SDLC Phase": "Development",
     "Data type": "",
@@ -3390,9 +3454,10 @@
     "Sub-Threat": "Model disclosure",
     "Description": "This threat refers to a leak of the internals (i.e. parameter values) of the ML model. This model leakage could occur because of human error or contraction with a third party with a too low security level.",
     "Vulnerability (consequence)": "The model allows private information to be retrieved",
-    "Action": "To implement diffierential privacy, is possible to use one of these tools:\nhttps://aip360.res.ibm.com/tools#differential\nhttps://opacus.ai/#quickstart"
+    "Action": "To implement differential privacy, is possible to use one of these tools: https://aip360.res.ibm.com/tools#differential, https://opacus.ai/#quickstart"
   },
   {
+    "Title": "(Specific ML) Reduce the information given by the model",
     "Category": "Privacy",
     "SDLC Phase": "Design",
     "Data type": "",
@@ -3402,9 +3467,10 @@
     "Sub-Threat": "Model disclosure",
     "Description": "This threat refers to a leak of the internals (i.e. parameter values) of the ML model. This model leakage could occur because of human error or contraction with a third party with a too low security level.",
     "Vulnerability (consequence)": "Too much information about the model given in its outputs",
-    "Action": "(Specific ML) Reduce the information given by the model\nControlling the information (like its verbosity) provided by the model by applying basic cybersecurity hygiene rules is a way of limiting the techniques that an attacker can use to build adversarial examples. One of the basic rules of hygiene, for example, is to reduce the information of the output determined by the model to the maximum, or by profiling who is making the request. \nFor example: considering a classification application, it would consist of communicating only the predicted class to the users of solution, not the associated probability. \nTo summarize, some of the possible valid techniques are:\n- Rate-limit queries allowed by model\n- Minimize or obfuscate the details returned in prediction APIs while still maintaining their usefulness to �honest� applications. For further reading refer <a href='https://en.wikipedia.org/wiki/Form_follows_function'>here</a>.\n- Define a well-formed query for your model inputs and only return results in response to completed, well-formed inputs matching that format.\n- Return rounded confidence values. Most legitimate callers do not need multiple decimal places of precision."
+    "Action": "Controlling the information (like its verbosity) provided by the model by applying basic cybersecurity hygiene rules is a way of limiting the techniques that an attacker can use to build adversarial examples. One of the basic rules of hygiene, for example, is to reduce the information of the output determined by the model to the maximum, or by profiling who is making the request. \nFor example: considering a classification application, it would consist of communicating only the predicted class to the users of solution, not the associated probability. \nTo summarize, some of the possible valid techniques are:\n- Rate-limit queries allowed by model\n- Minimize or obfuscate the details returned in prediction APIs while still maintaining their usefulness to �honest� applications. For further reading refer <a href='https://en.wikipedia.org/wiki/Form_follows_function'>here</a>.\n- Define a well-formed query for your model inputs and only return results in response to completed, well-formed inputs matching that format.\n- Return rounded confidence values. Most legitimate callers do not need multiple decimal places of precision."
   },
   {
+    "Title": "(Specific ML) Reduce the information given by the model",
     "Category": "Privacy",
     "SDLC Phase": "Development",
     "Data type": "",
@@ -3414,9 +3480,10 @@
     "Sub-Threat": "Model disclosure",
     "Description": "This threat refers to a leak of the internals (i.e. parameter values) of the ML model. This model leakage could occur because of human error or contraction with a third party with a too low security level.",
     "Vulnerability (consequence)": "Too much information about the model given in its outputs",
-    "Action": "(Specific ML) Reduce the information given by the model\nControlling the information (like its verbosity) provided by the model by applying basic cybersecurity hygiene rules is a way of limiting the techniques that an attacker can use to build adversarial examples. One of the basic rules of hygiene, for example, is to reduce the information of the output determined by the model to the maximum, or by profiling who is making the request. \nFor example: considering a classification application, it would consist of communicating only the predicted class to the users of solution, not the associated probability. \nTo summarize, some of the possible valid techniques are:\n- Rate-limit queries allowed by model\n- Minimize or obfuscate the details returned in prediction APIs while still maintaining their usefulness to �honest� applications. For further reading refer <a href='https://en.wikipedia.org/wiki/Form_follows_function'>here</a>.\n- Define a well-formed query for your model inputs and only return results in response to completed, well-formed inputs matching that format.\n- Return rounded confidence values. Most legitimate callers do not need multiple decimal places of precision."
+    "Action": "\nControlling the information (like its verbosity) provided by the model by applying basic cybersecurity hygiene rules is a way of limiting the techniques that an attacker can use to build adversarial examples. One of the basic rules of hygiene, for example, is to reduce the information of the output determined by the model to the maximum, or by profiling who is making the request. \nFor example: considering a classification application, it would consist of communicating only the predicted class to the users of solution, not the associated probability. \nTo summarize, some of the possible valid techniques are:\n- Rate-limit queries allowed by model\n- Minimize or obfuscate the details returned in prediction APIs while still maintaining their usefulness to �honest� applications. For further reading refer <a href='https://en.wikipedia.org/wiki/Form_follows_function'>here</a>.\n- Define a well-formed query for your model inputs and only return results in response to completed, well-formed inputs matching that format.\n- Return rounded confidence values. Most legitimate callers do not need multiple decimal places of precision."
   },
   {
+    "Title": "(Specific ML) Reduce the information given by the model",
     "Category": "Privacy",
     "SDLC Phase": "Deployment",
     "Data type": "",
@@ -3426,6 +3493,6 @@
     "Sub-Threat": "Model disclosure",
     "Description": "This threat refers to a leak of the internals (i.e. parameter values) of the ML model. This model leakage could occur because of human error or contraction with a third party with a too low security level.",
     "Vulnerability (consequence)": "Too much information about the model given in its outputs",
-    "Action": "(Specific ML) Reduce the information given by the model\nControlling the information (like its verbosity) provided by the model by applying basic cybersecurity hygiene rules is a way of limiting the techniques that an attacker can use to build adversarial examples. One of the basic rules of hygiene, for example, is to reduce the information of the output determined by the model to the maximum, or by profiling who is making the request. \nFor example: considering a classification application, it would consist of communicating only the predicted class to the users of solution, not the associated probability. \nTo summarize, some of the possible valid techniques are:\n- Rate-limit queries allowed by model\n- Minimize or obfuscate the details returned in prediction APIs while still maintaining their usefulness to �honest� applications. For further reading refer <a href='https://en.wikipedia.org/wiki/Form_follows_function'>here</a>.\n- Define a well-formed query for your model inputs and only return results in response to completed, well-formed inputs matching that format.\n- Return rounded confidence values. Most legitimate callers do not need multiple decimal places of precision."
+    "Action": "Controlling the information (like its verbosity) provided by the model by applying basic cybersecurity hygiene rules is a way of limiting the techniques that an attacker can use to build adversarial examples. One of the basic rules of hygiene, for example, is to reduce the information of the output determined by the model to the maximum, or by profiling who is making the request. \nFor example: considering a classification application, it would consist of communicating only the predicted class to the users of solution, not the associated probability. \nTo summarize, some of the possible valid techniques are:\n- Rate-limit queries allowed by model\n- Minimize or obfuscate the details returned in prediction APIs while still maintaining their usefulness to �honest� applications. For further reading refer <a href='https://en.wikipedia.org/wiki/Form_follows_function'>here</a>.\n- Define a well-formed query for your model inputs and only return results in response to completed, well-formed inputs matching that format.\n- Return rounded confidence values. Most legitimate callers do not need multiple decimal places of precision."
   }
 ]
