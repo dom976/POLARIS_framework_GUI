@@ -1820,6 +1820,7 @@
     "Action": "Apply one of the following high-level mitigations:\n- Strong client<->server mutual authentication and access control to model interfaces\n- Takedown of the offending accounts.\n- Identify and enforce a service-level agreement for your APIs. Determine the acceptable time-to-fix for an issue once reported and ensure the issue no longer repros once SLA expires."
   },
   {
+    "Title": "Defining Explainability Requirements for AI Systems",
     "Category": "Explainability",
     "SDLC Phase": "RE",
     "Data type": "General",
@@ -1832,6 +1833,7 @@
     "Action": "Elicit also explainability requirements; examples are: \n- Unexpected Prediction: Disagreement with AI: declare the required behaviour in case the AI prediction is unexpected, and/or users disagree with AI�s prediction\n- Expected prediction: declare the required behaviour in case AI�s prediction aligns with users� expectations\n- Differentiate similar instances: due to the consequences of wrong decisions, users sometimes need to discern similar instances or outcomes. For example, a doctor differentiates whether the diagnosis is a benign or malignant tumor\n- Learn from AI: users need to gain knowledge, improve their problem-solving skills, and discover new knowledge\n- Improve the predicted outcome: users seek causal factors to control and improve the predicted outcome\n- Communicate with stakeholders: many critical decision-making processes involve multiple stakeholders, and users need to discuss the decision with them\n- Generate reports: users need to utilize the explanations to perform particular tasks such as report production. For example, a radiologist generates a medical report on a patient�s X-ray image"
   },
   {
+    "Title": "Designing Explanation Interfaces: Composing UI Elements and Information Presentation",
     "Category": "Explainability",
     "SDLC Phase": "Design",
     "Data type": "General",
@@ -1844,6 +1846,7 @@
     "Action": "Consider the design of the explanation design: how the final UI should be composed and how to present the information"
   },
   {
+    "Title": "Feature-Based Explanation: Understanding Attribution, Pros, and Cons",
     "Category": "Explainability",
     "SDLC Phase": "Design",
     "Data type": "Tabular",
@@ -1856,6 +1859,7 @@
     "Action": "Feature- based explanation\nFeature Attribution\nPro: Simple and easy to understand; Can answer how and why AI reaches its decisions. \nCons: Illusion of causality, confirmation bias."
   },
   {
+    "Title": "Explaining AI Techniques for Model Interpretability and Feature Importance",
     "Category": "Explainability",
     "SDLC Phase": "Development",
     "Data type": "Tabular",
@@ -1868,6 +1872,7 @@
     "Action": "LIME (Local Interpretable Model-agnostic Explanations) is a technique used to explain the predictions of machine learning models by approximating them locally with interpretable models. For example, LIME can be applied to interpret the decisions made by a deep neural network in medical imaging for diagnosing diseases. For further reading, refer <a href='https://doi.org/10.1145/2939672.2939778'>here</a>.\nSHAP (SHapley Additive exPlanations) is a method that assigns an importance value to each feature in a prediction, based on Shapley values from cooperative game theory. This can be used in credit scoring to understand the impact of different financial factors on a person's creditworthiness. For further reading, refer <a href='https://github.com/slundberg/shap'>here</a>.\nCAM (Class Activation Mapping) is a technique used to visualize which parts of an image are important for a deep neural network's prediction. For instance, CAM can be used in autonomous driving systems to identify the objects that the vehicle needs to react to in real-time. For further reading, refer <a href='http://cnnlocalization.csail.mit.edu'>here</a>.\nLRP (Layer-wise Relevance Propagation) is a method for explaining the predictions of neural networks by attributing relevance scores to each input feature. This can be applied in natural language processing to understand which words contribute most to the sentiment of a text. For further reading, refer <a href='https://doi.org/10.1371/journal.pone.0130140'>here</a>.\nTCAV (Testing with Concept Activation Vectors) is a technique used to understand what concepts a neural network has learned to recognize. For example, TCAV can be applied in medical imaging to validate that a model is detecting relevant medical features rather than spurious correlations. For further reading, refer <a href='http://proceedings.mlr.press/v80/kim18d.html'>here</a>."
   },
   {
+    "Title": "Example-Based Explanation for Decision Verification",
     "Category": "Explainability",
     "SDLC Phase": "Design",
     "Data type": "Tabular",
@@ -1880,6 +1885,7 @@
     "Action": "Example- based explanation\nSimilar Example\nPro: Easy to comprehend, users intuitively verify AI�s decision using analogical reasoning on similar examples\nCons: It does not highlight features within examples to enable users� side-by-side comparison."
   },
   {
+    "Title": "Comparing Nearest Neighbor and Case-Based Reasoning in Recommendation Systems and Problem Solving",
     "Category": "Explainability",
     "SDLC Phase": "Development",
     "Data type": "Tabular",
@@ -1892,6 +1898,7 @@
     "Action": "Nearest neighbor is a simple classification algorithm that classifies an unlabeled data point based on the majority class of its nearest labeled data points. For example, it can be used in recommendation systems to suggest products to users based on the preferences of similar users.\nCase-Based Reasoning (CBR) is a method where new problems are solved based on the solutions of similar past problems. For further reading, refer <a href='https://doi.org/10.1007/BF00155578'>here</a>."
   },
   {
+    "Title": "Example-Based Explanation to Showcase Learned Representations and Identify Model Limitations",
     "Category": "Explainability",
     "SDLC Phase": "Design",
     "Data type": "Tabular",
@@ -1904,6 +1911,7 @@
     "Action": "Example- based explanation\nTypical Example\nPro: Use prototypical instances to show learned representation; Reveal potential problems of the model\nCons: Users may not appreciate the idea of typical cases."
   },
   {
+    "Title": "Exploring Prototype Generation for Understanding and Interpretation",
     "Category": "Explainability",
     "SDLC Phase": "Development",
     "Data type": "Tabular",
@@ -1916,6 +1924,7 @@
     "Action": "k-Medoids is a clustering algorithm that classifies objects into clusters by finding representative points (medoids) that minimize the distance within clusters. For example, it can be used in market segmentation to group similar customers. For further reading, refer <a href='http://papers.nips.cc/paper/6300-examples-are-not-enough-learn-to-criticize-criticism-for-interpretability.pdf'>here</a>.\nMaximum Mean Discrepancy (MMD)-critic is a method used to evaluate the quality of generated samples by comparing their distribution to the real data distribution. This can be applied in generative models to ensure the generated data closely resembles the real data. For further reading, refer <a href='http://papers.nips.cc/paper/6300-examples-are-not-enough-learn-to-criticize-criticism-for-interpretability.pdf'>here</a>.\nGenerate prototype involves creating representative examples (prototypes) of different classes within a dataset. For instance, in image recognition, prototypes can help in understanding the typical features of each class. For further reading, refer <a href='http://arxiv.org/abs/1412.0035'>here</a> and <a href='https://arxiv.org/abs/1312.6034v2'>here</a>.\nCNN (Convolutional Neural Network) prototype refers to generating representative images that highlight the features learned by a CNN. This is useful in visualizing and interpreting how a CNN classifies images. For further reading, refer <a href='https://proceedings.neurips.cc/paper/2019/file/adf7ee2dcf142b0e11888e72b43fcb75-Paper.pdf'>here</a> and <a href='https://arxiv.org/pdf/1710.04806'>here</a>."
   },
   {
+    "Title": "Counterfactual Example-Based Explanation in Contrasting Outcomes",
     "Category": "Explainability",
     "SDLC Phase": "Design",
     "Data type": "Tabular",
@@ -1928,6 +1937,7 @@
     "Action": "Example- based explanation\nCounterfactual Example\nPro: Helpful to identify the differences between the current outcome and another contrastive outcome \nCons: Hard to understand, may cause confusion."
   },
   {
+    "Title": "Exploring Techniques for Interpretation and Application",
     "Category": "Explainability",
     "SDLC Phase": "Development",
     "Data type": "Tabular",
@@ -1940,6 +1950,7 @@
     "Action": "Inverse classification is a technique used to identify the necessary changes to input features in order to achieve a desired output from a model. For example, it can be used in healthcare to suggest lifestyle changes for improving patient health outcomes. For further reading, refer <a href='https://link.springer.com/chapter/10.1007/978-3-319-91473-2_9'>here</a>.\nMaximum Mean Discrepancy (MMD)-critic is a method used to evaluate the quality of generated samples by comparing their distribution to the real data distribution. This can be applied in generative models to ensure the generated data closely resembles the real data. For further reading, refer <a href='http://papers.nips.cc/paper/6300-examples-are-not-enough-learn-to-criticize-criticism-for-interpretability.pdf'>here</a>.\nProgression refers to modeling and predicting the future states or stages of a process over time. This can be used in disease progression modeling to predict how a patient's condition will evolve. For further reading, refer <a href='https://doi.org/10.1007/978-3-319-67675-3_4'>here</a>.\nVisual techniques involve using graphical representations to interpret and understand the data and model outcomes. For example, visualizations can be used to display the feature importance in a model, making it easier to understand how decisions are made. For further reading, refer <a href='https://arxiv.org/pdf/1904.07451'>here</a>."
   },
   {
+    "Title": "Understanding Feature-Based Explanation for Decision-Making",
     "Category": "Explainability",
     "SDLC Phase": "Design",
     "Data type": "Tabular",
@@ -1952,6 +1963,7 @@
     "Action": "Feature- based explanation\nFeature Attribution\nPro: Simple and easy to understand; Can answer how and why AI reaches its decisions. \nCons: Illusion of causality, confirmation bias."
   },
   {
+    "Title": "Advanced Techniques for Interpreting Machine Learning Models: LIME, SHAP, CAM, LRP, and TCAV",
     "Category": "Explainability",
     "SDLC Phase": "Development",
     "Data type": "Tabular",
@@ -1964,6 +1976,7 @@
     "Action": "Local Interpretable Model-agnostic Explanations (LIME) is a technique that explains the predictions of any machine learning model by approximating it locally with an interpretable model. For example, LIME can be used to explain why a specific medical diagnosis was made by highlighting the most influential factors. For further reading, refer <a href='https://doi.org/10.1145/2939672.2939778'>here</a>.\nSHapley Additive exPlanations (SHAP) is a method that explains the output of a machine learning model by assigning each feature an importance value based on Shapley values from cooperative game theory. This can be applied in credit scoring to determine which factors most influenced a person's credit score. For further reading, refer <a href='https://github.com/slundberg/shap'>here</a>.\nClass Activation Mapping (CAM) is a technique used to identify the regions in an image that are most relevant to a convolutional neural network's prediction. For example, CAM can be used to highlight the parts of an X-ray image that led to a particular diagnosis. For further reading, refer <a href='http://cnnlocalization.csail.mit.edu'>here</a>.\nLayer-wise Relevance Propagation (LRP) is a method that decomposes the prediction of a neural network by propagating the prediction backward through the network to identify the contribution of each input feature. This technique can be used in sentiment analysis to determine which words in a review most influenced the sentiment score. For further reading, refer <a href='https://doi.org/10.1371/journal.pone.0130140'>here</a>.\nTesting with Concept Activation Vectors (TCAV) is a technique that quantifies the importance of high-level concepts for a model's predictions. For example, TCAV can be used to understand how concepts like \"stripes\" influence the classification of images as zebras. For further reading, refer <a href='http://proceedings.mlr.press/v80/kim18d.html'>here</a>."
   },
   {
+    "Title": "Feature-Based Explanation for Graphical Representation and Interpretation",
     "Category": "Explainability",
     "SDLC Phase": "Design",
     "Data type": "Tabular",
@@ -1976,6 +1989,7 @@
     "Action": "Feature- based explanation\nFeature Shape \nPro: Graphical representation, easy to understand the relationship between one feature and prediction\nCons: Lacks feature interaction; Information overload if multiple feature shapes are presented."
   },
   {
+    "Title": "Visualizing Feature Effects: Partial Dependence Plot (PDP), Accumulated Local Effects (ALE), Generalized Additive Model (GAM), and SHAP Dependence Plots",
     "Category": "Explainability",
     "SDLC Phase": "Development",
     "Data type": "Tabular",
@@ -1988,6 +2002,7 @@
     "Action": "Partial Dependence Plot (PDP) is a technique used to visualize the marginal effect of a feature on the predicted outcome of a machine learning model while marginalizing over all other features. For example, PDP can be used to understand how the price of a house changes with respect to its size while keeping other features constant. For further reading, refer <a href='https://doi.org/10.1214/aos/1013203451'>here</a>.\nAccumulated Local Effects (ALE) is a method that estimates the average effect of a feature on the predicted outcome across different values of other features. This can be applied in healthcare to understand how a patient's age affects the likelihood of a certain medical condition across different levels of other risk factors. For further reading, refer <a href='http://arxiv.org/abs/1612.08468'>here</a>.\nGeneralized Additive Model (GAM) is a flexible regression model that allows for non-linear relationships between features and the predicted outcome. For example, GAM can be used in environmental science to model the relationship between temperature and the growth of a species of plant. For further reading, refer <a href='https://youtu.be/ErQYwNqzEdc'>here</a>.\nSHAP dependence plots visualize how the predicted outcome of a machine learning model changes as a function of a feature, while taking into account the interaction effects with other features. For instance, SHAP dependence plots can be used in finance to understand how changes in interest rates affect the predicted stock prices while considering the influence of other market factors. For further reading, refer <a href='https://github.com/slundberg/shap'>here</a>."
   },
   {
+    "Title": "Feature-Based Explanation: Feature Interaction Analysis",
     "Category": "Explainability",
     "SDLC Phase": "Design",
     "Data type": "Tabular",
@@ -2000,6 +2015,7 @@
     "Action": "Feature- based explanation\nFeature Interaction\nPro: Show feature-feature interaction\nCons: The diagram on multiple features is difficult to interpret."
   },
   {
+    "Title": "Exploring Techniques for Understanding Feature Effects in Machine Learning: PDP, ALE, GA2M, and SHAP Interaction Plots",
     "Category": "Explainability",
     "SDLC Phase": "Development",
     "Data type": "Tabular",
@@ -2012,6 +2028,7 @@
     "Action": "Partial Dependence Plot (PDP) is a technique used to visualize the marginal effect of a feature on the predicted outcome of a machine learning model while marginalizing over all other features. For example, PDP can be used to understand how the price of a house changes with respect to its size while keeping other features constant. For further reading, refer <a href='https://doi.org/10.1214/aos/1013203451'>here</a>.\nAccumulated Local Effects (ALE) is a method that estimates the average effect of a feature on the predicted outcome across different values of other features. This can be applied in healthcare to understand how a patient's age affects the likelihood of a certain medical condition across different levels of other risk factors. For further reading, refer <a href='http://arxiv.org/abs/1612.08468'>here</a>.\nGeneralized Additive 2-Model (GA2M) is a machine learning model that captures non-linear relationships between features and the predicted outcome by combining multiple base models. For example, GA2M can be used in marketing to predict customer response to advertising campaigns based on various demographic and behavioral features. For further reading, refer <a href='https://doi.org/10.1145/2783258.2788613'>here</a>.\nSHAP interaction plots visualize how the predicted outcome of a machine learning model changes as a function of two interacting features, while accounting for the influence of other features. For instance, SHAP interaction plots can be used in bioinformatics to study how gene expression levels interact to affect the susceptibility to a disease. For further reading, refer <a href='https://github.com/slundberg/shap'>here</a>."
   },
   {
+    "Title": "Example-Based Explanation to Showcase Learned Representations and Identify Model Limitations",
     "Category": "Explainability",
     "SDLC Phase": "Design",
     "Data type": "Tabular",
@@ -2024,6 +2041,7 @@
     "Action": "Example- based explanation\nTypical Example\nPro: Use prototypical instances to show learned representation; Reveal potential problems of the model\nCons: Users may not appreciate the idea of typical cases."
   },
   {
+    "Title": "Advanced Techniques: k-Medoids Clustering, Maximum Mean Discrepancy (MMD)-critic, Prototype Generation, and CNN Prototype for Interpretation and Application",
     "Category": "Explainability",
     "SDLC Phase": "Development",
     "Data type": "Tabular",
@@ -2036,6 +2054,7 @@
     "Action": "k-Medoids is a clustering algorithm that classifies objects into clusters by finding representative points (medoids) that minimize the distance within clusters. For example, it can be used in market segmentation to group similar customers. For further reading, refer <a href='http://papers.nips.cc/paper/6300-examples-are-not-enough-learn-to-criticize-criticism-for-interpretability.pdf'>here</a>.\nMaximum Mean Discrepancy (MMD)-critic is a method used to evaluate the quality of generated samples by comparing their distribution to the real data distribution. This can be applied in generative models to ensure the generated data closely resembles the real data. For further reading, refer <a href='http://papers.nips.cc/paper/6300-examples-are-not-enough-learn-to-criticize-criticism-for-interpretability.pdf'>here</a>.\nGenerate prototype involves creating representative examples (prototypes) of different classes within a dataset. For instance, in image recognition, prototypes can help in understanding the typical features of each class. For further reading, refer <a href='http://arxiv.org/abs/1412.0035'>here</a> and <a href='https://arxiv.org/abs/1312.6034v2'>here</a>.\nCNN (Convolutional Neural Network) prototype refers to generating representative images that highlight the features learned by a CNN. This is useful in visualizing and interpreting how a CNN classifies images. For further reading, refer <a href='https://proceedings.neurips.cc/paper/2019/file/adf7ee2dcf142b0e11888e72b43fcb75-Paper.pdf'>here</a> and <a href='https://arxiv.org/pdf/1710.04806'>here</a>."
   },
   {
+    "Title": "Rule-Based Explanation for Balancing Completeness and Simplicity",
     "Category": "Explainability",
     "SDLC Phase": "Design",
     "Data type": "Tabular",
@@ -2048,6 +2067,7 @@
     "Action": "Rule- based explanation\nDecision Rules/Sets\nPro: Need to carefully balance between completeness and simplicity of explanation\nCons: Trim rules and show on-demand; Highlight local rule clauses related to user�s interested instances."
   },
   {
+    "Title": "Interpretable Machine Learning Models: Bayesian Rule Lists, LORE, and Anchors for Explainable AI",
     "Category": "Explainability",
     "SDLC Phase": "Development",
     "Data type": "Tabular",
@@ -2060,6 +2080,7 @@
     "Action": "Bayesian Rule Lists is a machine learning model that combines decision rules with Bayesian inference to make predictions. For example, it can be used in healthcare to predict patient outcomes based on a set of rules derived from medical guidelines and patient data. For further reading, refer <a href='https://proceedings.mlr.press/v70/yang17h.html'>here</a>.\nLORE (Learning One-Rule Explanations) is a method that generates simple, human-interpretable rules to explain the predictions of machine learning models. This can be applied in credit scoring to provide customers with explanations for why their credit application was accepted or rejected. For further reading, refer <a href='http://arxiv.org/abs/1805.10820'>here</a>.\nAnchors is a technique used to generate faithful and human-friendly explanations for individual predictions made by complex machine learning models. For instance, Anchors can be used in fraud detection systems to explain why a particular transaction was flagged as fraudulent. For further reading, refer <a href='https://arxiv.org/pdf/1606.05386'>here</a>."
   },
   {
+    "Title": "Rule-Based Explanation Using Decision Trees: Visualizing Decision Processes and Challenges in Complexity",
     "Category": "Explainability",
     "SDLC Phase": "Design",
     "Data type": "Tabular",
@@ -2072,6 +2093,7 @@
     "Action": "Rule- based explanation\n<a href='http://localhost:5173/Learning#tree'>Decision tree</a>\nPro: Show decision process, explain the differences\nCons: Too much information, complicated to understand."
   },
   {
+    "Title": "Advanced Techniques: Model Distillation and Disentangle CNN for Knowledge Transfer and Disentangled Representations",
     "Category": "Explainability",
     "SDLC Phase": "Development",
     "Data type": "Tabular",
@@ -2084,6 +2106,7 @@
     "Action": "Model distillation is a technique used to transfer knowledge from a complex model (teacher) to a simpler model (student) by training the student model to mimic the predictions of the teacher model. For example, it can be used to compress large deep learning models for deployment on resource-constrained devices. For further reading, refer <a href='https://arxiv.org/pdf/1711.09784.pdf'>here</a>.\nDisentangle CNN (Convolutional Neural Network) is a method aimed at learning disentangled representations of data by encouraging the network to learn separate and meaningful factors of variation. This can be applied in computer vision tasks to disentangle object shape, pose, and texture for better understanding of visual scenes. For further reading, refer <a href='http://arxiv.org/abs/1802.00121'>here</a>."
   },
   {
+    "Title": "Feature-Based Explanation: Understanding Feature Attribution, Benefits, and Limitations",
     "Category": "Explainability",
     "SDLC Phase": "Design",
     "Data type": "Image/Text",
@@ -2096,6 +2119,7 @@
     "Action": "Feature- based explanation\nFeature Attribution\nPro: Simple and easy to understand; Can answer how and why AI reaches its decisions. \nCons: Illusion of causality, confirmation bias."
   },
   {
+    "Title": "Advanced Techniques for Interpreting Machine Learning Models: LIME, SHAP, CAM, LRP, and TCAV",
     "Category": "Explainability",
     "SDLC Phase": "Development",
     "Data type": "Image/Text",
@@ -2108,6 +2132,7 @@
     "Action": "Local Interpretable Model-agnostic Explanations (LIME) is a technique used to explain the predictions of machine learning models by approximating them locally with interpretable models. For example, LIME can be applied to interpret the decisions made by a deep neural network in medical imaging for diagnosing diseases. For further reading, refer <a href='https://doi.org/10.1145/2939672.2939778'>here</a>.\nSHapley Additive exPlanations (SHAP) is a method that assigns an importance value to each feature in a prediction, based on Shapley values from cooperative game theory. This can be used in credit scoring to understand the impact of different financial factors on a person's creditworthiness. For further reading, refer <a href='https://github.com/slundberg/shap'>here</a>.\nClass Activation Mapping (CAM) is a technique used to visualize which parts of an image are important for a deep neural network's prediction. For instance, CAM can be used in autonomous driving systems to identify the objects that the vehicle needs to react to in real-time. For further reading, refer <a href='http://cnnlocalization.csail.mit.edu'>here</a>.\nLayer-wise Relevance Propagation (LRP) is a method for explaining the predictions of neural networks by attributing relevance scores to each input feature. This can be applied in natural language processing to understand which words contribute most to the sentiment of a text. For further reading, refer <a href='https://doi.org/10.1371/journal.pone.0130140'>here</a>.\nTesting with Concept Activation Vectors (TCAV) is a technique used to understand what concepts a neural network has learned to recognize. For example, TCAV can be applied in medical imaging to validate that a model is detecting relevant medical features rather than spurious correlations. For further reading, refer <a href='http://proceedings.mlr.press/v80/kim18d.html'>here</a>."
   },
   {
+    "Title": "Example-Based Explanation: Using Similar Examples for Intuitive Decision Verification",
     "Category": "Explainability",
     "SDLC Phase": "Design",
     "Data type": "Image/Text",
@@ -2120,6 +2145,7 @@
     "Action": "Example- based explanation\nSimilar Example\nPro: Easy to comprehend, users intuitively verify AI�s decision using analogical reasoning on similar examples\nCons: It does not highlight features within examples to enable users� side-by-side comparison."
   },
   {
+    "Title": "Comparing Nearest Neighbor and Case-Based Reasoning in AI Applications",
     "Category": "Explainability",
     "SDLC Phase": "Development",
     "Data type": "Image/Text",
@@ -2132,6 +2158,7 @@
     "Action": "Nearest neighbor is a simple classification algorithm that classifies an unlabeled data point based on the majority class of its nearest labeled data points. For example, it can be used in recommendation systems to suggest products to users based on the preferences of similar users.\nCase-Based Reasoning (CBR) is a problem-solving method that relies on past experiences (cases) to solve new problems. This can be applied in medical diagnosis to suggest treatments for new patients based on similar cases from the past. For further reading, refer <a href='https://doi.org/10.1007/BF00155578'>here</a>."
   },
   {
+    "Title": "Utilizing Typical Examples: Revealing Model Representations and Challenges",
     "Category": "Explainability",
     "SDLC Phase": "Design",
     "Data type": "Image/Text",
@@ -2144,6 +2171,7 @@
     "Action": "Example- based explanation\nTypical Example\nPro: Use prototypical instances to show learned representation; Reveal potential problems of the model\nCons: Users may not appreciate the idea of typical cases."
   },
   {
+    "Title": "Clustering and Prototype Generation Techniques in Machine Learning",
     "Category": "Explainability",
     "SDLC Phase": "Development",
     "Data type": "Image/Text",
@@ -2156,6 +2184,7 @@
     "Action": "k-Medoids is a clustering algorithm that aims to partition data into clusters around representative points called medoids. For instance, it can be applied in customer segmentation to group similar customers based on their purchasing behavior. For further reading, refer <a href='http://papers.nips.cc/paper/6300-examples-are-not-enough-learn-to-criticize-criticism-for-interpretability.pdf'>here</a>.\nMaximum Mean Discrepancy (MMD)-critic is a method used to evaluate the quality of generated samples by comparing their distribution to that of real data. This can be applied in generative models to ensure that the generated data closely matches the characteristics of the real data. For further reading, refer <a href='http://papers.nips.cc/paper/6300-examples-are-not-enough-learn-to-criticize-criticism-for-interpretability.pdf'>here</a>.\nGenerate prototype involves creating representative examples (prototypes) for different classes within a dataset. For example, in image classification tasks, prototypes can be generated to represent different object categories, aiding in model interpretation. For further reading, refer <a href='http://arxiv.org/abs/1412.0035'>here</a> and <a href='https://arxiv.org/abs/1312.6034v2'>here</a>.\nCNN (Convolutional Neural Network) prototype refers to generating prototype images that highlight the features learned by a CNN. This can be useful for visualizing and understanding how a CNN makes predictions. For example, in image recognition, CNN prototypes can help identify the features important for distinguishing different objects. For further reading, refer <a href='https://proceedings.neurips.cc/paper/2019/file/adf7ee2dcf142b0e11888e72b43fcb75-Paper.pdf'>here</a> and <a href='https://arxiv.org/pdf/1710.04806'>here</a>."
   },
   {
+    "Title": "Understanding Counterfactual Examples",
     "Category": "Explainability",
     "SDLC Phase": "Design",
     "Data type": "Image/Text",
@@ -2168,6 +2197,7 @@
     "Action": "Example- based explanation\nCounterfactual Example\nPro: Helpful to identify the differences between the current outcome and another contrastive outcome \nCons: Hard to understand, may cause confusion."
   },
   {
+    "Title": "Exploring Techniques for Enhanced Model Understanding and Evaluation",
     "Category": "Explainability",
     "SDLC Phase": "Development",
     "Data type": "Image/Text",
@@ -2180,6 +2210,7 @@
     "Action": "Inverse classification is a technique used to identify the necessary changes to input features in order to achieve a desired output from a model. For example, it can be used in healthcare to suggest lifestyle changes for improving patient health outcomes. For further reading, refer <a href='https://link.springer.com/chapter/10.1007/978-3-319-91473-2_9'>here</a>.\nMaximum Mean Discrepancy (MMD)-critic is a method used to evaluate the quality of generated samples by comparing their distribution to the real data distribution. This can be applied in generative models to ensure the generated data closely resembles the real data. For further reading, refer <a href='http://papers.nips.cc/paper/6300-examples-are-not-enough-learn-to-criticize-criticism-for-interpretability.pdf'>here</a>.\nProgression refers to modeling and predicting the future states or stages of a process over time. This can be used in disease progression modeling to predict how a patient's condition will evolve. For further reading, refer <a href='https://doi.org/10.1007/978-3-319-67675-3_4'>here</a>.\nVisual techniques involve using graphical representations to interpret and understand the data and model outcomes. For example, visualizations can be used to display the feature importance in a model, making it easier to understand how decisions are made. For further reading, refer <a href='https://arxiv.org/pdf/1904.07451'>here</a>."
   },
   {
+    "Title": "Feature Attribution: Unveiling Clarity and Challenges",
     "Category": "Explainability",
     "SDLC Phase": "Design",
     "Data type": "Img/Txt",
@@ -2192,6 +2223,7 @@
     "Action": "Feature- based explanation\nFeature Attribution\nPro: Simple and easy to understand; Can answer how and why AI reaches its decisions. \nCons: Illusion of causality, confirmation bias."
   },
   {
+    "Title": "Exploring AI Interpretability: LIME, SHAP, CAM, LRP, and TCAV Techniques",
     "Category": "Explainability",
     "SDLC Phase": "Development",
     "Data type": "Img/Txt",
@@ -2204,6 +2236,7 @@
     "Action": "LIME (Local Interpretable Model-agnostic Explanations) is a technique used to explain the predictions of machine learning models by approximating them locally with interpretable models. For example, LIME can be applied to interpret the decisions made by a deep neural network in medical imaging for diagnosing diseases. For further reading, refer <a href='https://doi.org/10.1145/2939672.2939778'>here</a>.\nSHAP (SHapley Additive exPlanations) is a method that assigns an importance value to each feature in a prediction, based on Shapley values from cooperative game theory. This can be used in credit scoring to understand the impact of different financial factors on a person's creditworthiness. For further reading, refer <a href='https://github.com/slundberg/shap'>here</a>.\nCAM (Class Activation Mapping) is a technique used to visualize which parts of an image are important for a deep neural network's prediction. For instance, CAM can be used in autonomous driving systems to identify the objects that the vehicle needs to react to in real-time. For further reading, refer to <a href='http://cnnlocalization.csail.mit.edu'>here</a>.\nLRP (Layer-wise Relevance Propagation) is a method for explaining the predictions of neural networks by attributing relevance scores to each input feature. This can be applied in natural language processing to understand which words contribute most to the sentiment of a text. For further reading, refer <a href='https://doi.org/10.1371/journal.pone.0130140'>here</a>.\nTCAV (Testing with Concept Activation Vectors) is a technique used to understand what concepts a neural network has learned to recognize. For example, TCAV can be applied in medical imaging to validate that a model is detecting relevant medical features rather than spurious correlations. For further reading, refer <a href='http://proceedings.mlr.press/v80/kim18d.html'>here</a>."
   },
   {
+    "Title": "Utilizing Typical Examples for Model Representation: Revealing Insights and Challenges",
     "Category": "Explainability",
     "SDLC Phase": "Design",
     "Data type": "Img/Txt",
@@ -2216,6 +2249,7 @@
     "Action": "Example- based explanation\nTypical Example\nPro: Use prototypical instances to show learned representation; Reveal potential problems of the model\nCons: Users may not appreciate the idea of typical cases."
   },
   {
+    "Title": "Exploring Techniques in Machine Learning: Insights from k-Medoids to CNN Prototypes",
     "Category": "Explainability",
     "SDLC Phase": "Development",
     "Data type": "Img/Txt",
@@ -2228,6 +2262,7 @@
     "Action": "k-Medoids is a clustering algorithm that aims to partition data into clusters around representative points called medoids. For instance, it can be applied in customer segmentation to group similar customers based on their purchasing behavior. For further reading, refer <a href='http://papers.nips.cc/paper/6300-examples-are-not-enough-learn-to-criticize-criticism-for-interpretability.pdf'>here</a>.\nMMD-critic is a method used to evaluate the quality of generated samples by comparing their distribution to that of real data. This can be applied in generative models to ensure the generated data closely matches the characteristics of the real data. For further reading, refer <a href='http://papers.nips.cc/paper/6300-examples-are-not-enough-learn-to-criticize-criticism-for-interpretability.pdf'>here</a>.\nGenerate prototype involves creating representative examples (prototypes) for different classes within a dataset. For example, in image classification tasks, prototypes can be generated to represent different object categories, aiding in model interpretation. For further reading, refer <a href='http://arxiv.org/abs/1412.0035'>here</a> and <a href='https://arxiv.org/abs/1312.6034v2'>here</a>.\nCNN (Convolutional Neural Network) prototype refers to generating prototype images that highlight the features learned by a CNN. This can be useful for visualizing and understanding how a CNN makes predictions. For example, in image recognition, CNN prototypes can help identify the features important for distinguishing different objects. For further reading, refer <a href='https://proceedings.neurips.cc/paper/2019/file/adf7ee2dcf142b0e11888e72b43fcb75-Paper.pdf'>here</a> and <a href='https://arxiv.org/pdf/1710.04806'>here</a>."
   },
   {
+    "Title": "Enhancing Understanding through Decision Rules and Sets in Machine Learning",
     "Category": "Explainability",
     "SDLC Phase": "Design",
     "Data type": "Img/Txt",
@@ -2240,6 +2275,7 @@
     "Action": "Rule- based explanation\nDecision Rules/Sets\nPro: Need to carefully balance between completeness and simplicity of explanation\nCons: Trim rules and show on-demand; Highlight local rule clauses related to user�s interested instances."
   },
   {
+    "Title": "Advancing Interpretability: Bayesian Rule Lists, LORE, and Anchors in Machine Learning",
     "Category": "Explainability",
     "SDLC Phase": "Development",
     "Data type": "Img/Txt",
@@ -2252,6 +2288,7 @@
     "Action": "Bayesian Rule Lists is a machine learning model that combines decision rules with Bayesian inference to make predictions. For example, it can be used in healthcare to predict patient outcomes based on a set of rules derived from medical guidelines and patient data. For further reading, refer <a href='https://proceedings.mlr.press/v70/yang17h.html'>here</a>.\nLORE (Learning One-Rule Explanations) is a method that generates simple, human-interpretable rules to explain the predictions of machine learning models. This can be applied in credit scoring to provide customers with explanations for why their credit application was accepted or rejected. For further reading, refer <a href='http://arxiv.org/abs/1805.10820'>here</a>.\nAnchors is a technique used to generate faithful and human-friendly explanations for individual predictions made by complex machine learning models. For instance, Anchors can be used in fraud detection systems to explain why a particular transaction was flagged as fraudulent. For further reading, refer <a href='https://arxiv.org/pdf/1606.05386'>here</a>."
   },
   {
+    "Title": "Understanding Decision Trees: Balancing Complexity and Insight",
     "Category": "Explainability",
     "SDLC Phase": "Design",
     "Data type": "Img/Txt",
@@ -2264,6 +2301,7 @@
     "Action": "Rule- based explanation\n<a href='http://localhost:5173/Learning#tree'>Decision tree</a>\nPro: Show decision process, explain the differences\nCons: Too much information, complicated to understand"
   },
   {
+    "Title": "Knowledge Transfer with Model Distillation and Disentanglement in CNNs",
     "Category": "Explainability",
     "SDLC Phase": "Development",
     "Data type": "Img/Txt",
