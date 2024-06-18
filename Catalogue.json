@@ -2314,6 +2314,7 @@
     "Action": "Model distillation is a technique used to transfer knowledge from a complex model (teacher) to a simpler model (student) by training the student model to mimic the predictions of the teacher model. For example, it can be used to compress large deep learning models for deployment on resource-constrained devices. For further reading, refer <a href='https://arxiv.org/pdf/1711.09784.pdf'>here</a>.\nDisentangle CNN (Convolutional Neural Network) is a method aimed at learning disentangled representations of data by encouraging the network to learn separate and meaningful factors of variation. This can be applied in computer vision tasks to disentangle object shape, pose, and texture for better understanding of visual scenes. For further reading, refer <a href='http://arxiv.org/abs/1802.00121'>here</a>."
   },
   {
+    "Title": "Questions to Avoid the Solutionist Trap in AI Projects",
     "Category": "Fairness",
     "SDLC Phase": "RE",
     "Data type": "",
@@ -2326,6 +2327,7 @@
     "Action": "To prevent the solutionist trap from happening and to create a more realistic view on whether the problem can indeed be solved or supported with a model, ask yourself the following questions:\n- How would using a predictive model offer a solution for the problem of interest?\n- Which other solutions are available to solve this problem? Why were these solutions not sufficient (anymore)? \n- Why should we use an AI technology to solve this problem?\n- How will we know if our project with AI technology is successful? How will the performance be measured in terms of organisation goals?"
   },
   {
+    "Title": "Artificial Intelligence Impact Assessment (AIIA)",
     "Category": "Fairness",
     "SDLC Phase": "RE",
     "Data type": "",
@@ -2338,6 +2340,7 @@
     "Action": "Conduct an Artificial Intelligence Impact Assessment (AIIA) by following this <a href='https://static1.squarespace.com/static/5b7877457c9327fa97fef427/t/5c368c611ae6cf01ea0fba53/1547078768062/Artificial+Intelligence+Impact+Assessment+-+English.pdf'>guide</a>.\nTo answer previous questions"
   },
   {
+    "Title": "Documenting Decisions and Stakeholder Involvement in AI Model Development",
     "Category": "Fairness",
     "SDLC Phase": "RE",
     "Data type": "",
@@ -2350,6 +2353,7 @@
     "Action": "Since many key choices are made during this phase that can introduce bias, it�s important to elaborate on these decisions.\nMoreover, during this phase we should establish who our stakeholders are, so we can educate them on the model development cycle. All these findings will be documented so that we can continuously evaluate these decisions during later phases.\nThe discussions and documentation should at least cover the following topics:\n1. Stakeholders: Describe the stakeholders who will be involved in the development and deployment of the model, such as the decision-makers and all the other people (in)directly affected by the system. It is important to involve stakeholders continuously throughout the lifecycle of the algorithm, since they all bring in their own valuable expertise and experiences about the problem. Using these multiple perspectives, we can minimise the risks observed.\n2. Demographic Groups: Define the demographic groups which the AI system is likely to impact. These demographic groups can be formed by (combinations of) sensitive attributes, such as by race, gender, age, or disability. \n- In Figure there is an overview of all the sensitive attributes.\n- The use of personas can also help to better describe the demographic groups. These can be created in collaboration with stakeholders and verified by domain experts who have experience with the population of interest. See also this introduction on <a href='https://www.interaction-design.org/literature/article/personas-why-and-how-you-should-use-them'>personas website</a> for more information about how to create these descriptions.\n3. Fairness Definitions and Metrics: it is recommended considering the fairness of the algorithm as early as possible. More specifically for this stage, we can begin to think about what fairness definition and metrics would be applicable to our algorithm. The sheet \"<a href='https://docs.google.com/spreadsheets/d/1Y3PucJ2PM277dr8qGgpnw3_zRPACOA58IYiGJaQYmPw/edit?usp=sharing'>Tree metrics</a>\" can be used as guidance.\n- Discuss with stakeholders: Which types of mistakes are you more willing to make? This question helps with scoping the bias analysis.\n- Define the fairness definitions and metrics.\n4. Target Variable and Sensitive Attributes: Describe the considerations made for the target variable and the sensitive attributes to avoid construct validity bias. Pay specific attention to describing how these variables will be measured.\n5. Socio-technical Context: Describe the socio-technical environment in which the model will be deployed.\n- How can the sociotechnical context be described in this AI system?\n- How will the working process change due to the new AI system?\n- Are there any relevant regulations, standards or policies that should also be considered?"
   },
   {
+    "Title": "Consult with Domain Experts on Socio-Technical Context and Model Portability",
     "Category": "Fairness",
     "SDLC Phase": "RE",
     "Data type": "",
@@ -2362,6 +2366,7 @@
     "Action": "Discuss with domain experts whether the translation of the problem formulation into a model is modelling the socio-technical context adequately.\nMap out all the possible factors that may have an impact on the algorithm and discuss with domain experts which of these factors can be left out and which can be included. As for the portability trap, make explicit what the differences are between the initial and the new context when reusing a model, and map how this may (negatively) affect the outcomes of the model."
   },
   {
+    "Title": "Evaluate the Model's Impact on Actor Behavior, Perception, Expertise, and Power Dynamics",
     "Category": "Fairness",
     "SDLC Phase": "RE",
     "Data type": "",
@@ -2374,6 +2379,7 @@
     "Action": "Pay sufficient attention to how the model can affect the behaviour, perception and expertise of all actors whose work is somehow involved with the newly introduced model, and investigate the relative power dynamics between the actors in the system."
   },
   {
+    "Title": "Evaluating Construct Validity Bias in AI Systems: Insights and Mitigation Strategies",
     "Category": "Fairness",
     "SDLC Phase": "RE",
     "Data type": "",
@@ -2386,6 +2392,7 @@
     "Action": "Inspecting an AI system for traces of construct validity bias is not an easy task. We need to gain deep insight into how proxy variables (including the target variable) are constructed. A way to mitigate this type of bias is by collecting multiple measures to form the target variable. In addition, the conceptualization framework of construct validity in What is Construct Validity? <a href='https://fairlearn.org/v0.7.0/user_guide/fairness_in_machine_learning.html#what-is-construct-validity'>This website</a> offers a starting point to evaluate the construct validity of your variables."
   },
   {
+    "Title": "Mitigation Techniques for Bias in Dataset Representation and Model Outcomes",
     "Category": "Fairness",
     "SDLC Phase": "Design",
     "Data type": "",
@@ -2398,6 +2405,7 @@
     "Action": "We identified the following mitigation techniques:\n- Analyse which unjust patterns are embedded in the dataset in collaboration with domain experts. Based on the demographic groups defined in the first phase, further research can be done to investigate how these groups are represented in the dataset.\n- Additionally, since historical bias is often caused by problematic distributions of the features and/or the target variable for the minority groups in the dataset, we could improve these distributions with over and undersampling techniques. \nThese sampling techniques can be used to systematically over or undersample the features and the target for minority groups, for example by assigning more desired target labels to minority groups which increases the probability that they receive a desired outcome by the model. For more information, see the mitigation techniques for representation bias.\n- Inspect the decisions and interventions that result from the outcomes of the model, especially when they have a punitive nature. Discuss with stakeholders how to extend the set of decisions and interventions with more assistive actions. For example, for loan eligibility models, extend the decision space with options to offer different interest rates and payment terms. For further reading <a href='https://www.annualreviews.org/doi/10.1146/annurev-statistics-042720-125902'>refer here</a>."
   },
   {
+    "Title": "Mitigating Statistical Bias in Predictive Model Training",
     "Category": "Fairness",
     "SDLC Phase": "Design",
     "Data type": "",
@@ -2410,6 +2418,7 @@
     "Action": "Analyze and comprehend this threat, togheter with all the related sub-threats."
   },
   {
+    "Title": "Strategies to Prevent Representation Bias in Algorithmic Training",
     "Category": "Fairness",
     "SDLC Phase": "Design",
     "Data type": "",
@@ -2422,6 +2431,7 @@
     "Action": "To prevent representation bias:\n- Be aware of your own blind spots as a data scientist and consult domain experts;\n- Develop the model with a diverse team;\n- Ensure your dataset contains sufficient instances of minority groups. \nThe population selected for the algorithm�s training should have similar distributions and proportions for all subgroups and for each protected attribute. Data visualisation techniques can be helpful to gain more insight into the differences between the data of the minority groups and the majority group."
   },
   {
+    "Title": "Mitigating Representation Bias in Dataset Sampling and Handling",
     "Category": "Fairness",
     "SDLC Phase": "Design",
     "Data type": "",
@@ -2434,6 +2444,7 @@
     "Action": "To mitigate representation bias:\n- Collect additional data to mitigate the dataset imbalance;\n- Find ways to deal with sampling errors. Consider pre-processing mitigation algorithms like methods to reweigh the instances of the dataset such that people from unprivileged groups with favourable labels get assigned higher weights while privileged people with favourable labels are assigned lower weights. \n- Use sampling techniques to obtain balanced dataset, for example with oversampling, undersampling and stratified sampling. These sampling techniques are only conducted on the training set: the validation and test set remain untouched. For a Python package about dealing with imbalanced data, we recommend the Imbalanced-Learn  package and reading through the corresponding <a href='https://jmlr.org/papers/v18/16-365.html'>paper</a>."
   },
   {
+    "Title": "Mitigating Measurement Bias Through Context-Aware Evaluation",
     "Category": "Fairness",
     "SDLC Phase": "Design",
     "Data type": "",
@@ -2446,6 +2457,7 @@
     "Action": "To mitigate the risk of measurement bias, re-evaluate the measurement or annotation process from a more context-aware perspective. Consult domain experts to provide more background information about all the factors that are related to the target variable, and select together which features are less prone to measurement errors. See also the proposed  mitigation techniques of Omitted Variable Bias. If there is some information available about the ground truth of the data, then this information will be valuable in assessing the  model for measurement bias."
   },
   {
+    "Title": "Documenting Data Collection and Sampling Choices Using Datasheets",
     "Category": "Fairness",
     "SDLC Phase": "Design",
     "Data type": "",
@@ -2458,6 +2470,7 @@
     "Action": "DATASHEET: It is important to describe the choices behind the data collection and sampling process in detail, as this gives insight into the distribution of the sampled population and can be used to find traces of representation bias. The <a href='https://doi.org/10.1145/3458723'>datasheets</a> introduced by Gebru et al.  can be useful here: this tool helps with documenting the key information about the dataset). The datasheet includes information about the following dataset properties: \n- The source of the dataset;\n- The timeframe over which the data was collected;\n- The collection, aggregation or curation process of the dataset, which also includes the used software, hardware, or infrastructure to collect and process the data;\n- The (pre)processing techniques used to prepare the dataset for the model training phase."
   },
   {
+    "Title": "Feature Analysis and Documentation for Fairness Pipeline",
     "Category": "Fairness",
     "SDLC Phase": "Design",
     "Data type": "",
@@ -2470,6 +2483,7 @@
     "Action": "FEATURE REVIEW: In the Feature Review, the relevant characteristics of the dataset features are documented and evaluated for potential links to direct or indirect bias. This descriptive analysis is compiled in collaboration with domain experts and end users to gain more insight about the features and business rules that shape the AI system. Specifically, the Feature Overview helps with determining: \n- Which features have a larger risk for direct or indirect bias;\n- To which sensitive attributes each feature is linked. These sensitive attributes help with determining the demographic groups who will be evaluated during the bias analysis.\nThe Feature Review is one of the key documents of the Fairness Pipeline and the bias analysis (which should be done through the dedicated sheet, if not aready done in RE phase). Therefore, make sure to schedule sufficient time with stakeholders to fill in the document.\nFor each feature, include the following information:\n- What is the source of this feature?\n- What does this feature tell us? How can it be interpreted?\n- How is the information behind the feature currently used in the work process?\n- Is there any legal, academic or common-sense justification for the link between this feature and the target variable? If so, how credible, strong and actual is this support?\n- To which protected attributes is it linked? (See Figure above for an overview of the protected attributes)\n- To which demographic groups does this feature link?\n- Will this feature be evaluated during the bias analysis?\nIf so, will it be analysed for indirect or direct bias?\nMake sure to continuously update the information in this overview, as it will be often used in the subsequent phases to describe the results of the applied Fairness Pipeline tools."
   },
   {
+    "Title": "Targeted Mitigation Techniques for Learning Objectives and Representation Bias",
     "Category": "Fairness",
     "SDLC Phase": "Development",
     "Data type": "",
@@ -2482,6 +2496,7 @@
     "Action": "Mitigation techniques should target the defined learning objectives and associated learning processes. Moreover, since this bias can amplify performance disparities on underrepresented groups, it is important to ensure there is no representation bias. With a more representative and balanced dataset, the model will be less prone to only preserving information about the majority group."
   },
   {
+    "Title": "Adjusting Objective Functions and Training Data for Fairness in Model Learning",
     "Category": "Fairness",
     "SDLC Phase": "Development",
     "Data type": "",
@@ -2494,6 +2509,7 @@
     "Action": "- Adjust the objective function to include the group differences in the data. In some cases, incorporating information about group differences into the design of the model can lead to a simpler function that the model can learn, which in turn can improve performance across groups. A branch to look into are coupled learning methods such as multitask learning, which modify the parameters of the <a href='https://doi.org/10.1145/3465416.3483305'>model objective</a> to also consider the group differences .\n- Adjust the training data to fit the objective function better, for example with data transformation techniques such as the <a href='https://proceedings.mlr.press/v28/zemel13.html'>Fair Representation Learning method</a>."
   },
   {
+    "Title": "Mitigating Risk with Permutation Feature Importance",
     "Category": "Fairness",
     "SDLC Phase": "Development",
     "Data type": "",
@@ -2506,6 +2522,7 @@
     "Action": "To mitigate this risk, use feature importance methods to evaluate the relationship between each feature and the target variable.\nThe <a href='https://christophm.github.io/interpretable-ml-book/pdp.html'>Permutation Feature Importance method</a> is one of the techniques that could be used . This method measures the increase in the prediction error of the model after permuting the feature�s values. Consult this source for a more detailed explanation about Permutation Feature Importance."
   },
   {
+    "Title": "Prioritizing Model Transparency and Understandability",
     "Category": "Fairness",
     "SDLC Phase": "Development",
     "Data type": "",
@@ -2518,6 +2535,7 @@
     "Action": "It is crucial to diagnose the model and the generated outcomes for presence of bias and to grasp why the model arrived at its outcomes. The more transparent the model is, the easier this process will be, so make sure to look into methods for increasing transparency and understandability of the model.\nWhen prioritizing transparency and understandability, the most straightforward option is to choose human-interpretable models, such as regression models, <a href='http://localhost:5173/Learning#tree'>decision trees</a>, Na�ve Bayes Classifiers and K-Nearest Neighbours. The open-source book �Interpretable Machine Learning� by Christoph Molnar (Learning�) is a recommended read for learning more about how to select interpretable models, or how to implement model-agnostic methods in more complex algorithmes to understand the decisions generated by the model."
   },
   {
+    "Title": "Utilizing Feature Importance Methods for Model Evaluation",
     "Category": "Fairness",
     "SDLC Phase": "Development",
     "Data type": "",
@@ -2530,6 +2548,7 @@
     "Action": "Feature Importance Methods: After training the model, feature importance methods such as Permutation Feature Importance or SHAP can be used to calculate the relative importance of each feature. These results should be communicated with the domain exports and end users to evaluate whether the most predictive values are proxies for indirect bias and whether these features are indeed essential for solving the problem in the real world.\nIf stakeholders do not recognize the most predictive features being essential for the real-world problem, it is advisable to re-evaluate the features and the functioning of the model. By doing so, the risk that the model produces harmful and erroneous outcomes is minimized. Finally, make sure to register the feature importance results in the Feature Review."
   },
   {
+    "Title": "Exploring Counterfactuals for Model Fairness Analysis",
     "Category": "Fairness",
     "SDLC Phase": "Development",
     "Data type": "",
@@ -2542,6 +2561,7 @@
     "Action": "Explore Counterfactuals: With counterfactuals, we change the values of sensitive attributes (or features linking to sensitive information) and observe whether the model outcome changes positively or negatively. Suppose, for example, we inspect a model that determines eligibility for a life insurance, and we include a feature that indirectly links to nationality, such as history of foreign travel. If changing the value of this feature from Italy to Lebanon increases the insurance rate significantly, the model might be biased against\nnationality, ethnicity or migration background. To experiment with counterfactuals, Google's What-If Tool offers a wide range of possibilities to probe your model and investigate\nwhich counterfactuals are present. The insights obtained from exploring counterfactuals can, for example, help with determining whether the decision space of the model should be extended with more interventions."
   },
   {
+    "Title": "Evaluate Your Decisions Regarding the Threat Description",
     "Category": "Fairness",
     "SDLC Phase": "Development",
     "Data type": "",
@@ -2554,6 +2574,7 @@
     "Action": "Evaluate you decisions w.r.t. the Threat description."
   },
   {
+    "Title": "Using Disaggregated Evaluation Metrics for Model Performance Analysis",
     "Category": "Fairness",
     "SDLC Phase": "Testing",
     "Data type": "",
@@ -2566,6 +2587,7 @@
     "Action": "Use disaggregated evaluation metrics on smaller groups of data to gain more insight in the model�s performance on minority groups. These subgroup metrics can also be used to compare the performance of groups with each other to find performance disparities, which often indicate various kinds of biases that we discussed. For example, both accuracy and precision could be calculated and compared for the self-defined groups. \nKeep in mind that selecting smaller-sized groups and metrics is always application-dependent, and it often requires intersectional analysis and privacy considerations. Therefore, input should be sought from domain experts and affected populations who understand the usage and consequences of the <a href='https://doi.org/10.1145/3465416.3483305'>model</a>. Tools such as the <a href='http://localhost:5173/Learning#tree'>Fairness tree</a> can assist in selecting these appropriate metrics.\nBesides reporting the performance of models on more granular subsets of data, we also recommend to closely inspect the data distribution for dataset imbalances that cause the model to underperform for certain subpopulations. If the subgroup evaluation metrics indicate a disparity in performance, then considering new ways to generate more representative data could be helpful to mitigate the evaluation bias, which are mentioned at the solution strategies for representation bias."
   },
   {
+    "Title": "Bias Analysis in the Fairness Pipeline",
     "Category": "Fairness",
     "SDLC Phase": "Testing",
     "Data type": "",
@@ -2578,6 +2600,7 @@
     "Action": "Bias Analysis: It is one of the most important actions of the Fairness Pipeline. Here, fairness metrics are used to compare the model�s performance across demographic groups and to find the groups for which the model is substantially underperforming, hereby possibly indicating bias. \nAs the bias analysis is a very intense and elaborate process, consult the dedicated Excel sheet. Based on the obtained results from the bias analysis, it is recommended to return to previous phases to solve the underlying problems causing the bias."
   },
   {
+    "Title": "Simulating Bias Scenarios for Fairness Analysis",
     "Category": "Fairness",
     "SDLC Phase": "Testing",
     "Data type": "",
@@ -2586,11 +2609,11 @@
     "Threat": "Evaluation bias",
     "Sub-Threat": "N.A.",
     "Description": "Evaluation bias occurs when the evaluation metrics are inappropriate for the model and dataset, hereby disguising the model�s performance for smaller-sized demographic groups.",
-    "Vulnerability (consequence)": "",
-    
+    "Vulnerability (consequence)": "",    
     "Action": "Bias Scenario Simulations: An useful exercise within the bias analysis is to create realistic simulations of unfavorable outcomes for demographic groups and to discuss the follow-up steps of these results with stakeholders.\nThe simulations can be made using different <a href='http://localhost:5173/Learning#matrix-container'>confusion matrix</a> outcomes for demographic groups, thereby highlighting how the model performs differently for advantaged versus disadvantaged groups. Simulating different scenarios helps with establishing the fairness definition, metrics and with determining suitable follow-up steps to mitigate the bias for the disadvantaged group."
   },
   {
+    "Title": "Ensuring Proper Training and Interpretability for Model Users",
     "Category": "Fairness",
     "SDLC Phase": "Deployment",
     "Data type": "",
@@ -2603,6 +2626,7 @@
     "Action": "The people who process or work with the results of the models must therefore be properly trained to be able to critically evaluate the generated outcomes. It is also important that the deployed models have a high degree of interpretability and understandability, so that reasoning errors can be detected more quickly in the model."
   },
   {
+    "Title": "Mitigation Strategies for Deployment and Automation Bias",
     "Category": "Fairness",
     "SDLC Phase": "Deployment",
     "Data type": "",
@@ -2615,6 +2639,7 @@
     "Action": "The mitigation strategies that we mention are identical to those to mitigate automation bias: they are aimed at educating the stakeholders about the AI system and informing them about the potential risks and harms when deploying the model into the real world.\nIt�s also important to keep in mind that most issues caused by automation and deployment bias can be traced back to the abstraction and framing traps that we discussed in the first phase of the model development cycle."
   },
   {
+    "Title": "Mitigation Strategies for Reinforcing Feedback Loops in Predictive Policing",
     "Category": "Fairness",
     "SDLC Phase": "Deployment",
     "Data type": "",
@@ -2627,6 +2652,7 @@
     "Action": "Based on an actual case of a reinforcing feedback loop in predictive policing where arrest data was used to train the model and police officers were concentrating on already overly policed communities, researchers found that incorporating community-driven data was a suitable mitigation strategy to reduce the feedback effects. The community-driven data consisted of residents who reported on crimes. Adding data from other sources seems therefore as a suitable solution to prevent the amplification of certain undesired patterns in the model and data.\n- Since the bias is likely to be caused by measurement errors, we recommend considering the mitigation strategies discussed at Measurement Bias.\n- Add also the �neutral� labels to the new dataset. That is, in fraud detection models, add also the people to the dataset who were checked for fraud and who did not commit fraud."
   },
   {
+    "Title": "Enhancing Stakeholder Understanding with Visualizations and User Interfaces",
     "Category": "Fairness",
     "SDLC Phase": "Deployment",
     "Data type": "",
@@ -2639,6 +2665,7 @@
     "Action": "Visualisations and User Interfaces: First, to educate stakeholders about the functioning of the AI systems, create intuitive visualisations and user interfaces that give insight into how the model arrived at its outcome, including:\n- Reporting and visualising which features and values played an important role for generated decision, for example with <a href='https://proceedings.neurips.cc/paper/2017/'>SHAP</a> or <a href='https://christophm.github.io/interpretable-ml-book/pdp.html'>Partial Dependence Plots</a>\n- With how much certainty the outcome was generated. This guides end users to use their own judgments more when the model generates an outcome with low certainty.\n- Additional information to support the stakeholders� judgments."
   },
   {
+    "Title": "Creating Transparent Model Cards for Comprehensive Model Documentation",
     "Category": "Fairness",
     "SDLC Phase": "Deployment",
     "Data type": "",
@@ -2651,6 +2678,7 @@
     "Action": "Model Cards: Despite all our actions in the Fairness Pipeline, each model will continue to have vulnerabilities that could potentially lead to discriminatory behavior against minority groups. The eradication of  biases is a continuous process in which human biases are interwoven into the data and the model development process in complicated ways.\nIt is therefore crucial to be transparent about these vulnerabilities, so that policy makers can take these risks into account when they write policies about the use of the model. Model cards are useful tools to document the most important information of the data, the model and its performance comprehensively.\nModel cards are short documents (one or two pages) that report the model�s performance for the demographic groups in the dataset and summarize the ethical, inclusive and fair considerations of the <a href='https://doi.org/10.1145/3287560.3287596'>model</a>. See also the Model Card Prompts in the Appendix for an overview of the components that can be included on model cards."
   },
   {
+    "Title": "Establishing a Comprehensive Monitoring Plan for AI System Oversight",
     "Category": "Fairness",
     "SDLC Phase": "Deployment",
     "Data type": "",
